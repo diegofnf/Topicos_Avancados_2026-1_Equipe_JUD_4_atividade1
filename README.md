@@ -1,5 +1,7 @@
 # OAB Pipeline — Benchmark de Modelos de Linguagem
 
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/diegofnf/Topicos_Avancados_2026-1_Equipe_JUD_4_atividade1/blob/main/notebook.ipynb)
+
 Avaliação de modelos open-source em questões discursivas e objetivas da OAB, utilizando uma arquitetura de três agentes: **candidato**, **curador** e **juiz**.
 
 ---
