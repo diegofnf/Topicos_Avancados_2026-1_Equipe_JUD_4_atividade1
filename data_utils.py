@@ -18,16 +18,12 @@ def salvar_csv(df: pd.DataFrame, path: Path) -> None:
 
 
 def git_push(repo_dir: str, github_repo: str, token: str, mensagem: str = "Atualiza resultados") -> None:
-    """
-    Commita e envia os CSVs gerados para o repositório Git.
-    Garante persistência dos resultados mesmo após a VM do Colab ser encerrada.
-    """
     remote = f"https://{token}@github.com/{github_repo}.git"
     cmds = [
         "git config user.email 'colab@pipeline.com'",
         "git config user.name 'Colab Pipeline'",
         f"git remote set-url origin {remote}",
-        "git add *.csv",
+        "git add -A",  # ← adiciona tudo, incluindo subpastas
         f'git commit -m "{mensagem}" --allow-empty',
         "git push",
     ]
@@ -35,8 +31,7 @@ def git_push(repo_dir: str, github_repo: str, token: str, mensagem: str = "Atual
         resultado = subprocess.run(cmd, shell=True, cwd=repo_dir, capture_output=True, text=True)
         if resultado.returncode != 0:
             print(f"Aviso git: {resultado.stderr.strip()}")
-    print("CSVs enviados para o repositório.")
-
+    print("Arquivos enviados para o repositório.")
 
 def area_confiavel(row) -> str:
     """

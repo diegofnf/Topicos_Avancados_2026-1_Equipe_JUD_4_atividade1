@@ -9,23 +9,24 @@ BASE_DIR.mkdir(parents=True, exist_ok=True)
 
 # Modelos ficam na VM — somem ao reiniciar, mas o snapshot_download
 # evita re-download dentro da mesma sessão
-HF_CACHE_DIR = "/content/models"
-os.environ["HF_HOME"]            = HF_CACHE_DIR
-os.environ["TRANSFORMERS_CACHE"] = HF_CACHE_DIR
-os.environ["HF_DATASETS_CACHE"]  = HF_CACHE_DIR
+HF_CACHE_DIR = "/content/hf_cache"
+os.environ["HF_HOME"] = HF_CACHE_DIR
 
 # ============================================================
 # CAMINHOS DOS ARQUIVOS DE SAÍDA
 # ============================================================
-QUESTOES_DISCURSIVAS_CSV     = BASE_DIR / "questoes_discursivas.csv"
-QUESTOES_OBJETIVAS_CSV       = BASE_DIR / "questoes_objetivas.csv"
-CURADORIA_DISCURSIVAS_CSV    = BASE_DIR / "curadoria_discursivas.csv"
-CURADORIA_OBJETIVAS_CSV      = BASE_DIR / "curadoria_objetivas.csv"
-RESPOSTAS_DISCURSIVAS_CSV    = BASE_DIR / "respostas_discursivas.csv"
-RESPOSTAS_OBJETIVAS_CSV      = BASE_DIR / "respostas_objetivas.csv"
-AVALIACAO_DISCURSIVAS_CSV    = BASE_DIR / "avaliacao_discursivas.csv"
-ACCURACY_MODELOS_CSV         = BASE_DIR / "accuracy_modelos.csv"
-BENCHMARK_DISCURSIVAS_CSV    = BASE_DIR / "questoes_discursivas_benchmark.csv"
+HF_SAIDA_DIR = Path("/content/oab_pipeline/saida")
+HF_SAIDA_DIR.mkdir(parents=True, exist_ok=True)
+
+QUESTOES_DISCURSIVAS_CSV     = HF_SAIDA_DIR / "questoes_discursivas.csv"
+QUESTOES_OBJETIVAS_CSV       = HF_SAIDA_DIR / "questoes_objetivas.csv"
+CURADORIA_DISCURSIVAS_CSV    = HF_SAIDA_DIR / "curadoria_discursivas.csv"
+CURADORIA_OBJETIVAS_CSV      = HF_SAIDA_DIR / "curadoria_objetivas.csv"
+RESPOSTAS_DISCURSIVAS_CSV    = HF_SAIDA_DIR / "respostas_discursivas.csv"
+RESPOSTAS_OBJETIVAS_CSV      = HF_SAIDA_DIR / "respostas_objetivas.csv"
+AVALIACAO_DISCURSIVAS_CSV    = HF_SAIDA_DIR / "avaliacao_discursivas.csv"
+BENCHMARK_OBJETIVAS_CSV      = HF_SAIDA_DIR / "benchmark_objetivas.csv"
+BENCHMARK_DISCURSIVAS_CSV    = HF_SAIDA_DIR / "benchmark_discursivas.csv"
 
 # ============================================================
 # MODELOS
@@ -43,10 +44,10 @@ MODELO_JUIZ    = "Qwen/Qwen3-4B-Instruct-2507"
 # RECORTES DO DATASET
 # ============================================================
 DISC_SLICE_START = 70
-DISC_SLICE_END   = 82
+DISC_SLICE_END   = 71 #82
 
 OBJ_SLICE_START  = 739
-OBJ_SLICE_END    = 740
+OBJ_SLICE_END    = 740 #862
 
 # ============================================================
 # GIT

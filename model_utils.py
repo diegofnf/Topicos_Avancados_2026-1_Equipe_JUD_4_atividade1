@@ -1,9 +1,9 @@
 import gc
 import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig
+from config import HF_CACHE_DIR
 
-
-def load_model(model_name: str, cache_dir: str = "/content/drive/MyDrive/hf_cache"):
+def load_model(model_name: str, cache_dir: str = HF_CACHE_DIR):
     """
     Carrega modelo e tokenizer com quantização 4bit (NF4).
 
@@ -80,6 +80,8 @@ def gerar_texto(
         "eos_token_id": tokenizer.eos_token_id,
         # 1.3 para candidato: penaliza repetições mais agressivamente.
         # 1.1 para juiz/curador: evita loops sem distorcer termos jurídicos.
+        #sample = true => (criatividade controlada), apenas para as respostas discursivas.
+        #sample = false => (resposta exata), para os demais.
         "repetition_penalty": 1.3 if sample else 1.1,
     }
 
