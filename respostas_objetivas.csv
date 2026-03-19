@@ -1,7 +1,0 @@
-question_id,dataset,tipo_questao,modelo,texto_questao,resposta,gabarito_oficial,correto,timestamp_execucao
-2012-08_41,J2,objetiva,gemma2,"Embora sujeito às constantes mutações e às diferenças de contexto em que é aplicado, o conceito tradicional de contrato sugere que ele representa o acordo de vontades estabelecido com a finalidade de produzir efeitos jurídicos.
-Tomando por base a teoria geral dos contratos, assinale a afirmativa correta.",C,B,False,2026-03-19T07:42:47.956895-03:00
-2012-08_41,J2,objetiva,llama323b,"Embora sujeito às constantes mutações e às diferenças de contexto em que é aplicado, o conceito tradicional de contrato sugere que ele representa o acordo de vontades estabelecido com a finalidade de produzir efeitos jurídicos.
-Tomando por base a teoria geral dos contratos, assinale a afirmativa correta.",A,B,False,2026-03-19T07:56:04.771023-03:00
-2012-08_41,J2,objetiva,llama321b,"Embora sujeito às constantes mutações e às diferenças de contexto em que é aplicado, o conceito tradicional de contrato sugere que ele representa o acordo de vontades estabelecido com a finalidade de produzir efeitos jurídicos.
-Tomando por base a teoria geral dos contratos, assinale a afirmativa correta.",A,B,False,2026-03-19T08:01:16.895051-03:00
