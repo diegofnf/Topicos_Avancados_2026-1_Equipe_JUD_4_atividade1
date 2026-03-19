@@ -6,6 +6,20 @@ Avaliação de modelos open-source em questões discursivas e objetivas da OAB, 
 
 ---
 
+## Regras dos Datasets
+
+### Discursivas (J1)
+
+- A **área de especialidade** é definida diretamente pelo campo `category` do dataset.
+- O modelo curador **não** infere mais a área de especialidade das questões discursivas.
+- O campo `values` é salvo junto com cada questão e usado na etapa de avaliação do juiz.
+
+### Objetivas (J2)
+
+- A **área de especialidade** é definida diretamente pelo campo `question_type` do dataset.
+
+---
+
 ## Arquitetura
 
 ```
@@ -26,8 +40,25 @@ notebook.ipynb  → orquestração no Colab
 | Respostas discursivas | Candidato | questões | respostas_discursivas.csv |
 | Respostas objetivas | Candidato | questões + alternativas | respostas_objetivas.csv |
 | Curadoria | Curador | questões | curadoria_discursivas/objetivas.csv |
-| Avaliação | Juiz | questões + respostas + curadoria | avaliacao_discursivas.csv |
+| Avaliação | Juiz | questões + respostas + curadoria + values | avaliacao_discursivas.csv |
 | Resultados | — | avaliação + respostas | accuracy + benchmark |
+
+### Avaliação das discursivas
+
+O juiz agora usa o campo `values` da questão para limitar a pontuação.
+
+- Quando `values = [0.65, 0.6]`, a correção é dividida em:
+- `nota_fundamentacao_coerencia`: de `0` até `0.65`
+- `nota_aderencia_completude`: de `0` até `0.6`
+- `nota_total`: soma das duas notas parciais
+
+Os critérios qualitativos usados pelo juiz são:
+
+- argumentação
+- precisão jurídica
+- coesão legal
+
+Quando a questão tiver apenas um valor, como em uma peça com `values = [5]`, esse valor passa a ser o teto da `nota_total`.
 
 ---
 

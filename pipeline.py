@@ -12,6 +12,66 @@ from prompts import (
 )
 
 
+def _parse_float(valor):
+    try:
+        return float(str(valor).replace(",", "."))
+    except (TypeError, ValueError):
+        return None
+
+
+def _carregar_values(values_json) -> list[float]:
+    try:
+        values = json.loads(values_json) if values_json else []
+    except Exception:
+        values = []
+
+    notas = []
+    for value in values:
+        nota = _parse_float(value)
+        if nota is not None:
+            notas.append(nota)
+    return notas
+
+
+def _formatar_pontuacao_questao(values: list[float]) -> str:
+    if len(values) >= 2:
+        return (
+            f"- nota_fundamentacao_coerencia: 0 até {values[0]:.2f}\n"
+            f"- nota_aderencia_completude: 0 até {values[1]:.2f}\n"
+            f"- nota_total: 0 até {sum(values):.2f}"
+        )
+    if len(values) == 1:
+        return f"- nota_total: 0 até {values[0]:.2f}"
+    return "- nota_total: não informada"
+
+
+def _normalizar_avaliacao(avaliacao: dict, values: list[float]) -> tuple[float | None, float | None, float | None, float | None]:
+    if len(values) >= 2:
+        nota_fc = _parse_float(avaliacao.get("nota_fundamentacao_coerencia"))
+        nota_ac = _parse_float(avaliacao.get("nota_aderencia_completude"))
+
+        if nota_fc is not None:
+            nota_fc = max(0.0, min(nota_fc, values[0]))
+        if nota_ac is not None:
+            nota_ac = max(0.0, min(nota_ac, values[1]))
+
+        if nota_fc is None and nota_ac is None:
+            nota_total = None
+        else:
+            nota_total = round((nota_fc or 0.0) + (nota_ac or 0.0), 4)
+
+        return nota_fc, nota_ac, nota_total, sum(values[:2])
+
+    if len(values) == 1:
+        nota_total = _parse_float(avaliacao.get("nota_total"))
+        if nota_total is not None:
+            nota_total = max(0.0, min(nota_total, values[0]))
+        return None, None, nota_total, values[0]
+
+    nota_total = _parse_float(avaliacao.get("nota_total"))
+    return None, None, nota_total, None
+
+
 def gerar_resposta_discursiva(model, tokenizer, row: dict, nome_modelo: str) -> dict:
     prompt = PROMPT_CANDIDATO_DISCURSIVA.format(questao=row["texto_questao"])
     resposta = gerar_texto(
@@ -27,6 +87,9 @@ def gerar_resposta_discursiva(model, tokenizer, row: dict, nome_modelo: str) -> 
         "dataset": row["dataset"],
         "tipo_questao": row["tipo_questao"],
         "modelo": nome_modelo,
+        "area_especialidade_dataset": row.get("area_especialidade_dataset"),
+        "values_json": row.get("values_json"),
+        "nota_maxima_total": row.get("nota_maxima_total"),
         "texto_questao": row["texto_questao"],
         "resposta": resposta,
         "timestamp_execucao": timestamp_execucao(),
@@ -50,6 +113,7 @@ def gerar_resposta_objetiva(model, tokenizer, row: dict, nome_modelo: str) -> di
         "dataset": row["dataset"],
         "tipo_questao": row["tipo_questao"],
         "modelo": nome_modelo,
+        "area_especialidade_dataset": row.get("area_especialidade_dataset"),
         "texto_questao": row["texto_questao"],
         "resposta": letra,
         "gabarito_oficial": row["gabarito_oficial"],
@@ -79,8 +143,7 @@ def gerar_curadoria(model, tokenizer, row: dict, tipo_questao: str) -> dict:
         "texto_questao": row["texto_questao"],
         "nivel_dificuldade_equipe": curadoria.get("nivel_dificuldade"),
         "justificativa_dificuldade": curadoria.get("justificativa_dificuldade"),
-        "area_especialidade_equipe": curadoria.get("area_especialidade"),
-        "justificativa_area": curadoria.get("justificativa_area"),
+        "area_especialidade_equipe": row.get("area_especialidade_dataset"),
         "dominio_juridico": curadoria.get("dominio_juridico"),
         "legislacao_base": curadoria.get("legislacao_base"),
         "confianca": curadoria.get("confianca"),
@@ -93,15 +156,17 @@ def gerar_curadoria(model, tokenizer, row: dict, tipo_questao: str) -> dict:
 def gerar_avaliacao_discursiva(
     model, tokenizer, questao_row: dict, resposta_row: dict, curadoria_row: dict
 ) -> dict:
+    values = _carregar_values(questao_row.get("values_json"))
     prompt = PROMPT_JUIZ_AVALIACAO.format(
         questao=questao_row["texto_questao"],
         resposta=resposta_row["resposta"],
         nivel_dificuldade=curadoria_row.get("nivel_dificuldade_equipe", "Não informado"),
         dominio_juridico=curadoria_row.get("dominio_juridico", "Não informado"),
-        area_especialidade=curadoria_row.get("area_especialidade_equipe", "Não informado"),
+        area_especialidade=questao_row.get("area_especialidade_dataset", "Não informado"),
         legislacao_base=curadoria_row.get("legislacao_base", "Não informado"),
+        pontuacao_questao=_formatar_pontuacao_questao(values),
     )
-    saida = gerar_texto(model, tokenizer, prompt, sample=False, max_tokens=300)
+    saida = gerar_texto(model, tokenizer, prompt, sample=False, max_tokens=450)
 
     json_bruto = extrair_json_bruto(saida)
     try:
@@ -109,12 +174,7 @@ def gerar_avaliacao_discursiva(
     except Exception:
         avaliacao = {}
 
-    try:
-        nota = float(str(avaliacao.get("nota", "")).replace(",", "."))
-        if not (0 <= nota <= 10):
-            nota = None
-    except (ValueError, TypeError):
-        nota = None
+    nota_fc, nota_ac, nota_total, nota_maxima_total = _normalizar_avaliacao(avaliacao, values)
 
     return {
         "question_id": resposta_row["question_id"],
@@ -122,10 +182,17 @@ def gerar_avaliacao_discursiva(
         "tipo_questao": resposta_row["tipo_questao"],
         "modelo_candidato": resposta_row["modelo"],
         "modelo_juiz": MODELO_JUIZ,
+        "area_especialidade_dataset": questao_row.get("area_especialidade_dataset"),
         "texto_questao": questao_row["texto_questao"],
         "resposta": resposta_row["resposta"],
+        "argumentacao": avaliacao.get("argumentacao"),
+        "precisao": avaliacao.get("precisao"),
+        "coesao_legal": avaliacao.get("coesao_legal"),
+        "nota_fundamentacao_coerencia": nota_fc,
+        "nota_aderencia_completude": nota_ac,
+        "nota_maxima_total": nota_maxima_total,
         "avaliacao": avaliacao.get("avaliacao"),
-        "nota": nota,
+        "nota": nota_total,
         "json_parse_ok": bool(avaliacao),
         "saida_bruta": json_bruto if json_bruto else saida,
         "timestamp_execucao": timestamp_execucao(),

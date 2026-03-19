@@ -42,23 +42,25 @@ Você é um examinador oficial da prova da OAB.
 
 Sua tarefa é avaliar a resposta de um candidato para uma questão aberta da OAB.
 
-Como esta base não possui gabarito oficial estruturado para as questões discursivas, avalie com rigor técnico:
+Avalie com rigor técnico usando principalmente:
 
-- correção jurídica
-- coerência argumentativa
-- uso adequado de conceitos e fundamentos legais
-- adequação da resposta ao problema apresentado
+- argumentação
+- precisão jurídica
+- coesão legal
 
-Use os seguintes critérios de pontuação:
+PONTUAÇÃO DA QUESTÃO:
+{pontuacao_questao}
 
-0-2: resposta incorreta ou irrelevante
-3-4: resposta muito incompleta ou com erros jurídicos graves
-5-6: resposta parcialmente correta, mas com lacunas importantes
-7-8: resposta correta, porém incompleta ou pouco fundamentada
-9-10: resposta completa, correta e bem fundamentada juridicamente
+Regras de correção:
+- Se a questão tiver dois valores em `values`, use:
+  1. `nota_fundamentacao_coerencia` no intervalo de 0 até o primeiro valor.
+  2. `nota_aderencia_completude` no intervalo de 0 até o segundo valor.
+- Se a questão tiver um único valor em `values`, trate esse valor como a nota máxima total da resposta.
+- `nota_total` deve ser a soma válida das notas parciais quando houver dois valores, ou a nota única quando houver um valor.
+- Nunca ultrapasse os tetos informados.
 
 Penalize fortemente:
-- ausência de fundamentação legal
+- ausência de fundamentação
 - interpretação jurídica incorreta
 - invenção de fatos ou normas
 
@@ -77,7 +79,12 @@ RESPOSTA DO CANDIDATO:
 Muito importante: A resposta só deve conter o JSON válido abaixo. Não imprima nada além do JSON.
 Responda apenas em JSON válido:
 {{
-  "nota": <número entre 0 e 10>,
+  "argumentacao": "<texto curto sobre a qualidade argumentativa>",
+  "precisao": "<texto curto sobre a precisão jurídica>",
+  "coesao_legal": "<texto curto sobre a coesão legal>",
+  "nota_fundamentacao_coerencia": <número ou null>,
+  "nota_aderencia_completude": <número ou null>,
+  "nota_total": <número>,
   "avaliacao": "<texto curto com a justificativa em no máximo 3 linhas>"
 }}
 '''
@@ -93,14 +100,6 @@ Nível de dificuldade:
 2. Aplicação jurídica simples
 3. Interpretação com confronto normativo
 4. Estratégia argumentativa complexa
-
-Área:
-- Relações Privadas
-- Estado e Administração
-- Sistema Penal
-- Trabalho e Proteção Social
-- Tributação e Finanças
-- Garantias Fundamentais
 
 Domínio:
 - Civil
@@ -118,7 +117,7 @@ Legislação base:
 
 Regras:
 - Escolha apenas uma opção por categoria
-- Use a opção predominante
+- A área de especialidade já foi definida pelo dataset e não deve ser inferida por você
 - Baseie-se apenas no enunciado
 
 Questão ({tipo_questao}):
@@ -129,8 +128,6 @@ Responda apenas em JSON:
 {{
   "nivel_dificuldade": "",
   "justificativa_dificuldade": "<texto curto com a justificativa em no máximo 3 linhas>",
-  "area_especialidade": "",
-  "justificativa_area": "<texto curto com a justificativa em no máximo 3 linhas>",
   "dominio_juridico": "",
   "legislacao_base": "",
   "confianca": "alta|media|baixa"

@@ -33,25 +33,58 @@ def git_push(repo_dir: str, github_repo: str, token: str, mensagem: str = "Atual
             print(f"Aviso git: {resultado.stderr.strip()}")
     print("Arquivos enviados para o repositório.")
 
+
+def serializar_json_campo(valor) -> str:
+    return json.dumps(valor, ensure_ascii=False)
+
+
+def normalizar_values(values) -> list[float]:
+    valores = []
+    if not isinstance(values, list):
+        return valores
+
+    for value in values:
+        try:
+            valores.append(float(value))
+        except (TypeError, ValueError):
+            continue
+
+    return valores
+
+
+def somar_values(values) -> float:
+    return round(sum(normalizar_values(values)), 2)
+
+
+def formatar_area_especialidade_j1(category: str) -> str:
+    partes = [parte for parte in str(category).split("_") if parte]
+    if partes and partes[0].isdigit():
+        partes = partes[1:]
+    if partes and partes[0].lower() == "direito":
+        partes = partes[1:]
+    if not partes:
+        return "Não identificado"
+    return "Direito " + " ".join(parte.capitalize() for parte in partes)
+
+
+def formatar_area_especialidade_j2(question_type: str) -> str:
+    tokens = [token for token in str(question_type).lower().split("_") if token]
+    if not tokens:
+        return "Não identificado"
+    return " ".join(token.capitalize() for token in tokens)
+
+
 def area_confiavel(row) -> str:
-    """
-    Determina a área do benchmark com fallback para o question_id.
+    area_dataset = row.get("area_especialidade_dataset")
+    if pd.notna(area_dataset):
+        return str(area_dataset)
 
-    Usa a classificação do curador se confiança for alta.
-    Caso contrário, extrai a área diretamente do question_id,
-    que é mais confiável que o modelo pequeno para esta taxonomia.
+    area_equipe = row.get("area_especialidade_equipe")
+    if pd.notna(area_equipe):
+        return str(area_equipe)
 
-    Ex: '41_direito_administrativo_questao_1' → 'Direito Administrativo'
-    """
     partes = str(row["question_id"]).split("_")
     area_id = f"Direito {partes[2].capitalize()}" if len(partes) >= 3 else "Não identificado"
-
-    area_curador = row.get("area_especialidade_equipe")
-    confianca = row.get("confianca")
-
-    # Só aceita o curador se ele concordar com o question_id
-    if confianca == "alta" and pd.notna(area_curador) and area_id.lower() in str(area_curador).lower():
-        return area_curador
     return area_id
 
 
