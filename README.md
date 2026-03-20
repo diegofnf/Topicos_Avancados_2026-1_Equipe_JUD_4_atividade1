@@ -6,7 +6,7 @@ Este repositório reúne os artefatos individuais e coletivos produzidos pelo Gr
 
 - Cada aluno mantém seus artefatos dentro de uma pasta individual.
 - Essa separação facilita a navegação, a avaliação e a identificação das decisões metodológicas de cada integrante.
-- O material de Diego Alves Bispo está na pasta [diego_bispo](/Users/Diego/Documents/Atividade1/diego_bispo).
+- O material de Diego Alves Bispo está na pasta [diego_bispo](https://github.com/diegofnf/Topicos_Avancados_2026-1_Equipe_JUD_4_atividade1/tree/main/diego_bispo).
 
 ## Curadoria
 
