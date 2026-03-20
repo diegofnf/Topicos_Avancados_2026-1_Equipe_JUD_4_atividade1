@@ -73,7 +73,19 @@ def _normalizar_avaliacao(avaliacao: dict, values: list[float]) -> tuple[float |
 
 def gerar_resposta_discursiva(model, tokenizer, row: dict, nome_modelo: str) -> dict:
     prompt = PROMPT_CANDIDATO_DISCURSIVA.format(questao=row["texto_questao"])
-    resposta = gerar_texto(
+    # Código anterior:
+    # resposta = gerar_texto(
+    #     model,
+    #     tokenizer,
+    #     prompt,
+    #     sample=True,
+    #     max_tokens=400,
+    #     temperature=0.7,
+    # )
+    # Artifício do prefill: queremos forçar que o modelo comece diretamente pelo JSON.
+    prefill = "{"
+    prompt = prompt + f"\n{prefill}"
+    saida = prefill + gerar_texto(
         model,
         tokenizer,
         prompt,
@@ -81,6 +93,14 @@ def gerar_resposta_discursiva(model, tokenizer, row: dict, nome_modelo: str) -> 
         max_tokens=400,
         temperature=0.7,
     )
+    json_bruto = extrair_json_bruto(saida)
+    try:
+        resposta_json = json.loads(json_bruto) if json_bruto else {}
+    except Exception:
+        resposta_json = {}
+
+    resposta = str(resposta_json.get("resposta_discursiva", "")).strip()
+
     return {
         "question_id": row["question_id"],
         "dataset": row["dataset"],
@@ -91,6 +111,8 @@ def gerar_resposta_discursiva(model, tokenizer, row: dict, nome_modelo: str) -> 
         "nota_maxima_total": row.get("nota_maxima_total"),
         "texto_questao": row["texto_questao"],
         "resposta": resposta,
+        "json_parse_ok": bool(resposta_json),
+        "saida_bruta": json_bruto if json_bruto else saida,
         "timestamp_execucao": timestamp_execucao(),
     }
 

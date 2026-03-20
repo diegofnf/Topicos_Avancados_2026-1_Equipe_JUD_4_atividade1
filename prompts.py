@@ -18,7 +18,11 @@ Conclusão objetiva:
 Questão:
 {questao}
 
-Escreva apenas a resposta final.
+ATENÇÃO: Não inclua nada além do JSON. Se você incluir alguma coisa além do JSON, você será penalizado.
+Responda apenas em JSON válido:
+{{
+  "resposta_discursiva": "<máximo 20 linhas>"
+}}
 '''
 
 
@@ -33,7 +37,7 @@ C) {C}
 D) {D}
 
 ATENÇÃO: Não inclua nada além do JSON. Se você incluir alguma coisa além do JSON, você será penalizado.
-Responda apenas em JSON:
+Responda apenas em JSON válido:
 {{
   "resposta_objetiva": "A|B|C|D"
 }}
@@ -78,7 +82,7 @@ QUESTÃO:
 RESPOSTA DO CANDIDATO:
 {resposta}
 
-Muito importante: A resposta só deve conter o JSON válido abaixo. Não imprima nada além do JSON.
+ATENÇÃO: Não inclua nada além do JSON. Se você incluir alguma coisa além do JSON, você será penalizado.
 Responda apenas em JSON válido:
 {{
   "argumentacao": "<texto curto sobre a qualidade argumentativa>",
@@ -118,7 +122,7 @@ Questão ({tipo_questao}):
 {questao}
 
 ATENÇÃO: Não inclua nada além do JSON. Se você incluir alguma coisa além do JSON, você será penalizado.
-Responda apenas em JSON:
+Responda apenas em JSON válido:
 {{
   "nivel_dificuldade": "1|2|3|4",
   "justificativa_dificuldade": "<texto curto com a justificativa em no máximo 3 linhas>",
