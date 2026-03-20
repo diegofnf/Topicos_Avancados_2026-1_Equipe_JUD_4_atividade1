@@ -92,6 +92,7 @@ def gerar_resposta_discursiva(model, tokenizer, row: dict, nome_modelo: str) -> 
         sample=True,
         max_tokens=400,
         temperature=0.7,
+        system_prompt=row.get("system_prompt"),
     )
     json_bruto = extrair_json_bruto(saida)
     try:
@@ -107,6 +108,7 @@ def gerar_resposta_discursiva(model, tokenizer, row: dict, nome_modelo: str) -> 
         "tipo_questao": row["tipo_questao"],
         "modelo": nome_modelo,
         "area_especialidade_dataset": row.get("area_especialidade_dataset"),
+        "system_prompt": row.get("system_prompt"),
         "values_json": row.get("values_json"),
         "nota_maxima_total": row.get("nota_maxima_total"),
         "texto_questao": row["texto_questao"],

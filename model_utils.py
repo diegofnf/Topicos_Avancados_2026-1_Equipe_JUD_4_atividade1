@@ -3,6 +3,14 @@ import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig
 from config import HF_CACHE_DIR
 
+
+def _montar_prompt_com_system(prompt: str, system_prompt: str | None = None) -> str:
+    if not system_prompt:
+        return prompt
+
+    return f"{system_prompt.strip()}\n\n{prompt.strip()}"
+
+
 def load_model(model_name: str, cache_dir: str = HF_CACHE_DIR):
     """
     Carrega modelo e tokenizer com quantização 4bit (NF4).
@@ -63,6 +71,7 @@ def gerar_texto(
     sample: bool = True,
     max_tokens: int = 512,
     temperature: float = 0.7,
+    system_prompt: str | None = None,
 ) -> str:
     """
     Gera texto a partir de um prompt.
@@ -71,7 +80,8 @@ def gerar_texto(
     - sample=False → juiz/curador (determinístico), ignora temperature
     """
     device = "cuda" if torch.cuda.is_available() else "cpu"
-    inputs = tokenizer(prompt, return_tensors="pt").to(device)
+    prompt_final = _montar_prompt_com_system(prompt, system_prompt=system_prompt)
+    inputs = tokenizer(prompt_final, return_tensors="pt").to(device)
 
     generation_kwargs = {
         "max_new_tokens": max_tokens,

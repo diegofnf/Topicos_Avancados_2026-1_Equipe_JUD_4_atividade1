@@ -1,22 +1,11 @@
 PROMPT_CANDIDATO_DISCURSIVA = '''
-Você é um candidato da OAB.
-
-Responda à questão discursiva abaixo em português brasileiro, com linguagem jurídica formal e objetiva.
-
-Instruções obrigatórias:
-- Saída somente com a resposta.
-- Proibido incluir: assinatura, cumprimento, explicações, observações, cabeçalhos, markdown, inglês, exemplos, avisos ao leitor.
-- Proibido inventar base legal.
-- Quando não souber o número exato do artigo, mencione apenas a lei aplicável ou o entendimento jurídico pertinente.
-- Máximo de 20 linhas.
-
-A resposta deve conter exatamente:
-Tese principal:
-Fundamentação jurídica:
-Conclusão objetiva:
-
 Questão:
 {questao}
+
+Instruções complementares:
+- Responda em português brasileiro, com linguagem jurídica formal e objetiva.
+- Não invente base legal.
+- Quando não souber o número exato do artigo, mencione apenas a lei aplicável ou o entendimento jurídico pertinente.
 
 ATENÇÃO: Não inclua nada além do JSON. Se você incluir alguma coisa além do JSON, você será penalizado.
 Responda apenas em JSON válido:
