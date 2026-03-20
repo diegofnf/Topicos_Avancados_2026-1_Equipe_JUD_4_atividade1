@@ -32,8 +32,11 @@ B) {B}
 C) {C}
 D) {D}
 
-Responda apenas com A, B, C ou D.
-Se você responder com alguma coisa que não seja A, B, C ou D, você será penalizado.
+ATENÇÃO: Não inclua nada além do JSON. Se você incluir alguma coisa além do JSON, você será penalizado.
+Responda apenas em JSON:
+{{
+  "resposta_objetiva": "A|B|C|D"
+}}
 '''
 
 
@@ -117,7 +120,7 @@ Questão ({tipo_questao}):
 ATENÇÃO: Não inclua nada além do JSON. Se você incluir alguma coisa além do JSON, você será penalizado.
 Responda apenas em JSON:
 {{
-  "nivel_dificuldade": "",
+  "nivel_dificuldade": "1|2|3|4",
   "justificativa_dificuldade": "<texto curto com a justificativa em no máximo 3 linhas>",
   "legislacao_base": "",
   "confianca": "alta|media|baixa"

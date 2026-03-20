@@ -1,5 +1,4 @@
 import json
-import re
 
 from config import MODELO_JUIZ, MODELO_CURADOR
 from data_utils import extrair_json_bruto, timestamp_execucao
@@ -105,9 +104,22 @@ def gerar_resposta_objetiva(model, tokenizer, row: dict, nome_modelo: str) -> di
         C=alternativas.get("C", ""),
         D=alternativas.get("D", ""),
     )
-    resposta = gerar_texto(model, tokenizer, prompt, sample=False, max_tokens=10)
-    match = re.search(r"\b[A-D]\b", resposta.upper())
-    letra = match.group() if match else "N/A"
+    # Código anterior:
+    # resposta = gerar_texto(model, tokenizer, prompt, sample=False, max_tokens=40)
+    # Artifício do prefill: queremos forçar que o modelo comece diretamente pelo JSON.
+    prefill = "{"
+    prompt = prompt + f"\n{prefill}"
+    saida = prefill + gerar_texto(model, tokenizer, prompt, sample=False, max_tokens=40)
+    json_bruto = extrair_json_bruto(saida)
+    try:
+        resposta_json = json.loads(json_bruto) if json_bruto else {}
+    except Exception:
+        resposta_json = {}
+
+    letra = str(resposta_json.get("resposta_objetiva", "")).strip().upper()
+    if letra not in {"A", "B", "C", "D"}:
+        letra = "N/A"
+
     return {
         "question_id": row["question_id"],
         "dataset": row["dataset"],
@@ -118,6 +130,8 @@ def gerar_resposta_objetiva(model, tokenizer, row: dict, nome_modelo: str) -> di
         "resposta": letra,
         "gabarito_oficial": row["gabarito_oficial"],
         "correto": letra == row["gabarito_oficial"],
+        "json_parse_ok": bool(resposta_json),
+        "saida_bruta": json_bruto if json_bruto else saida,
         "timestamp_execucao": timestamp_execucao(),
     }
 
@@ -150,10 +164,10 @@ def gerar_curadoria(model, tokenizer, row: dict, tipo_questao: str) -> dict:
         "justificativa_dificuldade": curadoria.get("justificativa_dificuldade"),
         "area_especialidade_equipe": row.get("area_especialidade_dataset"),
         "legislacao_base": curadoria.get("legislacao_base"),
-        "confianca": curadoria.get("confianca"),
-        "timestamp_execucao": timestamp_execucao(),
+        "confianca": curadoria.get("confianca"),        
         "saida_bruta": json_bruto if json_bruto else saida,
         "json_parse_ok": bool(curadoria),
+        "timestamp_execucao": timestamp_execucao(),
     }
 
 
