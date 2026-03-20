@@ -12,14 +12,39 @@ Este repositório reúne os artefatos individuais e coletivos produzidos pelo Gr
 
 A curadoria foi definida em grupo como uma etapa de apoio à análise das questões, com o objetivo de enriquecer o contexto de avaliação dos modelos.
 
-No projeto atual, a curadoria considera principalmente:
+**O prompt da curadoria é exatamente o mesmo para todos os integrantes do grupo.**
 
-- nível de dificuldade da questão, em escala de `1` a `4`
-- justificativa curta da dificuldade
-- legislação base mais relevante para o enunciado
-- confiança da própria curadoria
+No projeto atual, a curadoria considera os seguintes elementos:
 
-Nas questões discursivas e objetivas, a área de especialidade é herdada diretamente do dataset, para manter consistência metodológica entre os integrantes e evitar inferências desnecessárias do modelo curador.
+| Elemento | Definição |
+|---|---|
+| Nível de dificuldade da questão | Definido pelo LLM Curador |
+| Área de especialidade | Herdada diretamente do dataset |
+| Legislação | Definida pelo LLM Curador |
+
+### Nível de dificuldade da questão
+
+Classificação utilizada pelo LLM Curador:
+
+1. Literalidade direta
+2. Aplicação jurídica simples
+3. Interpretação com confronto normativo
+4. Estratégia argumentativa complexa
+
+### Área de especialidade
+
+A área de especialidade é herdada diretamente do dataset:
+
+- no dataset J1, a área vem do campo `category`
+- no dataset J2, a área vem do campo `question_type`
+
+### Legislação
+
+A legislação base é definida pelo LLM Curador com as seguintes orientações:
+
+- indicar a principal norma aplicável, como `CF/88` ou `Código Civil`
+- informar artigo apenas quando houver alta certeza
+- não inventar norma
 
 ## Integrantes
 
