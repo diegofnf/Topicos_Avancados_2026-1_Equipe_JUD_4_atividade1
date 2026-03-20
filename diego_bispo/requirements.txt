@@ -4,3 +4,6 @@ bitsandbytes
 datasets
 pandas
 tqdm
+sentence-transformers
+seaborn
+matplotlib

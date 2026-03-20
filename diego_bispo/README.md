@@ -41,6 +41,7 @@ notebook.ipynb  → orquestração no Colab
 | Respostas objetivas | Candidato | questões + alternativas | respostas_objetivas.csv |
 | Curadoria | Curador | questões | curadoria_discursivas/objetivas.csv |
 | Avaliação | Juiz | questões + respostas + curadoria + values | avaliacao_discursivas.csv |
+| Similaridade discursiva | Embeddings | respostas_discursivas.csv | similaridade_discursivas.csv + heatmap |
 | Resultados | — | avaliação + respostas | accuracy + benchmark |
 
 ### Avaliação das discursivas
@@ -59,6 +60,14 @@ Os critérios qualitativos usados pelo juiz são:
 - coesão legal
 
 Quando a questão tiver apenas um valor, como em uma peça com `values = [5]`, esse valor passa a ser o teto da `nota_total`.
+
+### Similaridade semântica entre modelos
+
+As respostas discursivas também podem ser avaliadas com embeddings, comparando apenas respostas da mesma questão.
+
+- O notebook gera uma tabela `similaridade_discursivas.csv` com a similaridade cosseno entre pares de modelos.
+- Também gera um heatmap `heatmap_similaridade_discursivas.png` com a similaridade média entre os modelos.
+- Essa análise mede proximidade semântica entre respostas, não correção jurídica.
 
 ---
 

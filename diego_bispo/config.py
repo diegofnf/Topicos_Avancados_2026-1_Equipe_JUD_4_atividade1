@@ -25,6 +25,8 @@ CURADORIA_OBJETIVAS_CSV      = HF_SAIDA_DIR / "curadoria_objetivas.csv"
 RESPOSTAS_DISCURSIVAS_CSV    = HF_SAIDA_DIR / "respostas_discursivas.csv"
 RESPOSTAS_OBJETIVAS_CSV      = HF_SAIDA_DIR / "respostas_objetivas.csv"
 AVALIACAO_DISCURSIVAS_CSV    = HF_SAIDA_DIR / "avaliacao_discursivas.csv"
+SIMILARIDADE_DISCURSIVAS_CSV = HF_SAIDA_DIR / "similaridade_discursivas.csv"
+HEATMAP_DISCURSIVAS_PNG      = HF_SAIDA_DIR / "heatmap_similaridade_discursivas.png"
 BENCHMARK_OBJETIVAS_CSV      = HF_SAIDA_DIR / "benchmark_objetivas.csv"
 BENCHMARK_DISCURSIVAS_CSV    = HF_SAIDA_DIR / "benchmark_discursivas.csv"
 
