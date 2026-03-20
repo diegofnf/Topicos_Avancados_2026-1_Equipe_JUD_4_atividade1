@@ -4,7 +4,7 @@ from pathlib import Path
 # ============================================================
 # DIRETÓRIOS
 # ============================================================
-BASE_DIR = Path("/content/oab_pipeline")
+BASE_DIR = Path("/content/oab_pipeline/diego_bispo")
 BASE_DIR.mkdir(parents=True, exist_ok=True)
 
 # Modelos ficam na VM — somem ao reiniciar, mas o snapshot_download
@@ -15,7 +15,7 @@ os.environ["HF_HOME"] = HF_CACHE_DIR
 # ============================================================
 # CAMINHOS DOS ARQUIVOS DE SAÍDA
 # ============================================================
-HF_SAIDA_DIR = Path("/content/oab_pipeline/saida")
+HF_SAIDA_DIR = BASE_DIR / "saida"
 HF_SAIDA_DIR.mkdir(parents=True, exist_ok=True)
 
 QUESTOES_DISCURSIVAS_CSV     = HF_SAIDA_DIR / "questoes_discursivas.csv"
@@ -52,5 +52,6 @@ OBJ_SLICE_END    = 740 #862
 # ============================================================
 # GIT
 # ============================================================
-REPO_DIR    = "/content/oab_pipeline"
+REPO_DIR    = "/content/oab_pipeline/diego_bispo"
+# O remote Git continua sendo o repositório raiz; `diego_bispo` é uma subpasta dentro dele.
 GITHUB_REPO = "diegofnf/Topicos_Avancados_2026-1_Equipe_JUD_4_atividade1"
