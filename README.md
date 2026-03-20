@@ -16,7 +16,7 @@ A curadoria foi definida em grupo como uma etapa de apoio à análise das quest�
 
 No projeto atual, a curadoria considera os seguintes elementos:
 
-| Elemento | Definição |
+| Parâmetros | Definição |
 |---|---|
 | Nível de dificuldade da questão | Definido pelo LLM Curador |
 | Área de especialidade | Herdada diretamente do dataset |
@@ -71,5 +71,5 @@ A legislação base é definida pelo LLM Curador com as seguintes orientações:
 
 **Artefatos**
 
-- GitHub: [diego_bispo](https://github.com/diegofnf/Topicos_Avancados_2026-1_Equipe_JUD_4_atividade1/tree/main/diego_bispo)
+- Artefatos: [diego_bispo](https://github.com/diegofnf/Topicos_Avancados_2026-1_Equipe_JUD_4_atividade1/tree/main/diego_bispo)
 - Detalhamento: [diego_bispo/README.md](/Users/Diego/Documents/Atividade1/diego_bispo/README.md)
