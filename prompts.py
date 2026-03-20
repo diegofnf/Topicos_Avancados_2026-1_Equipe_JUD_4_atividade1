@@ -66,7 +66,6 @@ Penalize fortemente:
 
 CONTEXTO DA QUESTÃO (use para calibrar a avaliação):
 - Nível de dificuldade: {nivel_dificuldade}
-- Domínio jurídico: {dominio_juridico}
 - Área de especialidade: {area_especialidade}
 - Legislação base: {legislacao_base}
 
@@ -101,14 +100,6 @@ Nível de dificuldade:
 3. Interpretação com confronto normativo
 4. Estratégia argumentativa complexa
 
-Domínio:
-- Civil
-- Trabalho
-- Penal
-- Tributário
-- Administrativo
-- Constitucional
-
 Legislação base:
 - Indique a principal norma aplicável (ex: CF/88, Código Civil)
 - Só informe artigo se tiver alta certeza
@@ -128,7 +119,6 @@ Responda apenas em JSON:
 {{
   "nivel_dificuldade": "",
   "justificativa_dificuldade": "<texto curto com a justificativa em no máximo 3 linhas>",
-  "dominio_juridico": "",
   "legislacao_base": "",
   "confianca": "alta|media|baixa"
 }}
