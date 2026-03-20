@@ -52,22 +52,9 @@ A legislação base é definida pelo LLM Curador com as seguintes orientações:
 
 **Contribuições**
 
-- desenvolvimento do pipeline para questões discursivas e objetivas da OAB
-- implementação da arquitetura com candidato, curador e juiz
-- definição do uso de `category`, `question_type` e `values` na metodologia
-
 **Pipeline**
 
-- modelos open-source quantizados em 4 bits
-- três modelos candidatos para geração de respostas
-- um modelo dedicado para curadoria e julgamento
-
 **Resultados**
-
-- respostas geradas para questões discursivas e objetivas
-- curadoria das questões
-- avaliação das discursivas
-- benchmark por modelo e por área de especialidade
 
 **Artefatos**
 
