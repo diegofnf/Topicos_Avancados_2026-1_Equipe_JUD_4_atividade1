@@ -27,6 +27,8 @@ Nas questões discursivas e objetivas, a área de especialidade é herdada diret
 
 GitHub: [Topicos_Avancados_2026-1_Equipe_JUD_4_atividade1/diego_bispo](https://github.com/diegofnf/Topicos_Avancados_2026-1_Equipe_JUD_4_atividade1/tree/main/diego_bispo)
 
+Colab: [Abrir notebook no Google Colab](https://colab.research.google.com/github/diegofnf/Topicos_Avancados_2026-1_Equipe_JUD_4_atividade1/blob/main/diego_bispo/notebook.ipynb)
+
 O trabalho de Diego Alves Bispo implementa um benchmark com modelos de linguagem aplicados a questões discursivas e objetivas da OAB. O projeto utiliza uma arquitetura com três papéis principais: candidato, curador e juiz, buscando comparar o comportamento dos modelos em geração de resposta, curadoria jurídica e avaliação.
 
 Os principais parâmetros e escolhas metodológicas incluem:
