@@ -4,7 +4,7 @@ from pathlib import Path
 # ============================================================
 # DIRETÓRIOS
 # ============================================================
-BASE_DIR = Path("/content/oab_pipeline/diego_bispo")
+BASE_DIR = Path("/content/oab_pipeline")
 BASE_DIR.mkdir(parents=True, exist_ok=True)
 
 # Modelos ficam na VM — somem ao reiniciar, mas o snapshot_download
@@ -52,6 +52,7 @@ OBJ_SLICE_END    = 740 #862
 # ============================================================
 # GIT
 # ============================================================
-REPO_DIR    = "/content/oab_pipeline/diego_bispo"
-# O remote Git continua sendo o repositório raiz; `diego_bispo` é uma subpasta dentro dele.
+REPO_DIR    = "/content/oab_repo"
+# O push é feito no repositório raiz, copiando antes o conteúdo de /content/oab_pipeline
+# para a subpasta diego_bispo dentro do checkout Git auxiliar.
 GITHUB_REPO = "diegofnf/Topicos_Avancados_2026-1_Equipe_JUD_4_atividade1"
