@@ -62,6 +62,14 @@ Quando a questão tiver apenas um valor, como em uma peça com `values = [5]`, e
 
 ---
 
+## Limitações metodológicas
+
+- A avaliação das discursivas é feita por um LLM juiz, e não por corretores humanos da OAB.
+- O dataset de discursivas não fornece `commented answer`; por isso, a avaliação não compara a resposta do modelo com um espelho oficial comentado, e se baseia no enunciado, na pontuação da questão e na curadoria produzida pelo pipeline.
+- O pipeline depende de saídas em JSON válido; quando um modelo quebra o formato, pode haver perda de resposta ou necessidade de fallback analítico.
+
+---
+
 ## Como executar no Colab
 
 1. Abra o `notebook.ipynb` no Google Colab
