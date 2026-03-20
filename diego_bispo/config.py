@@ -53,6 +53,6 @@ OBJ_SLICE_END    = 740 #862
 # GIT
 # ============================================================
 REPO_DIR    = "/content/oab_repo"
-# O push é feito no repositório raiz, copiando antes o conteúdo de /content/oab_pipeline
-# para a subpasta diego_bispo dentro do checkout Git auxiliar.
+# O checkout Git auxiliar é criado apenas no final, para publicar o conteúdo de
+# /content/oab_pipeline na subpasta diego_bispo do repositório remoto.
 GITHUB_REPO = "diegofnf/Topicos_Avancados_2026-1_Equipe_JUD_4_atividade1"
