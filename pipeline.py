@@ -132,7 +132,7 @@ def gerar_curadoria(model, tokenizer, row: dict, tipo_questao: str) -> dict:
     # Artifício do prefill: queremos forçar que o modelo comece diretamente pelo JSON.
     prefill = "{"
     prompt = prompt + f"\n{prefill}"
-    saida = prefill + gerar_texto(model, tokenizer, prompt, sample=False, max_tokens=150)
+    saida = prefill + gerar_texto(model, tokenizer, prompt, sample=False, max_tokens=180)
 
     json_bruto = extrair_json_bruto(saida)
     try:
@@ -174,7 +174,7 @@ def gerar_avaliacao_discursiva(
     # Artifício do prefill: queremos forçar que o modelo comece diretamente pelo JSON.
     prefill = "{"
     prompt = prompt + f"\n{prefill}"
-    saida = prefill + gerar_texto(model, tokenizer, prompt, sample=False, max_tokens=150)
+    saida = prefill + gerar_texto(model, tokenizer, prompt, sample=False, max_tokens=400)
 
     json_bruto = extrair_json_bruto(saida)
     try:
