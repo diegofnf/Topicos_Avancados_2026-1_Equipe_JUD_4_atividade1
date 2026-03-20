@@ -48,27 +48,28 @@ A legislação base é definida pelo LLM Curador com as seguintes orientações:
 
 ## Integrantes
 
-### Diego Alves Bispo
+### Diego Alves Bispo [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/diegofnf/Topicos_Avancados_2026-1_Equipe_JUD_4_atividade1/blob/main/diego_bispo/notebook.ipynb)
 
-GitHub: [Topicos_Avancados_2026-1_Equipe_JUD_4_atividade1/diego_bispo](https://github.com/diegofnf/Topicos_Avancados_2026-1_Equipe_JUD_4_atividade1/tree/main/diego_bispo)
+**Contribuições**
 
-Colab: [Abrir notebook no Google Colab](https://colab.research.google.com/github/diegofnf/Topicos_Avancados_2026-1_Equipe_JUD_4_atividade1/blob/main/diego_bispo/notebook.ipynb)
+- desenvolvimento do pipeline para questões discursivas e objetivas da OAB
+- implementação da arquitetura com candidato, curador e juiz
+- definição do uso de `category`, `question_type` e `values` na metodologia
 
-O trabalho de Diego Alves Bispo implementa um benchmark com modelos de linguagem aplicados a questões discursivas e objetivas da OAB. O projeto utiliza uma arquitetura com três papéis principais: candidato, curador e juiz, buscando comparar o comportamento dos modelos em geração de resposta, curadoria jurídica e avaliação.
+**Pipeline**
 
-Os principais parâmetros e escolhas metodológicas incluem:
-
-- uso de modelos open-source quantizados em 4 bits
+- modelos open-source quantizados em 4 bits
 - três modelos candidatos para geração de respostas
 - um modelo dedicado para curadoria e julgamento
-- uso do campo `category` nas discursivas e `question_type` nas objetivas para definir a área de especialidade
-- uso do campo `values` nas discursivas para limitar a pontuação atribuída pelo juiz
 
-Os resultados incluem:
+**Resultados**
 
 - respostas geradas para questões discursivas e objetivas
 - curadoria das questões
 - avaliação das discursivas
 - benchmark por modelo e por área de especialidade
 
-Para um nível maior de detalhamento, acesse [diego_bispo/README.md](/Users/Diego/Documents/Atividade1/diego_bispo/README.md).
+**Artefatos**
+
+- GitHub: [diego_bispo](https://github.com/diegofnf/Topicos_Avancados_2026-1_Equipe_JUD_4_atividade1/tree/main/diego_bispo)
+- Detalhamento: [diego_bispo/README.md](/Users/Diego/Documents/Atividade1/diego_bispo/README.md)
