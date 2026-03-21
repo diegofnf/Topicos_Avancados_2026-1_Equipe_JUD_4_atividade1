@@ -144,7 +144,7 @@ def calcular_bertscore(
         if _normalizar_texto(texto_a) and _normalizar_texto(texto_b)
     ]
     if not pares:
-        return 0.0
+        return 0.0, []
 
     try:
         from bert_score import score
