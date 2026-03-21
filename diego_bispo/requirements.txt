@@ -4,6 +4,9 @@ bitsandbytes
 datasets
 pandas
 tqdm
+scikit-learn
+textstat
+bert-score
 sentence-transformers
 seaborn
 matplotlib

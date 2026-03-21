@@ -42,7 +42,7 @@ notebook.ipynb  → orquestração no Colab
 | Curadoria | Curador | questões | curadoria_discursivas/objetivas.csv |
 | Avaliação | Juiz | questões + respostas + curadoria + values | avaliacao_discursivas.csv |
 | Similaridade discursiva | Embeddings | respostas_discursivas.csv | similaridade_discursivas.csv + heatmap |
-| Resultados | — | avaliação + respostas | accuracy + benchmark |
+| Resultados | — | avaliação + respostas | accuracy + benchmark quantitativo/qualitativo |
 
 ### Avaliação das discursivas
 
@@ -68,6 +68,13 @@ As respostas discursivas também podem ser avaliadas com embeddings, comparando 
 - O notebook gera uma tabela `similaridade_discursivas.csv` com a similaridade cosseno entre pares de modelos.
 - Também gera um heatmap `heatmap_similaridade_discursivas.png` com a similaridade média entre os modelos.
 - Essa análise mede proximidade semântica entre respostas, não correção jurídica.
+
+### BERTScore de concordância entre modelos
+
+O benchmark qualitativo também calcula `bertscore_concordancia`, comparando respostas de modelos diferentes para a mesma questão em lote.
+
+- Essa métrica mede concordância semântica entre modelos.
+- Ela não deve ser interpretada como nota de qualidade jurídica absoluta.
 
 ---
 
