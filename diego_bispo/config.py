@@ -46,7 +46,7 @@ MODELO_JUIZ    = "Qwen/Qwen3-4B-Instruct-2507"
 # RECORTES DO DATASET
 # ============================================================
 DISC_SLICE_START = 70
-DISC_SLICE_END   = 71 #82
+DISC_SLICE_END   = 82 #82
 
 OBJ_SLICE_START  = 739
 OBJ_SLICE_END    = 740 #862

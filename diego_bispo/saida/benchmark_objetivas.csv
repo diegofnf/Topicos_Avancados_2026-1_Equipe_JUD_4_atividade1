@@ -1,4 +1,2 @@
-modelo,accuracy
-gemma2,0.0
-llama321b,0.0
-llama323b,0.0
+Área de Especialidade,gemma2,llama321b,llama323b
+Civil,0.0,0.0,0.0

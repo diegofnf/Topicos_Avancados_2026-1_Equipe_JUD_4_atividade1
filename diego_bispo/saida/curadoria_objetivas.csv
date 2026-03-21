@@ -1,11 +1,7 @@
-question_id,dataset,tipo_questao,modelo_curador,texto_questao,nivel_dificuldade_equipe,justificativa_dificuldade,area_especialidade_equipe,justificativa_area,dominio_juridico,legislacao_base,confianca,timestamp_execucao,saida_bruta,json_parse_ok
+question_id,dataset,tipo_questao,modelo_curador,texto_questao,nivel_dificuldade_equipe,justificativa_dificuldade,area_especialidade_equipe,legislacao_base,confianca,saida_bruta,json_parse_ok,timestamp_execucao
 2012-08_41,J2,objetiva,Qwen/Qwen3-4B-Instruct-2507,"Embora sujeito às constantes mutações e às diferenças de contexto em que é aplicado, o conceito tradicional de contrato sugere que ele representa o acordo de vontades estabelecido com a finalidade de produzir efeitos jurídicos.
-Tomando por base a teoria geral dos contratos, assinale a afirmativa correta.",1. Literalidade direta,A questão reproduz diretamente a definição do contrato da teoria geral dos contratos sem necessidade de interpretação ou aplicação.,Relações Privadas,O conceito de contrato está no âmbito das relações privadas entre pessoas físicas ou jurídicas.,Civil,Não identificado com segurança,alta,2026-03-19T14:08:05.992250-03:00,"{
-  ""nivel_dificuldade"": ""1. Literalidade direta"",
-  ""justificativa_dificuldade"": ""A questão reproduz diretamente a definição do contrato da teoria geral dos contratos sem necessidade de interpretação ou aplicação."",
-  ""area_especialidade"": ""Relações Privadas"",
-  ""justificativa_area"": ""O conceito de contrato está no âmbito das relações privadas entre pessoas físicas ou jurídicas."",
-  ""dominio_juridico"": ""Civil"",
-  ""legislacao_base"": ""Não identificado com segurança"",
-  ""confianca"": ""alta""
-}",True
+Tomando por base a teoria geral dos contratos, assinale a afirmativa correta.",1,"A questão trata de um conceito básico da teoria geral dos contratos, apresentado de forma literal e direta.",Civil,Não identificado com segurança,alta,"{""nivel_dificuldade"": ""1"",  
+  ""justificativa_dificuldade"": ""A questão trata de um conceito básico da teoria geral dos contratos, apresentado de forma literal e direta."",  
+  ""legislacao_base"": ""Não identificado com segurança"",  
+  ""confianca"": ""alta""  
+}",True,2026-03-20T21:28:40.292874-03:00

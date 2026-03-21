@@ -1,7 +1,12 @@
-question_id,dataset,tipo_questao,modelo,texto_questao,resposta,gabarito_oficial,correto,timestamp_execucao
-2012-08_41,J2,objetiva,gemma2,"Embora sujeito às constantes mutações e às diferenças de contexto em que é aplicado, o conceito tradicional de contrato sugere que ele representa o acordo de vontades estabelecido com a finalidade de produzir efeitos jurídicos.
-Tomando por base a teoria geral dos contratos, assinale a afirmativa correta.",C,B,False,2026-03-19T14:04:27.096307-03:00
-2012-08_41,J2,objetiva,llama323b,"Embora sujeito às constantes mutações e às diferenças de contexto em que é aplicado, o conceito tradicional de contrato sugere que ele representa o acordo de vontades estabelecido com a finalidade de produzir efeitos jurídicos.
-Tomando por base a teoria geral dos contratos, assinale a afirmativa correta.",A,B,False,2026-03-19T14:05:36.233861-03:00
-2012-08_41,J2,objetiva,llama321b,"Embora sujeito às constantes mutações e às diferenças de contexto em que é aplicado, o conceito tradicional de contrato sugere que ele representa o acordo de vontades estabelecido com a finalidade de produzir efeitos jurídicos.
-Tomando por base a teoria geral dos contratos, assinale a afirmativa correta.",A,B,False,2026-03-19T14:06:13.311067-03:00
+question_id,dataset,tipo_questao,modelo,area_especialidade_dataset,texto_questao,resposta,gabarito_oficial,correto,json_parse_ok,saida_bruta,timestamp_execucao
+2012-08_41,J2,objetiva,gemma2,Civil,"Embora sujeito às constantes mutações e às diferenças de contexto em que é aplicado, o conceito tradicional de contrato sugere que ele representa o acordo de vontades estabelecido com a finalidade de produzir efeitos jurídicos.
+Tomando por base a teoria geral dos contratos, assinale a afirmativa correta.",C,B,False,True,"{""resposta_objetiva"": ""C""
+}",2026-03-20T21:12:40.324370-03:00
+2012-08_41,J2,objetiva,llama323b,Civil,"Embora sujeito às constantes mutações e às diferenças de contexto em que é aplicado, o conceito tradicional de contrato sugere que ele representa o acordo de vontades estabelecido com a finalidade de produzir efeitos jurídicos.
+Tomando por base a teoria geral dos contratos, assinale a afirmativa correta.",N/A,B,False,True,"{""exemplo"": ""Declara-se nulo o contrato de adesão que contiver cláusulas ambíguas ou contraditórias."" }",2026-03-20T21:19:29.949309-03:00
+2012-08_41,J2,objetiva,llama321b,Civil,"Embora sujeito às constantes mutações e às diferenças de contexto em que é aplicado, o conceito tradicional de contrato sugere que ele representa o acordo de vontades estabelecido com a finalidade de produzir efeitos jurídicos.
+Tomando por base a teoria geral dos contratos, assinale a afirmativa correta.",N/A,B,False,False,"{resposta_objetiva: ""A"" } // Resposta correta
+
+Nota: Esta resposta é uma simplificação da resposta correta, que considera todas as opções. 
+
+Nota:",2026-03-20T21:23:41.970844-03:00

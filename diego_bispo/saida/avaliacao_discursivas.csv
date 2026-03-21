@@ -1,5 +1,5 @@
-question_id,dataset,tipo_questao,modelo_candidato,modelo_juiz,texto_questao,resposta,avaliacao,nota,json_parse_ok,saida_bruta,timestamp_execucao
-41_direito_administrativo_peca_praticoprofissional,J1,discursiva,gemma2,Qwen/Qwen3-4B-Instruct-2507,"PEÇA PRÁTICO-PROFISSIONAL
+question_id,dataset,tipo_questao,modelo_candidato,modelo_juiz,area_especialidade_dataset,texto_questao,resposta,argumentacao,precisao,coesao_legal,nota_fundamentacao_coerencia,nota_aderencia_completude,nota_maxima_total,avaliacao,nota,json_parse_ok,saida_bruta,timestamp_execucao
+41_direito_administrativo_peca_praticoprofissional,J1,discursiva,gemma2,Qwen/Qwen3-4B-Instruct-2507,Direito Administrativo,"PEÇA PRÁTICO-PROFISSIONAL
 
 O Município Alfa publicou edital de licitação, visando à aquisição de centenas de cadeiras padronizadas para as repartições públicas municipais, mediante a divulgação e a manutenção do inteiro teor do ato convocatório e de seus anexos no Portal Nacional de Contratações Públicas (PNCP), além da publicação de extrato do edital no Diário Oficial do ente federativo e em jornal diário de grande circulação. Figura como presidente da Comissão de Licitação o agente público João da Silva, responsável por todos os atos, bem como, pelas regras editalícias, segundo as normas de convocação.
 Ao tomarem ciência da publicação do edital da licitação, os sócios da sociedade empresária XYZ passaram a analisá-lo detalhadamente, visando à tomada de uma decisão informada sobre a participação ou não no referido processo licitatório.
@@ -8,26 +8,181 @@ O edital previu também margem de preferência de 10% (dez por cento) para socie
 Nesse contexto, a sociedade empresária XYZ impugnou o edital publicado na seara administrativa, com observância ao prazo legal, questionando os seguintes tópicos: i) prazo mínimo para apresentação de propostas e lances; ii) garantia de proposta, como requisito de pré-habilitação; iii) margem de preferência estabelecida; iv) forma de demonstração da aptidão econômica do licitante para cumprir as obrigações decorrentes do futuro contrato; e v) critérios de desempate. Contudo, o agente público João da Silva, autoridade administrativa competente da Administração Pública, manteve o edital na íntegra, em decisão definitiva na esfera administrativa.
 Dessa forma, os sócios da sociedade empresária XYZ, dois dias depois de terem acesso à referida decisão administrativa, procuraram você para, na qualidade de advogado(a), adotar as providências cabíveis junto ao Poder Judiciário, sendo certo que há urgência na obtenção de um provimento jurisdicional, ante o receio de que a licitação prossiga, sem a participação da sociedade empresária XYZ. Considere que todas as provas necessárias já estão pré-constituídas, sendo desnecessária dilação probatória.
 Diante das circunstâncias narradas, redija a peça cabível, que traga o procedimento mais célere para a defesa dos interesses da sociedade empresária XYZ, mediante a apresentação de todos os fundamentos jurídicos pertinentes, ciente de que as provas documentais já existentes bastam para demonstrar os fatos acima. (Valor: 5,00)
-Obs.: a peça deve abranger todos os fundamentos de Direito que possam ser utilizados para dar respaldo à pretensão. A simples menção ou transcrição do dispositivo legal não confere pontuação.","## TESE PRINCIPAL
-Os sócios da società empresarial XYZ têm direito ao recebimento do edital de licitação, devido às irregularidades apontadas pela empresa.  
+Obs.: a peça deve abranger todos os fundamentos de Direito que possam ser utilizados para dar respaldo à pretensão. A simples menção ou transcrição do dispositivo legal não confere pontuação.","A presente situação configura irregularidade no ato administrativo do edital. Em face do princípio da boa-fé, torna-se imperioso analisar criticamente o edital antes de sua homologação, buscando assegurar condições justas aos interessado. No entanto, diante do descumprimento das disposições legais durante a realização da licitação, cabe recurso à Justiça, considerando a necessidade de garantir a imparcialidade e justiça na aplicação dos princípios fundamentais.","A argumentação é fraca e genérica, com falta de desenvolvimento de pontos específicos e de análise crítica dos dispositivos legais.","A resposta apresenta afirmações vagas e sem apoio direto em normas jurídicas relevantes, mostrando pouca precisão jurídica.","A coesão legal está ausente, pois a estrutura da peça não segue o formato exigido e não apresenta sequência lógica nem conexão entre os elementos jurídicos.",,,5.0,"A resposta não apresenta uma peça jurídica completa, com fundamento técnico, estrutura formal e análise jurídica adequada. Falta qualquer referência direta às normas de licitação, ao conteúdo do edital e ao alcance da intervenção judicial. A ausência de fundamentação jurídica específica e a ausência de estrutura de peça resultam em uma resposta nula.",0.0,True,"{""argumentacao"": ""A argumentação é fraca e genérica, com falta de desenvolvimento de pontos específicos e de análise crítica dos dispositivos legais."",
+  ""precisao"": ""A resposta apresenta afirmações vagas e sem apoio direto em normas jurídicas relevantes, mostrando pouca precisão jurídica."",
+  ""coesao_legal"": ""A coesão legal está ausente, pois a estrutura da peça não segue o formato exigido e não apresenta sequência lógica nem conexão entre os elementos jurídicos."",
+  ""nota_fundamentacao_coerencia"": null,
+  ""nota_aderencia_completude"": null,
+  ""nota_total"": 0,
+  ""avaliacao"": ""A resposta não apresenta uma peça jurídica completa, com fundamento técnico, estrutura formal e análise jurídica adequada. Falta qualquer referência direta às normas de licitação, ao conteúdo do edital e ao alcance da intervenção judicial. A ausência de fundamentação jurídica específica e a ausência de estrutura de peça resultam em uma resposta nula.""
+}",2026-03-20T21:30:10.258620-03:00
+41_direito_administrativo_questao_1,J1,discursiva,gemma2,Qwen/Qwen3-4B-Instruct-2507,Direito Administrativo,"QUESTÃO
 
+Esglobênia, servidora pública federal estável, acreditava ter preenchido os respectivos requisitos do Regime Próprio de Previdência no cargo que ocupava, razão pela qual pleiteou e obteve, junto ao órgão de origem, a aposentadoria voluntária.
+Ato contínuo, o processo foi encaminhado ao Tribunal de Contas da União, o qual verificou algumas inconsistências no deferimento do pedido, de modo que está tendente a negar o registro da aposentadoria, sendo certo que o processo chegou na Corte de Contas há apenas um ano.
+Diante dessa situação hipotética, responda como advogado(a), fundamentadamente, aos questionamentos a seguir
 
+1. O ato aposentadoria de Esglobênia estava perfeito, ou seja, completou o seu ciclo de formação, antes do pronunciamento da Corte de Contas? Justifique.
 
-## FUNDAMENTAÇÃO JURÍDVLC
-* **Norma Constitucional:** Art. 6°, inciso II, CF - garante o direito à igualdade perante a lei, assegurando o acesso aos procedimentos legais, inclusive, o registro de contestação. 
-* **Lei nº 8.439/92**: estabelece a publicidade dos processos administrativos, garantindo transparência e acessibilidade ao conteúdo administrativo.  
-* **Lei Orgânica Municipal** : regulamenta a organização e funcionamento da administração pública local, incluindo o regime de licitações.
-* **Código Civil Brasileiro**: exige, em sua Lei nº 7.431 / 96,  que contratos sejam firmados com a presença de ambas as partes.
+2. Para negar o registro da aposentadoria de Esglobênia, o Tribunal de Contas precisa observar a ampla defesa e o contraditório? Justifique.","Para esclarecer a sua dúvida sobre o Ato Aposentadoria, seria necessário analisar a legislação específica aplicando a regra geral de análise de atos administrativos.",A resposta apresentada não oferece uma argumentação clara nem direcionada à pergunta proposta.,"Falta referência explícita à legislação vigente, especialmente ao artigo 47 do RPPS, que trata da validade dos atos administrativos.",A coesão entre as partes da resposta é fraca; não há ligação lógica entre o texto e a pergunta formulada.,0.0,0.0,1.25,A resposta carece de qualquer fundamentação jurídica específica e não responde diretamente às perguntas. Falta análise do ciclo de formação dos atos administrativos e da competência da Corte de Contas.,0.0,True,"{""argumentacao"": ""A resposta apresentada não oferece uma argumentação clara nem direcionada à pergunta proposta."",
+  ""precisao"": ""Falta referência explícita à legislação vigente, especialmente ao artigo 47 do RPPS, que trata da validade dos atos administrativos."",
+  ""coesao_legal"": ""A coesão entre as partes da resposta é fraca; não há ligação lógica entre o texto e a pergunta formulada."",
+  ""nota_fundamentacao_coerencia"": 0,
+  ""nota_aderencia_completude"": 0,
+  ""nota_total"": 0,
+  ""avaliacao"": ""A resposta carece de qualquer fundamentação jurídica específica e não responde diretamente às perguntas. Falta análise do ciclo de formação dos atos administrativos e da competência da Corte de Contas.""
+}",2026-03-20T21:30:59.680539-03:00
+41_direito_administrativo_questao_2,J1,discursiva,gemma2,Qwen/Qwen3-4B-Instruct-2507,Direito Administrativo,"QUESTÃO
 
+A sociedade de economia mista federal XYZ entrou em contato com a sociedade empresária ABC, de notória especialização, que fornece serviço técnico especializado de publicidade e divulgação, visando à celebração de um contrato administrativo. Durante as tratativas, um dos representantes da estatal afirmou que, em razão da expertise da entidade ABC, seria possível a contratação direta, afastando-se a necessidade de licitação. Nesse contexto, o contrato administrativo foi celebrado sem o prévio processo licitatório. Passados alguns meses, o diretor-executivo da sociedade empresária ABC foi informado de que o órgão de controle externo da estatal estava analisando a regularidade da contratação, em razão de indícios de superfaturamento. Dessa forma, ele solicitou à sua equipe jurídica os devidos esclarecimentos sobre a temática.
+Diante dessa situação hipotética, com base na legislação que dispõe sobre o estatuto jurídico da empresa pública e da sociedade de economia mista e de suas subsidiárias, responda aos itens a seguir
 
+1. A contratação direta da sociedade empresária ABC pela sociedade de economia mista federal XYZ, no caso em tela, cumpriu as exigências legais? Justifique.
 
+2. Caso o órgão de controle externo da estatal verifique superfaturamento na contratação, quem responderá pelo dano causado? Justifique.",,Ausência de argumentação.,Ausência de conteúdo jurídico.,Ausência de estrutura legal.,,,1.25,A resposta está completamente vazio. Não há análise jurídica nem fundamentação. A ausência de qualquer conteúdo impede a avaliação conforme os critérios técnicos.,,True,"{""argumentacao"": ""Ausência de argumentação."",
+  ""precisao"": ""Ausência de conteúdo jurídico."",
+  ""coesao_legal"": ""Ausência de estrutura legal."",
+  ""nota_fundamentacao_coerencia"": null,
+  ""nota_aderencia_completude"": null,
+  ""nota_total"": null,
+  ""avaliacao"": ""A resposta está completamente vazio. Não há análise jurídica nem fundamentação. A ausência de qualquer conteúdo impede a avaliação conforme os critérios técnicos.""
+}",2026-03-20T21:31:49.309686-03:00
+41_direito_administrativo_questao_3,J1,discursiva,gemma2,Qwen/Qwen3-4B-Instruct-2507,Direito Administrativo,"QUESTÃO
 
-## CONCLUSÃO OBJETA
-	Conforme mencionado, a sociedade empresarial XYZ possui legitimidade para contestar o edital, especialmente quando houver violações de princípios básicos, como a ilegalidade, impunidade e falta de controle social. Esse princípio pode auxiliar o Poder Público a garantir a efetividade do sistema de licitação, evitando abusos e fraudes.","A resposta é muito incompleta e apresenta erros jurídicos graves. Falta qualquer análise sobre os pontos específicos da licitação (prazo, garantia, margem de preferência etc.). A menção à Lei 8.439/92 está incorreta, pois trata de processos administrativos, não de licitações. Ausência de fundamentação jurídica específica para cada ponto contestado.",3.0,True,"{
-  ""nota"": 3,
-  ""avaliacao"": ""A resposta é muito incompleta e apresenta erros jurídicos graves. Falta qualquer análise sobre os pontos específicos da licitação (prazo, garantia, margem de preferência etc.). A menção à Lei 8.439/92 está incorreta, pois trata de processos administrativos, não de licitações. Ausência de fundamentação jurídica específica para cada ponto contestado.""
-}",2026-03-19T14:09:21.440182-03:00
-41_direito_administrativo_peca_praticoprofissional,J1,discursiva,llama323b,Qwen/Qwen3-4B-Instruct-2507,"PEÇA PRÁTICO-PROFISSIONAL
+Determinada organização da sociedade civil tem, entre as suas principais atribuições, o desenvolvimento de projetos voltados para a alimentação saudável de crianças em idade escolar.
+Após aprofundado estudo, a entidade elaborou uma proposta que acredita ser de grande interesse para o Poder Público. Assim, deseja apresentá-la, a fim de que a Administração avalie a possibilidade de realizar um chamamento público para estabelecer uma parceria com fulcro na Lei nº 13.019/2014.
+Em razão disso, os representantes da mencionada organização da sociedade civil buscaram sua assessoria jurídica para dirimir as dúvidas a seguir
+
+1. Qual é o instrumento previsto na norma em comento que viabiliza a apresentação da proposta pretendida pela mencionada organização da sociedade civil? Justifique.
+
+2. A organização da sociedade civil ficaria impedida de participar de eventual chamamento público que venha a ser realizado a partir de sua proposta? Justifique.",Não existe um dispositivo legal específico que vise a abertura de chamamentos públicos visando à implementação de editais de apoio direto do Estado.,,,,,,1.25,,,True,"{""error"": ""The provided input does not include a candidate response to evaluate. No answer was provided for the OAB exam question.""}",2026-03-20T21:32:38.364162-03:00
+41_direito_administrativo_questao_4,J1,discursiva,gemma2,Qwen/Qwen3-4B-Instruct-2507,Direito Administrativo,"QUESTÃO
+
+Antes da edição do decreto expropriatório, Fábio tomou conhecimento de que a União deseja desapropriar uma grande propriedade rural de sua titularidade, situada na zona rural do Município Delta, para construir um aeroporto.
+Em razão disso, ele busca sua assessoria jurídica para esclarecer as dúvidas elencadas a seguir, que deverão ser respondidas à luz do ordenamento vigente
+
+1. A fim de concretizar a intervenção do Estado na propriedade, antes do ajuizamento da respectiva ação, o Poder Público deve fazer uma oferta a Fábio? Justifique.
+
+2. A fim de alcançar a justa indenização na situação descrita, é possível a utilização de arbitragem? Justifique.",,Ausência de argumentação e fundamentação jurídica.,Ausência de conteúdo jurídico específico.,Ausência de estrutura lógica e coerência legal.,,,1.25,"A resposta está em branco, sem qualquer fundamentação jurídica ou análise. Não há resposta às perguntas formuladas. A ausência de conteúdo impede qualquer avaliação de precisão ou coesão jurídica.",,True,"{""argumentacao"": ""Ausência de argumentação e fundamentação jurídica."",
+  ""precisao"": ""Ausência de conteúdo jurídico específico."",
+  ""coesao_legal"": ""Ausência de estrutura lógica e coerência legal."",
+  ""nota_fundamentacao_coerencia"": null,
+  ""nota_aderencia_completude"": null,
+  ""nota_total"": 0,
+  ""avaliacao"": ""A resposta está em branco, sem qualquer fundamentação jurídica ou análise. Não há resposta às perguntas formuladas. A ausência de conteúdo impede qualquer avaliação de precisão ou coesão jurídica.""
+}",2026-03-20T21:33:27.198058-03:00
+41_direito_civil_peca_praticoprofissional,J1,discursiva,gemma2,Qwen/Qwen3-4B-Instruct-2507,Direito Civil,"PEÇA PRÁTICO-PROFISSIONAL
+
+Paulo adquiriu os direitos possessórios sobre uma casa situada na Rua XYZ, nº 99, em Goiânia, GO, por meio de adjudicação em um processo de inventário, com sentença datada de 21/01/2012, transitada em julgado. O imóvel não tem matrícula regular ou registro de propriedade, situando-se em área onde historicamente há problemas de regularização fundiária.
+Na casa, Cíntia, como cuidadora, morava com José, pai de Paulo, assistindo-o durante toda a sua enfermidade. Depois da morte do pai, Paulo decidiu realizar o desejo dele, que fora manifestado oralmente antes do falecimento, ou seja, permitir que Cíntia, exclusivamente, residisse no imóvel pelo tempo que julgasse necessário, enquanto viva fosse. Assim, em 30/01/2012, poucos dias após a sentença de adjudicação, Paulo e Cíntia se encontraram para a celebração de contrato de comodato, no qual ficou ajustado que ela poderia residir no imóvel pelo tempo que quisesse.
+Doze anos depois, em 10/01/2024, Paulo foi informado pelo síndico do condomínio de que Cíntia falecera de infarto fulminante no dia anterior, deixando no imóvel o seu filho João. Em 11/01/2024, Paulo notificou João para que, no prazo de 30 (trinta) dias, restituísse o bem, com a entrega das chaves na portaria.
+Ocorre que João descumpriu a ordem, enviando contra-notificação, em 20/01/2024, informando que não reconhecia a posse de Paulo, porque sabe que o imóvel não tem matrícula regular ou registro de propriedade, sendo ele o verdadeiro dono do bem, por força de usucapião. O imóvel está avaliado em R$ 200.000,00 (duzentos mil reais).
+Na qualidade de advogado(a) de Paulo, elabore a peça processual cabível para a defesa imediata dos interesses de seu cliente, indicando seus requisitos e fundamentos nos termos da legislação vigente. (Valor: 5,00)
+Obs.: a peça deve abranger todos os fundamentos de Direito que possam ser utilizados para dar respaldo à pretensão. A simples menção ou transcrição do dispositivo legal não confere pontuação.",,Ausência de argumentação.,Ausência de precisão jurídica.,Ausência de coesão legal.,,,5.0,"A resposta do candidato está vazia, sem conteúdo nem fundamentação jurídica. Não há análise de direito, nem referência a normas, nem estrutura processual. A ausência total de conteúdo torna impossível qualquer avaliação positiva.",0.0,True,"{
+  ""argumentacao"": ""Ausência de argumentação."",
+  ""precisao"": ""Ausência de precisão jurídica."",
+  ""coesao_legal"": ""Ausência de coesão legal."",
+  ""nota_fundamentacao_coerencia"": null,
+  ""nota_aderencia_completude"": null,
+  ""nota_total"": 0,
+  ""avaliacao"": ""A resposta do candidato está vazia, sem conteúdo nem fundamentação jurídica. Não há análise de direito, nem referência a normas, nem estrutura processual. A ausência total de conteúdo torna impossível qualquer avaliação positiva.""
+}",2026-03-20T21:34:16.544461-03:00
+41_direito_civil_questao_1,J1,discursiva,gemma2,Qwen/Qwen3-4B-Instruct-2507,Direito Civil,"QUESTÃO
+
+Joaquim conduzia seu automóvel por avenida movimentada do bairro de Copacabana, no Rio de Janeiro, em velocidade acima da permitida, após consumir elevada dose de bebida alcoólica. Ao tentar desviar de outro veículo, Joaquim perdeu o controle e subiu na calçada, vindo a colidir contra um poste.
+Maria, que andava pela calçada, viu o momento em que Joaquim perdeu o controle de seu automóvel e, para salvar Joana, que estava ao seu lado, empurrou-a, vindo ambas a caírem em cima da vidraça de uma loja. Na queda, quebraram o vidro e danificaram alguns itens que estavam em exibição na vitrine.
+Sobre o caso narrado, responda aos itens a seguir
+
+1. Maria praticou ato ilícito ao empurrar Joana, quebrando o vidro e danificando os itens da vitrine? Justifique.
+
+2. Maria, uma vez demandada em Juízo pelo dono da loja para ser indenizado pelos danos sofridos, poderá provocar intervenção de terceiros? Caso afirmativo, qual a modalidade e em face de quem? Justifique.","Para analisar se Maria praticou ato ilícito ao empurrar Joana, considerando a circunstância de ambos terem caído na vitrine de uma loja durante essa queda, precisamos verificar se ela cometeu crime. Em relação ao fato ocorrido, podemos considerar que o atropelamento de Joaquim foi o resultado direto da sua condutas imprudente e perigosa. No entanto, a ação de Maria pode ter sido considerada atentatória ou culposa dentro de seus limites legais, dependendo da análise dos fatos. É necessário analisar a gravidade dos atos praticados, bem como a intenção de Maria, para determinar culpabilidade.","A argumentação apresentada é fraca e genérica, sem desenvolvimento claro nem estrutura lógica.",A resposta não demonstra conhecimento preciso sobre a natureza jurídica do ato ilícito ou sobre a responsabilidade civil por dano causado por ato culposo.,A coesão legal está ausente; a resposta não segue uma linha de raciocínio jurídico coerente nem conecta os elementos fáticos à teoria do direito civil.,0.0,0.0,1.25,"A resposta carece de qualquer fundamentação jurídica específica, com ausência de análise clara sobre a natureza do ato ilícito e da responsabilidade civil. Não há referência a conceitos como dolo, culpa, dano, ou a teoria do dever de cuidado. A análise é vaga, genérica e sem ligação com a legislação civil aplicável.",0.0,True,"{""argumentacao"": ""A argumentação apresentada é fraca e genérica, sem desenvolvimento claro nem estrutura lógica."",
+  ""precisao"": ""A resposta não demonstra conhecimento preciso sobre a natureza jurídica do ato ilícito ou sobre a responsabilidade civil por dano causado por ato culposo."",
+  ""coesao_legal"": ""A coesão legal está ausente; a resposta não segue uma linha de raciocínio jurídico coerente nem conecta os elementos fáticos à teoria do direito civil."",
+  ""nota_fundamentacao_coerencia"": 0,
+  ""nota_aderencia_completude"": 0,
+  ""nota_total"": 0,
+  ""avaliacao"": ""A resposta carece de qualquer fundamentação jurídica específica, com ausência de análise clara sobre a natureza do ato ilícito e da responsabilidade civil. Não há referência a conceitos como dolo, culpa, dano, ou a teoria do dever de cuidado. A análise é vaga, genérica e sem ligação com a legislação civil aplicável.""
+}",2026-03-20T21:35:05.541384-03:00
+41_direito_civil_questao_2,J1,discursiva,gemma2,Qwen/Qwen3-4B-Instruct-2507,Direito Civil,"QUESTÃO
+
+O gado Nelore criado por Duarte vem sofrendo de doença desconhecida. Inocêncio, produtor rural, comprometeu-se a ajudá-lo, conseguindo que o melhor veterinário da região e também produtor rural, Matias, concordasse em visitar o rebanho de Duarte em, no máximo, três dias, em virtude da urgência da situação. Matias aceitou o compromisso, mas não compareceu em razão dos seus próprios compromissos em sua fazenda, especialmente por causa do recebimento de duas novas máquinas agrícolas. Na semana seguinte, Matias foi até a fazenda de Duarte e constatou a morte de toda a criação. Duarte, diante disso, acionou Inocêncio e Matias pleiteando indenização pelos danos sofridos.
+
+Sobre a hipótese narrada, responda aos itens a seguir.
+
+1. O pedido de perdas e danos em face de Inocêncio merece prosperar? Justifique.
+
+2. Se Matias for condenado, as duas máquinas agrícolas de sua propriedade poderão ser penhoradas? Justifique.","Em primeira instância, a culpa de Matias pode ser considerada atípica, pois ele se encontrava sob responsabilidade civil pelo cumprimento das obrigações assumidas. No entanto, em relação ao prejuízo causado pela falta de providencia em auxiliar a evitar a perda total do bem, existe embasaramento para o reconhecimento da culpa da parte contratada em casos concretos como este.",A argumentação está fraca e apresenta falhas conceituais. A afirmação de que 'a culpa de Matias pode ser considerada atípica' é equivocada e não está sustentada na legislação. A análise não oferece uma linha de raciocínio clara nem conecta os fatos à teoria jurídica.,"A resposta apresenta interpretação jurídica incorreta. Não há referência ao artigo 569 do Código Civil, nem ao princípio da responsabilidade objetiva ou da obrigação de cuidado. A menção a 'obrigação assumida' é vaga e não se enquadra em normas específicas.",A coesão legal é nula. A resposta não estabelece conexões lógicas entre os fatos narrados e a aplicação do direito. Falta estrutura jurídica coerente e sequencial.,0.0,0.0,1.25,,0.0,True,"{""argumentacao"": ""A argumentação está fraca e apresenta falhas conceituais. A afirmação de que 'a culpa de Matias pode ser considerada atípica' é equivocada e não está sustentada na legislação. A análise não oferece uma linha de raciocínio clara nem conecta os fatos à teoria jurídica."",
+  ""precisao"": ""A resposta apresenta interpretação jurídica incorreta. Não há referência ao artigo 569 do Código Civil, nem ao princípio da responsabilidade objetiva ou da obrigação de cuidado. A menção a 'obrigação assumida' é vaga e não se enquadra em normas específicas."",
+  ""coesao_legal"": ""A coesão legal é nula. A resposta não estabelece conexões lógicas entre os fatos narrados e a aplicação do direito. Falta estrutura jurídica coerente e sequencial."",
+  ""nota_fundamentacao_coerencia"": 0,
+  ""nota_aderencia_completude"": 0,
+  ""nota_total"": 0
+}",2026-03-20T21:35:54.589278-03:00
+41_direito_civil_questao_3,J1,discursiva,gemma2,Qwen/Qwen3-4B-Instruct-2507,Direito Civil,"QUESTÃO
+
+Iara, atriz famosa por interpretar papéis de protagonista em diversas novelas, descobre que seu nome e sua imagem vêm sendo utilizados, indevidamente e sem sua autorização, por uma clínica de estética, em publicidade anunciando seus serviços.
+Na publicidade em questão, constava a foto da atriz com uma frase, entre aspas, dizendo que ela só realizava procedimentos estéticos naquela clínica, por considerá-la a melhor do ramo. Ocorre que a atriz sequer conhecia a referida clínica e não havia autorizado a utilização de sua imagem.
+Com receio de perder nova oportunidade de trabalho, já em fase de negociação de exclusividade, Iara procura você, como advogado(a), buscando a proibição da utilização de sua imagem pela clínica.
+Diante do caso narrado, responda aos itens a seguir
+
+1. Pode haver a proibição da utilização da imagem da atriz? Justifique.
+
+2. Para requerer a imediata cessação da divulgação da imagem, antes de eventual sentença de mérito, qual instrumento processual é cabível? Justifique.","Em relação à questão sobre a possibilidade de proibir a utilização da imagem, podemos analisar esse ponto sob diferentes ângulos jurídicos. Em primeiro lugar, devemos reconhecer que a privacidade individual tem proteção constitucional. Isso significa que cada indivíduo possui direitos dignos e protegidos pelo Estado. Entre eles estão os direitos de propriedade intelectual, incluindo a imagem de quem possuí-la.","A argumentação apresenta falhas significativas. A afirmação de que 'a privacidade individual tem proteção constitucional' é genérica e não se aplica diretamente ao uso indevido da imagem. Além disso, a menção a 'direitos de propriedade intelectual' está incorreta, pois a imagem não é objeto de propriedade intelectual, mas sim de direito de imagem.","A resposta contém erros jurídicos graves: confunde direito de imagem com direito de propriedimento intelectual; menciona 'privacidade' como proteção direta para uso de imagem, o que é incorreto. O direito de imagem é um direito de personalidade, não de privacidade.","A coesão é fraca. A estrutura é fragmentária, com falta de ligação lógica entre os pontos apresentados. O texto parece ter sido escrito de forma desorganizada, sem desenvolvimento coerente nem progressão lógica.",0.0,0.0,1.25,,0.0,True,"{""argumentacao"": ""A argumentação apresenta falhas significativas. A afirmação de que 'a privacidade individual tem proteção constitucional' é genérica e não se aplica diretamente ao uso indevido da imagem. Além disso, a menção a 'direitos de propriedade intelectual' está incorreta, pois a imagem não é objeto de propriedade intelectual, mas sim de direito de imagem."",
+  ""precisao"": ""A resposta contém erros jurídicos graves: confunde direito de imagem com direito de propriedimento intelectual; menciona 'privacidade' como proteção direta para uso de imagem, o que é incorreto. O direito de imagem é um direito de personalidade, não de privacidade."",
+  ""coesao_legal"": ""A coesão é fraca. A estrutura é fragmentária, com falta de ligação lógica entre os pontos apresentados. O texto parece ter sido escrito de forma desorganizada, sem desenvolvimento coerente nem progressão lógica."",
+  ""nota_fundamentacao_coerencia"": 0,
+  ""nota_aderencia_completude"": 0,
+  ""nota_total"": 0
+}",2026-03-20T21:36:43.748535-03:00
+41_direito_civil_questao_4,J1,discursiva,gemma2,Qwen/Qwen3-4B-Instruct-2507,Direito Civil,"QUESTÃO
+
+Antônio, casado com Maria em regime de separação voluntária de bens, desde 2015, celebrou um contrato de seguro de vida em 2017, renovando-o anualmente. Antônio não indicou os beneficiários do seguro de vida quando da celebração do contrato, nem em suas consecutivas renovações.
+Após seu falecimento, que se deu na vigência do contrato de seguro de vida, sua esposa, Maria, individualmente, e seus dois filhos de um relacionamento anterior, Caetano e Caio, conjuntamente, requereram o pagamento integral do capital estipulado no seguro. Maria alega que, na condição de cônjuge, é, por direito, a beneficiária do seguro. Já os filhos alegam que seu pai, ao optar pelo regime da separação de bens, indicou a intenção de que Maria não participasse de seu patrimônio; sendo assim, ela não poderia ser beneficiária, restando tal condição a eles, filhos.
+Diante dessa situação, você, na qualidade de advogado(a) do corpo jurídico da seguradora é consultado sobre os itens a seguir
+
+1. O argumento apresentado por Caetano e Caio é válido? Justifique e indique a quem deve ser pago o capital estipulado no contrato.
+
+2. Diante do impasse, qual medida processual a seguradora deve adotar para efetuar o pagamento do capital segurado de forma segura? Justifique.","Para analisar o primeiro item, devemos verificar se existe fundamento legal para a sucessão patrimonial entre o casal. Segundo o Código Civil Brasileiro, Art. 1634, a herança é dividida entre parentes até a ascendencia, independentemente do tipo de casamento. No entanto, a Lei nº 10.980/2004 dispõe que, na ausência de testamento, a sucessão testamentaria é observada.","A resposta apresenta uma análise superficial e incorreta do problema, pois ignora completamente a natureza do seguro de vida e a importância dos beneficiários indicados.","O candidato comete erro grave de interpretação jurídica ao citar o artigo 1634 do Código Civil, que trata da sucessão por testamento, e mencionar a Lei nº 10.980/2004, que não tem relação com a questão de beneficiários de seguro de vida.","A resposta carece de coesão legal, pois não desenvolve a linha de raciocínio jurídico coerente com a questão proposta e não conecta os pontos centrais do caso.",0.0,0.0,1.25,,0.0,True,"{""argumentacao"": ""A resposta apresenta uma análise superficial e incorreta do problema, pois ignora completamente a natureza do seguro de vida e a importância dos beneficiários indicados."",
+  ""precisao"": ""O candidato comete erro grave de interpretação jurídica ao citar o artigo 1634 do Código Civil, que trata da sucessão por testamento, e mencionar a Lei nº 10.980/2004, que não tem relação com a questão de beneficiários de seguro de vida."",
+  ""coesao_legal"": ""A resposta carece de coesão legal, pois não desenvolve a linha de raciocínio jurídico coerente com a questão proposta e não conecta os pontos centrais do caso."",
+  ""nota_fundamentacao_coerencia"": 0,
+  ""nota_aderencia_completude"": 0,
+  ""nota_total"": 0
+}",2026-03-20T21:37:33.034538-03:00
+41_direito_constitucional_peca_praticoprofissional,J1,discursiva,gemma2,Qwen/Qwen3-4B-Instruct-2507,Direito Constitucional,"PEÇA PRÁTICO-PROFISSIONAL
+
+Diversas instituições de ensino brasileiras uniram esforços para o desenvolvimento científico do país, o que acarretaria benefícios não só no plano econômico como também no ambiente social. Como fruto desse movimento, foi submetido à apreciação do Presidente da República um anteprojeto de lei, que veio a ser apresentado ao Poder Legislativo e deu origem à Lei nº XX.
+Nos termos do Art. 1º da Lei nº XX, a União deveria alocar mais recursos, observadas as políticas públicas adotadas por esse ente federativo, nos projetos direcionados ao aperfeiçoamento das teorias científicas, o que consubstancia a pesquisa científica básica, e nos projetos que buscam estabelecer padrões de inovação em atividade de interesse da coletividade, o que aponta para a pesquisa científica tecnológica. O Art. 2º, por sua vez, autorizou que a União celebrasse ajustes com os órgãos e as entidades públicas, bem como com entidades privadas, visando, entre outros objetivos, ao compartilhamento de recursos humanos especializados para a execução de projetos de pesquisa, o que ocorreria mediante contrapartida do beneficiário, não necessariamente financeira. Por fim, o Art. 3º estatuiu que a União poderia oferecer estímulos creditícios para a atuação de inventores independentes, de modo a aprimorar o processo criativo e a favorecer o aproveitamento econômico das invenções.
+A publicação da Lei nº XX acarretou uma grande repulsa de setores econômicos, que passaram a defender a sua inconstitucionalidade. Eram basicamente três os argumentos que invocavam para sustentar a sua conclusão: (I) normas dessa natureza deveriam ter sido veiculadas em lei complementar, não em lei ordinária; (II) a isonomia foi flagrantemente afrontada ao se permitir tratamento diferenciado em relação a certos aspectos do saber; e, (III) especificamente em relação ao denominado “compartilhamento de recursos humanos especializados”, alegava-se a ausência de previsão constitucional e a consequente afronta à exigência de prévia aprovação em concurso público para o provimento de cargos públicos, sempre que esse compartilhamento ocorresse entre órgãos públicos.
+Esses argumentos encontraram ressonância em diversos pontos do país, com o correlato ajuizamento de inúmeras ações individuais e coletivas, nas quais a inconstitucionalidade dos artigos 1º a 3º da Lei nº XX era incidentalmente reconhecida, em primeiro e em segundo graus de jurisdição, o que vinha inviabilizando a sua efetiva projeção na realidade.
+Sensível aos prejuízos para o interesse social que a não aplicação da Lei nº XX vinha acarretando, o Partido Político Alfa, que contava com representantes no Senado Federal, contratou os seus serviços como advogado(a) e solicitou o ajuizamento da ação constitucional cabível, com o objetivo de que fosse requerido o reconhecimento da plena compatibilidade da Lei nº XX com a CRFB/88.
+Redija a peça processual adequada aos objetivos almejados pelo Partido Político Alfa. (Valor: 5,00)
+Obs: a peça deve abranger todos os fundamentos de Direito que possam ser utilizados para dar respaldo à pretensão. A simples menção ou transcrição do dispositivo legal não confere pontuação.",,Ausência de argumentação,Ausência de precisão jurídica,Ausência de coesão legal,,,5.0,"Resposta vazia. Não há conteúdo, argumentação nem análise jurídica.",0.0,True,"{
+  ""argumentacao"": ""Ausência de argumentação"",
+  ""precisao"": ""Ausência de precisão jurídica"",
+  ""coesao_legal"": ""Ausência de coesão legal"",
+  ""nota_fundamentacao_coerencia"": null,
+  ""nota_aderencia_completude"": null,
+  ""nota_total"": 0,
+  ""avaliacao"": ""Resposta vazia. Não há conteúdo, argumentação nem análise jurídica.""
+}",2026-03-20T21:38:23.077748-03:00
+41_direito_constitucional_questao_1,J1,discursiva,gemma2,Qwen/Qwen3-4B-Instruct-2507,Direito Constitucional,"QUESTÃO
+
+João dos Santos, vereador no Município Alfa, participou, em Brasília, de um grande evento organizado pelo Partido Político Delta, ao qual estava filiado. Na ocasião, criticou duramente a gestão do prefeito municipal de Alfa, principalmente por direcionar recursos públicos para escolas vinculadas a certas religiões, que não tivessem finalidade lucrativa, e que aplicassem seus excedentes em educação e assegurassem a destinação do seu patrimônio, no caso de encerramento de suas atividades, às escolas comunitárias, filantrópicas ou confessionais, ou ao Poder Público. Para João, apesar da tentativa de atribuir ares de licitude à medida, ela seria francamente contrária ao caráter laico das estruturas estatais de poder, configurando, portanto, ato ilícito.
+Ao tomar conhecimento dos fatos, o prefeito informou que adotaria as medidas necessárias para a responsabilização de João, tendo este último afirmado que não poderia ser responsabilizado por suas opiniões.
+Sobre o quadro fático narrado, responda aos itens a seguir
+
+1. João, nas circunstâncias indicadas, pode vir a ser responsabilizado por suas opiniões a respeito do prefeito do Município Alfa? Justifique.
+
+2. Os recursos públicos, na forma descrita no enunciado, podem ser direcionados a escolas vinculadas a certas religiões? Justifique.",,Ausência de argumentação. A resposta está vazia.,Ausência de conteúdo jurídico. Não há análise nem referência à legislação constitucional.,Ausência de coesão. A resposta não apresenta sequência lógica nem conexão entre os elementos da questão.,,,1.25,"A resposta do candidato está completamente vazio. Não há nenhum conteúdo, fundamentação ou análise jurídica. A ausência de qualquer argumento torna impossível avaliar a resposta conforme os critérios técnicos de validade.",,True,"{""argumentacao"": ""Ausência de argumentação. A resposta está vazia."",
+  ""precisao"": ""Ausência de conteúdo jurídico. Não há análise nem referência à legislação constitucional."",
+  ""coesao_legal"": ""Ausência de coesão. A resposta não apresenta sequência lógica nem conexão entre os elementos da questão."",
+  ""nota_fundamentacao_coerencia"": null,
+  ""nota_aderencia_completude"": null,
+  ""nota_total"": null,
+  ""avaliacao"": ""A resposta do candidato está completamente vazio. Não há nenhum conteúdo, fundamentação ou análise jurídica. A ausência de qualquer argumento torna impossível avaliar a resposta conforme os critérios técnicos de validade.""
+}",2026-03-20T21:39:12.597568-03:00
+41_direito_administrativo_peca_praticoprofissional,J1,discursiva,llama323b,Qwen/Qwen3-4B-Instruct-2507,Direito Administrativo,"PEÇA PRÁTICO-PROFISSIONAL
 
 O Município Alfa publicou edital de licitação, visando à aquisição de centenas de cadeiras padronizadas para as repartições públicas municipais, mediante a divulgação e a manutenção do inteiro teor do ato convocatório e de seus anexos no Portal Nacional de Contratações Públicas (PNCP), além da publicação de extrato do edital no Diário Oficial do ente federativo e em jornal diário de grande circulação. Figura como presidente da Comissão de Licitação o agente público João da Silva, responsável por todos os atos, bem como, pelas regras editalícias, segundo as normas de convocação.
 Ao tomarem ciência da publicação do edital da licitação, os sócios da sociedade empresária XYZ passaram a analisá-lo detalhadamente, visando à tomada de uma decisão informada sobre a participação ou não no referido processo licitatório.
@@ -36,29 +191,186 @@ O edital previu também margem de preferência de 10% (dez por cento) para socie
 Nesse contexto, a sociedade empresária XYZ impugnou o edital publicado na seara administrativa, com observância ao prazo legal, questionando os seguintes tópicos: i) prazo mínimo para apresentação de propostas e lances; ii) garantia de proposta, como requisito de pré-habilitação; iii) margem de preferência estabelecida; iv) forma de demonstração da aptidão econômica do licitante para cumprir as obrigações decorrentes do futuro contrato; e v) critérios de desempate. Contudo, o agente público João da Silva, autoridade administrativa competente da Administração Pública, manteve o edital na íntegra, em decisão definitiva na esfera administrativa.
 Dessa forma, os sócios da sociedade empresária XYZ, dois dias depois de terem acesso à referida decisão administrativa, procuraram você para, na qualidade de advogado(a), adotar as providências cabíveis junto ao Poder Judiciário, sendo certo que há urgência na obtenção de um provimento jurisdicional, ante o receio de que a licitação prossiga, sem a participação da sociedade empresária XYZ. Considere que todas as provas necessárias já estão pré-constituídas, sendo desnecessária dilação probatória.
 Diante das circunstâncias narradas, redija a peça cabível, que traga o procedimento mais célere para a defesa dos interesses da sociedade empresária XYZ, mediante a apresentação de todos os fundamentos jurídicos pertinentes, ciente de que as provas documentais já existentes bastam para demonstrar os fatos acima. (Valor: 5,00)
-Obs.: a peça deve abranger todos os fundamentos de Direito que possam ser utilizados para dar respaldo à pretensão. A simples menção ou transcrição do dispositivo legal não confere pontuação.","Os fundamentos jurídicos poderão estar relaciondos aos dispositivos legais citados nos incisos I-VII, respectivamente:
+Obs.: a peça deve abranger todos os fundamentos de Direito que possam ser utilizados para dar respaldo à pretensão. A simples menção ou transcrição do dispositivo legal não confere pontuação.",,Ausência de argumentação.,Ausência de precisão jurídica.,Ausência de coesão legal.,,,5.0,"A resposta está vazia, sem nenhum conteúdo. Não há fundamentação jurídica, nem análise de direito administrativo, nem referência às normas legais aplicáveis. A peça prática não foi elaborada, pois não há nenhuma sugestão de ação jurisdicional ou argumentação jurídica.",0.0,True,"{""argumentacao"": ""Ausência de argumentação."", ""precisao"": ""Ausência de precisão jurídica."", ""coesao_legal"": ""Ausência de coesão legal."", ""nota_fundamentacao_coerencia"": null, ""nota_aderencia_completude"": null, ""nota_total"": 0, ""avaliacao"": ""A resposta está vazia, sem nenhum conteúdo. Não há fundamentação jurídica, nem análise de direito administrativo, nem referência às normas legais aplicáveis. A peça prática não foi elaborada, pois não há nenhuma sugestão de ação jurisdicional ou argumentação jurídica.""}",2026-03-20T21:40:03.704505-03:00
+41_direito_administrativo_questao_1,J1,discursiva,llama323b,Qwen/Qwen3-4B-Instruct-2507,Direito Administrativo,"QUESTÃO
 
-I - Código Civil Brasileiro;
-II - Lei nº 8.666/1993 – Estaduto das Sociedades Anonimas;
-III - Lei Federal nº 4.031/1969.
-IV - Lei federal nº 12.651/2012.
-V - Disposição Constitucional Universal.
-VI - Lei N° 11.1017– LEITONIA/2020 (não existe);
-VII - Códigoe Civl Baresiano – Não existe;
+Esglobênia, servidora pública federal estável, acreditava ter preenchido os respectivos requisitos do Regime Próprio de Previdência no cargo que ocupava, razão pela qual pleiteou e obteve, junto ao órgão de origem, a aposentadoria voluntária.
+Ato contínuo, o processo foi encaminhado ao Tribunal de Contas da União, o qual verificou algumas inconsistências no deferimento do pedido, de modo que está tendente a negar o registro da aposentadoria, sendo certo que o processo chegou na Corte de Contas há apenas um ano.
+Diante dessa situação hipotética, responda como advogado(a), fundamentadamente, aos questionamentos a seguir
 
-Consideremos então, nas palavras do diretor, 'depoimentos' que são a razao da sua análise,
+1. O ato aposentadoria de Esglobênia estava perfeito, ou seja, completou o seu ciclo de formação, antes do pronunciamento da Corte de Contas? Justifique.
 
-""Enfim, parece-nos evidentemente que esta situação é incompatível com a previsão expressa no artigo IV, § 1º, do texto constituiço universal [Dispostivo Constitucional Universal], pois essa cláusula dispõe explicitamente que 'às sociedades civis será reservada exclusivamente a função social'. Evidente que a empresa pública não pode concorrer contra empresas privadas em processos de licitação.""
+2. Para negar o registro da aposentadoria de Esglobênia, o Tribunal de Contas precisa observar a ampla defesa e o contraditório? Justifique.",,Ausência de argumentação.,Ausência de precisão jurídica.,Ausência de coesão legal.,,,1.25,"A resposta apresentada é nula, sem qualquer fundamentação jurídica, análise ou referência à legislação vigente. A ausência de conteúdo impede qualquer avaliação técnica ou jurídica.",,True,"{  
+  ""argumentacao"": ""Ausência de argumentação."",
+  ""precisao"": ""Ausência de precisão jurídica."",
+  ""coesao_legal"": ""Ausência de coesão legal."",
+  ""nota_fundamentacao_coerencia"": null,
+  ""nota_aderencia_completude"": null,
+  ""nota_total"": null,
+  ""avaliacao"": ""A resposta apresentada é nula, sem qualquer fundamentação jurídica, análise ou referência à legislação vigente. A ausência de conteúdo impede qualquer avaliação técnica ou jurídica.""
+}",2026-03-20T21:40:53.486825-03:00
+41_direito_administrativo_questao_2,J1,discursiva,llama323b,Qwen/Qwen3-4B-Instruct-2507,Direito Administrativo,"QUESTÃO
 
-É claro, assim mesmo, que, no âmbito civil, este tipo de situação tem relação muito próxima com a Lei nº 6.825 /99 mas não foi especificamente citado pelo prof., e, inclusive, sequencialmente ordenado, mas podemos inferenciar facilmente suas intenções e pensamentos,
-que foram transmitidos através do termo ""civil"", deixamos isso por enquanto, mantendo sempre em mente esse enfoce 'pelo lado civil', onde querermos ver algo próximo a alguma teoria específca do Direito Positivo Civil.
+A sociedade de economia mista federal XYZ entrou em contato com a sociedade empresária ABC, de notória especialização, que fornece serviço técnico especializado de publicidade e divulgação, visando à celebração de um contrato administrativo. Durante as tratativas, um dos representantes da estatal afirmou que, em razão da expertise da entidade ABC, seria possível a contratação direta, afastando-se a necessidade de licitação. Nesse contexto, o contrato administrativo foi celebrado sem o prévio processo licitatório. Passados alguns meses, o diretor-executivo da sociedade empresária ABC foi informado de que o órgão de controle externo da estatal estava analisando a regularidade da contratação, em razão de indícios de superfaturamento. Dessa forma, ele solicitou à sua equipe jurídica os devidos esclarecimentos sobre a temática.
+Diante dessa situação hipotética, com base na legislação que dispõe sobre o estatuto jurídico da empresa pública e da sociedade de economia mista e de suas subsidiárias, responda aos itens a seguir
 
+1. A contratação direta da sociedade empresária ABC pela sociedade de economia mista federal XYZ, no caso em tela, cumpriu as exigências legais? Justifique.
 
-Sobre esses pontos, devemos ressalt","A resposta está completamente incorreta. Inclui leis inexistentes (como Lei 11.1017/2020 e Código Civil Baresiano) e faz referência a dispositivos jurídicos irrelevantes (Código Civil, Lei das Sociedades Anônimas). Não há análise jurídica relevante nem fundamentação sobre os aspectos da licitação. A crítica ao edital é ausente, e não há qualquer conexão com a legislação específica da Lei das Licitações (Lei 8.666/93).",0.0,True,"{
-  ""nota"": 0,
-  ""avaliacao"": ""A resposta está completamente incorreta. Inclui leis inexistentes (como Lei 11.1017/2020 e Código Civil Baresiano) e faz referência a dispositivos jurídicos irrelevantes (Código Civil, Lei das Sociedades Anônimas). Não há análise jurídica relevante nem fundamentação sobre os aspectos da licitação. A crítica ao edital é ausente, e não há qualquer conexão com a legislação específica da Lei das Licitações (Lei 8.666/93).""
-}",2026-03-19T14:09:58.158559-03:00
-41_direito_administrativo_peca_praticoprofissional,J1,discursiva,llama321b,Qwen/Qwen3-4B-Instruct-2507,"PEÇA PRÁTICO-PROFISSIONAL
+2. Caso o órgão de controle externo da estatal verifique superfaturamento na contratação, quem responderá pelo dano causado? Justifique.",,Ausência de argumentação.,Ausência de conteúdo jurídico.,Ausência de estrutura legal.,,,1.25,A resposta está completamente vazio. Não há análise jurídica nem fundamentação. A ausência de qualquer conteúdo impede a avaliação conforme os critérios técnicos.,,True,"{""argumentacao"": ""Ausência de argumentação."",
+  ""precisao"": ""Ausência de conteúdo jurídico."",
+  ""coesao_legal"": ""Ausência de estrutura legal."",
+  ""nota_fundamentacao_coerencia"": null,
+  ""nota_aderencia_completude"": null,
+  ""nota_total"": null,
+  ""avaliacao"": ""A resposta está completamente vazio. Não há análise jurídica nem fundamentação. A ausência de qualquer conteúdo impede a avaliação conforme os critérios técnicos.""
+}",2026-03-20T21:41:43.465975-03:00
+41_direito_administrativo_questao_3,J1,discursiva,llama323b,Qwen/Qwen3-4B-Instruct-2507,Direito Administrativo,"QUESTÃO
+
+Determinada organização da sociedade civil tem, entre as suas principais atribuições, o desenvolvimento de projetos voltados para a alimentação saudável de crianças em idade escolar.
+Após aprofundado estudo, a entidade elaborou uma proposta que acredita ser de grande interesse para o Poder Público. Assim, deseja apresentá-la, a fim de que a Administração avalie a possibilidade de realizar um chamamento público para estabelecer uma parceria com fulcro na Lei nº 13.019/2014.
+Em razão disso, os representantes da mencionada organização da sociedade civil buscaram sua assessoria jurídica para dirimir as dúvidas a seguir
+
+1. Qual é o instrumento previsto na norma em comento que viabiliza a apresentação da proposta pretendida pela mencionada organização da sociedade civil? Justifique.
+
+2. A organização da sociedade civil ficaria impedida de participar de eventual chamamento público que venha a ser realizado a partir de sua proposta? Justifique.",,Ausência de argumentação.,Ausência de conteúdo jurídico.,Ausência de estrutura legal.,,,1.25,A resposta está vazia e não apresenta nenhum conteúdo. Não há fundamentação jurídica nem análise dos pontos levantados. A ausência de qualquer argumento torna impossível avaliar a coerência ou completude da resposta.,,True,"{""argumentacao"": ""Ausência de argumentação."",
+  ""precisao"": ""Ausência de conteúdo jurídico."",
+  ""coesao_legal"": ""Ausência de estrutura legal."",
+  ""nota_fundamentacao_coerencia"": null,
+  ""nota_aderencia_completude"": null,
+  ""nota_total"": 0,
+  ""avaliacao"": ""A resposta está vazia e não apresenta nenhum conteúdo. Não há fundamentação jurídica nem análise dos pontos levantados. A ausência de qualquer argumento torna impossível avaliar a coerência ou completude da resposta.""
+}",2026-03-20T21:42:33.076226-03:00
+41_direito_administrativo_questao_4,J1,discursiva,llama323b,Qwen/Qwen3-4B-Instruct-2507,Direito Administrativo,"QUESTÃO
+
+Antes da edição do decreto expropriatório, Fábio tomou conhecimento de que a União deseja desapropriar uma grande propriedade rural de sua titularidade, situada na zona rural do Município Delta, para construir um aeroporto.
+Em razão disso, ele busca sua assessoria jurídica para esclarecer as dúvidas elencadas a seguir, que deverão ser respondidas à luz do ordenamento vigente
+
+1. A fim de concretizar a intervenção do Estado na propriedade, antes do ajuizamento da respectiva ação, o Poder Público deve fazer uma oferta a Fábio? Justifique.
+
+2. A fim de alcançar a justa indenização na situação descrita, é possível a utilização de arbitragem? Justifique.",,Ausência de argumentação e fundamentação jurídica.,Ausência de conteúdo jurídico específico.,Ausência de estrutura lógica e coerência legal.,,,1.25,"A resposta está em branco, sem qualquer fundamentação jurídica ou análise. Não há resposta às perguntas formuladas. A ausência de conteúdo impede qualquer avaliação de precisão ou coesão jurídica.",,True,"{""argumentacao"": ""Ausência de argumentação e fundamentação jurídica."",
+  ""precisao"": ""Ausência de conteúdo jurídico específico."",
+  ""coesao_legal"": ""Ausência de estrutura lógica e coerência legal."",
+  ""nota_fundamentacao_coerencia"": null,
+  ""nota_aderencia_completude"": null,
+  ""nota_total"": 0,
+  ""avaliacao"": ""A resposta está em branco, sem qualquer fundamentação jurídica ou análise. Não há resposta às perguntas formuladas. A ausência de conteúdo impede qualquer avaliação de precisão ou coesão jurídica.""
+}",2026-03-20T21:43:22.497313-03:00
+41_direito_civil_peca_praticoprofissional,J1,discursiva,llama323b,Qwen/Qwen3-4B-Instruct-2507,Direito Civil,"PEÇA PRÁTICO-PROFISSIONAL
+
+Paulo adquiriu os direitos possessórios sobre uma casa situada na Rua XYZ, nº 99, em Goiânia, GO, por meio de adjudicação em um processo de inventário, com sentença datada de 21/01/2012, transitada em julgado. O imóvel não tem matrícula regular ou registro de propriedade, situando-se em área onde historicamente há problemas de regularização fundiária.
+Na casa, Cíntia, como cuidadora, morava com José, pai de Paulo, assistindo-o durante toda a sua enfermidade. Depois da morte do pai, Paulo decidiu realizar o desejo dele, que fora manifestado oralmente antes do falecimento, ou seja, permitir que Cíntia, exclusivamente, residisse no imóvel pelo tempo que julgasse necessário, enquanto viva fosse. Assim, em 30/01/2012, poucos dias após a sentença de adjudicação, Paulo e Cíntia se encontraram para a celebração de contrato de comodato, no qual ficou ajustado que ela poderia residir no imóvel pelo tempo que quisesse.
+Doze anos depois, em 10/01/2024, Paulo foi informado pelo síndico do condomínio de que Cíntia falecera de infarto fulminante no dia anterior, deixando no imóvel o seu filho João. Em 11/01/2024, Paulo notificou João para que, no prazo de 30 (trinta) dias, restituísse o bem, com a entrega das chaves na portaria.
+Ocorre que João descumpriu a ordem, enviando contra-notificação, em 20/01/2024, informando que não reconhecia a posse de Paulo, porque sabe que o imóvel não tem matrícula regular ou registro de propriedade, sendo ele o verdadeiro dono do bem, por força de usucapião. O imóvel está avaliado em R$ 200.000,00 (duzentos mil reais).
+Na qualidade de advogado(a) de Paulo, elabore a peça processual cabível para a defesa imediata dos interesses de seu cliente, indicando seus requisitos e fundamentos nos termos da legislação vigente. (Valor: 5,00)
+Obs.: a peça deve abranger todos os fundamentos de Direito que possam ser utilizados para dar respaldo à pretensão. A simples menção ou transcrição do dispositivo legal não confere pontuação.",,Ausência de argumentação.,Ausência de precisão jurídica.,Ausência de coesão legal.,,,5.0,"A resposta do candidato está vazia, sem conteúdo nem fundamentação jurídica. Não há análise de direito, nem referência a normas, nem estrutura processual. A ausência total de conteúdo torna impossível qualquer avaliação positiva.",0.0,True,"{
+  ""argumentacao"": ""Ausência de argumentação."",
+  ""precisao"": ""Ausência de precisão jurídica."",
+  ""coesao_legal"": ""Ausência de coesão legal."",
+  ""nota_fundamentacao_coerencia"": null,
+  ""nota_aderencia_completude"": null,
+  ""nota_total"": 0,
+  ""avaliacao"": ""A resposta do candidato está vazia, sem conteúdo nem fundamentação jurídica. Não há análise de direito, nem referência a normas, nem estrutura processual. A ausência total de conteúdo torna impossível qualquer avaliação positiva.""
+}",2026-03-20T21:44:11.550606-03:00
+41_direito_civil_questao_1,J1,discursiva,llama323b,Qwen/Qwen3-4B-Instruct-2507,Direito Civil,"QUESTÃO
+
+Joaquim conduzia seu automóvel por avenida movimentada do bairro de Copacabana, no Rio de Janeiro, em velocidade acima da permitida, após consumir elevada dose de bebida alcoólica. Ao tentar desviar de outro veículo, Joaquim perdeu o controle e subiu na calçada, vindo a colidir contra um poste.
+Maria, que andava pela calçada, viu o momento em que Joaquim perdeu o controle de seu automóvel e, para salvar Joana, que estava ao seu lado, empurrou-a, vindo ambas a caírem em cima da vidraça de uma loja. Na queda, quebraram o vidro e danificaram alguns itens que estavam em exibição na vitrine.
+Sobre o caso narrado, responda aos itens a seguir
+
+1. Maria praticou ato ilícito ao empurrar Joana, quebrando o vidro e danificando os itens da vitrine? Justifique.
+
+2. Maria, uma vez demandada em Juízo pelo dono da loja para ser indenizado pelos danos sofridos, poderá provocar intervenção de terceiros? Caso afirmativo, qual a modalidade e em face de quem? Justifique.",,Ausência de argumentação.,,,,,1.25,"A resposta está vazia, sem qualquer fundamentação jurídica ou análise. Não há análise de ato ilícito nem discussão sobre intervenção de terceiros. A ausência de conteúdo torna impossível qualquer avaliação jurídica.",,True,"{
+  ""argumentacao"": ""Ausência de argumentação."",
+  ""precisão"": ""Ausência de precisão jurídica."",
+  ""coesão_legal"": ""Ausência de coesão legal."",
+  ""nota_fundamentacao_coerencia"": null,
+  ""nota_aderencia_completude"": null,
+  ""nota_total"": 0,
+  ""avaliacao"": ""A resposta está vazia, sem qualquer fundamentação jurídica ou análise. Não há análise de ato ilícito nem discussão sobre intervenção de terceiros. A ausência de conteúdo torna impossível qualquer avaliação jurídica.""
+}",2026-03-20T21:45:00.790275-03:00
+41_direito_civil_questao_2,J1,discursiva,llama323b,Qwen/Qwen3-4B-Instruct-2507,Direito Civil,"QUESTÃO
+
+O gado Nelore criado por Duarte vem sofrendo de doença desconhecida. Inocêncio, produtor rural, comprometeu-se a ajudá-lo, conseguindo que o melhor veterinário da região e também produtor rural, Matias, concordasse em visitar o rebanho de Duarte em, no máximo, três dias, em virtude da urgência da situação. Matias aceitou o compromisso, mas não compareceu em razão dos seus próprios compromissos em sua fazenda, especialmente por causa do recebimento de duas novas máquinas agrícolas. Na semana seguinte, Matias foi até a fazenda de Duarte e constatou a morte de toda a criação. Duarte, diante disso, acionou Inocêncio e Matias pleiteando indenização pelos danos sofridos.
+
+Sobre a hipótese narrada, responda aos itens a seguir.
+
+1. O pedido de perdas e danos em face de Inocêncio merece prosperar? Justifique.
+
+2. Se Matias for condenado, as duas máquinas agrícolas de sua propriedade poderão ser penhoradas? Justifique.",,Ausência de argumentação jurídica.,Ausência de conteúdo jurídico.,Ausência de estrutura lógica.,,,1.25,"A resposta está vazia, sem qualquer análise jurídica ou fundamentação. Não há possibilidade de avaliação positiva.",,True,"{""argumentacao"": ""Ausência de argumentação jurídica."",
+  ""precisao"": ""Ausência de conteúdo jurídico."",
+  ""coesao_legal"": ""Ausência de estrutura lógica."",
+  ""nota_fundamentacao_coerencia"": null,
+  ""nota_aderencia_completude"": null,
+  ""nota_total"": 0,
+  ""avaliacao"": ""A resposta está vazia, sem qualquer análise jurídica ou fundamentação. Não há possibilidade de avaliação positiva.""
+}",2026-03-20T21:45:50.148093-03:00
+41_direito_civil_questao_3,J1,discursiva,llama323b,Qwen/Qwen3-4B-Instruct-2507,Direito Civil,"QUESTÃO
+
+Iara, atriz famosa por interpretar papéis de protagonista em diversas novelas, descobre que seu nome e sua imagem vêm sendo utilizados, indevidamente e sem sua autorização, por uma clínica de estética, em publicidade anunciando seus serviços.
+Na publicidade em questão, constava a foto da atriz com uma frase, entre aspas, dizendo que ela só realizava procedimentos estéticos naquela clínica, por considerá-la a melhor do ramo. Ocorre que a atriz sequer conhecia a referida clínica e não havia autorizado a utilização de sua imagem.
+Com receio de perder nova oportunidade de trabalho, já em fase de negociação de exclusividade, Iara procura você, como advogado(a), buscando a proibição da utilização de sua imagem pela clínica.
+Diante do caso narrado, responda aos itens a seguir
+
+1. Pode haver a proibição da utilização da imagem da atriz? Justifique.
+
+2. Para requerer a imediata cessação da divulgação da imagem, antes de eventual sentença de mérito, qual instrumento processual é cabível? Justifique.",,Ausência de argumentação. A resposta está vazia.,Ausência de conteúdo jurídico. Não há análise nem citação de norma.,Ausência de estrutura coerente. A resposta não apresenta sequência lógica nem conexão entre ideias.,,,1.25,"A resposta do candidato está completamente vazia. Não há nenhum conteúdo, fundamentação ou análise jurídica. A ausência de qualquer texto constitui falha grave de preenchimento da questão.",,True,"{""argumentacao"": ""Ausência de argumentação. A resposta está vazia."",
+  ""precisao"": ""Ausência de conteúdo jurídico. Não há análise nem citação de norma."",
+  ""coesao_legal"": ""Ausência de estrutura coerente. A resposta não apresenta sequência lógica nem conexão entre ideias."",
+  ""nota_fundamentacao_coerencia"": null,
+  ""nota_aptidao_completude"": null,
+  ""nota_total"": null,
+  ""avaliacao"": ""A resposta do candidato está completamente vazia. Não há nenhum conteúdo, fundamentação ou análise jurídica. A ausência de qualquer texto constitui falha grave de preenchimento da questão.""
+}",2026-03-20T21:46:10.760056-03:00
+41_direito_civil_questao_4,J1,discursiva,llama323b,Qwen/Qwen3-4B-Instruct-2507,Direito Civil,"QUESTÃO
+
+Antônio, casado com Maria em regime de separação voluntária de bens, desde 2015, celebrou um contrato de seguro de vida em 2017, renovando-o anualmente. Antônio não indicou os beneficiários do seguro de vida quando da celebração do contrato, nem em suas consecutivas renovações.
+Após seu falecimento, que se deu na vigência do contrato de seguro de vida, sua esposa, Maria, individualmente, e seus dois filhos de um relacionamento anterior, Caetano e Caio, conjuntamente, requereram o pagamento integral do capital estipulado no seguro. Maria alega que, na condição de cônjuge, é, por direito, a beneficiária do seguro. Já os filhos alegam que seu pai, ao optar pelo regime da separação de bens, indicou a intenção de que Maria não participasse de seu patrimônio; sendo assim, ela não poderia ser beneficiária, restando tal condição a eles, filhos.
+Diante dessa situação, você, na qualidade de advogado(a) do corpo jurídico da seguradora é consultado sobre os itens a seguir
+
+1. O argumento apresentado por Caetano e Caio é válido? Justifique e indique a quem deve ser pago o capital estipulado no contrato.
+
+2. Diante do impasse, qual medida processual a seguradora deve adotar para efetuar o pagamento do capital segurado de forma segura? Justifique.",,Ausência de argumentação.,Ausência de análise jurídica.,Ausência de estrutura legal.,,,1.25,"A resposta está vazia, sem qualquer conteúdo ou fundamentação jurídica. Não há análise dos pontos levantados pela questão. A ausência de qualquer argumento torna impossível avaliar a validade dos argumentos apresentados pelos requerentes.",,True,"{""argumentacao"": ""Ausência de argumentação."",
+  ""precisao"": ""Ausência de análise jurídica."",
+  ""coesao_legal"": ""Ausência de estrutura legal."",
+  ""nota_fundamentacao_coerencia"": null,
+  ""nota_aderencia_completude"": null,
+  ""nota_total"": null,
+  ""avaliacao"": ""A resposta está vazia, sem qualquer conteúdo ou fundamentação jurídica. Não há análise dos pontos levantados pela questão. A ausência de qualquer argumento torna impossível avaliar a validade dos argumentos apresentados pelos requerentes.""
+}",2026-03-20T21:47:00.446731-03:00
+41_direito_constitucional_peca_praticoprofissional,J1,discursiva,llama323b,Qwen/Qwen3-4B-Instruct-2507,Direito Constitucional,"PEÇA PRÁTICO-PROFISSIONAL
+
+Diversas instituições de ensino brasileiras uniram esforços para o desenvolvimento científico do país, o que acarretaria benefícios não só no plano econômico como também no ambiente social. Como fruto desse movimento, foi submetido à apreciação do Presidente da República um anteprojeto de lei, que veio a ser apresentado ao Poder Legislativo e deu origem à Lei nº XX.
+Nos termos do Art. 1º da Lei nº XX, a União deveria alocar mais recursos, observadas as políticas públicas adotadas por esse ente federativo, nos projetos direcionados ao aperfeiçoamento das teorias científicas, o que consubstancia a pesquisa científica básica, e nos projetos que buscam estabelecer padrões de inovação em atividade de interesse da coletividade, o que aponta para a pesquisa científica tecnológica. O Art. 2º, por sua vez, autorizou que a União celebrasse ajustes com os órgãos e as entidades públicas, bem como com entidades privadas, visando, entre outros objetivos, ao compartilhamento de recursos humanos especializados para a execução de projetos de pesquisa, o que ocorreria mediante contrapartida do beneficiário, não necessariamente financeira. Por fim, o Art. 3º estatuiu que a União poderia oferecer estímulos creditícios para a atuação de inventores independentes, de modo a aprimorar o processo criativo e a favorecer o aproveitamento econômico das invenções.
+A publicação da Lei nº XX acarretou uma grande repulsa de setores econômicos, que passaram a defender a sua inconstitucionalidade. Eram basicamente três os argumentos que invocavam para sustentar a sua conclusão: (I) normas dessa natureza deveriam ter sido veiculadas em lei complementar, não em lei ordinária; (II) a isonomia foi flagrantemente afrontada ao se permitir tratamento diferenciado em relação a certos aspectos do saber; e, (III) especificamente em relação ao denominado “compartilhamento de recursos humanos especializados”, alegava-se a ausência de previsão constitucional e a consequente afronta à exigência de prévia aprovação em concurso público para o provimento de cargos públicos, sempre que esse compartilhamento ocorresse entre órgãos públicos.
+Esses argumentos encontraram ressonância em diversos pontos do país, com o correlato ajuizamento de inúmeras ações individuais e coletivas, nas quais a inconstitucionalidade dos artigos 1º a 3º da Lei nº XX era incidentalmente reconhecida, em primeiro e em segundo graus de jurisdição, o que vinha inviabilizando a sua efetiva projeção na realidade.
+Sensível aos prejuízos para o interesse social que a não aplicação da Lei nº XX vinha acarretando, o Partido Político Alfa, que contava com representantes no Senado Federal, contratou os seus serviços como advogado(a) e solicitou o ajuizamento da ação constitucional cabível, com o objetivo de que fosse requerido o reconhecimento da plena compatibilidade da Lei nº XX com a CRFB/88.
+Redija a peça processual adequada aos objetivos almejados pelo Partido Político Alfa. (Valor: 5,00)
+Obs: a peça deve abranger todos os fundamentos de Direito que possam ser utilizados para dar respaldo à pretensão. A simples menção ou transcrição do dispositivo legal não confere pontuação.",,Ausência de argumentação,Ausência de precisão jurídica,Ausência de coesão legal,,,5.0,"Resposta vazia. Não há conteúdo, argumentação nem análise jurídica.",0.0,True,"{
+  ""argumentacao"": ""Ausência de argumentação"",
+  ""precisao"": ""Ausência de precisão jurídica"",
+  ""coesao_legal"": ""Ausência de coesão legal"",
+  ""nota_fundamentacao_coerencia"": null,
+  ""nota_aderencia_completude"": null,
+  ""nota_total"": 0,
+  ""avaliacao"": ""Resposta vazia. Não há conteúdo, argumentação nem análise jurídica.""
+}",2026-03-20T21:47:50.942109-03:00
+41_direito_constitucional_questao_1,J1,discursiva,llama323b,Qwen/Qwen3-4B-Instruct-2507,Direito Constitucional,"QUESTÃO
+
+João dos Santos, vereador no Município Alfa, participou, em Brasília, de um grande evento organizado pelo Partido Político Delta, ao qual estava filiado. Na ocasião, criticou duramente a gestão do prefeito municipal de Alfa, principalmente por direcionar recursos públicos para escolas vinculadas a certas religiões, que não tivessem finalidade lucrativa, e que aplicassem seus excedentes em educação e assegurassem a destinação do seu patrimônio, no caso de encerramento de suas atividades, às escolas comunitárias, filantrópicas ou confessionais, ou ao Poder Público. Para João, apesar da tentativa de atribuir ares de licitude à medida, ela seria francamente contrária ao caráter laico das estruturas estatais de poder, configurando, portanto, ato ilícito.
+Ao tomar conhecimento dos fatos, o prefeito informou que adotaria as medidas necessárias para a responsabilização de João, tendo este último afirmado que não poderia ser responsabilizado por suas opiniões.
+Sobre o quadro fático narrado, responda aos itens a seguir
+
+1. João, nas circunstâncias indicadas, pode vir a ser responsabilizado por suas opiniões a respeito do prefeito do Município Alfa? Justifique.
+
+2. Os recursos públicos, na forma descrita no enunciado, podem ser direcionados a escolas vinculadas a certas religiões? Justifique.",,Ausência de argumentação. A resposta está vazia.,Ausência de conteúdo jurídico. Não há análise nem referência à legislação constitucional.,Ausência de coesão. A resposta não apresenta sequência lógica nem conexão entre os elementos da questão.,,,1.25,"A resposta do candidato está completamente vazio. Não há nenhum conteúdo, fundamentação ou análise jurídica. A ausência de qualquer argumento torna impossível avaliar a resposta conforme os critérios técnicos de validade.",,True,"{""argumentacao"": ""Ausência de argumentação. A resposta está vazia."",
+  ""precisao"": ""Ausência de conteúdo jurídico. Não há análise nem referência à legislação constitucional."",
+  ""coesao_legal"": ""Ausência de coesão. A resposta não apresenta sequência lógica nem conexão entre os elementos da questão."",
+  ""nota_fundamentacao_coerencia"": null,
+  ""nota_aderencia_completude"": null,
+  ""nota_total"": null,
+  ""avaliacao"": ""A resposta do candidato está completamente vazio. Não há nenhum conteúdo, fundamentação ou análise jurídica. A ausência de qualquer argumento torna impossível avaliar a resposta conforme os critérios técnicos de validade.""
+}",2026-03-20T21:48:40.496830-03:00
+41_direito_administrativo_peca_praticoprofissional,J1,discursiva,llama321b,Qwen/Qwen3-4B-Instruct-2507,Direito Administrativo,"PEÇA PRÁTICO-PROFISSIONAL
 
 O Município Alfa publicou edital de licitação, visando à aquisição de centenas de cadeiras padronizadas para as repartições públicas municipais, mediante a divulgação e a manutenção do inteiro teor do ato convocatório e de seus anexos no Portal Nacional de Contratações Públicas (PNCP), além da publicação de extrato do edital no Diário Oficial do ente federativo e em jornal diário de grande circulação. Figura como presidente da Comissão de Licitação o agente público João da Silva, responsável por todos os atos, bem como, pelas regras editalícias, segundo as normas de convocação.
 Ao tomarem ciência da publicação do edital da licitação, os sócios da sociedade empresária XYZ passaram a analisá-lo detalhadamente, visando à tomada de uma decisão informada sobre a participação ou não no referido processo licitatório.
@@ -67,13 +379,182 @@ O edital previu também margem de preferência de 10% (dez por cento) para socie
 Nesse contexto, a sociedade empresária XYZ impugnou o edital publicado na seara administrativa, com observância ao prazo legal, questionando os seguintes tópicos: i) prazo mínimo para apresentação de propostas e lances; ii) garantia de proposta, como requisito de pré-habilitação; iii) margem de preferência estabelecida; iv) forma de demonstração da aptidão econômica do licitante para cumprir as obrigações decorrentes do futuro contrato; e v) critérios de desempate. Contudo, o agente público João da Silva, autoridade administrativa competente da Administração Pública, manteve o edital na íntegra, em decisão definitiva na esfera administrativa.
 Dessa forma, os sócios da sociedade empresária XYZ, dois dias depois de terem acesso à referida decisão administrativa, procuraram você para, na qualidade de advogado(a), adotar as providências cabíveis junto ao Poder Judiciário, sendo certo que há urgência na obtenção de um provimento jurisdicional, ante o receio de que a licitação prossiga, sem a participação da sociedade empresária XYZ. Considere que todas as provas necessárias já estão pré-constituídas, sendo desnecessária dilação probatória.
 Diante das circunstâncias narradas, redija a peça cabível, que traga o procedimento mais célere para a defesa dos interesses da sociedade empresária XYZ, mediante a apresentação de todos os fundamentos jurídicos pertinentes, ciente de que as provas documentais já existentes bastam para demonstrar os fatos acima. (Valor: 5,00)
-Obs.: a peça deve abranger todos os fundamentos de Direito que possam ser utilizados para dar respaldo à pretensão. A simples menção ou transcrição do dispositivo legal não confere pontuação.","Não havered verificação técnica adequada nas condições específicas impostas pelo tribunal eletrônico, resultando em falta da parte judicial realizadora, nenhuma alteracão possível nos termos exigidos pela sentença transitória pronunciando os mesmos fundamentos principais originales que levantavam sua prevenção imediata e irreversível da decisão motivada pela sentença justificativas requerida antes desta opiniões razoáveis tendencísticas que comprometem seu conhecimento profissional superior - respeitar plenamente tudo o que foi solicitado, fazendo assim minha preservação completa desde dentro do meu espelho interno.
+Obs.: a peça deve abranger todos os fundamentos de Direito que possam ser utilizados para dar respaldo à pretensão. A simples menção ou transcrição do dispositivo legal não confere pontuação.",,Ausência de argumentação.,Ausência de precisão jurídica.,Ausência de coesão legal.,,,5.0,"A resposta está vazia, sem nenhum conteúdo. Não há fundamentação jurídica, nem análise de direito administrativo, nem referência às normas legais aplicáveis. A peça prática não foi elaborada, pois não há nenhuma sugestão de ação jurisdicional ou argumentação jurídica.",0.0,True,"{""argumentacao"": ""Ausência de argumentação."", ""precisao"": ""Ausência de precisão jurídica."", ""coesao_legal"": ""Ausência de coesão legal."", ""nota_fundamentacao_coerencia"": null, ""nota_aderencia_completude"": null, ""nota_total"": 0, ""avaliacao"": ""A resposta está vazia, sem nenhum conteúdo. Não há fundamentação jurídica, nem análise de direito administrativo, nem referência às normas legais aplicáveis. A peça prática não foi elaborada, pois não há nenhuma sugestão de ação jurisdicional ou argumentação jurídica.""}",2026-03-20T21:49:31.766098-03:00
+41_direito_administrativo_questao_1,J1,discursiva,llama321b,Qwen/Qwen3-4B-Instruct-2507,Direito Administrativo,"QUESTÃO
 
-Assunto: RECURSO DE CONTRADIÇÃO EM JUÍZIA - VINCULOS COM ESSAS PROCESES CONVOCADÓRIAS AO SINAIS DE TRIBUNAL TÉCNICO Nº [número] DA SEDE DO Tribunal Regional Federal União Brasileira Eletrônea 
+Esglobênia, servidora pública federal estável, acreditava ter preenchido os respectivos requisitos do Regime Próprio de Previdência no cargo que ocupava, razão pela qual pleiteou e obteve, junto ao órgão de origem, a aposentadoria voluntária.
+Ato contínuo, o processo foi encaminhado ao Tribunal de Contas da União, o qual verificou algumas inconsistências no deferimento do pedido, de modo que está tendente a negar o registro da aposentadoria, sendo certo que o processo chegou na Corte de Contas há apenas um ano.
+Diante dessa situação hipotética, responda como advogado(a), fundamentadamente, aos questionamentos a seguir
 
-PRIMEIRA PARADA DURANTE A CEDENTE É O FUNDAMENTO JUDICIAL QUE MOTIVOU A SENTENZA JUSTIFICATIVA DA PRESTIÃO, E QUANDO INCLUIR UMA CLAUSE CONTRODIJA DE ASSINATA OU UM REMITO QUE VIENE COMPRENSADO ENTRE AS PARTES ENCONTRARAS NO ESTELOGO DO CASIO DIÚMUS?  
+1. O ato aposentadoria de Esglobênia estava perfeito, ou seja, completou o seu ciclo de formação, antes do pronunciamento da Corte de Contas? Justifique.
 
-Como podemos perceber, essa cláusula tem função estratégicamente importante para a proteção dos direitos individuais às partes envolvidas, permitindo-lhes reconhecer suas respectivas diferenças coletivos, mas essencialmente relevante principalmente quando são considerares situações processualis novas ou complexas, pois elas têm poderosa capacidade para influenciarmelhor compreender","A resposta é completamente irrelevante e ininteligível. Ausente qualquer fundamentação jurídica, conceitos legais ou análise de problemas. Inclui invenções de fatos, termos técnicos e referências sem sentido (ex: 'tribunal eletrônico', 'casio diúmus'). Não há relação com a legislação das licitações nem com os pontos contestados. Falta total de coerência argumentativa e conteúdo jurídico.",0.0,True,"{
-  ""nota"": 0,
-  ""avaliacao"": ""A resposta é completamente irrelevante e ininteligível. Ausente qualquer fundamentação jurídica, conceitos legais ou análise de problemas. Inclui invenções de fatos, termos técnicos e referências sem sentido (ex: 'tribunal eletrônico', 'casio diúmus'). Não há relação com a legislação das licitações nem com os pontos contestados. Falta total de coerência argumentativa e conteúdo jurídico.""
-}",2026-03-19T14:10:35.008331-03:00
+2. Para negar o registro da aposentadoria de Esglobênia, o Tribunal de Contas precisa observar a ampla defesa e o contraditório? Justifique.",,Ausência de argumentação.,Ausência de precisão jurídica.,Ausência de coesão legal.,,,1.25,"A resposta apresentada é nula, sem qualquer fundamentação jurídica, análise ou referência à legislação vigente. A ausência de conteúdo impede qualquer avaliação técnica ou jurídica.",,True,"{  
+  ""argumentacao"": ""Ausência de argumentação."",
+  ""precisao"": ""Ausência de precisão jurídica."",
+  ""coesao_legal"": ""Ausência de coesão legal."",
+  ""nota_fundamentacao_coerencia"": null,
+  ""nota_aderencia_completude"": null,
+  ""nota_total"": null,
+  ""avaliacao"": ""A resposta apresentada é nula, sem qualquer fundamentação jurídica, análise ou referência à legislação vigente. A ausência de conteúdo impede qualquer avaliação técnica ou jurídica.""
+}",2026-03-20T21:50:20.822466-03:00
+41_direito_administrativo_questao_2,J1,discursiva,llama321b,Qwen/Qwen3-4B-Instruct-2507,Direito Administrativo,"QUESTÃO
+
+A sociedade de economia mista federal XYZ entrou em contato com a sociedade empresária ABC, de notória especialização, que fornece serviço técnico especializado de publicidade e divulgação, visando à celebração de um contrato administrativo. Durante as tratativas, um dos representantes da estatal afirmou que, em razão da expertise da entidade ABC, seria possível a contratação direta, afastando-se a necessidade de licitação. Nesse contexto, o contrato administrativo foi celebrado sem o prévio processo licitatório. Passados alguns meses, o diretor-executivo da sociedade empresária ABC foi informado de que o órgão de controle externo da estatal estava analisando a regularidade da contratação, em razão de indícios de superfaturamento. Dessa forma, ele solicitou à sua equipe jurídica os devidos esclarecimentos sobre a temática.
+Diante dessa situação hipotética, com base na legislação que dispõe sobre o estatuto jurídico da empresa pública e da sociedade de economia mista e de suas subsidiárias, responda aos itens a seguir
+
+1. A contratação direta da sociedade empresária ABC pela sociedade de economia mista federal XYZ, no caso em tela, cumpriu as exigências legais? Justifique.
+
+2. Caso o órgão de controle externo da estatal verifique superfaturamento na contratação, quem responderá pelo dano causado? Justifique.",,Ausência de argumentação.,Ausência de conteúdo jurídico.,Ausência de estrutura legal.,,,1.25,A resposta está completamente vazio. Não há análise jurídica nem fundamentação. A ausência de qualquer conteúdo impede a avaliação conforme os critérios técnicos.,,True,"{""argumentacao"": ""Ausência de argumentação."",
+  ""precisao"": ""Ausência de conteúdo jurídico."",
+  ""coesao_legal"": ""Ausência de estrutura legal."",
+  ""nota_fundamentacao_coerencia"": null,
+  ""nota_aderencia_completude"": null,
+  ""nota_total"": null,
+  ""avaliacao"": ""A resposta está completamente vazio. Não há análise jurídica nem fundamentação. A ausência de qualquer conteúdo impede a avaliação conforme os critérios técnicos.""
+}",2026-03-20T21:51:09.816426-03:00
+41_direito_administrativo_questao_3,J1,discursiva,llama321b,Qwen/Qwen3-4B-Instruct-2507,Direito Administrativo,"QUESTÃO
+
+Determinada organização da sociedade civil tem, entre as suas principais atribuições, o desenvolvimento de projetos voltados para a alimentação saudável de crianças em idade escolar.
+Após aprofundado estudo, a entidade elaborou uma proposta que acredita ser de grande interesse para o Poder Público. Assim, deseja apresentá-la, a fim de que a Administração avalie a possibilidade de realizar um chamamento público para estabelecer uma parceria com fulcro na Lei nº 13.019/2014.
+Em razão disso, os representantes da mencionada organização da sociedade civil buscaram sua assessoria jurídica para dirimir as dúvidas a seguir
+
+1. Qual é o instrumento previsto na norma em comento que viabiliza a apresentação da proposta pretendida pela mencionada organização da sociedade civil? Justifique.
+
+2. A organização da sociedade civil ficaria impedida de participar de eventual chamamento público que venha a ser realizado a partir de sua proposta? Justifique.",,Ausência de argumentação.,Ausência de conteúdo jurídico.,Ausência de estrutura legal.,,,1.25,A resposta está vazia e não apresenta nenhum conteúdo. Não há fundamentação jurídica nem análise dos pontos levantados. A ausência de qualquer argumento torna impossível avaliar a coerência ou completude da resposta.,,True,"{""argumentacao"": ""Ausência de argumentação."",
+  ""precisao"": ""Ausência de conteúdo jurídico."",
+  ""coesao_legal"": ""Ausência de estrutura legal."",
+  ""nota_fundamentacao_coerencia"": null,
+  ""nota_aderencia_completude"": null,
+  ""nota_total"": 0,
+  ""avaliacao"": ""A resposta está vazia e não apresenta nenhum conteúdo. Não há fundamentação jurídica nem análise dos pontos levantados. A ausência de qualquer argumento torna impossível avaliar a coerência ou completude da resposta.""
+}",2026-03-20T21:51:58.718270-03:00
+41_direito_administrativo_questao_4,J1,discursiva,llama321b,Qwen/Qwen3-4B-Instruct-2507,Direito Administrativo,"QUESTÃO
+
+Antes da edição do decreto expropriatório, Fábio tomou conhecimento de que a União deseja desapropriar uma grande propriedade rural de sua titularidade, situada na zona rural do Município Delta, para construir um aeroporto.
+Em razão disso, ele busca sua assessoria jurídica para esclarecer as dúvidas elencadas a seguir, que deverão ser respondidas à luz do ordenamento vigente
+
+1. A fim de concretizar a intervenção do Estado na propriedade, antes do ajuizamento da respectiva ação, o Poder Público deve fazer uma oferta a Fábio? Justifique.
+
+2. A fim de alcançar a justa indenização na situação descrita, é possível a utilização de arbitragem? Justifique.",,Ausência de argumentação e fundamentação jurídica.,Ausência de conteúdo jurídico específico.,Ausência de estrutura lógica e coerência legal.,,,1.25,"A resposta está em branco, sem qualquer fundamentação jurídica ou análise. Não há resposta às perguntas formuladas. A ausência de conteúdo impede qualquer avaliação de precisão ou coesão jurídica.",,True,"{""argumentacao"": ""Ausência de argumentação e fundamentação jurídica."",
+  ""precisao"": ""Ausência de conteúdo jurídico específico."",
+  ""coesao_legal"": ""Ausência de estrutura lógica e coerência legal."",
+  ""nota_fundamentacao_coerencia"": null,
+  ""nota_aderencia_completude"": null,
+  ""nota_total"": 0,
+  ""avaliacao"": ""A resposta está em branco, sem qualquer fundamentação jurídica ou análise. Não há resposta às perguntas formuladas. A ausência de conteúdo impede qualquer avaliação de precisão ou coesão jurídica.""
+}",2026-03-20T21:52:48.029695-03:00
+41_direito_civil_peca_praticoprofissional,J1,discursiva,llama321b,Qwen/Qwen3-4B-Instruct-2507,Direito Civil,"PEÇA PRÁTICO-PROFISSIONAL
+
+Paulo adquiriu os direitos possessórios sobre uma casa situada na Rua XYZ, nº 99, em Goiânia, GO, por meio de adjudicação em um processo de inventário, com sentença datada de 21/01/2012, transitada em julgado. O imóvel não tem matrícula regular ou registro de propriedade, situando-se em área onde historicamente há problemas de regularização fundiária.
+Na casa, Cíntia, como cuidadora, morava com José, pai de Paulo, assistindo-o durante toda a sua enfermidade. Depois da morte do pai, Paulo decidiu realizar o desejo dele, que fora manifestado oralmente antes do falecimento, ou seja, permitir que Cíntia, exclusivamente, residisse no imóvel pelo tempo que julgasse necessário, enquanto viva fosse. Assim, em 30/01/2012, poucos dias após a sentença de adjudicação, Paulo e Cíntia se encontraram para a celebração de contrato de comodato, no qual ficou ajustado que ela poderia residir no imóvel pelo tempo que quisesse.
+Doze anos depois, em 10/01/2024, Paulo foi informado pelo síndico do condomínio de que Cíntia falecera de infarto fulminante no dia anterior, deixando no imóvel o seu filho João. Em 11/01/2024, Paulo notificou João para que, no prazo de 30 (trinta) dias, restituísse o bem, com a entrega das chaves na portaria.
+Ocorre que João descumpriu a ordem, enviando contra-notificação, em 20/01/2024, informando que não reconhecia a posse de Paulo, porque sabe que o imóvel não tem matrícula regular ou registro de propriedade, sendo ele o verdadeiro dono do bem, por força de usucapião. O imóvel está avaliado em R$ 200.000,00 (duzentos mil reais).
+Na qualidade de advogado(a) de Paulo, elabore a peça processual cabível para a defesa imediata dos interesses de seu cliente, indicando seus requisitos e fundamentos nos termos da legislação vigente. (Valor: 5,00)
+Obs.: a peça deve abranger todos os fundamentos de Direito que possam ser utilizados para dar respaldo à pretensão. A simples menção ou transcrição do dispositivo legal não confere pontuação.",,Ausência de argumentação.,Ausência de precisão jurídica.,Ausência de coesão legal.,,,5.0,"A resposta do candidato está vazia, sem conteúdo nem fundamentação jurídica. Não há análise de direito, nem referência a normas, nem estrutura processual. A ausência total de conteúdo torna impossível qualquer avaliação positiva.",0.0,True,"{
+  ""argumentacao"": ""Ausência de argumentação."",
+  ""precisao"": ""Ausência de precisão jurídica."",
+  ""coesao_legal"": ""Ausência de coesão legal."",
+  ""nota_fundamentacao_coerencia"": null,
+  ""nota_aderencia_completude"": null,
+  ""nota_total"": 0,
+  ""avaliacao"": ""A resposta do candidato está vazia, sem conteúdo nem fundamentação jurídica. Não há análise de direito, nem referência a normas, nem estrutura processual. A ausência total de conteúdo torna impossível qualquer avaliação positiva.""
+}",2026-03-20T21:53:37.333001-03:00
+41_direito_civil_questao_1,J1,discursiva,llama321b,Qwen/Qwen3-4B-Instruct-2507,Direito Civil,"QUESTÃO
+
+Joaquim conduzia seu automóvel por avenida movimentada do bairro de Copacabana, no Rio de Janeiro, em velocidade acima da permitida, após consumir elevada dose de bebida alcoólica. Ao tentar desviar de outro veículo, Joaquim perdeu o controle e subiu na calçada, vindo a colidir contra um poste.
+Maria, que andava pela calçada, viu o momento em que Joaquim perdeu o controle de seu automóvel e, para salvar Joana, que estava ao seu lado, empurrou-a, vindo ambas a caírem em cima da vidraça de uma loja. Na queda, quebraram o vidro e danificaram alguns itens que estavam em exibição na vitrine.
+Sobre o caso narrado, responda aos itens a seguir
+
+1. Maria praticou ato ilícito ao empurrar Joana, quebrando o vidro e danificando os itens da vitrine? Justifique.
+
+2. Maria, uma vez demandada em Juízo pelo dono da loja para ser indenizado pelos danos sofridos, poderá provocar intervenção de terceiros? Caso afirmativo, qual a modalidade e em face de quem? Justifique.",,Ausência de argumentação.,,,,,1.25,"A resposta está vazia, sem qualquer fundamentação jurídica ou análise. Não há análise de ato ilícito nem discussão sobre intervenção de terceiros. A ausência de conteúdo torna impossível qualquer avaliação jurídica.",,True,"{
+  ""argumentacao"": ""Ausência de argumentação."",
+  ""precisão"": ""Ausência de precisão jurídica."",
+  ""coesão_legal"": ""Ausência de coesão legal."",
+  ""nota_fundamentacao_coerencia"": null,
+  ""nota_aderencia_completude"": null,
+  ""nota_total"": 0,
+  ""avaliacao"": ""A resposta está vazia, sem qualquer fundamentação jurídica ou análise. Não há análise de ato ilícito nem discussão sobre intervenção de terceiros. A ausência de conteúdo torna impossível qualquer avaliação jurídica.""
+}",2026-03-20T21:54:26.103971-03:00
+41_direito_civil_questao_2,J1,discursiva,llama321b,Qwen/Qwen3-4B-Instruct-2507,Direito Civil,"QUESTÃO
+
+O gado Nelore criado por Duarte vem sofrendo de doença desconhecida. Inocêncio, produtor rural, comprometeu-se a ajudá-lo, conseguindo que o melhor veterinário da região e também produtor rural, Matias, concordasse em visitar o rebanho de Duarte em, no máximo, três dias, em virtude da urgência da situação. Matias aceitou o compromisso, mas não compareceu em razão dos seus próprios compromissos em sua fazenda, especialmente por causa do recebimento de duas novas máquinas agrícolas. Na semana seguinte, Matias foi até a fazenda de Duarte e constatou a morte de toda a criação. Duarte, diante disso, acionou Inocêncio e Matias pleiteando indenização pelos danos sofridos.
+
+Sobre a hipótese narrada, responda aos itens a seguir.
+
+1. O pedido de perdas e danos em face de Inocêncio merece prosperar? Justifique.
+
+2. Se Matias for condenado, as duas máquinas agrícolas de sua propriedade poderão ser penhoradas? Justifique.",,Ausência de argumentação jurídica.,Ausência de conteúdo jurídico.,Ausência de estrutura lógica.,,,1.25,"A resposta está vazia, sem qualquer análise jurídica ou fundamentação. Não há possibilidade de avaliação positiva.",,True,"{""argumentacao"": ""Ausência de argumentação jurídica."",
+  ""precisao"": ""Ausência de conteúdo jurídico."",
+  ""coesao_legal"": ""Ausência de estrutura lógica."",
+  ""nota_fundamentacao_coerencia"": null,
+  ""nota_aderencia_completude"": null,
+  ""nota_total"": 0,
+  ""avaliacao"": ""A resposta está vazia, sem qualquer análise jurídica ou fundamentação. Não há possibilidade de avaliação positiva.""
+}",2026-03-20T21:55:15.830846-03:00
+41_direito_civil_questao_3,J1,discursiva,llama321b,Qwen/Qwen3-4B-Instruct-2507,Direito Civil,"QUESTÃO
+
+Iara, atriz famosa por interpretar papéis de protagonista em diversas novelas, descobre que seu nome e sua imagem vêm sendo utilizados, indevidamente e sem sua autorização, por uma clínica de estética, em publicidade anunciando seus serviços.
+Na publicidade em questão, constava a foto da atriz com uma frase, entre aspas, dizendo que ela só realizava procedimentos estéticos naquela clínica, por considerá-la a melhor do ramo. Ocorre que a atriz sequer conhecia a referida clínica e não havia autorizado a utilização de sua imagem.
+Com receio de perder nova oportunidade de trabalho, já em fase de negociação de exclusividade, Iara procura você, como advogado(a), buscando a proibição da utilização de sua imagem pela clínica.
+Diante do caso narrado, responda aos itens a seguir
+
+1. Pode haver a proibição da utilização da imagem da atriz? Justifique.
+
+2. Para requerer a imediata cessação da divulgação da imagem, antes de eventual sentença de mérito, qual instrumento processual é cabível? Justifique.",,Ausência de argumentação. A resposta está vazia.,Ausência de conteúdo jurídico. Não há análise nem citação de norma.,Ausência de estrutura coerente. A resposta não apresenta sequência lógica nem conexão entre ideias.,,,1.25,"A resposta do candidato está completamente vazia. Não há nenhum conteúdo, fundamentação ou análise jurídica. A ausência de qualquer texto constitui falha grave de preenchimento da questão.",,True,"{""argumentacao"": ""Ausência de argumentação. A resposta está vazia."",
+  ""precisao"": ""Ausência de conteúdo jurídico. Não há análise nem citação de norma."",
+  ""coesao_legal"": ""Ausência de estrutura coerente. A resposta não apresenta sequência lógica nem conexão entre ideias."",
+  ""nota_fundamentacao_coerencia"": null,
+  ""nota_aptidao_completude"": null,
+  ""nota_total"": null,
+  ""avaliacao"": ""A resposta do candidato está completamente vazia. Não há nenhum conteúdo, fundamentação ou análise jurídica. A ausência de qualquer texto constitui falha grave de preenchimento da questão.""
+}",2026-03-20T21:55:36.598281-03:00
+41_direito_civil_questao_4,J1,discursiva,llama321b,Qwen/Qwen3-4B-Instruct-2507,Direito Civil,"QUESTÃO
+
+Antônio, casado com Maria em regime de separação voluntária de bens, desde 2015, celebrou um contrato de seguro de vida em 2017, renovando-o anualmente. Antônio não indicou os beneficiários do seguro de vida quando da celebração do contrato, nem em suas consecutivas renovações.
+Após seu falecimento, que se deu na vigência do contrato de seguro de vida, sua esposa, Maria, individualmente, e seus dois filhos de um relacionamento anterior, Caetano e Caio, conjuntamente, requereram o pagamento integral do capital estipulado no seguro. Maria alega que, na condição de cônjuge, é, por direito, a beneficiária do seguro. Já os filhos alegam que seu pai, ao optar pelo regime da separação de bens, indicou a intenção de que Maria não participasse de seu patrimônio; sendo assim, ela não poderia ser beneficiária, restando tal condição a eles, filhos.
+Diante dessa situação, você, na qualidade de advogado(a) do corpo jurídico da seguradora é consultado sobre os itens a seguir
+
+1. O argumento apresentado por Caetano e Caio é válido? Justifique e indique a quem deve ser pago o capital estipulado no contrato.
+
+2. Diante do impasse, qual medida processual a seguradora deve adotar para efetuar o pagamento do capital segurado de forma segura? Justifique.",,Ausência de argumentação.,Ausência de análise jurídica.,Ausência de estrutura legal.,,,1.25,"A resposta está vazia, sem qualquer conteúdo ou fundamentação jurídica. Não há análise dos pontos levantados pela questão. A ausência de qualquer argumento torna impossível avaliar a validade dos argumentos apresentados pelos requerentes.",,True,"{""argumentacao"": ""Ausência de argumentação."",
+  ""precisao"": ""Ausência de análise jurídica."",
+  ""coesao_legal"": ""Ausência de estrutura legal."",
+  ""nota_fundamentacao_coerencia"": null,
+  ""nota_aderencia_completude"": null,
+  ""nota_total"": null,
+  ""avaliacao"": ""A resposta está vazia, sem qualquer conteúdo ou fundamentação jurídica. Não há análise dos pontos levantados pela questão. A ausência de qualquer argumento torna impossível avaliar a validade dos argumentos apresentados pelos requerentes.""
+}",2026-03-20T21:56:26.166562-03:00
+41_direito_constitucional_peca_praticoprofissional,J1,discursiva,llama321b,Qwen/Qwen3-4B-Instruct-2507,Direito Constitucional,"PEÇA PRÁTICO-PROFISSIONAL
+
+Diversas instituições de ensino brasileiras uniram esforços para o desenvolvimento científico do país, o que acarretaria benefícios não só no plano econômico como também no ambiente social. Como fruto desse movimento, foi submetido à apreciação do Presidente da República um anteprojeto de lei, que veio a ser apresentado ao Poder Legislativo e deu origem à Lei nº XX.
+Nos termos do Art. 1º da Lei nº XX, a União deveria alocar mais recursos, observadas as políticas públicas adotadas por esse ente federativo, nos projetos direcionados ao aperfeiçoamento das teorias científicas, o que consubstancia a pesquisa científica básica, e nos projetos que buscam estabelecer padrões de inovação em atividade de interesse da coletividade, o que aponta para a pesquisa científica tecnológica. O Art. 2º, por sua vez, autorizou que a União celebrasse ajustes com os órgãos e as entidades públicas, bem como com entidades privadas, visando, entre outros objetivos, ao compartilhamento de recursos humanos especializados para a execução de projetos de pesquisa, o que ocorreria mediante contrapartida do beneficiário, não necessariamente financeira. Por fim, o Art. 3º estatuiu que a União poderia oferecer estímulos creditícios para a atuação de inventores independentes, de modo a aprimorar o processo criativo e a favorecer o aproveitamento econômico das invenções.
+A publicação da Lei nº XX acarretou uma grande repulsa de setores econômicos, que passaram a defender a sua inconstitucionalidade. Eram basicamente três os argumentos que invocavam para sustentar a sua conclusão: (I) normas dessa natureza deveriam ter sido veiculadas em lei complementar, não em lei ordinária; (II) a isonomia foi flagrantemente afrontada ao se permitir tratamento diferenciado em relação a certos aspectos do saber; e, (III) especificamente em relação ao denominado “compartilhamento de recursos humanos especializados”, alegava-se a ausência de previsão constitucional e a consequente afronta à exigência de prévia aprovação em concurso público para o provimento de cargos públicos, sempre que esse compartilhamento ocorresse entre órgãos públicos.
+Esses argumentos encontraram ressonância em diversos pontos do país, com o correlato ajuizamento de inúmeras ações individuais e coletivas, nas quais a inconstitucionalidade dos artigos 1º a 3º da Lei nº XX era incidentalmente reconhecida, em primeiro e em segundo graus de jurisdição, o que vinha inviabilizando a sua efetiva projeção na realidade.
+Sensível aos prejuízos para o interesse social que a não aplicação da Lei nº XX vinha acarretando, o Partido Político Alfa, que contava com representantes no Senado Federal, contratou os seus serviços como advogado(a) e solicitou o ajuizamento da ação constitucional cabível, com o objetivo de que fosse requerido o reconhecimento da plena compatibilidade da Lei nº XX com a CRFB/88.
+Redija a peça processual adequada aos objetivos almejados pelo Partido Político Alfa. (Valor: 5,00)
+Obs: a peça deve abranger todos os fundamentos de Direito que possam ser utilizados para dar respaldo à pretensão. A simples menção ou transcrição do dispositivo legal não confere pontuação.",,Ausência de argumentação,Ausência de precisão jurídica,Ausência de coesão legal,,,5.0,"Resposta vazia. Não há conteúdo, argumentação nem análise jurídica.",0.0,True,"{
+  ""argumentacao"": ""Ausência de argumentação"",
+  ""precisao"": ""Ausência de precisão jurídica"",
+  ""coesao_legal"": ""Ausência de coesão legal"",
+  ""nota_fundamentacao_coerencia"": null,
+  ""nota_aderencia_completude"": null,
+  ""nota_total"": 0,
+  ""avaliacao"": ""Resposta vazia. Não há conteúdo, argumentação nem análise jurídica.""
+}",2026-03-20T21:57:17.135885-03:00
+41_direito_constitucional_questao_1,J1,discursiva,llama321b,Qwen/Qwen3-4B-Instruct-2507,Direito Constitucional,"QUESTÃO
+
+João dos Santos, vereador no Município Alfa, participou, em Brasília, de um grande evento organizado pelo Partido Político Delta, ao qual estava filiado. Na ocasião, criticou duramente a gestão do prefeito municipal de Alfa, principalmente por direcionar recursos públicos para escolas vinculadas a certas religiões, que não tivessem finalidade lucrativa, e que aplicassem seus excedentes em educação e assegurassem a destinação do seu patrimônio, no caso de encerramento de suas atividades, às escolas comunitárias, filantrópicas ou confessionais, ou ao Poder Público. Para João, apesar da tentativa de atribuir ares de licitude à medida, ela seria francamente contrária ao caráter laico das estruturas estatais de poder, configurando, portanto, ato ilícito.
+Ao tomar conhecimento dos fatos, o prefeito informou que adotaria as medidas necessárias para a responsabilização de João, tendo este último afirmado que não poderia ser responsabilizado por suas opiniões.
+Sobre o quadro fático narrado, responda aos itens a seguir
+
+1. João, nas circunstâncias indicadas, pode vir a ser responsabilizado por suas opiniões a respeito do prefeito do Município Alfa? Justifique.
+
+2. Os recursos públicos, na forma descrita no enunciado, podem ser direcionados a escolas vinculadas a certas religiões? Justifique.",,Ausência de argumentação. A resposta está vazia.,Ausência de conteúdo jurídico. Não há análise nem referência à legislação constitucional.,Ausência de coesão. A resposta não apresenta sequência lógica nem conexão entre os elementos da questão.,,,1.25,"A resposta do candidato está completamente vazio. Não há nenhum conteúdo, fundamentação ou análise jurídica. A ausência de qualquer argumento torna impossível avaliar a resposta conforme os critérios técnicos de validade.",,True,"{""argumentacao"": ""Ausência de argumentação. A resposta está vazia."",
+  ""precisao"": ""Ausência de conteúdo jurídico. Não há análise nem referência à legislação constitucional."",
+  ""coesao_legal"": ""Ausência de coesão. A resposta não apresenta sequência lógica nem conexão entre os elementos da questão."",
+  ""nota_fundamentacao_coerencia"": null,
+  ""nota_aderencia_completude"": null,
+  ""nota_total"": null,
+  ""avaliacao"": ""A resposta do candidato está completamente vazio. Não há nenhum conteúdo, fundamentação ou análise jurídica. A ausência de qualquer argumento torna impossível avaliar a resposta conforme os critérios técnicos de validade.""
+}",2026-03-20T21:58:06.227645-03:00
