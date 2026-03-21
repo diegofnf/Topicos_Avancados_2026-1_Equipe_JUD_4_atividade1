@@ -24,7 +24,7 @@ def calcular_acuracia(df: pd.DataFrame) -> float:
     _validar_colunas(df, COLUNAS_OBRIGATORIAS)
     if df.empty:
         return 0.0
-    return float(accuracy_score(df["gabarito_oficial"], df["resposta"]))
+    return float(accuracy_score(_serie_texto(df, "gabarito_oficial"), _serie_texto(df, "resposta")))
 
 
 def acuracia_por_modelo(df: pd.DataFrame) -> pd.DataFrame:
@@ -35,7 +35,7 @@ def acuracia_por_modelo(df: pd.DataFrame) -> pd.DataFrame:
 
     resultado = (
         df.groupby("modelo", dropna=False)
-        .apply(lambda grupo: accuracy_score(grupo["gabarito_oficial"], grupo["resposta"]))
+        .apply(lambda grupo: accuracy_score(_serie_texto(grupo, "gabarito_oficial"), _serie_texto(grupo, "resposta")))
         .reset_index(name="acuracia")
     )
     return resultado.sort_values("modelo").reset_index(drop=True)

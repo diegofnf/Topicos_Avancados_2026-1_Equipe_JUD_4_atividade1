@@ -16,7 +16,13 @@ from config import (
     SIMILARIDADE_DISCURSIVAS_CSV,
 )
 from data_utils import carregar_csv, salvar_csv
-from metricas_quantitativas import acuracia_por_modelo, calcular_acuracia, calcular_f1_score, matriz_confusao
+from metricas_quantitativas import (
+    _serie_texto,
+    acuracia_por_modelo,
+    calcular_acuracia,
+    calcular_f1_score,
+    matriz_confusao,
+)
 from metricas_qualitativas import (
     calcular_bertscore_por_modelo,
     calcular_flesch,
@@ -50,7 +56,14 @@ def gerar_benchmark_objetivas(df_objetivas: pd.DataFrame) -> pd.DataFrame:
     base = acuracia_por_modelo(df_objetivas)
     f1_por_modelo = (
         df_objetivas.groupby("modelo", dropna=False)
-        .apply(lambda grupo: f1_score(grupo["gabarito_oficial"], grupo["resposta"], average="macro", zero_division=0))
+        .apply(
+            lambda grupo: f1_score(
+                _serie_texto(grupo, "gabarito_oficial"),
+                _serie_texto(grupo, "resposta"),
+                average="macro",
+                zero_division=0,
+            )
+        )
         .reset_index(name="f1")
     )
     return (
