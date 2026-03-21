@@ -74,20 +74,6 @@ def formatar_area_especialidade_j2(question_type: str) -> str:
     return " ".join(token.capitalize() for token in tokens)
 
 
-def area_confiavel(row) -> str:
-    area_dataset = row.get("area_especialidade_dataset")
-    if pd.notna(area_dataset):
-        return str(area_dataset)
-
-    area_equipe = row.get("area_especialidade_equipe")
-    if pd.notna(area_equipe):
-        return str(area_equipe)
-
-    partes = str(row["question_id"]).split("_")
-    area_id = f"Direito {partes[2].capitalize()}" if len(partes) >= 3 else "Não identificado"
-    return area_id
-
-
 def timestamp_execucao() -> str:
     return datetime.now(ZoneInfo("America/Sao_Paulo")).isoformat()
 
