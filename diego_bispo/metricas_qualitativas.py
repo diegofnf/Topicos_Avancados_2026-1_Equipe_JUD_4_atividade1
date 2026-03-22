@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import importlib
 from typing import Iterable, Sequence
 
 import pandas as pd
@@ -29,6 +30,31 @@ def _normalizar_texto(valor: object) -> str:
     return texto.strip()
 
 
+def _ajustar_tokenizer_bertscore() -> None:
+    """Forca um max_length valido para tokenizers de modelos customizados no BERTScore."""
+    utils_module = importlib.import_module("bert_score.utils")
+    score_module = importlib.import_module("bert_score.score")
+
+    if getattr(utils_module, "_oab_tokenizer_patched", False):
+        return
+
+    original_get_tokenizer = utils_module.get_tokenizer
+
+    def get_tokenizer_ajustado(model_type: str, use_fast_tokenizer: bool = False):
+        try:
+            tokenizer = original_get_tokenizer(model_type, use_fast_tokenizer=use_fast_tokenizer)
+        except TypeError:
+            tokenizer = original_get_tokenizer(model_type)
+        max_length = getattr(tokenizer, "model_max_length", None)
+        if max_length is None or max_length > 512:
+            tokenizer.model_max_length = 512
+        return tokenizer
+
+    utils_module.get_tokenizer = get_tokenizer_ajustado
+    score_module.get_tokenizer = get_tokenizer_ajustado
+    utils_module._oab_tokenizer_patched = True
+
+
 def media_notas_por_modelo(df: pd.DataFrame) -> pd.DataFrame:
     """Calcula a media de notas agrupada por modelo."""
     _validar_colunas(df, [COLUNA_NOTA])
@@ -48,6 +74,7 @@ def calcular_bertscore(
     lista_respostas_a: Sequence[str],
     lista_respostas_b: Sequence[str],
     model_type: str = MODELO_BERTSCORE,
+    num_layers: int = 12,
 ) -> tuple[float, list[float]]:
     """Calcula o BERTScore F1 medio e os scores individuais em lote."""
     if len(lista_respostas_a) != len(lista_respostas_b):
@@ -66,9 +93,19 @@ def calcular_bertscore(
     except ImportError as exc:
         raise ImportError("Instale 'bert-score' para calcular o BERTScore.") from exc
 
+    _ajustar_tokenizer_bertscore()
+
     candidatos = [candidato for candidato, _ in pares]
     referencias = [referencia for _, referencia in pares]
-    _, _, f1 = score(candidatos, referencias, lang="pt", model_type=model_type, verbose=False)
+    _, _, f1 = score(
+        candidatos,
+        referencias,
+        lang="pt",
+        model_type=model_type,
+        num_layers=num_layers,
+        use_fast_tokenizer=False,
+        verbose=False,
+    )
     scores_individuais = [float(valor) for valor in f1.tolist()]
     return float(f1.mean().item()), scores_individuais
 

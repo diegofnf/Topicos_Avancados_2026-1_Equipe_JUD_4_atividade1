@@ -1,5 +1,4 @@
-Área de Especialidade,gemma2,llama321b,llama323b
-Direito Administrativo,0.0,0.0,0.0
-Direito Civil,0.0,0.0,0.0
-Direito Constitucional,0.0,0.0,0.0
-Média,0.0,0.0,0.0
+modelo,acuracia,nota_media
+gemma2,0.0,0.03333333333333334
+llama321b,0.0,0.0
+llama323b,0.0,0.0

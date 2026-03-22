@@ -65,14 +65,23 @@ def executar_analise(
     benchmark_discursivas_path: str | Path = BENCHMARK_DISCURSIVAS_CSV,
     similaridade_discursivas_path: str | Path = SIMILARIDADE_DISCURSIVAS_CSV,
     heatmap_discursivas_path: str | Path = HEATMAP_DISCURSIVAS_PNG,
+    incluir_qualitativa: bool = False,
 ) -> dict[str, pd.DataFrame | float]:
-    """Executa a analise completa de resultados e salva os artefatos gerados."""
+    """Executa a analise de resultados e salva os artefatos gerados."""
     df_objetivas = carregar_csv(Path(respostas_objetivas_path))
-    df_discursivas = carregar_csv(Path(avaliacao_discursivas_path))
-    df_respostas_discursivas = carregar_csv(Path(respostas_discursivas_path))
 
     acuracia_global = calcular_acuracia(df_objetivas)
     df_benchmark_obj = gerar_benchmark_objetivas(df_objetivas)
+    salvar_csv(df_benchmark_obj, Path(benchmark_objetivas_path))
+
+    if not incluir_qualitativa:
+        return {
+            "acuracia_global": acuracia_global,
+            "benchmark_objetivas": df_benchmark_obj,
+        }
+
+    df_discursivas = carregar_csv(Path(avaliacao_discursivas_path))
+    df_respostas_discursivas = carregar_csv(Path(respostas_discursivas_path))
     df_benchmark_disc = gerar_benchmark_discursivas(df_discursivas)
     df_benchmark_final = (
         df_benchmark_obj.merge(df_benchmark_disc, on="modelo", how="outer")
@@ -81,7 +90,6 @@ def executar_analise(
     )
     df_bertscore = gerar_matriz_bertscore_discursivas(df_respostas_discursivas)
 
-    salvar_csv(df_benchmark_obj, Path(benchmark_objetivas_path))
     salvar_csv(df_benchmark_final, Path(benchmark_discursivas_path))
 
     if not df_bertscore.empty:

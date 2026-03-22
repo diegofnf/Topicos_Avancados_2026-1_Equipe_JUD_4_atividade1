@@ -12,7 +12,7 @@ Obs.: a peça deve abranger todos os fundamentos de Direito que possam ser utili
   ""justificativa_dificuldade"": ""A questão exige confronto entre normas de licitação, como o pregão e a exigência de garantia, margem de preferência e critérios de desempate, que demandam interpretação comparativa com o Código de Licitação."",
   ""legislacao_base"": ""Código de Licitação e Contratos - Lei nº 8.666/1993"",
   ""confiança"": ""alta""
-}",True,2026-03-20T21:24:40.574460-03:00
+}",True,2026-03-22T12:09:06.550019-03:00
 41_direito_administrativo_questao_1,J1,discursiva,Qwen/Qwen3-4B-Instruct-2507,"QUESTÃO
 
 Esglobênia, servidora pública federal estável, acreditava ter preenchido os respectivos requisitos do Regime Próprio de Previdência no cargo que ocupava, razão pela qual pleiteou e obteve, junto ao órgão de origem, a aposentadoria voluntária.
@@ -25,7 +25,7 @@ Diante dessa situação hipotética, responda como advogado(a), fundamentadament
   ""justificativa_dificuldade"": ""A questão envolve interpretação direta da legislação sobre aposentadoria voluntária e validade do ato administrativo, sem necessidade de análise normativa complexa."",
   ""legislacao_base"": ""Regime Próprio de Previdência dos Servidores Públicos Federais - RPPS"",
   ""confianca"": ""alta""
-}",True,2026-03-20T21:25:04.467768-03:00
+}",True,2026-03-22T12:09:28.863961-03:00
 41_direito_administrativo_questao_2,J1,discursiva,Qwen/Qwen3-4B-Instruct-2507,"QUESTÃO
 
 A sociedade de economia mista federal XYZ entrou em contato com a sociedade empresária ABC, de notória especialização, que fornece serviço técnico especializado de publicidade e divulgação, visando à celebração de um contrato administrativo. Durante as tratativas, um dos representantes da estatal afirmou que, em razão da expertise da entidade ABC, seria possível a contratação direta, afastando-se a necessidade de licitação. Nesse contexto, o contrato administrativo foi celebrado sem o prévio processo licitatório. Passados alguns meses, o diretor-executivo da sociedade empresária ABC foi informado de que o órgão de controle externo da estatal estava analisando a regularidade da contratação, em razão de indícios de superfaturamento. Dessa forma, ele solicitou à sua equipe jurídica os devidos esclarecimentos sobre a temática.
@@ -37,7 +37,7 @@ Diante dessa situação hipotética, com base na legislação que dispõe sobre 
   ""justificativa_dificuldade"": ""O enunciado exige confronto entre a possibilidade de contratação direta e a obrigação de licitação, conforme previsto no Código de Licitações e Contratos (CLC). Há necessidade de verificar a condição de 'notória especialização' e a ausência de licitação."",
   ""legislacao_base"": ""Lei nº 8.666/1993 - Código de Licitações e Contratos (CLC)"",
   ""confiança"": ""alta""
-}",True,2026-03-20T21:25:21.616256-03:00
+}",True,2026-03-22T12:09:45.621676-03:00
 41_direito_administrativo_questao_3,J1,discursiva,Qwen/Qwen3-4B-Instruct-2507,"QUESTÃO
 
 Determinada organização da sociedade civil tem, entre as suas principais atribuições, o desenvolvimento de projetos voltados para a alimentação saudável de crianças em idade escolar.
@@ -50,7 +50,7 @@ Em razão disso, os representantes da mencionada organização da sociedade civi
   ""justificativa_dificuldade"": ""A pergunta busca a aplicação direta da lei 13.019/2014 sobre o chamamento público, sem necessidade de interpretação ou conflito normativo."",
   ""legislacao_base"": ""Lei nº 13.019/2014"",
   ""confianca"": ""alta""
-}",True,2026-03-20T21:25:44.332103-03:00
+}",True,2026-03-22T12:10:08.811375-03:00
 41_direito_administrativo_questao_4,J1,discursiva,Qwen/Qwen3-4B-Instruct-2507,"QUESTÃO
 
 Antes da edição do decreto expropriatório, Fábio tomou conhecimento de que a União deseja desapropriar uma grande propriedade rural de sua titularidade, situada na zona rural do Município Delta, para construir um aeroporto.
@@ -62,7 +62,7 @@ Em razão disso, ele busca sua assessoria jurídica para esclarecer as dúvidas 
   ""justificativa_dificuldade"": ""A questão exige confronto entre normas sobre expropriação e indenização, como o artigo 5º, inciso II, da Constituição Federal e o artigo 107 do Código Civil."",
   ""legislacao_base"": ""CF/88, art. 5º, II; Código Civil, art. 107"",
   ""confianca"": ""alta""
-}",True,2026-03-20T21:26:07.190435-03:00
+}",True,2026-03-22T12:10:30.938090-03:00
 41_direito_civil_peca_praticoprofissional,J1,discursiva,Qwen/Qwen3-4B-Instruct-2507,"PEÇA PRÁTICO-PROFISSIONAL
 
 Paulo adquiriu os direitos possessórios sobre uma casa situada na Rua XYZ, nº 99, em Goiânia, GO, por meio de adjudicação em um processo de inventário, com sentença datada de 21/01/2012, transitada em julgado. O imóvel não tem matrícula regular ou registro de propriedade, situando-se em área onde historicamente há problemas de regularização fundiária.
@@ -72,7 +72,7 @@ Ocorre que João descumpriu a ordem, enviando contra-notificação, em 20/01/202
 Na qualidade de advogado(a) de Paulo, elabore a peça processual cabível para a defesa imediata dos interesses de seu cliente, indicando seus requisitos e fundamentos nos termos da legislação vigente. (Valor: 5,00)
 Obs.: a peça deve abranger todos os fundamentos de Direito que possam ser utilizados para dar respaldo à pretensão. A simples menção ou transcrição do dispositivo legal não confere pontuação.",,,Direito Civil,,,"{""nivel_dificuldade"": ""3"",
   ""justificativa_dificuldade"": ""A questão exige confronto entre normas sobre posse, comodato e usucapião, considerando a falta de matrícula e a natureza do contrato celebrado."",
-  ""legislacao_base"": ""CF/88, Art. 176; Código Civil, Arts. 1.001, 1.002, 1.003, 1.004, 1.005, 1.006, 1.007, 1.008, 1.009, 1.010, 1.011, 1.012, 1.013,",False,2026-03-20T21:26:30.728329-03:00
+  ""legislacao_base"": ""CF/88, Art. 176; Código Civil, Arts. 1.001, 1.002, 1.003, 1.004, 1.005, 1.006, 1.007, 1.008, 1.009, 1.010, 1.011, 1.012, 1.013,",False,2026-03-22T12:10:53.158451-03:00
 41_direito_civil_questao_1,J1,discursiva,Qwen/Qwen3-4B-Instruct-2507,"QUESTÃO
 
 Joaquim conduzia seu automóvel por avenida movimentada do bairro de Copacabana, no Rio de Janeiro, em velocidade acima da permitida, após consumir elevada dose de bebida alcoólica. Ao tentar desviar de outro veículo, Joaquim perdeu o controle e subiu na calçada, vindo a colidir contra um poste.
@@ -85,7 +85,7 @@ Sobre o caso narrado, responda aos itens a seguir
   ""justificativa_dificuldade"": ""A questão pede interpretação direta do artigo 1075 do Código Civil sobre ato ilícito, sem necessidade de confronto entre normas ou análise de hipóteses complexas."",
   ""legislacao_base"": ""Código Civil - Artigo 1075"",
   ""confianca"": ""alta""
-}",True,2026-03-20T21:26:43.650351-03:00
+}",True,2026-03-22T12:11:05.628036-03:00
 41_direito_civil_questao_2,J1,discursiva,Qwen/Qwen3-4B-Instruct-2507,"QUESTÃO
 
 O gado Nelore criado por Duarte vem sofrendo de doença desconhecida. Inocêncio, produtor rural, comprometeu-se a ajudá-lo, conseguindo que o melhor veterinário da região e também produtor rural, Matias, concordasse em visitar o rebanho de Duarte em, no máximo, três dias, em virtude da urgência da situação. Matias aceitou o compromisso, mas não compareceu em razão dos seus próprios compromissos em sua fazenda, especialmente por causa do recebimento de duas novas máquinas agrícolas. Na semana seguinte, Matias foi até a fazenda de Duarte e constatou a morte de toda a criação. Duarte, diante disso, acionou Inocêncio e Matias pleiteando indenização pelos danos sofridos.
@@ -98,7 +98,7 @@ Sobre a hipótese narrada, responda aos itens a seguir.
   ""justificativa_dificuldade"": ""A questão envolve aplicação direta do dever de cumprir contrato de prestação de serviço, sem necessidade de interpretação ou análise de conflitos normativos."",
   ""legislacao_base"": ""CF/88, Art. 170, inciso II; Código Civil, Art. 569"",
   ""confianca"": ""alta""
-}",True,2026-03-20T21:27:06.360609-03:00
+}",True,2026-03-22T12:11:28.073321-03:00
 41_direito_civil_questao_3,J1,discursiva,Qwen/Qwen3-4B-Instruct-2507,"QUESTÃO
 
 Iara, atriz famosa por interpretar papéis de protagonista em diversas novelas, descobre que seu nome e sua imagem vêm sendo utilizados, indevidamente e sem sua autorização, por uma clínica de estética, em publicidade anunciando seus serviços.
@@ -112,7 +112,7 @@ Diante do caso narrado, responda aos itens a seguir
   ""justificativa_dificuldade"": ""A questão exige aplicação direta da norma sobre uso indevido de imagem, sem necessidade de interpretação ou conflito normativo."",
   ""legislacao_base"": ""CF/88, Art. 5º, inciso L"",
   ""confianca"": ""alta""
-}",True,2026-03-20T21:27:28.814300-03:00
+}",True,2026-03-22T12:11:50.380421-03:00
 41_direito_civil_questao_4,J1,discursiva,Qwen/Qwen3-4B-Instruct-2507,"QUESTÃO
 
 Antônio, casado com Maria em regime de separação voluntária de bens, desde 2015, celebrou um contrato de seguro de vida em 2017, renovando-o anualmente. Antônio não indicou os beneficiários do seguro de vida quando da celebração do contrato, nem em suas consecutivas renovações.
@@ -125,7 +125,7 @@ Diante dessa situação, você, na qualidade de advogado(a) do corpo jurídico d
   ""justificativa_dificuldade"": ""A questão exige confronto entre a norma da separação de bens e a jurisprudência sobre herança e benefícios de seguro, envolvendo interpretação de cláusulas de contrato e direitos familiares."",
   ""legislacao_base"": ""CF/88, art. 1.690 do Código Civil"",
   ""confiança"": ""alta""
-}",True,2026-03-20T21:27:42.766080-03:00
+}",True,2026-03-22T12:12:04.584386-03:00
 41_direito_constitucional_peca_praticoprofissional,J1,discursiva,Qwen/Qwen3-4B-Instruct-2507,"PEÇA PRÁTICO-PROFISSIONAL
 
 Diversas instituições de ensino brasileiras uniram esforços para o desenvolvimento científico do país, o que acarretaria benefícios não só no plano econômico como também no ambiente social. Como fruto desse movimento, foi submetido à apreciação do Presidente da República um anteprojeto de lei, que veio a ser apresentado ao Poder Legislativo e deu origem à Lei nº XX.
@@ -138,7 +138,7 @@ Obs: a peça deve abranger todos os fundamentos de Direito que possam ser utiliz
   ""justificativa_dificuldade"": ""A questão exige interpretação comparativa entre normas constitucionais e legislação específica, especialmente sobre competência legislativa, isonomia e exigências de concurso público."",  
   ""legislacao_base"": ""CF/88, artigo 69, inciso II; artigo 176, parágrafo único; artigo 137, inciso I; artigo 138, inciso III"",  
   ""confianca"": ""alta""  
-}",True,2026-03-20T21:28:06.594624-03:00
+}",True,2026-03-22T12:12:28.126054-03:00
 41_direito_constitucional_questao_1,J1,discursiva,Qwen/Qwen3-4B-Instruct-2507,"QUESTÃO
 
 João dos Santos, vereador no Município Alfa, participou, em Brasília, de um grande evento organizado pelo Partido Político Delta, ao qual estava filiado. Na ocasião, criticou duramente a gestão do prefeito municipal de Alfa, principalmente por direcionar recursos públicos para escolas vinculadas a certas religiões, que não tivessem finalidade lucrativa, e que aplicassem seus excedentes em educação e assegurassem a destinação do seu patrimônio, no caso de encerramento de suas atividades, às escolas comunitárias, filantrópicas ou confessionais, ou ao Poder Público. Para João, apesar da tentativa de atribuir ares de licitude à medida, ela seria francamente contrária ao caráter laico das estruturas estatais de poder, configurando, portanto, ato ilícito.
@@ -151,4 +151,4 @@ Sobre o quadro fático narrado, responda aos itens a seguir
   ""justificativa_dificuldade"": ""A questão envolve interpretação direta da lei sobre responsabilidade por opiniões políticas, sem necessidade de análise normativa complexa."",
   ""legislacao_base"": ""CF/88, Artigo 37, inciso II"",
   ""confianca"": ""alta""
-}",True,2026-03-20T21:28:18.135397-03:00
+}",True,2026-03-22T12:12:39.745093-03:00
