@@ -45,6 +45,31 @@ notebook.ipynb  → orquestração no Colab
 | Similaridade discursiva | BERTScore par a par | respostas_discursivas.csv | similaridade_discursivas.csv + heatmap |
 | Resultados | — | avaliação + respostas | accuracy + benchmark quantitativo/qualitativo |
 
+## Artefatos Gerados
+
+- `questoes_discursivas.csv`
+  Contém o recorte das questões abertas do lote do aluno, já com área de especialidade e metadados do dataset.
+- `questoes_objetivas.csv`
+  Contém o recorte das questões objetivas do lote do aluno, com alternativas, gabarito e área de especialidade.
+- `respostas_discursivas.csv`
+  Armazena as respostas em texto livre geradas pelos três modelos candidatos para cada questão discursiva.
+- `respostas_objetivas.csv`
+  Armazena as respostas em JSON dos três modelos candidatos para cada questão objetiva, junto do gabarito e do campo `correto`.
+- `curadoria_discursivas.csv`
+  Registra a curadoria das questões discursivas, com dificuldade, legislação base e confiança atribuídas pelo modelo curador.
+- `curadoria_objetivas.csv`
+  Registra a curadoria das questões objetivas com a mesma estrutura usada para as discursivas.
+- `avaliacao_discursivas.csv`
+  Guarda a avaliação feita pelo LLM juiz para cada resposta discursiva, incluindo justificativas e nota final.
+- `benchmark_objetivas.csv`
+  Resume a análise quantitativa das objetivas por modelo, usando apenas a acurácia.
+- `benchmark_discursivas.csv`
+  Resume a análise qualitativa das discursivas por modelo, usando a nota média atribuída pelo juiz.
+- `similaridade_discursivas.csv`
+  Armazena a matriz par a par de `BERTScore` médio entre os modelos nas mesmas questões discursivas.
+- `heatmap_similaridade_discursivas.png`
+  Visualiza a matriz de `BERTScore` em forma de heatmap para facilitar a comparação semântica entre modelos.
+
 ### Avaliação das discursivas
 
 O juiz agora usa o campo `values` da questão para limitar a pontuação.
@@ -66,6 +91,13 @@ Os critérios qualitativos usados pelo juiz são:
 
 Quando a questão tiver apenas um valor, como em uma peça com `values = [5]`, esse valor passa a ser o teto da `nota_total`.
 
+### Métricas qualitativas adotadas
+
+- `nota_media`
+  É a métrica qualitativa principal do projeto e representa a média das notas atribuídas pelo LLM juiz às respostas discursivas de cada modelo.
+- `BERTScore` par a par
+  Mede a proximidade semântica entre as respostas dos modelos para a mesma questão e é usado como análise complementar de comparação entre eles.
+
 ### Similaridade semântica entre modelos
 
 Na versão final do projeto, a comparação semântica entre modelos passou a ser feita com `BERTScore` par a par, e não mais com embeddings genéricos.
@@ -75,6 +107,7 @@ Na versão final do projeto, a comparação semântica entre modelos passou a se
 - Essa decisão foi tomada porque o `BERTScore` par a par atende de forma mais direta ao requisito de comparar as respostas dos três modelos entre si, além de gerar uma visualização mais interpretável academicamente do que um score agregado por modelo.
 - Essa métrica mede proximidade semântica entre respostas, não correção jurídica absoluta.
 - O backbone usado nessa etapa é o `RoBERTaLexPT-base`, um modelo jurídico em português cuja escolha é motivada pelo artigo de Garcia et al., que mostra ganhos consistentes de adaptação ao domínio jurídico lusófono no benchmark `PortuLex`.
+- A opção pelo `RoBERTaLexPT-base` substituiu o backbone anterior porque o artigo oferece uma justificativa metodológica mais aderente ao domínio jurídico em português, enquanto o modelo anterior não tinha a mesma sustentação acadêmica específica para esse contexto.
 
 ---
 
