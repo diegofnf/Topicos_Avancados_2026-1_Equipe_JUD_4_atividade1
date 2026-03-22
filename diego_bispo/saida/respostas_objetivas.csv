@@ -1,12 +1,9 @@
 question_id,dataset,tipo_questao,modelo,area_especialidade_dataset,texto_questao,resposta,gabarito_oficial,correto,json_parse_ok,saida_bruta,timestamp_execucao
 2012-08_41,J2,objetiva,gemma2,Civil,"Embora sujeito às constantes mutações e às diferenças de contexto em que é aplicado, o conceito tradicional de contrato sugere que ele representa o acordo de vontades estabelecido com a finalidade de produzir efeitos jurídicos.
-Tomando por base a teoria geral dos contratos, assinale a afirmativa correta.",C,B,False,True,"{""resposta_objetiva"": ""C""
-}",2026-03-22T11:56:57.329860-03:00
+Tomando por base a teoria geral dos contratos, assinale a afirmativa correta.",C,B,False,True,"{""resposta_objetiva"": ""C""}",2026-03-22T14:20:35.832570-03:00
 2012-08_41,J2,objetiva,llama323b,Civil,"Embora sujeito às constantes mutações e às diferenças de contexto em que é aplicado, o conceito tradicional de contrato sugere que ele representa o acordo de vontades estabelecido com a finalidade de produzir efeitos jurídicos.
-Tomando por base a teoria geral dos contratos, assinale a afirmativa correta.",N/A,B,False,True,"{""exemplo"": ""Declara-se nulo o contrato de adesão que contiver cláusulas ambíguas ou contraditórias."" }",2026-03-22T12:04:05.645830-03:00
+Tomando por base a teoria geral dos contratos, assinale a afirmativa correta.",A,B,False,True,"{""resposta_objetiva"": ""A""}",2026-03-22T14:27:32.021865-03:00
 2012-08_41,J2,objetiva,llama321b,Civil,"Embora sujeito às constantes mutações e às diferenças de contexto em que é aplicado, o conceito tradicional de contrato sugere que ele representa o acordo de vontades estabelecido com a finalidade de produzir efeitos jurídicos.
-Tomando por base a teoria geral dos contratos, assinale a afirmativa correta.",N/A,B,False,False,"{resposta_objetiva: ""A"" } // Resposta correta
-
-Nota: Esta resposta é uma simplificação da resposta correta, que considera todas as opções. 
-
-Nota:",2026-03-22T12:08:07.779300-03:00
+Tomando por base a teoria geral dos contratos, assinale a afirmativa correta.",A,B,False,True,"{
+  ""resposta_objetiva"": ""A""
+}",2026-03-22T14:31:28.052844-03:00

@@ -4,13 +4,6 @@ from transformers import AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig
 from config import HF_CACHE_DIR
 
 
-def _montar_prompt_com_system(prompt: str, system_prompt: str | None = None) -> str:
-    if not system_prompt:
-        return prompt
-
-    return f"{system_prompt.strip()}\n\n{prompt.strip()}"
-
-
 def load_model(model_name: str, cache_dir: str = HF_CACHE_DIR):
     """
     Carrega modelo e tokenizer com quantização 4bit (NF4).
@@ -78,10 +71,57 @@ def gerar_texto(
 
     - sample=True  → candidato (criativo), usa temperature
     - sample=False → juiz/curador (determinístico), ignora temperature
+
+    Estratégia de montagem do prompt:
+    1. Tenta apply_chat_template com system role separado (Llama, Qwen)
+    2. Se falhar, incorpora system_prompt no conteúdo do usuário (Gemma)
+    3. Se falhar, usa texto plano como fallback final
     """
     device = "cuda" if torch.cuda.is_available() else "cpu"
-    prompt_final = _montar_prompt_com_system(prompt, system_prompt=system_prompt)
-    inputs = tokenizer(prompt_final, return_tensors="pt").to(device)
+
+    messages_com_system = []
+    if system_prompt:
+        messages_com_system.append({"role": "system", "content": system_prompt.strip()})
+    messages_com_system.append({"role": "user", "content": prompt.strip()})
+
+    messages_sem_system = [
+        {
+            "role": "user",
+            "content": f"{system_prompt.strip()}\n\n{prompt.strip()}" if system_prompt else prompt.strip(),
+        }
+    ]
+
+    input_ids = None
+    attention_mask = None
+
+    for messages in [messages_com_system, messages_sem_system]:
+        try:
+            result = tokenizer.apply_chat_template(
+                messages,
+                return_tensors="pt",
+                add_generation_prompt=True,
+            )
+            # apply_chat_template pode retornar tensor ou BatchEncoding
+            # dependendo da versão do transformers
+            if hasattr(result, "input_ids"):
+                input_ids = result.input_ids.to(device)
+                attention_mask = (
+                    result.attention_mask.to(device)
+                    if hasattr(result, "attention_mask")
+                    else torch.ones_like(input_ids)
+                )
+            else:
+                input_ids = result.to(device)
+                attention_mask = torch.ones_like(input_ids)
+            break
+        except Exception as e:
+            print(f"[aviso] apply_chat_template falhou ({e}), tentando fallback.")
+
+    if input_ids is None:
+        texto = f"{system_prompt.strip()}\n\n{prompt.strip()}" if system_prompt else prompt.strip()
+        encoded = tokenizer(texto, return_tensors="pt").to(device)
+        input_ids = encoded.input_ids
+        attention_mask = encoded.attention_mask
 
     generation_kwargs = {
         "max_new_tokens": max_tokens,
@@ -90,8 +130,8 @@ def gerar_texto(
         "eos_token_id": tokenizer.eos_token_id,
         # 1.3 para candidato: penaliza repetições mais agressivamente.
         # 1.1 para juiz/curador: evita loops sem distorcer termos jurídicos.
-        #sample = true => (criatividade controlada), apenas para as respostas discursivas.
-        #sample = false => (resposta exata), para os demais.
+        # sample=True  → (criatividade controlada), apenas para as respostas discursivas.
+        # sample=False → (resposta exata), para os demais.
         "repetition_penalty": 1.3 if sample else 1.1,
     }
 
@@ -104,9 +144,6 @@ def gerar_texto(
         generation_kwargs["temperature"] = None
         generation_kwargs["top_p"] = None
 
-    outputs = model.generate(**inputs, **generation_kwargs)
-
-    # model.generate() retorna o prompt + resposta concatenados.
-    # O slice abaixo isola apenas os tokens gerados pelo modelo.
-    generated_tokens = outputs[0][inputs.input_ids.shape[-1]:]
+    outputs = model.generate(input_ids, attention_mask=attention_mask, **generation_kwargs)
+    generated_tokens = outputs[0][input_ids.shape[-1]:]
     return tokenizer.decode(generated_tokens, skip_special_tokens=True).strip()
