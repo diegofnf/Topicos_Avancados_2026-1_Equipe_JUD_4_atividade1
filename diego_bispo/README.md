@@ -42,14 +42,14 @@ notebook.ipynb  → orquestração no Colab
 | Respostas objetivas | Candidato | questões + alternativas | respostas_objetivas.csv |
 | Curadoria | Curador | questões | curadoria_discursivas/objetivas.csv |
 | Avaliação | Juiz | questões + respostas + curadoria + values | avaliacao_discursivas.csv |
-| Similaridade discursiva | Embeddings | respostas_discursivas.csv | similaridade_discursivas.csv + heatmap |
+| Similaridade discursiva | BERTScore par a par | respostas_discursivas.csv | similaridade_discursivas.csv + heatmap |
 | Resultados | — | avaliação + respostas | accuracy + benchmark quantitativo/qualitativo |
 
 ### Avaliação das discursivas
 
 O juiz agora usa o campo `values` da questão para limitar a pontuação.
 
-Metodologicamente, esta etapa segue a lógica do artigo de referência do `oab-bench`, que adota avaliação individual de respostas com um `LLM judge` em modo `single-answer` e `reference-guided grading`. Em vez de colocar as três respostas dos modelos no mesmo prompt, o pipeline avalia cada resposta discursiva separadamente, atribuindo notas e justificativas para argumentação, precisão jurídica e coesão legal. A comparação entre os três modelos é feita posteriormente, de forma agregada, a partir dessas avaliações individuais e de métricas adicionais de concordância semântica, como embeddings e `bertscore_concordancia`.
+Metodologicamente, esta etapa segue a lógica do artigo de referência do `oab-bench`, que adota avaliação individual de respostas com um `LLM judge` em modo `single-answer` e `reference-guided grading`. Em vez de colocar as três respostas dos modelos no mesmo prompt, o pipeline avalia cada resposta discursiva separadamente, atribuindo notas e justificativas para argumentação, precisão jurídica e coesão legal. A comparação entre os três modelos é feita posteriormente, de forma agregada, a partir dessas avaliações individuais e de uma análise semântica complementar via `BERTScore` par a par.
 
 Para preservar a qualidade das respostas discursivas dos modelos candidatos, o pipeline deixou de exigir JSON nessa etapa. Na prática, os candidatos agora respondem em texto livre, em formato aberto, e o sistema captura diretamente a resposta final gerada. A exigência de JSON foi mantida apenas nas etapas em que ela se mostrou estável e útil, como nas respostas objetivas, na curadoria e na avaliação do juiz.
 
@@ -68,20 +68,13 @@ Quando a questão tiver apenas um valor, como em uma peça com `values = [5]`, e
 
 ### Similaridade semântica entre modelos
 
-As respostas discursivas também podem ser avaliadas com embeddings, comparando apenas respostas da mesma questão.
+Na versão final do projeto, a comparação semântica entre modelos passou a ser feita com `BERTScore` par a par, e não mais com embeddings genéricos.
 
-- O notebook gera uma tabela `similaridade_discursivas.csv` com a similaridade cosseno entre pares de modelos.
-- Também gera um heatmap `heatmap_similaridade_discursivas.png` com a similaridade média entre os modelos.
-- Essa análise mede proximidade semântica entre respostas, não correção jurídica.
-
-### BERTScore de concordância entre modelos
-
-O benchmark qualitativo também calcula `bertscore_concordancia`, comparando respostas de modelos diferentes para a mesma questão em lote.
-
-- Essa métrica mede concordância semântica entre modelos.
-- Ela não deve ser interpretada como nota de qualidade jurídica absoluta.
+- O notebook gera uma matriz `similaridade_discursivas.csv` com o `BERTScore` médio entre cada par de modelos nas mesmas questões.
+- Também gera um heatmap `heatmap_similaridade_discursivas.png` para visualização dessa matriz.
+- Essa decisão foi tomada porque o `BERTScore` par a par atende de forma mais direta ao requisito de comparar as respostas dos três modelos entre si, além de gerar uma visualização mais interpretável academicamente do que um score agregado por modelo.
+- Essa métrica mede proximidade semântica entre respostas, não correção jurídica absoluta.
 - O backbone usado nessa etapa é o `RoBERTaLexPT-base`, um modelo jurídico em português cuja escolha é motivada pelo artigo de Garcia et al., que mostra ganhos consistentes de adaptação ao domínio jurídico lusófono no benchmark `PortuLex`.
-- Já a etapa de embeddings para matriz de similaridade permanece com um modelo ajustado para `sentence similarity`, por ser mais apropriado para comparação vetorial direta entre respostas completas.
 
 ---
 

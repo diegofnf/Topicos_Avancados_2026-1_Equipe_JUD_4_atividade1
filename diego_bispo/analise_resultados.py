@@ -2,7 +2,6 @@ from __future__ import annotations
 
 from pathlib import Path
 
-import numpy as np
 import pandas as pd
 
 from config import (
@@ -20,12 +19,8 @@ from metricas_quantitativas import (
     calcular_acuracia,
 )
 from metricas_qualitativas import (
-    calcular_bertscore_por_modelo,
-    calcular_flesch,
-    calcular_matriz_similaridade,
-    calcular_tamanho_medio,
+    calcular_matriz_bertscore,
     media_notas_por_modelo,
-    variancia_notas,
 )
 from visualizacoes import plotar_heatmap_similaridade
 
@@ -54,48 +49,12 @@ def gerar_benchmark_objetivas(df_objetivas: pd.DataFrame) -> pd.DataFrame:
 def gerar_benchmark_discursivas(df_discursivas: pd.DataFrame) -> pd.DataFrame:
     """Gera benchmark qualitativo das respostas discursivas por modelo."""
     coluna_modelo = _coluna_modelo_discursiva(df_discursivas)
-    base = _renomear_modelo(media_notas_por_modelo(df_discursivas), coluna_modelo)
-    variancia = _renomear_modelo(variancia_notas(df_discursivas), coluna_modelo)
-    tamanho = _renomear_modelo(calcular_tamanho_medio(df_discursivas), coluna_modelo)
-    flesch = _renomear_modelo(calcular_flesch(df_discursivas), coluna_modelo)
-    bertscore_concordancia = _renomear_modelo(calcular_bertscore_por_modelo(df_discursivas), coluna_modelo)
-
-    return (
-        base.merge(variancia, on="modelo", how="outer")
-        .merge(tamanho, on="modelo", how="outer")
-        .merge(flesch, on="modelo", how="outer")
-        .merge(bertscore_concordancia, on="modelo", how="outer")
-        .sort_values("modelo")
-        .reset_index(drop=True)
-    )
+    return _renomear_modelo(media_notas_por_modelo(df_discursivas), coluna_modelo)
 
 
-def gerar_matriz_similaridade_discursivas(df_respostas_discursivas: pd.DataFrame) -> pd.DataFrame:
-    """Gera uma matriz de similaridade entre modelos a partir da media dos embeddings."""
-    from metricas_qualitativas import gerar_embeddings
-
-    if df_respostas_discursivas.empty:
-        return pd.DataFrame()
-
-    if "modelo" not in df_respostas_discursivas.columns or "resposta" not in df_respostas_discursivas.columns:
-        raise ValueError("O DataFrame de respostas discursivas deve conter as colunas 'modelo' e 'resposta'.")
-
-    modelos = []
-    vetores_medios = []
-
-    for modelo, grupo in df_respostas_discursivas.groupby("modelo", dropna=False):
-        textos = grupo["resposta"].fillna("").astype(str).tolist()
-        embeddings = gerar_embeddings(textos)
-        if embeddings.size == 0:
-            continue
-        modelos.append(str(modelo))
-        vetores_medios.append(embeddings.mean(axis=0))
-
-    if not vetores_medios:
-        return pd.DataFrame()
-
-    matriz = calcular_matriz_similaridade(np.vstack(vetores_medios))
-    return pd.DataFrame(matriz, index=modelos, columns=modelos)
+def gerar_matriz_bertscore_discursivas(df_respostas_discursivas: pd.DataFrame) -> pd.DataFrame:
+    """Gera uma matriz par a par de BERTScore entre modelos."""
+    return calcular_matriz_bertscore(df_respostas_discursivas)
 
 
 def executar_analise(
@@ -120,19 +79,20 @@ def executar_analise(
         .sort_values("modelo")
         .reset_index(drop=True)
     )
-    df_similaridade = gerar_matriz_similaridade_discursivas(df_respostas_discursivas)
+    df_bertscore = gerar_matriz_bertscore_discursivas(df_respostas_discursivas)
 
     salvar_csv(df_benchmark_obj, Path(benchmark_objetivas_path))
     salvar_csv(df_benchmark_final, Path(benchmark_discursivas_path))
 
-    if not df_similaridade.empty:
-        matriz_serializavel = df_similaridade.copy()
+    if not df_bertscore.empty:
+        matriz_serializavel = df_bertscore.copy()
         matriz_serializavel.insert(0, "modelo", matriz_serializavel.index)
         salvar_csv(matriz_serializavel.reset_index(drop=True), Path(similaridade_discursivas_path))
         figura, _ = plotar_heatmap_similaridade(
-            df_similaridade.values,
-            labels=df_similaridade.index.tolist(),
+            df_bertscore.values,
+            labels=df_bertscore.index.tolist(),
             output_path=heatmap_discursivas_path,
+            titulo="BERTScore entre Modelos",
         )
         try:
             import matplotlib.pyplot as plt
@@ -147,5 +107,5 @@ def executar_analise(
         "acuracia_global": acuracia_global,
         "benchmark_objetivas": df_benchmark_obj,
         "benchmark_final": df_benchmark_final,
-        "similaridade_discursivas": df_similaridade,
+        "bertscore_discursivas": df_bertscore,
     }
