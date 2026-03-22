@@ -41,8 +41,8 @@ MODELOS_CANDIDATOS = {
 
 MODELO_CURADOR = "Qwen/Qwen3-4B-Instruct-2507"
 MODELO_JUIZ    = "Qwen/Qwen3-4B-Instruct-2507"
-#MODELO_BERTSCORE = "rufimelo/Legal-BERTimbau-base"
-MODELO_BERTSCORE = "eduagarcia/RoBERTaLexPT-base"
+MODELO_BERTSCORE = "rufimelo/Legal-BERTimbau-base"
+#MODELO_BERTSCORE = "eduagarcia/RoBERTaLexPT-base"
 
 # ============================================================
 # RECORTES DO DATASET
