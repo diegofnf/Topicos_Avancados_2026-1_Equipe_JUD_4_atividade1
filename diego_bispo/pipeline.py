@@ -1,4 +1,5 @@
 import json
+import re
 
 from config import MODELO_JUIZ, MODELO_CURADOR
 from data_utils import extrair_json_bruto, timestamp_execucao
@@ -71,21 +72,16 @@ def _normalizar_avaliacao(avaliacao: dict, values: list[float]) -> tuple[float |
     return None, None, nota_total, None
 
 
+def _limpar_resposta_discursiva(texto: str) -> str:
+    resposta = (texto or "").strip()
+    resposta = re.sub(r"^\s*resposta\s*:\s*", "", resposta, flags=re.I)
+    resposta = re.sub(r"^\s*resposta\s+final\s*:\s*", "", resposta, flags=re.I)
+    return resposta.strip()
+
+
 def gerar_resposta_discursiva(model, tokenizer, row: dict, nome_modelo: str) -> dict:
     prompt = PROMPT_CANDIDATO_DISCURSIVA.format(questao=row["texto_questao"])
-    # Código anterior:
-    # resposta = gerar_texto(
-    #     model,
-    #     tokenizer,
-    #     prompt,
-    #     sample=True,
-    #     max_tokens=400,
-    #     temperature=0.7,
-    # )
-    # Artifício do prefill: queremos forçar que o modelo comece diretamente pelo JSON.
-    prefill = "{"
-    prompt = prompt + f"\n{prefill}"
-    saida = prefill + gerar_texto(
+    saida = gerar_texto(
         model,
         tokenizer,
         prompt,
@@ -94,13 +90,7 @@ def gerar_resposta_discursiva(model, tokenizer, row: dict, nome_modelo: str) -> 
         temperature=0.7,
         system_prompt=row.get("system_prompt"),
     )
-    json_bruto = extrair_json_bruto(saida)
-    try:
-        resposta_json = json.loads(json_bruto) if json_bruto else {}
-    except Exception:
-        resposta_json = {}
-
-    resposta = str(resposta_json.get("resposta_discursiva", "")).strip()
+    resposta = _limpar_resposta_discursiva(saida)
 
     return {
         "question_id": row["question_id"],
@@ -113,8 +103,8 @@ def gerar_resposta_discursiva(model, tokenizer, row: dict, nome_modelo: str) -> 
         "nota_maxima_total": row.get("nota_maxima_total"),
         "texto_questao": row["texto_questao"],
         "resposta": resposta,
-        "json_parse_ok": bool(resposta_json),
-        "saida_bruta": json_bruto if json_bruto else saida,
+        "json_parse_ok": bool(resposta),
+        "saida_bruta": saida,
         "timestamp_execucao": timestamp_execucao(),
     }
 

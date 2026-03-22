@@ -17,6 +17,7 @@ Avaliação de modelos open-source em questões discursivas e objetivas da OAB, 
 ### Objetivas (J2)
 
 - A **área de especialidade** é definida diretamente pelo campo `question_type` do dataset.
+- Na análise quantitativa das questões objetivas, optou-se por utilizar apenas **acurácia**. Essa escolha foi feita porque, neste contexto, o objetivo principal é medir quantas questões o modelo acerta no total, e não investigar padrões de confusão entre letras específicas. Métricas como `F1 macro` e matriz de confusão foram consideradas excessivas para a proposta da atividade, já que as alternativas `A/B/C/D` não possuem valor semântico próprio fora do gabarito da questão.
 
 ---
 
@@ -48,6 +49,10 @@ notebook.ipynb  → orquestração no Colab
 
 O juiz agora usa o campo `values` da questão para limitar a pontuação.
 
+Metodologicamente, esta etapa segue a lógica do artigo de referência do `oab-bench`, que adota avaliação individual de respostas com um `LLM judge` em modo `single-answer` e `reference-guided grading`. Em vez de colocar as três respostas dos modelos no mesmo prompt, o pipeline avalia cada resposta discursiva separadamente, atribuindo notas e justificativas para argumentação, precisão jurídica e coesão legal. A comparação entre os três modelos é feita posteriormente, de forma agregada, a partir dessas avaliações individuais e de métricas adicionais de concordância semântica, como embeddings e `bertscore_concordancia`.
+
+Para preservar a qualidade das respostas discursivas dos modelos candidatos, o pipeline deixou de exigir JSON nessa etapa. Na prática, os candidatos agora respondem em texto livre, em formato aberto, e o sistema captura diretamente a resposta final gerada. A exigência de JSON foi mantida apenas nas etapas em que ela se mostrou estável e útil, como nas respostas objetivas, na curadoria e na avaliação do juiz.
+
 - Quando `values = [0.65, 0.6]`, a correção é dividida em:
 - `nota_fundamentacao_coerencia`: de `0` até `0.65`
 - `nota_aderencia_completude`: de `0` até `0.6`
@@ -75,6 +80,8 @@ O benchmark qualitativo também calcula `bertscore_concordancia`, comparando res
 
 - Essa métrica mede concordância semântica entre modelos.
 - Ela não deve ser interpretada como nota de qualidade jurídica absoluta.
+- O backbone usado nessa etapa é o `RoBERTaLexPT-base`, um modelo jurídico em português cuja escolha é motivada pelo artigo de Garcia et al., que mostra ganhos consistentes de adaptação ao domínio jurídico lusófono no benchmark `PortuLex`.
+- Já a etapa de embeddings para matriz de similaridade permanece com um modelo ajustado para `sentence similarity`, por ser mais apropriado para comparação vetorial direta entre respostas completas.
 
 ---
 

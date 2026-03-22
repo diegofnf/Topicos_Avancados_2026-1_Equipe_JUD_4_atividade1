@@ -4,7 +4,6 @@ from pathlib import Path
 
 import numpy as np
 import pandas as pd
-from sklearn.metrics import f1_score
 
 from config import (
     AVALIACAO_DISCURSIVAS_CSV,
@@ -17,11 +16,8 @@ from config import (
 )
 from data_utils import carregar_csv, salvar_csv
 from metricas_quantitativas import (
-    _serie_texto,
     acuracia_por_modelo,
     calcular_acuracia,
-    calcular_f1_score,
-    matriz_confusao,
 )
 from metricas_qualitativas import (
     calcular_bertscore_por_modelo,
@@ -51,26 +47,8 @@ def _renomear_modelo(df: pd.DataFrame, coluna_modelo: str) -> pd.DataFrame:
 def gerar_benchmark_objetivas(df_objetivas: pd.DataFrame) -> pd.DataFrame:
     """Gera benchmark consolidado das questoes objetivas por modelo."""
     if df_objetivas.empty:
-        return pd.DataFrame(columns=["modelo", "acuracia", "f1"])
-
-    base = acuracia_por_modelo(df_objetivas)
-    f1_por_modelo = (
-        df_objetivas.groupby("modelo", dropna=False)
-        .apply(
-            lambda grupo: f1_score(
-                _serie_texto(grupo, "gabarito_oficial"),
-                _serie_texto(grupo, "resposta"),
-                average="macro",
-                zero_division=0,
-            )
-        )
-        .reset_index(name="f1")
-    )
-    return (
-        base.merge(f1_por_modelo, on="modelo", how="left")
-        .sort_values("modelo")
-        .reset_index(drop=True)
-    )
+        return pd.DataFrame(columns=["modelo", "acuracia"])
+    return acuracia_por_modelo(df_objetivas)
 
 
 def gerar_benchmark_discursivas(df_discursivas: pd.DataFrame) -> pd.DataFrame:
@@ -135,7 +113,6 @@ def executar_analise(
     df_respostas_discursivas = carregar_csv(Path(respostas_discursivas_path))
 
     acuracia_global = calcular_acuracia(df_objetivas)
-    f1_global = calcular_f1_score(df_objetivas)
     df_benchmark_obj = gerar_benchmark_objetivas(df_objetivas)
     df_benchmark_disc = gerar_benchmark_discursivas(df_discursivas)
     df_benchmark_final = (
@@ -143,7 +120,6 @@ def executar_analise(
         .sort_values("modelo")
         .reset_index(drop=True)
     )
-    df_matriz_confusao = matriz_confusao(df_objetivas)
     df_similaridade = gerar_matriz_similaridade_discursivas(df_respostas_discursivas)
 
     salvar_csv(df_benchmark_obj, Path(benchmark_objetivas_path))
@@ -169,9 +145,7 @@ def executar_analise(
 
     return {
         "acuracia_global": acuracia_global,
-        "f1_global": f1_global,
         "benchmark_objetivas": df_benchmark_obj,
         "benchmark_final": df_benchmark_final,
-        "matriz_confusao": df_matriz_confusao,
         "similaridade_discursivas": df_similaridade,
     }

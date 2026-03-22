@@ -1,24 +1,17 @@
 PROMPT_CANDIDATO_DISCURSIVA = '''
-Responda à questão abaixo e devolva somente um JSON válido.
+Responda à questão abaixo em texto corrido.
 
 Questão:
 {questao}
 
 Regras:
-1. A saída deve conter exatamente uma chave: "resposta_discursiva"
-2. Não escreva nenhuma chave adicional
-3. Não escreva texto antes ou depois do JSON
-4. Não use markdown
+1. Responda em português jurídico formal e objetivo
+2. Não use JSON
+3. Não use markdown
+4. Não escreva introduções como "Segue a resposta" ou "Resposta:"
 5. Não invente base legal
-6. Use português jurídico formal e objetivo
+6. Quando não souber o número exato do artigo, mencione apenas a lei, o princípio ou o entendimento jurídico pertinente
 7. Máximo de 20 linhas na resposta
-
-Formato exato:
-{{
-  "resposta_discursiva": "texto da resposta"
-}}
-
-Saída inválida será descartada.
 '''
 
 
