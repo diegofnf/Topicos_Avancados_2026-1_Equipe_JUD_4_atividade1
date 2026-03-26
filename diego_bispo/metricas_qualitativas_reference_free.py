@@ -14,6 +14,8 @@ from transformers import (
     AutoTokenizer,
 )
 from config import (
+    MAX_LENGTH_RF_EMBEDDINGS,
+    MAX_LENGTH_RF_NLI,
     MODELO_RF_ARGUMENTACAO,
     MODELO_RF_COESAO,
     MODELO_RF_PRECISAO,
@@ -81,6 +83,7 @@ class EmbeddingBackend:
     prefix: str | None = None
     batch_size: int = 8
     verbose: bool = True
+    max_length: int = MAX_LENGTH_RF_EMBEDDINGS
 
     def __post_init__(self) -> None:
         _log_status(f"[Reference-Free] Carregando embeddings: {self.model_name}", self.verbose)
@@ -114,7 +117,7 @@ class EmbeddingBackend:
                 lote_modelo,
                 padding=True,
                 truncation=True,
-                max_length=512,
+                max_length=self.max_length,
                 return_tensors="pt",
             ).to(self.device)
             with torch.no_grad():
@@ -133,6 +136,7 @@ class NLIBackend:
     model_name: str = MODELO_RF_COESAO
     batch_size: int = 8
     verbose: bool = True
+    max_length: int = MAX_LENGTH_RF_NLI
 
     def __post_init__(self) -> None:
         _log_status(f"[Reference-Free] Carregando NLI: {self.model_name}", self.verbose)
@@ -170,7 +174,7 @@ class NLIBackend:
                 textos_b,
                 padding=True,
                 truncation=True,
-                max_length=512,
+                max_length=self.max_length,
                 return_tensors="pt",
             ).to(self.device)
 

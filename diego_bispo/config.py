@@ -59,6 +59,9 @@ PESO_RF_COESAO = 0.25
 PESO_RF_PRECISAO_PROPOSICIONAL = 0.80
 PESO_RF_PRECISAO_PERGUNTA = 0.20
 
+MAX_LENGTH_RF_EMBEDDINGS = 256
+MAX_LENGTH_RF_NLI = 192
+
 # ============================================================
 # RECORTES DO DATASET
 # ============================================================
