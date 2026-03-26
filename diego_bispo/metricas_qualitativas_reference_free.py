@@ -20,6 +20,10 @@ MODELO_PRECISAO_FALLBACK = "sentence-transformers/paraphrase-multilingual-MiniLM
 MODELO_COESAO = "MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli"
 
 
+def normalize_text(text: str) -> str:
+    return re.sub(r"\s+", " ", str(text or "")).strip()
+
+
 def decompose_into_propositions(text: str) -> list[str]:
     """
     Decompõe um texto em proposições usando heurística simples.
@@ -27,7 +31,7 @@ def decompose_into_propositions(text: str) -> list[str]:
     A implementação foi mantida propositalmente simples para ser estável no Colab
     e facilitar futura troca por um decompositor baseado em LLM.
     """
-    texto = re.sub(r"\s+", " ", str(text or "")).strip()
+    texto = normalize_text(text)
     if not texto:
         return []
     partes = re.split(r"[.!?;\n]+", texto)
@@ -56,7 +60,7 @@ class EmbeddingBackend:
         self._cache: dict[str, np.ndarray] = {}
 
     def _normalize_text(self, text: str) -> str:
-        texto = re.sub(r"\s+", " ", str(text or "")).strip()
+        texto = normalize_text(text)
         if self.prefix:
             return f"{self.prefix}: {texto}"
         return texto
@@ -68,7 +72,7 @@ class EmbeddingBackend:
         return soma / contagem
 
     def get_embeddings(self, texts: Iterable[str]) -> dict[str, np.ndarray]:
-        textos_brutos = [re.sub(r"\s+", " ", str(text or "")).strip() for text in texts]
+        textos_brutos = [normalize_text(text) for text in texts]
         textos_unicos = [texto for texto in dict.fromkeys(textos_brutos) if texto]
         faltantes = [texto for texto in textos_unicos if texto not in self._cache]
 
@@ -187,16 +191,21 @@ def score_precisao(
     if not props_a:
         return 0.0
 
-    todos_textos = list(props_a) + [question, answer_text]
-    for resposta in respostas_referencia:
+    question_norm = normalize_text(question)
+    answer_norm = normalize_text(answer_text)
+    props_norm = [normalize_text(prop) for prop in props_a]
+    referencias_norm = [[normalize_text(prop) for prop in resposta if normalize_text(prop)] for resposta in respostas_referencia]
+
+    todos_textos = list(props_norm) + [question_norm, answer_norm]
+    for resposta in referencias_norm:
         todos_textos.extend(resposta)
 
     embeddings = get_embeddings(todos_textos, backend)
     scores_prop = []
 
-    for prop in props_a:
+    for prop in props_norm:
         matches = []
-        for resposta in respostas_referencia:
+        for resposta in referencias_norm:
             if not resposta:
                 continue
             sims = [cosine_sim(embeddings[prop], embeddings[outra_prop]) for outra_prop in resposta]
@@ -204,7 +213,7 @@ def score_precisao(
         scores_prop.append(float(np.mean(matches)) if matches else 0.0)
 
     score_prop = float(np.mean(scores_prop)) if scores_prop else 0.0
-    score_q = cosine_sim(embeddings[answer_text], embeddings[question])
+    score_q = cosine_sim(embeddings[answer_norm], embeddings[question_norm])
     return 0.8 * score_prop + 0.2 * score_q
 
 
@@ -241,7 +250,7 @@ def _evaluate_all_with_backends(
     backend_precisao: EmbeddingBackend,
     backend_nli: NLIBackend,
 ) -> tuple[dict[str, dict[str, float]], list[dict[str, float | str]]]:
-    respostas_limpas = {modelo: re.sub(r"\s+", " ", str(texto or "")).strip() for modelo, texto in answers.items()}
+    respostas_limpas = {modelo: normalize_text(texto) for modelo, texto in answers.items()}
     proposicoes = {modelo: decompose_into_propositions(texto) for modelo, texto in respostas_limpas.items()}
 
     resultados: dict[str, dict[str, float]] = {}
