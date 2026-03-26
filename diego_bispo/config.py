@@ -45,6 +45,21 @@ MODELO_BERTSCORE = "rufimelo/Legal-BERTimbau-base"
 #MODELO_BERTSCORE = "eduagarcia/RoBERTaLexPT-base"
 
 # ============================================================
+# ANÁLISE QUALITATIVA REFERENCE-FREE
+# ============================================================
+MODELO_RF_ARGUMENTACAO = "intfloat/multilingual-e5-large"
+MODELO_RF_PRECISAO = "rufimelo/Legal-BERTimbau-sts-large-ma-v3"
+MODELO_RF_PRECISAO_FALLBACK = "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
+MODELO_RF_COESAO = "MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli"
+
+PESO_RF_ARGUMENTACAO = 0.35
+PESO_RF_PRECISAO = 0.40
+PESO_RF_COESAO = 0.25
+
+PESO_RF_PRECISAO_PROPOSICIONAL = 0.80
+PESO_RF_PRECISAO_PERGUNTA = 0.20
+
+# ============================================================
 # RECORTES DO DATASET
 # ============================================================
 DISC_SLICE_START = 70

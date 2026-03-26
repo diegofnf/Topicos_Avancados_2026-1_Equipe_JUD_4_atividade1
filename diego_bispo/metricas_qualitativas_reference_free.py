@@ -13,12 +13,17 @@ from transformers import (
     AutoModelForSequenceClassification,
     AutoTokenizer,
 )
-
-
-MODELO_ARGUMENTACAO = "intfloat/multilingual-e5-large"
-MODELO_PRECISAO = "rufimelo/Legal-BERTimbau-base"
-MODELO_PRECISAO_FALLBACK = "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
-MODELO_COESAO = "MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli"
+from config import (
+    MODELO_RF_ARGUMENTACAO,
+    MODELO_RF_COESAO,
+    MODELO_RF_PRECISAO,
+    MODELO_RF_PRECISAO_FALLBACK,
+    PESO_RF_ARGUMENTACAO,
+    PESO_RF_COESAO,
+    PESO_RF_PRECISAO,
+    PESO_RF_PRECISAO_PERGUNTA,
+    PESO_RF_PRECISAO_PROPOSICIONAL,
+)
 
 
 def normalize_text(text: str) -> str:
@@ -35,11 +40,21 @@ def decompose_into_propositions(text: str) -> list[str]:
     texto = normalize_text(text)
     if not texto:
         return []
+    # Evita quebrar abreviações jurídicas e honoríficas muito comuns.
+    texto = re.sub(
+        r"\b(art|arts|n[ºo]|nr|sr|sra|dr|dra|prof|profa|inc|incs)\.",
+        lambda match: match.group(0).replace(".", "<DOT>"),
+        texto,
+        flags=re.IGNORECASE,
+    )
     partes = re.split(r"[.!?;\n]+", texto)
+    partes = [parte.replace("<DOT>", ".") for parte in partes]
     return [parte.strip(" -\t\r") for parte in partes if parte.strip(" -\t\r")]
 
 
 def cosine_sim(a: np.ndarray, b: np.ndarray) -> float:
+    """Calcula similaridade de cosseno assumindo vetores já normalizados em L2."""
+    assert np.isfinite(a).all() and np.isfinite(b).all(), "Embeddings inválidos para cosine_sim."
     return float(np.dot(a, b))
 
 
@@ -50,6 +65,14 @@ def _device() -> str:
 def _log_status(message: str, verbose: bool = True) -> None:
     if verbose:
         print(message)
+
+
+def _mean_normalized(vectors: list[np.ndarray]) -> np.ndarray:
+    media = np.mean(vectors, axis=0)
+    norma = np.linalg.norm(media)
+    if norma == 0:
+        return media
+    return media / norma
 
 
 @dataclass
@@ -107,7 +130,7 @@ class EmbeddingBackend:
 
 @dataclass
 class NLIBackend:
-    model_name: str = MODELO_COESAO
+    model_name: str = MODELO_RF_COESAO
     batch_size: int = 8
     verbose: bool = True
 
@@ -179,10 +202,14 @@ def score_argumentacao(props: list[str], backend: EmbeddingBackend) -> float:
         for i in range(len(props) - 1)
     ]
 
-    construcoes = [" ".join(props[: i + 1]) for i in range(len(props) - 1)]
-    embeddings_const = get_embeddings(construcoes + props[1:], backend)
+    # Em vez de concatenar todas as proposições anteriores em um texto longo,
+    # agregamos seus embeddings já normalizados. Isso preserva a ideia de
+    # "construção do argumento" sem diluir tanto o sinal semântico.
     construcao = [
-        cosine_sim(embeddings_const[construcoes[i]], embeddings_const[props[i + 1]])
+        cosine_sim(
+            _mean_normalized([embeddings[props[j]] for j in range(i + 1)]),
+            embeddings[props[i + 1]],
+        )
         for i in range(len(props) - 1)
     ]
 
@@ -198,6 +225,14 @@ def score_precisao(
     answer_text: str,
     backend: EmbeddingBackend,
 ) -> float:
+    """
+    Mede dois sinais complementares:
+    1. alinhamento proposicional entre respostas concorrentes
+    2. relevância da resposta completa para a pergunta
+
+    O score final mistura ambos, então "precisão" aqui não significa apenas
+    concordância entre modelos; também incorpora aderência ao enunciado.
+    """
     if not props_a:
         return 0.0
 
@@ -224,7 +259,7 @@ def score_precisao(
 
     score_prop = float(np.mean(scores_prop)) if scores_prop else 0.0
     score_q = cosine_sim(embeddings[answer_norm], embeddings[question_norm])
-    return 0.8 * score_prop + 0.2 * score_q
+    return (PESO_RF_PRECISAO_PROPOSICIONAL * score_prop) + (PESO_RF_PRECISAO_PERGUNTA * score_q)
 
 
 def score_coesao(props: list[str], backend: NLIBackend) -> float:
@@ -248,13 +283,13 @@ def score_coesao(props: list[str], backend: NLIBackend) -> float:
 
 def _tentar_backend_precisao(verbose: bool = True) -> EmbeddingBackend:
     try:
-        return EmbeddingBackend(MODELO_PRECISAO, verbose=verbose)
+        return EmbeddingBackend(MODELO_RF_PRECISAO, verbose=verbose)
     except Exception:
         _log_status(
-            f"[Reference-Free] Fallback de precisão ativado: {MODELO_PRECISAO_FALLBACK}",
+            f"[Reference-Free] Fallback de precisão ativado: {MODELO_RF_PRECISAO_FALLBACK}",
             verbose,
         )
-        return EmbeddingBackend(MODELO_PRECISAO_FALLBACK, verbose=verbose)
+        return EmbeddingBackend(MODELO_RF_PRECISAO_FALLBACK, verbose=verbose)
 
 
 def _evaluate_all_with_backends(
@@ -273,7 +308,11 @@ def _evaluate_all_with_backends(
         score_arg = score_argumentacao(props, backend_argumentacao)
         score_pre = score_precisao(props, outras_props, question, respostas_limpas[modelo], backend_precisao)
         score_coe = score_coesao(props, backend_nli)
-        score_final = (0.35 * score_arg) + (0.40 * score_pre) + (0.25 * score_coe)
+        score_final = (
+            (PESO_RF_ARGUMENTACAO * score_arg)
+            + (PESO_RF_PRECISAO * score_pre)
+            + (PESO_RF_COESAO * score_coe)
+        )
 
         resultados[modelo] = {
             "argumentacao": float(score_arg),
@@ -301,7 +340,7 @@ def evaluate_all(
     """
     Avalia todas as respostas de uma mesma questão e retorna scores por modelo e ranking final.
     """
-    backend_argumentacao = EmbeddingBackend(MODELO_ARGUMENTACAO, prefix="passage", verbose=verbose)
+    backend_argumentacao = EmbeddingBackend(MODELO_RF_ARGUMENTACAO, prefix="passage", verbose=verbose)
     backend_precisao = _tentar_backend_precisao(verbose=verbose)
     backend_nli = NLIBackend(verbose=verbose)
     return _evaluate_all_with_backends(
@@ -332,7 +371,7 @@ def evaluate_dataframe(
         raise ValueError(f"Colunas obrigatórias ausentes: {', '.join(ausentes)}")
 
     _log_status("[Reference-Free] Inicializando backends de avaliação...", show_progress)
-    backend_argumentacao = EmbeddingBackend(MODELO_ARGUMENTACAO, prefix="passage", verbose=show_progress)
+    backend_argumentacao = EmbeddingBackend(MODELO_RF_ARGUMENTACAO, prefix="passage", verbose=show_progress)
     backend_precisao = _tentar_backend_precisao(verbose=show_progress)
     backend_nli = NLIBackend(verbose=show_progress)
 
