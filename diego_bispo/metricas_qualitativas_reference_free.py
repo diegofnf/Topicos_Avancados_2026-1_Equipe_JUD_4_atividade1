@@ -7,6 +7,7 @@ from typing import Iterable
 import numpy as np
 import pandas as pd
 import torch
+from tqdm.auto import tqdm
 from transformers import (
     AutoModel,
     AutoModelForSequenceClassification,
@@ -46,13 +47,20 @@ def _device() -> str:
     return "cuda" if torch.cuda.is_available() else "cpu"
 
 
+def _log_status(message: str, verbose: bool = True) -> None:
+    if verbose:
+        print(message)
+
+
 @dataclass
 class EmbeddingBackend:
     model_name: str
     prefix: str | None = None
     batch_size: int = 8
+    verbose: bool = True
 
     def __post_init__(self) -> None:
+        _log_status(f"[Reference-Free] Carregando embeddings: {self.model_name}", self.verbose)
         self.device = _device()
         self.tokenizer = AutoTokenizer.from_pretrained(self.model_name)
         self.model = AutoModel.from_pretrained(self.model_name).to(self.device)
@@ -101,8 +109,10 @@ class EmbeddingBackend:
 class NLIBackend:
     model_name: str = MODELO_COESAO
     batch_size: int = 8
+    verbose: bool = True
 
     def __post_init__(self) -> None:
+        _log_status(f"[Reference-Free] Carregando NLI: {self.model_name}", self.verbose)
         self.device = _device()
         self.tokenizer = AutoTokenizer.from_pretrained(self.model_name)
         self.model = AutoModelForSequenceClassification.from_pretrained(self.model_name).to(self.device)
@@ -236,11 +246,15 @@ def score_coesao(props: list[str], backend: NLIBackend) -> float:
     return float(np.mean(scores)) if scores else 0.0
 
 
-def _tentar_backend_precisao() -> EmbeddingBackend:
+def _tentar_backend_precisao(verbose: bool = True) -> EmbeddingBackend:
     try:
-        return EmbeddingBackend(MODELO_PRECISAO)
+        return EmbeddingBackend(MODELO_PRECISAO, verbose=verbose)
     except Exception:
-        return EmbeddingBackend(MODELO_PRECISAO_FALLBACK)
+        _log_status(
+            f"[Reference-Free] Fallback de precisão ativado: {MODELO_PRECISAO_FALLBACK}",
+            verbose,
+        )
+        return EmbeddingBackend(MODELO_PRECISAO_FALLBACK, verbose=verbose)
 
 
 def _evaluate_all_with_backends(
@@ -279,13 +293,17 @@ def _evaluate_all_with_backends(
     return resultados, ranking
 
 
-def evaluate_all(answers: dict[str, str], question: str) -> tuple[dict[str, dict[str, float]], list[dict[str, float | str]]]:
+def evaluate_all(
+    answers: dict[str, str],
+    question: str,
+    verbose: bool = True,
+) -> tuple[dict[str, dict[str, float]], list[dict[str, float | str]]]:
     """
     Avalia todas as respostas de uma mesma questão e retorna scores por modelo e ranking final.
     """
-    backend_argumentacao = EmbeddingBackend(MODELO_ARGUMENTACAO, prefix="passage")
-    backend_precisao = _tentar_backend_precisao()
-    backend_nli = NLIBackend()
+    backend_argumentacao = EmbeddingBackend(MODELO_ARGUMENTACAO, prefix="passage", verbose=verbose)
+    backend_precisao = _tentar_backend_precisao(verbose=verbose)
+    backend_nli = NLIBackend(verbose=verbose)
     return _evaluate_all_with_backends(
         answers,
         question,
@@ -295,7 +313,10 @@ def evaluate_all(answers: dict[str, str], question: str) -> tuple[dict[str, dict
     )
 
 
-def evaluate_dataframe(df_respostas: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame]:
+def evaluate_dataframe(
+    df_respostas: pd.DataFrame,
+    show_progress: bool = True,
+) -> tuple[pd.DataFrame, pd.DataFrame]:
     """
     Avalia um DataFrame de respostas discursivas agrupando por questão.
 
@@ -310,12 +331,20 @@ def evaluate_dataframe(df_respostas: pd.DataFrame) -> tuple[pd.DataFrame, pd.Dat
     if ausentes:
         raise ValueError(f"Colunas obrigatórias ausentes: {', '.join(ausentes)}")
 
-    backend_argumentacao = EmbeddingBackend(MODELO_ARGUMENTACAO, prefix="passage")
-    backend_precisao = _tentar_backend_precisao()
-    backend_nli = NLIBackend()
+    _log_status("[Reference-Free] Inicializando backends de avaliação...", show_progress)
+    backend_argumentacao = EmbeddingBackend(MODELO_ARGUMENTACAO, prefix="passage", verbose=show_progress)
+    backend_precisao = _tentar_backend_precisao(verbose=show_progress)
+    backend_nli = NLIBackend(verbose=show_progress)
 
     linhas_detalhe: list[dict[str, object]] = []
-    for question_id, grupo in df_respostas.groupby("question_id", dropna=False):
+    grupos = list(df_respostas.groupby("question_id", dropna=False))
+    iterador = tqdm(
+        grupos,
+        total=len(grupos),
+        desc="Reference-Free por questão",
+        disable=not show_progress,
+    )
+    for question_id, grupo in iterador:
         answers = {
             str(row["modelo"]): str(row["resposta"] or "")
             for _, row in grupo.iterrows()
@@ -353,4 +382,5 @@ def evaluate_dataframe(df_respostas: pd.DataFrame) -> tuple[pd.DataFrame, pd.Dat
         .sort_values("final", ascending=False)
         .reset_index(drop=True)
     )
+    _log_status("[Reference-Free] Avaliação concluída.", show_progress)
     return df_detalhe, df_resumo
