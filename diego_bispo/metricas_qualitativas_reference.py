@@ -1,27 +1,31 @@
 from __future__ import annotations
 
 import json
-import re
-import unicodedata
 import warnings
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 
+import numpy as np
 import pandas as pd
 from bert_score import score as bert_score_fn
-from nltk.translate.bleu_score import SmoothingFunction, sentence_bleu
 from rouge_score import rouge_scorer
 from sentence_transformers import SentenceTransformer, util
 from tqdm.auto import tqdm
 
 from config import (
     MODELO_BERTSCORE,
+    MODELO_R_FACTSCORE,
     MODELO_R_SBERT,
-    PESO_R_BERT_F1,
-    PESO_R_BLEU,
-    PESO_R_KEYWORD,
-    PESO_R_ROUGE_F1,
-    PESO_R_SBERT,
+    PESO_R_ARGUMENTACAO,
+    PESO_R_ARG_ROUGE1,
+    PESO_R_ARG_ROUGE2,
+    PESO_R_ARG_ROUGEL,
+    PESO_R_COESAO,
+    PESO_R_FACTSCORE,
+    PESO_R_PRECISAO,
+    PESO_R_PRECISAO_BERT,
+    PESO_R_PRECISAO_SBERT,
 )
+from metricas_qualitativas import NLIBackend, normalize_text, obter_proposicoes_resposta
 
 
 def _log_status(message: str, verbose: bool = True) -> None:
@@ -29,38 +33,20 @@ def _log_status(message: str, verbose: bool = True) -> None:
         print(message)
 
 
-def normalize_text(text: object) -> str:
-    return re.sub(r"\s+", " ", str(text or "")).strip()
-
-
-def normalize_text_ascii(text: object) -> str:
-    texto = normalize_text(text).lower()
-    texto = unicodedata.normalize("NFKD", texto)
-    return "".join(ch for ch in texto if not unicodedata.combining(ch))
-
-
 @dataclass
 class MetricasQuestao:
     question_id: str
     modelo: str
-    bleu: float = 0.0
-    rouge1_precision: float = 0.0
-    rouge1_recall: float = 0.0
+    coesao: float = 0.0
     rouge1_f1: float = 0.0
-    rouge2_precision: float = 0.0
-    rouge2_recall: float = 0.0
     rouge2_f1: float = 0.0
-    rougeL_precision: float = 0.0
-    rougeL_recall: float = 0.0
     rougeL_f1: float = 0.0
-    bert_precision: float = 0.0
-    bert_recall: float = 0.0
+    argumentacao: float = 0.0
+    sbert_precisao: float = 0.0
     bert_f1: float = 0.0
-    sbert_similaridade: float = 0.0
-    keyword_score: float = 0.0
-    keywords_encontrados: list[str] = field(default_factory=list)
-    keywords_ausentes: list[str] = field(default_factory=list)
-    score_composto: float = 0.0
+    precisao: float = 0.0
+    factscore: float = 0.0
+    final: float = 0.0
 
 
 def _parse_gabarito_itens(gabarito_itens_json: str | list | None) -> list[dict[str, object]]:
@@ -73,140 +59,123 @@ def _parse_gabarito_itens(gabarito_itens_json: str | list | None) -> list[dict[s
         dados = gabarito_itens_json
     else:
         return []
-
     return [item for item in dados if isinstance(item, dict)]
 
 
-def _tokenize_simple(text: str) -> list[str]:
-    return [token for token in re.split(r"\W+", normalize_text_ascii(text)) if len(token) >= 3]
+def _carregar_sbert(verbose: bool = True) -> SentenceTransformer:
+    _log_status(f"[Reference] Carregando SBERT: {MODELO_R_SBERT}", verbose)
+    return SentenceTransformer(MODELO_R_SBERT)
 
 
-def _extrair_keywords_legais(texto: str) -> list[str]:
-    texto_ascii = normalize_text_ascii(texto)
-    padroes = [
-        r"art\.?\s*\d+[a-z0-9º°/-]*(?:,\s*(?:inciso|paragrafo|§)\s*[a-z0-9ivxlcdmº°-]+)?",
-        r"lei\s*(?:n[ºo.]?\s*)?\d[\d./-]*",
-        r"codigo\s+[a-z]+(?:\s+[a-z]+)?",
-        r"constituicao\s+(?:federal|da republica)",
-        r"cf/?88",
-        r"sumula(?:\s+vinculante)?\s*(?:n[ºo.]?\s*)?\d+",
-        r"mandado\s+de\s+seguranca",
-        r"acao\s+[a-z]+(?:\s+[a-z]+){0,2}",
-        r"tribunal\s+de\s+contas",
-        r"ministerio\s+publico",
-        r"ato\s+complexo",
-        r"contraditorio",
-        r"ampla\s+defesa",
-        r"usucapiao",
-        r"comodato",
-        r"licitacao",
-        r"pregao",
+def _carregar_nli(verbose: bool = True) -> NLIBackend:
+    return NLIBackend(model_name=MODELO_R_FACTSCORE, verbose=verbose)
+
+
+def _similaridade_sbert(texto_a: str, texto_b: str, modelo: SentenceTransformer) -> float:
+    texto_a = normalize_text(texto_a)
+    texto_b = normalize_text(texto_b)
+    if not texto_a or not texto_b:
+        return 0.0
+    emb_a = modelo.encode(texto_a, convert_to_tensor=True)
+    emb_b = modelo.encode(texto_b, convert_to_tensor=True)
+    return float(util.cos_sim(emb_a, emb_b)[0][0])
+
+
+def _score_coesao(resposta: str, sbert_model: SentenceTransformer) -> float:
+    sentencas = obter_proposicoes_resposta(resposta)
+    if not sentencas:
+        return 0.0
+    if len(sentencas) == 1:
+        return 1.0
+
+    embeddings = sbert_model.encode(sentencas, convert_to_tensor=True)
+    scores = [
+        float(util.cos_sim(embeddings[i], embeddings[i + 1])[0][0])
+        for i in range(len(sentencas) - 1)
     ]
-    encontrados: list[str] = []
-    for padrao in padroes:
-        encontrados.extend(re.findall(padrao, texto_ascii, flags=re.IGNORECASE))
-    return list(dict.fromkeys(item.strip() for item in encontrados if item.strip()))
+    return float(np.mean(scores)) if scores else 0.0
 
 
-def _extrair_keywords_gabarito(
-    gabarito_narrativo: str,
-    gabarito_itens_json: str | list | None = None,
-) -> list[str]:
-    candidatos: list[str] = []
-    candidatos.extend(_extrair_keywords_legais(gabarito_narrativo))
-
-    for item in _parse_gabarito_itens(gabarito_itens_json):
-        texto_item = normalize_text(item.get("texto", ""))
-        if texto_item:
-            candidatos.extend(_extrair_keywords_legais(texto_item))
-
-            tokens_relevantes = [
-                token
-                for token in _tokenize_simple(texto_item)
-                if token not in {"de", "da", "do", "das", "dos", "que", "para", "com"}
-            ]
-            if tokens_relevantes:
-                candidatos.append(" ".join(tokens_relevantes[:4]))
-
-    candidatos = [normalize_text_ascii(item) for item in candidatos if normalize_text(item)]
-    candidatos = [item for item in candidatos if len(item) >= 4]
-    return list(dict.fromkeys(candidatos))[:12]
+def _score_argumentacao(gabarito: str, resposta: str) -> tuple[float, float, float, float]:
+    scorer = rouge_scorer.RougeScorer(["rouge1", "rouge2", "rougeL"], use_stemmer=False)
+    scores = scorer.score(normalize_text(gabarito), normalize_text(resposta))
+    rouge1_f1 = float(scores["rouge1"].fmeasure)
+    rouge2_f1 = float(scores["rouge2"].fmeasure)
+    rougeL_f1 = float(scores["rougeL"].fmeasure)
+    argumentacao = (
+        (PESO_R_ARG_ROUGE1 * rouge1_f1)
+        + (PESO_R_ARG_ROUGE2 * rouge2_f1)
+        + (PESO_R_ARG_ROUGEL * rougeL_f1)
+    )
+    return rouge1_f1, rouge2_f1, rougeL_f1, float(argumentacao)
 
 
-def calcular_bleu(referencia: str, hipotese: str) -> float:
-    ref_tok = referencia.lower().split()
-    hyp_tok = hipotese.lower().split()
-    if not ref_tok or not hyp_tok:
+def _score_bert(referencia: str, hipotese: str) -> float:
+    try:
+        precision, recall, f1 = bert_score_fn(
+            [hipotese],
+            [referencia],
+            lang="pt",
+            model_type=MODELO_BERTSCORE,
+            verbose=False,
+        )
+    except KeyError:
+        warnings.warn(
+            f"[Reference] Modelo de BERTScore '{MODELO_BERTSCORE}' nao suportado. "
+            "Usando fallback: 'bert-base-multilingual-cased'.",
+            RuntimeWarning,
+            stacklevel=2,
+        )
+        precision, recall, f1 = bert_score_fn(
+            [hipotese],
+            [referencia],
+            lang="pt",
+            model_type="bert-base-multilingual-cased",
+            verbose=False,
+        )
+    return float(f1[0])
+
+
+def _score_precisao(gabarito: str, resposta: str, sbert_model: SentenceTransformer) -> tuple[float, float, float]:
+    sbert_score = _similaridade_sbert(gabarito, resposta, sbert_model)
+    bert_f1 = _score_bert(gabarito, resposta)
+    precisao = (PESO_R_PRECISAO_SBERT * sbert_score) + (PESO_R_PRECISAO_BERT * bert_f1)
+    return float(sbert_score), float(bert_f1), float(precisao)
+
+
+def _proposicoes_gabarito(gabarito: str, gabarito_itens_json: str | list | None) -> list[str]:
+    proposicoes = obter_proposicoes_resposta(gabarito)
+    if proposicoes:
+        return proposicoes
+
+    itens = _parse_gabarito_itens(gabarito_itens_json)
+    props_itens = [normalize_text(item.get("texto", "")) for item in itens if normalize_text(item.get("texto", ""))]
+    return props_itens or [normalize_text(gabarito)]
+
+
+def _score_factscore(
+    resposta: str,
+    gabarito: str,
+    gabarito_itens_json: str | list | None,
+    nli_backend: NLIBackend,
+) -> float:
+    props_resposta = obter_proposicoes_resposta(resposta)
+    props_gabarito = _proposicoes_gabarito(gabarito, gabarito_itens_json)
+
+    if not props_resposta or not props_gabarito:
         return 0.0
 
-    smoothing = SmoothingFunction().method4
-    return float(
-        sentence_bleu(
-            [ref_tok],
-            hyp_tok,
-            weights=(0.25, 0.25, 0.25, 0.25),
-            smoothing_function=smoothing,
-        )
-    )
+    suporte_por_proposicao: list[float] = []
+    for prop_resposta in props_resposta:
+        pares = [(prop_resposta, prop_gabarito) for prop_gabarito in props_gabarito]
+        scores = nli_backend.score_pairs(pares)
+        if not scores:
+            suporte_por_proposicao.append(0.0)
+            continue
+        melhor_suporte = max(scores)
+        suporte_por_proposicao.append((melhor_suporte + 1.0) / 2.0)
 
-
-def calcular_rouge(referencia: str, hipotese: str) -> dict[str, object]:
-    scorer = rouge_scorer.RougeScorer(["rouge1", "rouge2", "rougeL"], use_stemmer=False)
-    return scorer.score(referencia, hipotese)
-
-
-def calcular_bert_score(referencia: str, hipotese: str) -> tuple[float, float, float]:
-    precision, recall, f1 = bert_score_fn(
-        [hipotese],
-        [referencia],
-        lang="pt",
-        model_type=MODELO_BERTSCORE,
-        verbose=False,
-    )
-    return float(precision[0]), float(recall[0]), float(f1[0])
-
-
-def calcular_sbert(referencia: str, hipotese: str, modelo: SentenceTransformer) -> float:
-    emb_ref = modelo.encode(referencia, convert_to_tensor=True)
-    emb_hyp = modelo.encode(hipotese, convert_to_tensor=True)
-    return float(util.cos_sim(emb_ref, emb_hyp)[0][0])
-
-
-def calcular_keyword_juridico(
-    gabarito_narrativo: str,
-    hipotese: str,
-    gabarito_itens_json: str | list | None = None,
-) -> tuple[float, list[str], list[str]]:
-    keywords = _extrair_keywords_gabarito(gabarito_narrativo, gabarito_itens_json)
-    if not keywords:
-        return 0.0, [], []
-
-    hipotese_ascii = normalize_text_ascii(hipotese)
-    encontrados: list[str] = []
-    ausentes: list[str] = []
-
-    for keyword in keywords:
-        if keyword in hipotese_ascii:
-            encontrados.append(keyword)
-        else:
-            ausentes.append(keyword)
-
-    score = len(encontrados) / len(keywords) if keywords else 0.0
-    return float(score), encontrados, ausentes
-
-
-def score_composto(metricas: MetricasQuestao) -> float:
-    rouge_medio = (
-        metricas.rouge1_f1 + metricas.rouge2_f1 + metricas.rougeL_f1
-    ) / 3.0
-
-    return float(
-        (metricas.bleu * PESO_R_BLEU)
-        + (rouge_medio * PESO_R_ROUGE_F1)
-        + (metricas.bert_f1 * PESO_R_BERT_F1)
-        + (metricas.sbert_similaridade * PESO_R_SBERT)
-        + (metricas.keyword_score * PESO_R_KEYWORD)
-    )
+    return float(np.mean(suporte_por_proposicao)) if suporte_por_proposicao else 0.0
 
 
 def _avaliar_resposta(
@@ -216,6 +185,7 @@ def _avaliar_resposta(
     gabarito_narrativo: str,
     gabarito_itens_json: str | list | None,
     sbert_model: SentenceTransformer,
+    nli_backend: NLIBackend,
 ) -> MetricasQuestao:
     resposta = normalize_text(resposta)
     gabarito_narrativo = normalize_text(gabarito_narrativo)
@@ -224,38 +194,37 @@ def _avaliar_resposta(
     if not resposta or not gabarito_narrativo:
         return metricas
 
-    metricas.bleu = round(calcular_bleu(gabarito_narrativo, resposta), 4)
+    metricas.coesao = round(_score_coesao(resposta, sbert_model), 4)
+    (
+        metricas.rouge1_f1,
+        metricas.rouge2_f1,
+        metricas.rougeL_f1,
+        metricas.argumentacao,
+    ) = [round(valor, 4) for valor in _score_argumentacao(gabarito_narrativo, resposta)]
 
-    rouge = calcular_rouge(gabarito_narrativo, resposta)
-    metricas.rouge1_precision = round(rouge["rouge1"].precision, 4)
-    metricas.rouge1_recall = round(rouge["rouge1"].recall, 4)
-    metricas.rouge1_f1 = round(rouge["rouge1"].fmeasure, 4)
-    metricas.rouge2_precision = round(rouge["rouge2"].precision, 4)
-    metricas.rouge2_recall = round(rouge["rouge2"].recall, 4)
-    metricas.rouge2_f1 = round(rouge["rouge2"].fmeasure, 4)
-    metricas.rougeL_precision = round(rouge["rougeL"].precision, 4)
-    metricas.rougeL_recall = round(rouge["rougeL"].recall, 4)
-    metricas.rougeL_f1 = round(rouge["rougeL"].fmeasure, 4)
+    (
+        metricas.sbert_precisao,
+        metricas.bert_f1,
+        metricas.precisao,
+    ) = [round(valor, 4) for valor in _score_precisao(gabarito_narrativo, resposta, sbert_model)]
 
-    bert_p, bert_r, bert_f1 = calcular_bert_score(gabarito_narrativo, resposta)
-    metricas.bert_precision = round(bert_p, 4)
-    metricas.bert_recall = round(bert_r, 4)
-    metricas.bert_f1 = round(bert_f1, 4)
-
-    metricas.sbert_similaridade = round(
-        calcular_sbert(gabarito_narrativo, resposta, sbert_model),
+    metricas.factscore = round(
+        _score_factscore(
+            resposta,
+            gabarito_narrativo,
+            gabarito_itens_json,
+            nli_backend,
+        ),
         4,
     )
 
-    keyword_score, encontrados, ausentes = calcular_keyword_juridico(
-        gabarito_narrativo,
-        resposta,
-        gabarito_itens_json=gabarito_itens_json,
+    metricas.final = round(
+        (PESO_R_COESAO * metricas.coesao)
+        + (PESO_R_ARGUMENTACAO * metricas.argumentacao)
+        + (PESO_R_PRECISAO * metricas.precisao)
+        + (PESO_R_FACTSCORE * metricas.factscore),
+        4,
     )
-    metricas.keyword_score = round(keyword_score, 4)
-    metricas.keywords_encontrados = encontrados
-    metricas.keywords_ausentes = ausentes
-    metricas.score_composto = round(score_composto(metricas), 4)
     return metricas
 
 
@@ -273,8 +242,8 @@ def evaluate_dataframe(
     if ausentes:
         raise ValueError(f"Colunas obrigatorias ausentes: {', '.join(ausentes)}")
 
-    _log_status(f"[Reference] Carregando SBERT: {MODELO_R_SBERT}", show_progress)
-    sbert_model = SentenceTransformer(MODELO_R_SBERT)
+    sbert_model = _carregar_sbert(show_progress)
+    nli_backend = _carregar_nli(show_progress)
 
     linhas: list[dict[str, object]] = []
     registros = df_respostas.to_dict("records")
@@ -302,30 +271,23 @@ def evaluate_dataframe(
             gabarito_narrativo=str(gabarito),
             gabarito_itens_json=row.get("gabarito_itens_json"),
             sbert_model=sbert_model,
+            nli_backend=nli_backend,
         )
 
         linhas.append(
             {
                 "question_id": metricas.question_id,
                 "modelo": metricas.modelo,
-                "bleu": metricas.bleu,
-                "rouge1_precision": metricas.rouge1_precision,
-                "rouge1_recall": metricas.rouge1_recall,
+                "coesao": metricas.coesao,
                 "rouge1_f1": metricas.rouge1_f1,
-                "rouge2_precision": metricas.rouge2_precision,
-                "rouge2_recall": metricas.rouge2_recall,
                 "rouge2_f1": metricas.rouge2_f1,
-                "rougeL_precision": metricas.rougeL_precision,
-                "rougeL_recall": metricas.rougeL_recall,
                 "rougeL_f1": metricas.rougeL_f1,
-                "bert_precision": metricas.bert_precision,
-                "bert_recall": metricas.bert_recall,
+                "argumentacao": metricas.argumentacao,
+                "sbert_precisao": metricas.sbert_precisao,
                 "bert_f1": metricas.bert_f1,
-                "sbert_similaridade": metricas.sbert_similaridade,
-                "keyword_score": metricas.keyword_score,
-                "keywords_encontrados": json.dumps(metricas.keywords_encontrados, ensure_ascii=False),
-                "keywords_ausentes": json.dumps(metricas.keywords_ausentes, ensure_ascii=False),
-                "final": metricas.score_composto,
+                "precisao": metricas.precisao,
+                "factscore": metricas.factscore,
+                "final": metricas.final,
             }
         )
 
@@ -334,13 +296,15 @@ def evaluate_dataframe(
         return df_detalhe, pd.DataFrame(
             columns=[
                 "modelo",
-                "bleu",
+                "coesao",
                 "rouge1_f1",
                 "rouge2_f1",
                 "rougeL_f1",
+                "argumentacao",
+                "sbert_precisao",
                 "bert_f1",
-                "sbert_similaridade",
-                "keyword_score",
+                "precisao",
+                "factscore",
                 "final",
             ]
         )
@@ -354,13 +318,15 @@ def evaluate_dataframe(
     df_resumo = (
         df_detalhe.groupby("modelo", dropna=False)[
             [
-                "bleu",
+                "coesao",
                 "rouge1_f1",
                 "rouge2_f1",
                 "rougeL_f1",
+                "argumentacao",
+                "sbert_precisao",
                 "bert_f1",
-                "sbert_similaridade",
-                "keyword_score",
+                "precisao",
+                "factscore",
                 "final",
             ]
         ]

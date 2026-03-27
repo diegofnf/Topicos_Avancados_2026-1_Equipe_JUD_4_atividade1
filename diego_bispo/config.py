@@ -50,8 +50,7 @@ MODELOS_CANDIDATOS = {
 
 MODELO_CURADOR = "Qwen/Qwen3-4B-Instruct-2507"
 MODELO_JUIZ    = "Qwen/Qwen3-4B-Instruct-2507"
-MODELO_BERTSCORE = "rufimelo/Legal-BERTimbau-base"
-#MODELO_BERTSCORE = "eduagarcia/RoBERTaLexPT-base"
+MODELO_BERTSCORE = "bert-base-multilingual-cased"
 
 # ============================================================
 # ANÁLISE QUALITATIVA REFERENCE-FREE
@@ -75,12 +74,19 @@ MAX_LENGTH_RF_NLI = 192
 # ANÁLISE QUALITATIVA REFERENCE
 # ============================================================
 MODELO_R_SBERT = "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
+MODELO_R_FACTSCORE = MODELO_RF_COESAO
 
-PESO_R_BLEU = 0.10
-PESO_R_ROUGE_F1 = 0.15
-PESO_R_BERT_F1 = 0.25
-PESO_R_SBERT = 0.25
-PESO_R_KEYWORD = 0.25
+PESO_R_COESAO = 0.15
+PESO_R_ARGUMENTACAO = 0.25
+PESO_R_PRECISAO = 0.35
+PESO_R_FACTSCORE = 0.25
+
+PESO_R_ARG_ROUGE1 = 0.20
+PESO_R_ARG_ROUGE2 = 0.30
+PESO_R_ARG_ROUGEL = 0.50
+
+PESO_R_PRECISAO_SBERT = 0.60
+PESO_R_PRECISAO_BERT = 0.40
 
 # ============================================================
 # RECORTES DO DATASET
