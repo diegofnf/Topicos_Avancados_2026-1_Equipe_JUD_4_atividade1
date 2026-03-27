@@ -4,6 +4,7 @@ from pathlib import Path
 # ============================================================
 # DIRETÓRIOS
 # ============================================================
+PROJECT_DIR = Path(__file__).resolve().parent
 BASE_DIR = Path("/content/oab_pipeline")
 BASE_DIR.mkdir(parents=True, exist_ok=True)
 
@@ -17,6 +18,7 @@ os.environ["HF_HOME"] = HF_CACHE_DIR
 # ============================================================
 HF_SAIDA_DIR = BASE_DIR / "saida"
 HF_SAIDA_DIR.mkdir(parents=True, exist_ok=True)
+INSUMOS_DIR = PROJECT_DIR / "insumos"
 
 QUESTOES_DISCURSIVAS_CSV     = HF_SAIDA_DIR / "questoes_discursivas.csv"
 QUESTOES_OBJETIVAS_CSV       = HF_SAIDA_DIR / "questoes_objetivas.csv"
@@ -33,6 +35,9 @@ SIMILARIDADE_DISCURSIVAS_CSV = HF_SAIDA_DIR / "similaridade_discursivas.csv"
 HEATMAP_DISCURSIVAS_PNG      = HF_SAIDA_DIR / "heatmap_similaridade_discursivas.png"
 BENCHMARK_OBJETIVAS_CSV      = HF_SAIDA_DIR / "benchmark_objetivas.csv"
 BENCHMARK_DISCURSIVAS_CSV    = HF_SAIDA_DIR / "benchmark_discursivas.csv"
+
+CURADORIAS_EXTERNAS_CSV = INSUMOS_DIR / "curadorias.csv"
+USAR_CURADORIA_EXTERNA = True
 
 # ============================================================
 # MODELOS

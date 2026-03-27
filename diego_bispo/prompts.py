@@ -1,35 +1,13 @@
 PROMPT_CANDIDATO_DISCURSIVA = '''
-Responda à questão discursiva da OAB abaixo.
-
 Questão:
 {questao}
 
-Regras:
-1. Responda em português jurídico formal e objetivo
-2. Não use markdown
-3. Não escreva introduções como "Segue a resposta" ou "Resposta:"
-4. Não invente base legal
-5. Quando não souber o número exato do artigo, mencione apenas a lei, o princípio ou o entendimento jurídico pertinente
-6. A chave "resposta" deve conter a resposta final em texto corrido
-7. Decomponha a resposta em proposições jurídicas atômicas
-8. Cada proposição deve ser uma afirmação completa e independente
-9. Preserve referências legais, precedentes e fundamentos junto à proposição que os utiliza
-10. A chave "proposicoes" deve ser uma lista de objetos com "ordem" e "proposicao"
-11. Retorne as proposições na ordem em que aparecem na resposta
-12. Não adicione nenhuma chave além de "resposta" e "proposicoes"
-13. Máximo de 20 linhas na resposta
+Instruções complementares:
+- Responda em português brasileiro, com linguagem jurídica formal e objetiva.
+- Não invente base legal.
+- Quando não souber o número exato do artigo, mencione apenas a lei aplicável ou o entendimento jurídico pertinente.
 
-ATENÇÃO: Não inclua nada além do JSON. Se você incluir alguma coisa além do JSON, você será penalizado.
-Responda apenas em JSON válido:
-{{
-  "resposta": "<texto da resposta>",
-  "proposicoes": [
-    {{
-      "ordem": "1",
-      "proposicao": "<proposição jurídica atômica>"
-    }}
-  ]
-}}
+Escreva apenas a resposta final.
 '''
 
 
