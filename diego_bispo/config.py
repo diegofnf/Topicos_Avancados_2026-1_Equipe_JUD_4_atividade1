@@ -25,7 +25,10 @@ CURADORIA_OBJETIVAS_CSV      = HF_SAIDA_DIR / "curadoria_objetivas.csv"
 RESPOSTAS_DISCURSIVAS_CSV    = HF_SAIDA_DIR / "respostas_discursivas.csv"
 RESPOSTAS_OBJETIVAS_CSV      = HF_SAIDA_DIR / "respostas_objetivas.csv"
 AVALIACAO_DISCURSIVAS_CSV    = HF_SAIDA_DIR / "avaliacao_discursivas.csv"
+AVALIACAO_DISCURSIVAS_REFERENCE_CSV = HF_SAIDA_DIR / "avaliacao_discursiva_reference.csv"
+BENCHMARK_DISCURSIVAS_REFERENCE_CSV = HF_SAIDA_DIR / "benchmark_discursivas_reference.csv"
 AVALIACAO_DISCURSIVAS_REFERENCE_FREE_CSV = HF_SAIDA_DIR / "avaliacao_discursiva_reference_free.csv"
+BENCHMARK_DISCURSIVAS_REFERENCE_FREE_CSV = HF_SAIDA_DIR / "benchmark_discursivas_reference_free.csv"
 SIMILARIDADE_DISCURSIVAS_CSV = HF_SAIDA_DIR / "similaridade_discursivas.csv"
 HEATMAP_DISCURSIVAS_PNG      = HF_SAIDA_DIR / "heatmap_similaridade_discursivas.png"
 BENCHMARK_OBJETIVAS_CSV      = HF_SAIDA_DIR / "benchmark_objetivas.csv"
@@ -62,6 +65,16 @@ PESO_RF_PRECISAO_PERGUNTA = 0.20
 
 MAX_LENGTH_RF_EMBEDDINGS = 256
 MAX_LENGTH_RF_NLI = 192
+
+# ============================================================
+# ANÁLISE QUALITATIVA REFERENCE
+# ============================================================
+PESO_R_ARGUMENTACAO = 0.35
+PESO_R_PRECISAO = 0.40
+PESO_R_COESAO = 0.25
+
+PESO_R_ARG_COBERTURA = 0.70
+PESO_R_ARG_ORDEM = 0.30
 
 # ============================================================
 # RECORTES DO DATASET

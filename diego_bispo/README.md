@@ -43,6 +43,8 @@ notebook.ipynb  → orquestração no Colab
 | Curadoria | Curador | questões | curadoria_discursivas/objetivas.csv |
 | Avaliação | Juiz | questões + respostas + curadoria + values | avaliacao_discursivas.csv |
 | Similaridade discursiva | BERTScore par a par | respostas_discursivas.csv | similaridade_discursivas.csv + heatmap |
+| Avaliação reference | Métricas guiadas por gabarito | respostas + gabarito_itens_json | avaliacao_discursiva_reference.csv + benchmark_discursivas_reference.csv |
+| Avaliação reference-free | Métricas sem espelho oficial | respostas_discursivas.csv | avaliacao_discursiva_reference_free.csv + benchmark_discursivas_reference_free.csv |
 | Resultados | — | avaliação + respostas | accuracy + benchmark quantitativo/qualitativo |
 
 ## Artefatos Gerados
@@ -61,6 +63,14 @@ notebook.ipynb  → orquestração no Colab
   Registra a curadoria das questões objetivas com a mesma estrutura usada para as discursivas.
 - `avaliacao_discursivas.csv`
   Guarda a avaliação feita pelo LLM juiz para cada resposta discursiva, incluindo justificativas e nota final.
+- `avaliacao_discursiva_reference.csv`
+  Guarda a avaliação guiada por gabarito estruturado, com scores por questão/modelo e ranking dentro de cada questão.
+- `benchmark_discursivas_reference.csv`
+  Resume por modelo a média dos scores `argumentacao`, `precisao`, `coesao` e `final` da avaliação reference.
+- `avaliacao_discursiva_reference_free.csv`
+  Guarda a avaliação sem espelho oficial, baseada em comparação semântica entre respostas e consistência textual.
+- `benchmark_discursivas_reference_free.csv`
+  Resume por modelo a média dos scores da avaliação reference-free.
 - `benchmark_objetivas.csv`
   Resume a análise quantitativa das objetivas por modelo, usando apenas a acurácia.
 - `benchmark_discursivas.csv`
@@ -97,6 +107,10 @@ Quando a questão tiver apenas um valor, como em uma peça com `values = [5]`, e
   É a métrica qualitativa principal do projeto e representa a média das notas atribuídas pelo LLM juiz às respostas discursivas de cada modelo.
 - `BERTScore` par a par
   Mede a proximidade semântica entre as respostas dos modelos para a mesma questão e é usado como análise complementar de comparação entre eles.
+- `Reference`
+  Mede aderência ao gabarito oficial estruturado em itens e seções, combinando cobertura argumentativa, precisão ponderada e coesão.
+- `Reference-Free`
+  Mede qualidade relativa sem usar espelho oficial, combinando construção argumentativa, precisão semântica e coesão entre proposições.
 
 ### Similaridade semântica entre modelos
 
@@ -106,8 +120,13 @@ Na versão final do projeto, a comparação semântica entre modelos passou a se
 - Também gera um heatmap `heatmap_similaridade_discursivas.png` para visualização dessa matriz.
 - Essa decisão foi tomada porque o `BERTScore` par a par atende de forma mais direta ao requisito de comparar as respostas dos três modelos entre si, além de gerar uma visualização mais interpretável academicamente do que um score agregado por modelo.
 - Essa métrica mede proximidade semântica entre respostas, não correção jurídica absoluta.
-- O backbone usado nessa etapa é o `RoBERTaLexPT-base`, um modelo jurídico em português cuja escolha é motivada pelo artigo de Garcia et al., que mostra ganhos consistentes de adaptação ao domínio jurídico lusófono no benchmark `PortuLex`.
-- A opção pelo `RoBERTaLexPT-base` substituiu o backbone anterior porque o artigo oferece uma justificativa metodológica mais aderente ao domínio jurídico em português, enquanto o modelo anterior não tinha a mesma sustentação acadêmica específica para esse contexto.
+- O backbone usado nessa etapa é o `Legal-BERTimbau-base`, um modelo jurídico em português que se integrou de forma estável ao `bert-score` no Colab e preserva a aderência ao domínio legal.
+- O `RoBERTaLexPT-base` chegou a ser considerado por sua motivação acadêmica no domínio jurídico lusófono, mas a versão final priorizou o `Legal-BERTimbau-base` por compatibilidade prática e reprodutibilidade da métrica no ambiente da atividade.
+
+### Avaliações reference e reference-free
+
+- A avaliação `reference` usa o `gabarito_itens_json` gerado no preparo dos dados para comparar cada resposta com os critérios oficiais de correção da questão.
+- A avaliação `reference-free` não usa espelho oficial e funciona como diagnóstico complementar quando se quer medir qualidade textual e semântica sem depender do gabarito estruturado.
 
 ---
 
