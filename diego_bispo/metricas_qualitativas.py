@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import importlib
+import json
 import re
 from dataclasses import dataclass
 from typing import Iterable, Sequence
@@ -63,6 +64,40 @@ def decompose_into_propositions(text: str) -> list[str]:
     partes = re.split(r"[.!?;\n]+", texto)
     partes = [parte.replace("<DOT>", ".") for parte in partes]
     return [parte.strip(" -\t\r") for parte in partes if parte.strip(" -\t\r")]
+
+
+def carregar_proposicoes_json(proposicoes_json: str | list | None) -> list[str]:
+    """Extrai apenas os textos das proposições a partir de JSON serializado ou lista."""
+    if isinstance(proposicoes_json, str):
+        try:
+            dados = json.loads(proposicoes_json)
+        except Exception:
+            dados = []
+    elif isinstance(proposicoes_json, list):
+        dados = proposicoes_json
+    else:
+        dados = []
+
+    proposicoes: list[str] = []
+    for item in dados:
+        if isinstance(item, dict):
+            texto = normalize_text(item.get("proposicao", ""))
+        else:
+            texto = normalize_text(item)
+        if texto:
+            proposicoes.append(texto)
+    return proposicoes
+
+
+def obter_proposicoes_resposta(resposta: str, proposicoes_json: str | list | None = None) -> list[str]:
+    """
+    Usa `proposicoes_json` como fonte principal e cai para decomposição heurística
+    apenas quando as proposições estruturadas não estiverem disponíveis.
+    """
+    proposicoes = carregar_proposicoes_json(proposicoes_json)
+    if proposicoes:
+        return proposicoes
+    return decompose_into_propositions(resposta)
 
 
 def cosine_sim(a: np.ndarray, b: np.ndarray) -> float:

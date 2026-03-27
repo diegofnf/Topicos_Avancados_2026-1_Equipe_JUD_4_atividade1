@@ -17,9 +17,9 @@ from metricas_qualitativas import (
     _log_status,
     _mean_normalized,
     cosine_sim,
-    decompose_into_propositions,
     get_embeddings,
     normalize_text,
+    obter_proposicoes_resposta,
     score_coesao,
 )
 
@@ -107,14 +107,25 @@ def _tentar_backend_precisao(verbose: bool = True) -> EmbeddingBackend:
 
 
 def _evaluate_all_with_backends(
-    answers: dict[str, str],
+    answers: dict[str, str | dict[str, object]],
     question: str,
     backend_argumentacao: EmbeddingBackend,
     backend_precisao: EmbeddingBackend,
     backend_nli: NLIBackend,
 ) -> tuple[dict[str, dict[str, float]], list[dict[str, float | str]]]:
-    respostas_limpas = {modelo: normalize_text(texto) for modelo, texto in answers.items()}
-    proposicoes = {modelo: decompose_into_propositions(texto) for modelo, texto in respostas_limpas.items()}
+    respostas_limpas: dict[str, str] = {}
+    proposicoes: dict[str, list[str]] = {}
+
+    for modelo, payload in answers.items():
+        if isinstance(payload, dict):
+            resposta = normalize_text(str(payload.get("resposta", "")))
+            props = obter_proposicoes_resposta(resposta, payload.get("proposicoes_json"))
+        else:
+            resposta = normalize_text(str(payload))
+            props = obter_proposicoes_resposta(resposta)
+
+        respostas_limpas[modelo] = resposta
+        proposicoes[modelo] = props
 
     resultados: dict[str, dict[str, float]] = {}
     for modelo, props in proposicoes.items():
@@ -199,7 +210,10 @@ def evaluate_dataframe(
     )
     for question_id, grupo in iterador:
         answers = {
-            str(row["modelo"]): str(row["resposta"] or "")
+            str(row["modelo"]): {
+                "resposta": str(row["resposta"] or ""),
+                "proposicoes_json": row.get("proposicoes_json"),
+            }
             for _, row in grupo.iterrows()
         }
         question = str(grupo["texto_questao"].iloc[0] or "")

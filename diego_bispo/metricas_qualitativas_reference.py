@@ -24,8 +24,8 @@ from metricas_qualitativas import (
     NLIBackend,
     _log_status,
     cosine_sim,
-    decompose_into_propositions,
     normalize_text,
+    obter_proposicoes_resposta,
     score_coesao,
 )
 
@@ -80,6 +80,7 @@ def score_precisao(
     resposta: str,
     itens: list[GabaritoItem],
     backend: EmbeddingBackend,
+    props: list[str] | None = None,
 ) -> float:
     """
     Mede o quanto a resposta candidata cobre os critérios do gabarito,
@@ -93,7 +94,7 @@ def score_precisao(
     if not itens_com_peso:
         return 0.0
 
-    props = decompose_into_propositions(resposta_norm)
+    props = props if props is not None else obter_proposicoes_resposta(resposta_norm)
     if not props:
         props = [resposta_norm]
 
@@ -130,6 +131,7 @@ def score_argumentacao(
     resposta: str,
     secoes: list[str],
     backend: EmbeddingBackend,
+    props: list[str] | None = None,
 ) -> float:
     """
     Mede cobertura e ordem das seções do gabarito na resposta candidata.
@@ -141,7 +143,7 @@ def score_argumentacao(
     if not resposta_norm:
         return 0.0
 
-    props = decompose_into_propositions(resposta_norm)
+    props = props if props is not None else obter_proposicoes_resposta(resposta_norm)
     if not props:
         props = [resposta_norm]
 
@@ -198,7 +200,7 @@ def _tentar_backend_precisao(verbose: bool = True) -> EmbeddingBackend:
 
 
 def _evaluate_all_with_backends(
-    answers: dict[str, str],
+    answers: dict[str, str | dict[str, object]],
     itens_gabarito: list[GabaritoItem],
     backend_argumentacao: EmbeddingBackend,
     backend_precisao: EmbeddingBackend,
@@ -210,12 +212,19 @@ def _evaluate_all_with_backends(
     secoes = _extrair_secoes_ordenadas(itens_gabarito)
     resultados: dict[str, dict[str, float]] = {}
 
-    for modelo, resposta_bruta in answers.items():
-        resposta = normalize_text(resposta_bruta)
-        props = decompose_into_propositions(resposta)
+    for modelo, resposta_payload in answers.items():
+        if isinstance(resposta_payload, dict):
+            resposta = normalize_text(str(resposta_payload.get("resposta", "")))
+            props = obter_proposicoes_resposta(
+                resposta,
+                resposta_payload.get("proposicoes_json"),
+            )
+        else:
+            resposta = normalize_text(str(resposta_payload))
+            props = obter_proposicoes_resposta(resposta)
 
-        score_arg = score_argumentacao(resposta, secoes, backend_argumentacao)
-        score_pre = score_precisao(resposta, itens_gabarito, backend_precisao)
+        score_arg = score_argumentacao(resposta, secoes, backend_argumentacao, props=props)
+        score_pre = score_precisao(resposta, itens_gabarito, backend_precisao, props=props)
         score_coe = score_coesao(props, backend_nli)
 
         score_final = (
@@ -312,7 +321,10 @@ def evaluate_dataframe(
         n_itens = sum(1 for item in itens if item.peso_maximo is not None)
 
         answers = {
-            str(row["modelo"]): str(row["resposta"] or "")
+            str(row["modelo"]): {
+                "resposta": str(row["resposta"] or ""),
+                "proposicoes_json": row.get("proposicoes_json"),
+            }
             for _, row in grupo.iterrows()
         }
 

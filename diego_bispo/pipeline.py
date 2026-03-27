@@ -79,9 +79,35 @@ def _limpar_resposta_discursiva(texto: str) -> str:
     return resposta.strip()
 
 
+def _normalizar_proposicoes_discursivas(proposicoes) -> list[dict[str, str]]:
+    itens_normalizados = []
+    if not isinstance(proposicoes, list):
+        return itens_normalizados
+
+    for indice, item in enumerate(proposicoes, start=1):
+        if isinstance(item, dict):
+            ordem = str(item.get("ordem", indice)).strip() or str(indice)
+            proposicao = _limpar_resposta_discursiva(str(item.get("proposicao", "")))
+        else:
+            ordem = str(indice)
+            proposicao = _limpar_resposta_discursiva(str(item))
+
+        if proposicao:
+            itens_normalizados.append(
+                {
+                    "ordem": ordem,
+                    "proposicao": proposicao,
+                }
+            )
+
+    return itens_normalizados
+
+
 def gerar_resposta_discursiva(model, tokenizer, row: dict, nome_modelo: str) -> dict:
     prompt = PROMPT_CANDIDATO_DISCURSIVA.format(questao=row["texto_questao"])
-    saida = gerar_texto(
+    prefill = "{"
+    prompt = prompt + f"\n{prefill}"
+    saida = prefill + gerar_texto(
         model,
         tokenizer,
         prompt,
@@ -90,7 +116,14 @@ def gerar_resposta_discursiva(model, tokenizer, row: dict, nome_modelo: str) -> 
         temperature=0.7,
         system_prompt=row.get("system_prompt"),
     )
-    resposta = _limpar_resposta_discursiva(saida)
+    json_bruto = extrair_json_bruto(saida)
+    try:
+        resposta_json = json.loads(json_bruto) if json_bruto else {}
+    except Exception:
+        resposta_json = {}
+
+    resposta = _limpar_resposta_discursiva(str(resposta_json.get("resposta", "")))
+    proposicoes = _normalizar_proposicoes_discursivas(resposta_json.get("proposicoes", []))
 
     return {
         "question_id": row["question_id"],
@@ -103,8 +136,9 @@ def gerar_resposta_discursiva(model, tokenizer, row: dict, nome_modelo: str) -> 
         "nota_maxima_total": row.get("nota_maxima_total"),
         "texto_questao": row["texto_questao"],
         "resposta": resposta,
-        "json_parse_ok": bool(resposta),
-        "saida_bruta": saida,
+        "proposicoes_json": json.dumps(proposicoes, ensure_ascii=False),
+        "json_parse_ok": bool(resposta_json),
+        "saida_bruta": json_bruto if json_bruto else saida,
         "timestamp_execucao": timestamp_execucao(),
     }
 
