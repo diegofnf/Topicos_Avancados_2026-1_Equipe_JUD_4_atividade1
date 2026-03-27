@@ -24,16 +24,58 @@ from data_utils import (
 )
 
 
-def _extrair_partes_guideline(turns: list) -> tuple[str, str]:
+def _extrair_texto_guideline(registro: pd.Series | dict | list | str) -> str:
     """
-    Recebe o campo `turns` de um registro de guidelines e devolve
+    Extrai o texto bruto do guideline suportando tanto o schema antigo com
+    `turns` na raiz quanto o schema atual com `choices[0]['turns']`.
+    """
+    if isinstance(registro, str):
+        return registro.strip()
+
+    if isinstance(registro, list):
+        return str(registro[0]).strip() if registro else ""
+
+    if isinstance(registro, (pd.Series, dict)):
+        turns = registro.get("turns")
+        if isinstance(turns, list) and turns:
+            return str(turns[0]).strip()
+
+        choices = registro.get("choices")
+        if isinstance(choices, list) and choices:
+            primeiro = choices[0]
+            if isinstance(primeiro, dict):
+                turns_choice = primeiro.get("turns")
+                if isinstance(turns_choice, list) and turns_choice:
+                    return str(turns_choice[0]).strip()
+            return str(primeiro).strip()
+
+    return ""
+
+
+def _normalizar_tabela_guideline(tabela_raw: str) -> str:
+    """
+    Normaliza tabelas markdown que às vezes chegam inline em uma única linha.
+    """
+    texto = str(tabela_raw or "").strip()
+    if not texto:
+        return ""
+
+    # Alguns guidelines vêm com as linhas da tabela coladas, usando `| |`
+    # entre uma linha e outra. Isso recompõe as quebras de linha esperadas.
+    texto = re.sub(r"\|\s+\|", "|\n|", texto)
+    texto = re.sub(r"\n{2,}", "\n", texto)
+    return texto.strip()
+
+
+def _extrair_partes_guideline(registro: pd.Series | dict | list | str) -> tuple[str, str]:
+    """
+    Recebe um registro de guidelines e devolve
     (narrativo, tabela_raw) separados pelo literal 'Distribuição dos Pontos'.
     """
-    texto = str(turns[0]) if isinstance(turns, list) and turns else ""
-    sep = "Distribuição dos Pontos"
-    partes = texto.split(sep, 1)
+    texto = _extrair_texto_guideline(registro)
+    partes = re.split(r"distribuiç[aã]o dos pontos", texto, maxsplit=1, flags=re.IGNORECASE)
     narrativo = partes[0].strip()
-    tabela_raw = partes[1].strip() if len(partes) > 1 else ""
+    tabela_raw = _normalizar_tabela_guideline(partes[1]) if len(partes) > 1 else ""
     return narrativo, tabela_raw
 
 
@@ -46,6 +88,7 @@ def parse_itens_gabarito(tabela_raw: str) -> list[dict]:
     - peso_maximo
     - secao
     """
+    tabela_raw = _normalizar_tabela_guideline(tabela_raw)
     linhas = [linha.strip() for linha in tabela_raw.split("\n") if linha.strip().startswith("|")]
     linhas = [linha for linha in linhas if not re.match(r"^\|[-:\s|]+\|$", linha)]
 
@@ -84,12 +127,12 @@ def parse_itens_gabarito(tabela_raw: str) -> list[dict]:
     return itens
 
 
-def _montar_narrativo(turns: list) -> str:
-    return _extrair_partes_guideline(turns)[0]
+def _montar_narrativo(registro: pd.Series | dict | list | str) -> str:
+    return _extrair_partes_guideline(registro)[0]
 
 
-def _montar_itens_json(turns: list) -> str:
-    _, tabela_raw = _extrair_partes_guideline(turns)
+def _montar_itens_json(registro: pd.Series | dict | list | str) -> str:
+    _, tabela_raw = _extrair_partes_guideline(registro)
     itens = parse_itens_gabarito(tabela_raw)
     return json.dumps(itens, ensure_ascii=False)
 
@@ -131,8 +174,8 @@ def preparar_questoes_discursivas() -> pd.DataFrame:
     df_guide_raw = pd.DataFrame(dataset_guide["train"])
 
     df_guide_raw = df_guide_raw.assign(
-        gabarito_narrativo=df_guide_raw["turns"].apply(_montar_narrativo),
-        gabarito_itens_json=df_guide_raw["turns"].apply(_montar_itens_json),
+        gabarito_narrativo=df_guide_raw.apply(_montar_narrativo, axis=1),
+        gabarito_itens_json=df_guide_raw.apply(_montar_itens_json, axis=1),
     )
 
     df_disc = pd.DataFrame(
