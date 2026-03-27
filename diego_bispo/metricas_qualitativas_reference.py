@@ -1,365 +1,368 @@
 from __future__ import annotations
 
 import json
+import re
+import unicodedata
 import warnings
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 
-import numpy as np
 import pandas as pd
+from bert_score import score as bert_score_fn
+from nltk.translate.bleu_score import SmoothingFunction, sentence_bleu
+from rouge_score import rouge_scorer
+from sentence_transformers import SentenceTransformer, util
 from tqdm.auto import tqdm
 
 from config import (
-    MODELO_RF_ARGUMENTACAO,
-    MODELO_RF_COESAO,
-    MODELO_RF_PRECISAO,
-    MODELO_RF_PRECISAO_FALLBACK,
-    PESO_R_ARG_COBERTURA,
-    PESO_R_ARG_ORDEM,
-    PESO_R_ARGUMENTACAO,
-    PESO_R_COESAO,
-    PESO_R_PRECISAO,
+    MODELO_BERTSCORE,
+    MODELO_R_SBERT,
+    PESO_R_BERT_F1,
+    PESO_R_BLEU,
+    PESO_R_KEYWORD,
+    PESO_R_ROUGE_F1,
+    PESO_R_SBERT,
 )
-from metricas_qualitativas import (
-    EmbeddingBackend,
-    NLIBackend,
-    _log_status,
-    cosine_sim,
-    normalize_text,
-    obter_proposicoes_resposta,
-    score_coesao,
-)
+
+
+def _log_status(message: str, verbose: bool = True) -> None:
+    if verbose:
+        print(message)
+
+
+def normalize_text(text: object) -> str:
+    return re.sub(r"\s+", " ", str(text or "")).strip()
+
+
+def normalize_text_ascii(text: object) -> str:
+    texto = normalize_text(text).lower()
+    texto = unicodedata.normalize("NFKD", texto)
+    return "".join(ch for ch in texto if not unicodedata.combining(ch))
 
 
 @dataclass
-class GabaritoItem:
-    """
-    Representa um critério de avaliação extraído da tabela de pontuação
-    do gabarito oficial.
-    """
+class MetricasQuestao:
+    question_id: str
+    modelo: str
+    bleu: float = 0.0
+    rouge1_precision: float = 0.0
+    rouge1_recall: float = 0.0
+    rouge1_f1: float = 0.0
+    rouge2_precision: float = 0.0
+    rouge2_recall: float = 0.0
+    rouge2_f1: float = 0.0
+    rougeL_precision: float = 0.0
+    rougeL_recall: float = 0.0
+    rougeL_f1: float = 0.0
+    bert_precision: float = 0.0
+    bert_recall: float = 0.0
+    bert_f1: float = 0.0
+    sbert_similaridade: float = 0.0
+    keyword_score: float = 0.0
+    keywords_encontrados: list[str] = field(default_factory=list)
+    keywords_ausentes: list[str] = field(default_factory=list)
+    score_composto: float = 0.0
 
-    texto: str
-    peso_maximo: float | None
-    secao: str | None = None
 
-
-def carregar_itens_gabarito(gabarito_itens_json: str | list) -> list[GabaritoItem]:
-    """
-    Deserializa a coluna `gabarito_itens_json` em uma lista de GabaritoItem.
-    """
+def _parse_gabarito_itens(gabarito_itens_json: str | list | None) -> list[dict[str, object]]:
     if isinstance(gabarito_itens_json, str):
-        dados = json.loads(gabarito_itens_json)
+        try:
+            dados = json.loads(gabarito_itens_json)
+        except Exception:
+            return []
+    elif isinstance(gabarito_itens_json, list):
+        dados = gabarito_itens_json
     else:
-        dados = gabarito_itens_json or []
+        return []
 
-    return [
-        GabaritoItem(
-            texto=str(dado.get("texto", "")),
-            peso_maximo=dado.get("peso_maximo"),
-            secao=dado.get("secao"),
-        )
-        for dado in dados
-        if dado.get("texto")
+    return [item for item in dados if isinstance(item, dict)]
+
+
+def _tokenize_simple(text: str) -> list[str]:
+    return [token for token in re.split(r"\W+", normalize_text_ascii(text)) if len(token) >= 3]
+
+
+def _extrair_keywords_legais(texto: str) -> list[str]:
+    texto_ascii = normalize_text_ascii(texto)
+    padroes = [
+        r"art\.?\s*\d+[a-z0-9º°/-]*(?:,\s*(?:inciso|paragrafo|§)\s*[a-z0-9ivxlcdmº°-]+)?",
+        r"lei\s*(?:n[ºo.]?\s*)?\d[\d./-]*",
+        r"codigo\s+[a-z]+(?:\s+[a-z]+)?",
+        r"constituicao\s+(?:federal|da republica)",
+        r"cf/?88",
+        r"sumula(?:\s+vinculante)?\s*(?:n[ºo.]?\s*)?\d+",
+        r"mandado\s+de\s+seguranca",
+        r"acao\s+[a-z]+(?:\s+[a-z]+){0,2}",
+        r"tribunal\s+de\s+contas",
+        r"ministerio\s+publico",
+        r"ato\s+complexo",
+        r"contraditorio",
+        r"ampla\s+defesa",
+        r"usucapiao",
+        r"comodato",
+        r"licitacao",
+        r"pregao",
     ]
+    encontrados: list[str] = []
+    for padrao in padroes:
+        encontrados.extend(re.findall(padrao, texto_ascii, flags=re.IGNORECASE))
+    return list(dict.fromkeys(item.strip() for item in encontrados if item.strip()))
 
 
-def _extrair_secoes_ordenadas(itens: list[GabaritoItem]) -> list[str]:
-    """
-    Extrai as seções únicas dos itens do gabarito preservando a ordem
-    de primeira aparição.
-    """
-    vistas: set[str] = set()
-    secoes: list[str] = []
-    for item in itens:
-        if item.secao and item.secao not in vistas:
-            vistas.add(item.secao)
-            secoes.append(item.secao)
-    return secoes
+def _extrair_keywords_gabarito(
+    gabarito_narrativo: str,
+    gabarito_itens_json: str | list | None = None,
+) -> list[str]:
+    candidatos: list[str] = []
+    candidatos.extend(_extrair_keywords_legais(gabarito_narrativo))
+
+    for item in _parse_gabarito_itens(gabarito_itens_json):
+        texto_item = normalize_text(item.get("texto", ""))
+        if texto_item:
+            candidatos.extend(_extrair_keywords_legais(texto_item))
+
+            tokens_relevantes = [
+                token
+                for token in _tokenize_simple(texto_item)
+                if token not in {"de", "da", "do", "das", "dos", "que", "para", "com"}
+            ]
+            if tokens_relevantes:
+                candidatos.append(" ".join(tokens_relevantes[:4]))
+
+    candidatos = [normalize_text_ascii(item) for item in candidatos if normalize_text(item)]
+    candidatos = [item for item in candidatos if len(item) >= 4]
+    return list(dict.fromkeys(candidatos))[:12]
 
 
-def score_precisao(
-    resposta: str,
-    itens: list[GabaritoItem],
-    backend: EmbeddingBackend,
-    props: list[str] | None = None,
-) -> float:
-    """
-    Mede o quanto a resposta candidata cobre os critérios do gabarito,
-    ponderado pelo peso de cada item.
-    """
-    resposta_norm = normalize_text(resposta)
-    if not resposta_norm:
+def calcular_bleu(referencia: str, hipotese: str) -> float:
+    ref_tok = referencia.lower().split()
+    hyp_tok = hipotese.lower().split()
+    if not ref_tok or not hyp_tok:
         return 0.0
 
-    itens_com_peso = [item for item in itens if item.peso_maximo is not None]
-    if not itens_com_peso:
-        return 0.0
-
-    props = props if props is not None else obter_proposicoes_resposta(resposta_norm)
-    if not props:
-        props = [resposta_norm]
-
-    textos_item = [normalize_text(item.texto) for item in itens_com_peso]
-    todos_textos = list(dict.fromkeys(props + textos_item))
-    embeddings = backend.get_embeddings(todos_textos)
-
-    soma_ponderada = 0.0
-    soma_pesos = 0.0
-
-    for item, texto_item in zip(itens_com_peso, textos_item):
-        if texto_item not in embeddings:
-            continue
-
-        sims = [
-            cosine_sim(embeddings[prop], embeddings[texto_item])
-            for prop in props
-            if prop in embeddings
-        ]
-        if not sims:
-            continue
-
-        sim_max = float(max(sims))
-        soma_ponderada += sim_max * item.peso_maximo
-        soma_pesos += item.peso_maximo
-
-    if soma_pesos == 0.0:
-        return 0.0
-
-    return soma_ponderada / soma_pesos
-
-
-def score_argumentacao(
-    resposta: str,
-    secoes: list[str],
-    backend: EmbeddingBackend,
-    props: list[str] | None = None,
-) -> float:
-    """
-    Mede cobertura e ordem das seções do gabarito na resposta candidata.
-    """
-    if not secoes:
-        return 0.0
-
-    resposta_norm = normalize_text(resposta)
-    if not resposta_norm:
-        return 0.0
-
-    props = props if props is not None else obter_proposicoes_resposta(resposta_norm)
-    if not props:
-        props = [resposta_norm]
-
-    secoes_norm = [normalize_text(secao) for secao in secoes]
-    todos_textos = list(dict.fromkeys(props + secoes_norm))
-    embeddings = backend.get_embeddings(todos_textos)
-
-    coberturas: list[float] = []
-    posicoes: list[int] = []
-
-    for secao_norm in secoes_norm:
-        if secao_norm not in embeddings:
-            continue
-
-        sims = [
-            cosine_sim(embeddings[prop], embeddings[secao_norm])
-            for prop in props
-            if prop in embeddings
-        ]
-        if not sims:
-            continue
-
-        idx_max = int(np.argmax(sims))
-        coberturas.append(sims[idx_max])
-        posicoes.append(idx_max)
-
-    if not coberturas:
-        return 0.0
-
-    score_cobertura = float(np.mean(coberturas))
-
-    if len(posicoes) >= 2:
-        pares_em_ordem = sum(
-            1 for i in range(len(posicoes) - 1) if posicoes[i] <= posicoes[i + 1]
+    smoothing = SmoothingFunction().method4
+    return float(
+        sentence_bleu(
+            [ref_tok],
+            hyp_tok,
+            weights=(0.25, 0.25, 0.25, 0.25),
+            smoothing_function=smoothing,
         )
-        score_ordem = pares_em_ordem / (len(posicoes) - 1)
-    else:
-        score_ordem = 1.0
-
-    return (PESO_R_ARG_COBERTURA * score_cobertura) + (PESO_R_ARG_ORDEM * score_ordem)
+    )
 
 
-def _tentar_backend_precisao(verbose: bool = True) -> EmbeddingBackend:
-    try:
-        return EmbeddingBackend(MODELO_RF_PRECISAO, verbose=verbose)
-    except Exception:
-        warnings.warn(
-            f"[Reference] Modelo de precisão '{MODELO_RF_PRECISAO}' indisponível. "
-            f"Usando fallback: '{MODELO_RF_PRECISAO_FALLBACK}'.",
-            RuntimeWarning,
-            stacklevel=2,
-        )
-        return EmbeddingBackend(MODELO_RF_PRECISAO_FALLBACK, verbose=verbose)
+def calcular_rouge(referencia: str, hipotese: str) -> dict[str, object]:
+    scorer = rouge_scorer.RougeScorer(["rouge1", "rouge2", "rougeL"], use_stemmer=False)
+    return scorer.score(referencia, hipotese)
 
 
-def _evaluate_all_with_backends(
-    answers: dict[str, str | dict[str, object]],
-    itens_gabarito: list[GabaritoItem],
-    backend_argumentacao: EmbeddingBackend,
-    backend_precisao: EmbeddingBackend,
-    backend_nli: NLIBackend,
-) -> tuple[dict[str, dict[str, float]], list[dict[str, float | str]]]:
-    """
-    Avalia todas as respostas de uma questão contra o gabarito estruturado.
-    """
-    secoes = _extrair_secoes_ordenadas(itens_gabarito)
-    resultados: dict[str, dict[str, float]] = {}
+def calcular_bert_score(referencia: str, hipotese: str) -> tuple[float, float, float]:
+    precision, recall, f1 = bert_score_fn(
+        [hipotese],
+        [referencia],
+        lang="pt",
+        model_type=MODELO_BERTSCORE,
+        verbose=False,
+    )
+    return float(precision[0]), float(recall[0]), float(f1[0])
 
-    for modelo, resposta_payload in answers.items():
-        if isinstance(resposta_payload, dict):
-            resposta = normalize_text(str(resposta_payload.get("resposta", "")))
-            props = obter_proposicoes_resposta(
-                resposta,
-                resposta_payload.get("proposicoes_json"),
-            )
+
+def calcular_sbert(referencia: str, hipotese: str, modelo: SentenceTransformer) -> float:
+    emb_ref = modelo.encode(referencia, convert_to_tensor=True)
+    emb_hyp = modelo.encode(hipotese, convert_to_tensor=True)
+    return float(util.cos_sim(emb_ref, emb_hyp)[0][0])
+
+
+def calcular_keyword_juridico(
+    gabarito_narrativo: str,
+    hipotese: str,
+    gabarito_itens_json: str | list | None = None,
+) -> tuple[float, list[str], list[str]]:
+    keywords = _extrair_keywords_gabarito(gabarito_narrativo, gabarito_itens_json)
+    if not keywords:
+        return 0.0, [], []
+
+    hipotese_ascii = normalize_text_ascii(hipotese)
+    encontrados: list[str] = []
+    ausentes: list[str] = []
+
+    for keyword in keywords:
+        if keyword in hipotese_ascii:
+            encontrados.append(keyword)
         else:
-            resposta = normalize_text(str(resposta_payload))
-            props = obter_proposicoes_resposta(resposta)
+            ausentes.append(keyword)
 
-        score_arg = score_argumentacao(resposta, secoes, backend_argumentacao, props=props)
-        score_pre = score_precisao(resposta, itens_gabarito, backend_precisao, props=props)
-        score_coe = score_coesao(props, backend_nli)
-
-        score_final = (
-            (PESO_R_ARGUMENTACAO * score_arg)
-            + (PESO_R_PRECISAO * score_pre)
-            + (PESO_R_COESAO * score_coe)
-        )
-
-        resultados[modelo] = {
-            "argumentacao": float(score_arg),
-            "precisao": float(score_pre),
-            "coesao": float(score_coe),
-            "final": float(score_final),
-        }
-
-    ranking = [
-        {"modelo": modelo, **scores}
-        for modelo, scores in sorted(
-            resultados.items(),
-            key=lambda item: item[1]["final"],
-            reverse=True,
-        )
-    ]
-    return resultados, ranking
+    score = len(encontrados) / len(keywords) if keywords else 0.0
+    return float(score), encontrados, ausentes
 
 
-def evaluate_all(
-    answers: dict[str, str],
-    gabarito_itens_json: str | list,
-    verbose: bool = True,
-) -> tuple[dict[str, dict[str, float]], list[dict[str, float | str]]]:
-    """
-    Avalia todas as respostas de uma mesma questão contra o gabarito oficial.
-    """
-    itens = carregar_itens_gabarito(gabarito_itens_json)
-    backend_argumentacao = EmbeddingBackend(
-        MODELO_RF_ARGUMENTACAO, prefix="passage", verbose=verbose
+def score_composto(metricas: MetricasQuestao) -> float:
+    rouge_medio = (
+        metricas.rouge1_f1 + metricas.rouge2_f1 + metricas.rougeL_f1
+    ) / 3.0
+
+    return float(
+        (metricas.bleu * PESO_R_BLEU)
+        + (rouge_medio * PESO_R_ROUGE_F1)
+        + (metricas.bert_f1 * PESO_R_BERT_F1)
+        + (metricas.sbert_similaridade * PESO_R_SBERT)
+        + (metricas.keyword_score * PESO_R_KEYWORD)
     )
-    backend_precisao = _tentar_backend_precisao(verbose=verbose)
-    backend_nli = NLIBackend(model_name=MODELO_RF_COESAO, verbose=verbose)
 
-    return _evaluate_all_with_backends(
-        answers,
-        itens,
-        backend_argumentacao=backend_argumentacao,
-        backend_precisao=backend_precisao,
-        backend_nli=backend_nli,
+
+def _avaliar_resposta(
+    question_id: str,
+    modelo: str,
+    resposta: str,
+    gabarito_narrativo: str,
+    gabarito_itens_json: str | list | None,
+    sbert_model: SentenceTransformer,
+) -> MetricasQuestao:
+    resposta = normalize_text(resposta)
+    gabarito_narrativo = normalize_text(gabarito_narrativo)
+
+    metricas = MetricasQuestao(question_id=question_id, modelo=modelo)
+    if not resposta or not gabarito_narrativo:
+        return metricas
+
+    metricas.bleu = round(calcular_bleu(gabarito_narrativo, resposta), 4)
+
+    rouge = calcular_rouge(gabarito_narrativo, resposta)
+    metricas.rouge1_precision = round(rouge["rouge1"].precision, 4)
+    metricas.rouge1_recall = round(rouge["rouge1"].recall, 4)
+    metricas.rouge1_f1 = round(rouge["rouge1"].fmeasure, 4)
+    metricas.rouge2_precision = round(rouge["rouge2"].precision, 4)
+    metricas.rouge2_recall = round(rouge["rouge2"].recall, 4)
+    metricas.rouge2_f1 = round(rouge["rouge2"].fmeasure, 4)
+    metricas.rougeL_precision = round(rouge["rougeL"].precision, 4)
+    metricas.rougeL_recall = round(rouge["rougeL"].recall, 4)
+    metricas.rougeL_f1 = round(rouge["rougeL"].fmeasure, 4)
+
+    bert_p, bert_r, bert_f1 = calcular_bert_score(gabarito_narrativo, resposta)
+    metricas.bert_precision = round(bert_p, 4)
+    metricas.bert_recall = round(bert_r, 4)
+    metricas.bert_f1 = round(bert_f1, 4)
+
+    metricas.sbert_similaridade = round(
+        calcular_sbert(gabarito_narrativo, resposta, sbert_model),
+        4,
     )
+
+    keyword_score, encontrados, ausentes = calcular_keyword_juridico(
+        gabarito_narrativo,
+        resposta,
+        gabarito_itens_json=gabarito_itens_json,
+    )
+    metricas.keyword_score = round(keyword_score, 4)
+    metricas.keywords_encontrados = encontrados
+    metricas.keywords_ausentes = ausentes
+    metricas.score_composto = round(score_composto(metricas), 4)
+    return metricas
 
 
 def evaluate_dataframe(
     df_respostas: pd.DataFrame,
     show_progress: bool = True,
 ) -> tuple[pd.DataFrame, pd.DataFrame]:
-    """
-    Avalia um DataFrame de respostas discursivas agrupando por questão.
-    """
-    colunas_obrigatorias = {"question_id", "modelo", "resposta", "gabarito_itens_json"}
+    colunas_obrigatorias = {
+        "question_id",
+        "modelo",
+        "resposta",
+        "gabarito_narrativo",
+    }
     ausentes = sorted(colunas_obrigatorias - set(df_respostas.columns))
     if ausentes:
-        raise ValueError(f"Colunas obrigatórias ausentes: {', '.join(ausentes)}")
+        raise ValueError(f"Colunas obrigatorias ausentes: {', '.join(ausentes)}")
 
-    _log_status("[Reference] Inicializando backends de avaliação...", show_progress)
-    backend_argumentacao = EmbeddingBackend(
-        MODELO_RF_ARGUMENTACAO, prefix="passage", verbose=show_progress
-    )
-    backend_precisao = _tentar_backend_precisao(verbose=show_progress)
-    backend_nli = NLIBackend(model_name=MODELO_RF_COESAO, verbose=show_progress)
+    _log_status(f"[Reference] Carregando SBERT: {MODELO_R_SBERT}", show_progress)
+    sbert_model = SentenceTransformer(MODELO_R_SBERT)
 
-    linhas_detalhe: list[dict[str, object]] = []
-    grupos = list(df_respostas.groupby("question_id", dropna=False))
-
+    linhas: list[dict[str, object]] = []
+    registros = df_respostas.to_dict("records")
     iterador = tqdm(
-        grupos,
-        total=len(grupos),
-        desc="Reference por questão",
+        registros,
+        total=len(registros),
+        desc="Reference por resposta",
         disable=not show_progress,
     )
 
-    for question_id, grupo in iterador:
-        gabarito_raw = next(
-            (valor for valor in grupo["gabarito_itens_json"] if pd.notna(valor) and valor),
-            None,
-        )
-        if not gabarito_raw:
-            _log_status(
-                f"[Reference] Questão '{question_id}' sem gabarito_itens_json — ignorada.",
-                show_progress,
+    for row in iterador:
+        gabarito = row.get("gabarito_narrativo")
+        if pd.isna(gabarito) or not normalize_text(gabarito):
+            warnings.warn(
+                f"[Reference] Questao '{row.get('question_id')}' sem gabarito_narrativo. Linha ignorada.",
+                RuntimeWarning,
+                stacklevel=2,
             )
             continue
 
-        itens = carregar_itens_gabarito(gabarito_raw)
-        secoes = _extrair_secoes_ordenadas(itens)
-        n_itens = sum(1 for item in itens if item.peso_maximo is not None)
-
-        answers = {
-            str(row["modelo"]): {
-                "resposta": str(row["resposta"] or ""),
-                "proposicoes_json": row.get("proposicoes_json"),
-            }
-            for _, row in grupo.iterrows()
-        }
-
-        _, ranking = _evaluate_all_with_backends(
-            answers,
-            itens,
-            backend_argumentacao=backend_argumentacao,
-            backend_precisao=backend_precisao,
-            backend_nli=backend_nli,
+        metricas = _avaliar_resposta(
+            question_id=str(row.get("question_id", "")),
+            modelo=str(row.get("modelo", "")),
+            resposta=str(row.get("resposta", "")),
+            gabarito_narrativo=str(gabarito),
+            gabarito_itens_json=row.get("gabarito_itens_json"),
+            sbert_model=sbert_model,
         )
 
-        for posicao, item in enumerate(ranking, start=1):
-            linhas_detalhe.append(
-                {
-                    "question_id": question_id,
-                    "modelo": item["modelo"],
-                    "argumentacao": item["argumentacao"],
-                    "precisao": item["precisao"],
-                    "coesao": item["coesao"],
-                    "final": item["final"],
-                    "ranking": posicao,
-                    "n_secoes_gabarito": len(secoes),
-                    "n_itens_gabarito": n_itens,
-                }
-            )
+        linhas.append(
+            {
+                "question_id": metricas.question_id,
+                "modelo": metricas.modelo,
+                "bleu": metricas.bleu,
+                "rouge1_precision": metricas.rouge1_precision,
+                "rouge1_recall": metricas.rouge1_recall,
+                "rouge1_f1": metricas.rouge1_f1,
+                "rouge2_precision": metricas.rouge2_precision,
+                "rouge2_recall": metricas.rouge2_recall,
+                "rouge2_f1": metricas.rouge2_f1,
+                "rougeL_precision": metricas.rougeL_precision,
+                "rougeL_recall": metricas.rougeL_recall,
+                "rougeL_f1": metricas.rougeL_f1,
+                "bert_precision": metricas.bert_precision,
+                "bert_recall": metricas.bert_recall,
+                "bert_f1": metricas.bert_f1,
+                "sbert_similaridade": metricas.sbert_similaridade,
+                "keyword_score": metricas.keyword_score,
+                "keywords_encontrados": json.dumps(metricas.keywords_encontrados, ensure_ascii=False),
+                "keywords_ausentes": json.dumps(metricas.keywords_ausentes, ensure_ascii=False),
+                "final": metricas.score_composto,
+            }
+        )
 
-    df_detalhe = pd.DataFrame(linhas_detalhe)
+    df_detalhe = pd.DataFrame(linhas)
     if df_detalhe.empty:
         return df_detalhe, pd.DataFrame(
-            columns=["modelo", "argumentacao", "precisao", "coesao", "final"]
+            columns=[
+                "modelo",
+                "bleu",
+                "rouge1_f1",
+                "rouge2_f1",
+                "rougeL_f1",
+                "bert_f1",
+                "sbert_similaridade",
+                "keyword_score",
+                "final",
+            ]
         )
+
+    df_detalhe["ranking"] = (
+        df_detalhe.groupby("question_id")["final"]
+        .rank(method="dense", ascending=False)
+        .astype(int)
+    )
 
     df_resumo = (
         df_detalhe.groupby("modelo", dropna=False)[
-            ["argumentacao", "precisao", "coesao", "final"]
+            [
+                "bleu",
+                "rouge1_f1",
+                "rouge2_f1",
+                "rougeL_f1",
+                "bert_f1",
+                "sbert_similaridade",
+                "keyword_score",
+                "final",
+            ]
         ]
         .mean()
         .reset_index()
@@ -367,5 +370,5 @@ def evaluate_dataframe(
         .reset_index(drop=True)
     )
 
-    _log_status("[Reference] Avaliação concluída.", show_progress)
+    _log_status("[Reference] Avaliacao concluida.", show_progress)
     return df_detalhe, df_resumo

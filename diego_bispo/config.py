@@ -74,12 +74,13 @@ MAX_LENGTH_RF_NLI = 192
 # ============================================================
 # ANÁLISE QUALITATIVA REFERENCE
 # ============================================================
-PESO_R_ARGUMENTACAO = 0.35
-PESO_R_PRECISAO = 0.40
-PESO_R_COESAO = 0.25
+MODELO_R_SBERT = "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
 
-PESO_R_ARG_COBERTURA = 0.70
-PESO_R_ARG_ORDEM = 0.30
+PESO_R_BLEU = 0.10
+PESO_R_ROUGE_F1 = 0.15
+PESO_R_BERT_F1 = 0.25
+PESO_R_SBERT = 0.25
+PESO_R_KEYWORD = 0.25
 
 # ============================================================
 # RECORTES DO DATASET
