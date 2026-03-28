@@ -108,7 +108,7 @@ Quando a questão tiver apenas um valor, como em uma peça com `values = [5]`, e
 - `BERTScore` par a par
   Mede a proximidade semântica entre as respostas dos modelos para a mesma questão e é usado como análise complementar de comparação entre eles.
 - `Reference`
-  Mede aderência ao gabarito oficial estruturado em itens e seções, combinando cobertura argumentativa, precisão ponderada e coesão.
+  Mede aderência ao gabarito oficial com um único SBERT jurídico: precisão por cobertura dos itens, argumentação por cobertura das seções e coesão legal por alinhamento global ao gabarito.
 - `Reference-Free`
   Mede qualidade relativa sem usar espelho oficial, combinando construção argumentativa, precisão semântica e coesão entre proposições.
 
@@ -125,7 +125,8 @@ Na versão final do projeto, a comparação semântica entre modelos passou a se
 
 ### Avaliações reference e reference-free
 
-- A avaliação `reference` usa o `gabarito_itens_json` gerado no preparo dos dados para comparar cada resposta com os critérios oficiais de correção da questão.
+- A avaliação `reference` usa o `gabarito_itens_json` e o `gabarito_narrativo` gerados no preparo dos dados para comparar cada resposta com os critérios oficiais de correção da questão.
+- Nessa etapa, adotou-se um desenho minimalista com um único SBERT jurídico: `precisao` mede a cobertura ponderada dos itens do gabarito, `argumentacao` mede a presença da estrutura jurídica esperada via seções do espelho, e `coesao_legal` mede o alinhamento global da resposta com o raciocínio jurídico narrativo do gabarito.
 - A avaliação `reference-free` não usa espelho oficial e funciona como diagnóstico complementar quando se quer medir qualidade textual e semântica sem depender do gabarito estruturado.
 
 ---
