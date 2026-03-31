@@ -63,16 +63,12 @@ def gerar_relatorios_consolidados(
 ) -> pd.DataFrame:
     """Gera os artefatos executivos e analiticos da execucao."""
     benchmark_consolidado = benchmark_objetivas.merge(benchmark_discursivas, on="modelo", how="outer").fillna(0.0)
-    benchmark_consolidado["score_balanceado"] = (
-        benchmark_consolidado["acuracia_objetivas"] + benchmark_consolidado["aproveitamento_geral"]
+    benchmark_consolidado["media_discursivas"] = benchmark_consolidado["aproveitamento_geral"]
+    benchmark_consolidado["media_geral"] = (
+        benchmark_consolidado["acuracia_objetivas"] + benchmark_consolidado["media_discursivas"]
     ) / 2
-    benchmark_consolidado["score_total_ponderado"] = (
-        benchmark_consolidado["acertos_objetivas"] + benchmark_consolidado["nota_total"]
-    ) / (
-        benchmark_consolidado["total_objetivas"] + benchmark_consolidado["pontuacao_total_disc"]
-    ).replace(0, float("nan"))
     benchmark_consolidado = benchmark_consolidado.fillna(0.0).sort_values(
-        ["score_balanceado", "score_total_ponderado", "modelo"],
+        ["media_geral", "acuracia_objetivas", "media_discursivas", "modelo"],
         ascending=[False, False, True],
     ).reset_index(drop=True)
     salvar_csv(benchmark_consolidado, caminhos_saida.benchmark_consolidado_csv)
@@ -120,6 +116,13 @@ def gerar_relatorios_consolidados(
         ],
         ignore_index=True,
     )
+    vencedores_dificuldade["acertos"] = vencedores_dificuldade["acertos"].fillna(0.0)
+    vencedores_dificuldade["total"] = vencedores_dificuldade["total"].fillna(0.0)
+    vencedores_dificuldade["score_num"] = vencedores_dificuldade["score_num"].fillna(0.0)
+    vencedores_dificuldade["score_den"] = vencedores_dificuldade["score_den"].fillna(0.0)
+    vencedores_dificuldade = vencedores_dificuldade[
+        ["tipo_avaliacao", "criterio", "nivel_dificuldade", "modelo", "score", "acertos", "total", "score_num", "score_den"]
+    ]
     salvar_csv(vencedores_dificuldade, caminhos_saida.vencedores_dificuldade_csv)
 
     objetivas_por_disciplina = (
@@ -142,7 +145,25 @@ def gerar_relatorios_consolidados(
         ],
         ignore_index=True,
     )
+    vencedores_disciplina["acertos"] = vencedores_disciplina["acertos"].fillna(0.0)
+    vencedores_disciplina["total"] = vencedores_disciplina["total"].fillna(0.0)
+    vencedores_disciplina["score_num"] = vencedores_disciplina["score_num"].fillna(0.0)
+    vencedores_disciplina["score_den"] = vencedores_disciplina["score_den"].fillna(0.0)
+    vencedores_disciplina = vencedores_disciplina[
+        ["tipo_avaliacao", "criterio", "disciplina", "modelo", "score", "acertos", "total", "score_num", "score_den"]
+    ]
     salvar_csv(vencedores_disciplina, caminhos_saida.vencedores_disciplina_csv)
+
+    composicao_resumida = (
+        df_composicao_discursiva.groupby(["question_id", "modelo", "criterio_id", "secao"], dropna=False)
+        .agg(
+            nota_total_criterio=("nota_obtida", "sum"),
+            score_medio=("score", "mean"),
+        )
+        .reset_index()
+    )
+    primeiras_questoes = list(df_discursivas_detalhe["question_id"].drop_duplicates().head(2))
+    composicao_resumida = composicao_resumida[composicao_resumida["question_id"].isin(primeiras_questoes)].reset_index(drop=True)
 
     melhor_objetiva = benchmark_objetivas.iloc[0]
     melhor_discursiva = benchmark_discursivas.iloc[0]
@@ -151,15 +172,15 @@ def gerar_relatorios_consolidados(
         Markdown(
             f"### Painel executivo\n"
             f"- **Melhor nas objetivas:** `{melhor_objetiva['modelo']}` com **{melhor_objetiva['acuracia_objetivas']:.2%}** de acuracia.\n"
-            f"- **Melhor nas discursivas:** `{melhor_discursiva['modelo']}` com **{melhor_discursiva['aproveitamento_geral']:.2%}** de aproveitamento e **{melhor_discursiva['nota_total']:.2f} pontos**.\n"
-            f"- **Melhor no consolidado:** `{melhor_geral['modelo']}` com **{melhor_geral['score_balanceado']:.2%}**."
+            f"- **Melhor media das discursivas:** `{melhor_discursiva['modelo']}` com **{melhor_discursiva['aproveitamento_geral']:.2%}**.\n"
+            f"- **Melhor media geral:** `{melhor_geral['modelo']}` com **{melhor_geral['media_geral']:.2%}**."
         )
     )
 
     display(Markdown("### Secao 1 - Notas das discursivas por questao"))
     display(arredondar_numericos(notas_discursivas))
     display(Markdown("### Secao 2 - Composicao dos criterios discursivos"))
-    display(arredondar_numericos(df_composicao_discursiva.head(20)))
+    display(arredondar_numericos(composicao_resumida))
     display(Markdown("### Secao 3 - Avaliacao das objetivas"))
     display(arredondar_numericos(objetivas_resumo))
     display(Markdown("### Secao 4 - Analise por dificuldade"))
@@ -167,7 +188,7 @@ def gerar_relatorios_consolidados(
     display(Markdown("### Secao 5 - Analise por especialidade"))
     display(arredondar_numericos(vencedores_disciplina))
 
-    colunas_heatmap = ["acuracia_objetivas", "aproveitamento_geral", "score_balanceado", "score_total_ponderado"]
+    colunas_heatmap = ["acuracia_objetivas", "media_discursivas", "media_geral"]
     heatmap_df = benchmark_consolidado.set_index("modelo")[colunas_heatmap]
     plt.figure(figsize=(10, 4))
     sns.heatmap(heatmap_df, annot=True, fmt=".2f", cmap="YlOrRd", linewidths=0.5, cbar=True)
@@ -181,11 +202,11 @@ def gerar_relatorios_consolidados(
 
     with PdfPages(caminhos_saida.relatorio_executivo_pdf) as pdf:
         resumo_pdf = arredondar_numericos(
-            benchmark_consolidado[["modelo", "acuracia_objetivas", "aproveitamento_geral", "score_balanceado", "score_total_ponderado"]]
+            benchmark_consolidado[["modelo", "acuracia_objetivas", "media_discursivas", "media_geral"]]
         )
         renderizar_pagina_tabela(pdf, "Resumo executivo", resumo_pdf, linhas_por_pagina=12)
         renderizar_pagina_tabela(pdf, "Secao 1 - Notas discursivas", notas_discursivas, linhas_por_pagina=18)
-        renderizar_pagina_tabela(pdf, "Secao 2 - Composicao dos criterios", df_composicao_discursiva, linhas_por_pagina=16)
+        renderizar_pagina_tabela(pdf, "Secao 2 - Composicao dos criterios", composicao_resumida, linhas_por_pagina=16)
         renderizar_pagina_tabela(pdf, "Secao 3 - Avaliacao objetivas", objetivas_resumo, linhas_por_pagina=10)
         renderizar_pagina_tabela(pdf, "Secao 4 - Por dificuldade", vencedores_dificuldade, linhas_por_pagina=16)
         renderizar_pagina_tabela(pdf, "Secao 5 - Por especialidade", vencedores_disciplina, linhas_por_pagina=16)
