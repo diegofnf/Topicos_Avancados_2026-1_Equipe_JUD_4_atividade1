@@ -72,6 +72,31 @@ def renderizar_pagina_tabela(pdf: PdfPages, titulo: str, df: pd.DataFrame, linha
         plt.close(figura)
 
 
+def resumir_totais_por_grupo(
+    df_base: pd.DataFrame,
+    coluna_grupo: str,
+    coluna_pontos_modelo: str,
+    coluna_pontos_questao: str,
+) -> pd.DataFrame:
+    """Resume total de questoes, total da prova e total obtido por modelo em um agrupamento."""
+    totais_questao = (
+        df_base[["question_id", coluna_grupo, coluna_pontos_questao]]
+        .drop_duplicates(subset=["question_id"])
+        .groupby(coluna_grupo, dropna=False)
+        .agg(total_questoes=("question_id", "nunique"), total_pontuacao_questoes=(coluna_pontos_questao, "sum"))
+        .reset_index()
+    )
+    totais_modelo = (
+        df_base.groupby([coluna_grupo, "modelo"], dropna=False)
+        .agg(total_pontuacao_modelo=(coluna_pontos_modelo, "sum"))
+        .reset_index()
+        .pivot(index=coluna_grupo, columns="modelo", values="total_pontuacao_modelo")
+        .fillna(0.0)
+        .reset_index()
+    )
+    return totais_questao.merge(totais_modelo, on=coluna_grupo, how="left").fillna(0.0)
+
+
 def gerar_relatorios_consolidados(
     df_objetivas_detalhe: pd.DataFrame,
     benchmark_objetivas: pd.DataFrame,
@@ -115,72 +140,26 @@ def gerar_relatorios_consolidados(
     objetivas_resumo.insert(0, "total_questoes_objetivas", int(df_objetivas_detalhe["question_id"].nunique()))
     salvar_csv(objetivas_resumo, caminhos_saida.objetivas_resumo_csv)
 
-    objetivas_por_dificuldade = (
-        df_objetivas_detalhe.groupby(["nivel_dificuldade", "modelo"], dropna=False)
-        .agg(score=("correto", "mean"), acertos=("correto", "sum"), total=("correto", "size"))
-        .reset_index()
+    df_obj_dificuldade = df_objetivas_detalhe.copy()
+    df_obj_dificuldade["valor_questao"] = 1.0
+    df_obj_dificuldade["nivel_dificuldade"] = df_obj_dificuldade["nivel_dificuldade"].map(normalizar_nivel_dificuldade)
+    resumo_objetivas_dificuldade = resumir_totais_por_grupo(
+        df_obj_dificuldade,
+        coluna_grupo="nivel_dificuldade",
+        coluna_pontos_modelo="correto",
+        coluna_pontos_questao="valor_questao",
     )
-    objetivas_por_dificuldade["nivel_dificuldade"] = objetivas_por_dificuldade["nivel_dificuldade"].map(normalizar_nivel_dificuldade)
-    discursivas_por_dificuldade = (
-        df_discursivas_detalhe.groupby(["nivel_dificuldade", "modelo"], dropna=False)
-        .agg(score_num=("nota_estimada", "sum"), score_den=("pontuacao_total", "sum"))
-        .reset_index()
-    )
-    discursivas_por_dificuldade["nivel_dificuldade"] = discursivas_por_dificuldade["nivel_dificuldade"].map(normalizar_nivel_dificuldade)
-    discursivas_por_dificuldade["score"] = discursivas_por_dificuldade["score_num"] / discursivas_por_dificuldade["score_den"].replace(0, float("nan"))
-    discursivas_por_dificuldade = discursivas_por_dificuldade.fillna(0.0)
-
-    objetivas_dificuldade_resumo = (
-        df_objetivas_detalhe.groupby(["nivel_dificuldade", "modelo"], dropna=False)
-        .agg(total_pontuacao_modelo=("correto", "sum"))
-        .reset_index()
-        .pivot(index="nivel_dificuldade", columns="modelo", values="total_pontuacao_modelo")
-        .fillna(0.0)
-        .reset_index()
-    )
-    objetivas_dificuldade_resumo["nivel_dificuldade"] = objetivas_dificuldade_resumo["nivel_dificuldade"].map(normalizar_nivel_dificuldade)
-    total_obj_dificuldade = (
-        df_objetivas_detalhe.groupby("nivel_dificuldade", dropna=False)
-        .agg(total_questoes=("question_id", "nunique"), total_pontuacao_questoes=("question_id", "nunique"))
-        .reset_index()
-    )
-    total_obj_dificuldade["nivel_dificuldade"] = total_obj_dificuldade["nivel_dificuldade"].map(normalizar_nivel_dificuldade)
-    total_obj_dificuldade = total_obj_dificuldade.groupby("nivel_dificuldade", dropna=False, as_index=False).sum(numeric_only=True)
-    resumo_objetivas_dificuldade = total_obj_dificuldade.merge(
-        objetivas_dificuldade_resumo, on="nivel_dificuldade", how="left"
-    ).fillna(0.0)
     resumo_objetivas_dificuldade.insert(0, "tipo_avaliacao", "objetiva")
-    resumo_objetivas_dificuldade = (
-        resumo_objetivas_dificuldade.groupby(["tipo_avaliacao", "nivel_dificuldade"], dropna=False, as_index=False)
-        .sum(numeric_only=True)
-    )
 
-    discursivas_dificuldade_resumo = (
-        df_discursivas_detalhe.groupby(["nivel_dificuldade", "modelo"], dropna=False)
-        .agg(total_pontuacao_modelo=("nota_estimada", "sum"))
-        .reset_index()
-        .pivot(index="nivel_dificuldade", columns="modelo", values="total_pontuacao_modelo")
-        .fillna(0.0)
-        .reset_index()
+    df_disc_dificuldade = df_discursivas_detalhe.copy()
+    df_disc_dificuldade["nivel_dificuldade"] = df_disc_dificuldade["nivel_dificuldade"].map(normalizar_nivel_dificuldade)
+    resumo_discursivas_dificuldade = resumir_totais_por_grupo(
+        df_disc_dificuldade,
+        coluna_grupo="nivel_dificuldade",
+        coluna_pontos_modelo="nota_estimada",
+        coluna_pontos_questao="pontuacao_total",
     )
-    discursivas_dificuldade_resumo["nivel_dificuldade"] = discursivas_dificuldade_resumo["nivel_dificuldade"].map(normalizar_nivel_dificuldade)
-    total_disc_dificuldade = (
-        df_discursivas_detalhe[["question_id", "nivel_dificuldade", "pontuacao_total"]]
-        .drop_duplicates(subset=["question_id"])
-        .groupby("nivel_dificuldade", dropna=False)
-        .agg(total_questoes=("question_id", "nunique"), total_pontuacao_questoes=("pontuacao_total", "sum"))
-        .reset_index()
-    )
-    total_disc_dificuldade["nivel_dificuldade"] = total_disc_dificuldade["nivel_dificuldade"].map(normalizar_nivel_dificuldade)
-    total_disc_dificuldade = total_disc_dificuldade.groupby("nivel_dificuldade", dropna=False, as_index=False).sum(numeric_only=True)
-    resumo_discursivas_dificuldade = total_disc_dificuldade.merge(
-        discursivas_dificuldade_resumo, on="nivel_dificuldade", how="left"
-    ).fillna(0.0)
     resumo_discursivas_dificuldade.insert(0, "tipo_avaliacao", "discursiva")
-    resumo_discursivas_dificuldade = (
-        resumo_discursivas_dificuldade.groupby(["tipo_avaliacao", "nivel_dificuldade"], dropna=False, as_index=False)
-        .sum(numeric_only=True)
-    )
 
     resumo_dificuldade = pd.concat(
         [resumo_objetivas_dificuldade, resumo_discursivas_dificuldade],
@@ -191,55 +170,23 @@ def gerar_relatorios_consolidados(
     resumo_dificuldade = resumo_dificuldade.sort_values(["tipo_avaliacao", "_ordem", "nivel_dificuldade"]).drop(columns="_ordem").reset_index(drop=True)
     salvar_csv(resumo_dificuldade, caminhos_saida.vencedores_dificuldade_csv)
 
-    objetivas_por_disciplina = (
-        df_objetivas_detalhe.groupby(["disciplina", "modelo"], dropna=False)
-        .agg(score=("correto", "mean"), acertos=("correto", "sum"), total=("correto", "size"))
-        .reset_index()
+    df_obj_disciplina = df_objetivas_detalhe.copy()
+    df_obj_disciplina["valor_questao"] = 1.0
+    resumo_objetivas_disciplina = resumir_totais_por_grupo(
+        df_obj_disciplina,
+        coluna_grupo="disciplina",
+        coluna_pontos_modelo="correto",
+        coluna_pontos_questao="valor_questao",
     )
-    discursivas_por_disciplina = (
-        df_discursivas_detalhe.groupby(["disciplina", "modelo"], dropna=False)
-        .agg(score_num=("nota_estimada", "sum"), score_den=("pontuacao_total", "sum"))
-        .reset_index()
-    )
-    discursivas_por_disciplina["score"] = discursivas_por_disciplina["score_num"] / discursivas_por_disciplina["score_den"].replace(0, float("nan"))
-    discursivas_por_disciplina = discursivas_por_disciplina.fillna(0.0)
-
-    objetivas_disciplina_resumo = (
-        df_objetivas_detalhe.groupby(["disciplina", "modelo"], dropna=False)
-        .agg(total_pontuacao_modelo=("correto", "sum"))
-        .reset_index()
-        .pivot(index="disciplina", columns="modelo", values="total_pontuacao_modelo")
-        .fillna(0.0)
-        .reset_index()
-    )
-    total_obj_disciplina = (
-        df_objetivas_detalhe.groupby("disciplina", dropna=False)
-        .agg(total_questoes=("question_id", "nunique"), total_pontuacao_questoes=("question_id", "nunique"))
-        .reset_index()
-    )
-    resumo_objetivas_disciplina = total_obj_disciplina.merge(
-        objetivas_disciplina_resumo, on="disciplina", how="left"
-    ).fillna(0.0)
     resumo_objetivas_disciplina.insert(0, "tipo_avaliacao", "objetiva")
 
-    discursivas_disciplina_resumo = (
-        df_discursivas_detalhe.groupby(["disciplina", "modelo"], dropna=False)
-        .agg(total_pontuacao_modelo=("nota_estimada", "sum"))
-        .reset_index()
-        .pivot(index="disciplina", columns="modelo", values="total_pontuacao_modelo")
-        .fillna(0.0)
-        .reset_index()
+    df_disc_disciplina = df_discursivas_detalhe.copy()
+    resumo_discursivas_disciplina = resumir_totais_por_grupo(
+        df_disc_disciplina,
+        coluna_grupo="disciplina",
+        coluna_pontos_modelo="nota_estimada",
+        coluna_pontos_questao="pontuacao_total",
     )
-    total_disc_disciplina = (
-        df_discursivas_detalhe[["question_id", "disciplina", "pontuacao_total"]]
-        .drop_duplicates(subset=["question_id"])
-        .groupby("disciplina", dropna=False)
-        .agg(total_questoes=("question_id", "nunique"), total_pontuacao_questoes=("pontuacao_total", "sum"))
-        .reset_index()
-    )
-    resumo_discursivas_disciplina = total_disc_disciplina.merge(
-        discursivas_disciplina_resumo, on="disciplina", how="left"
-    ).fillna(0.0)
     resumo_discursivas_disciplina.insert(0, "tipo_avaliacao", "discursiva")
 
     resumo_disciplina = pd.concat(
