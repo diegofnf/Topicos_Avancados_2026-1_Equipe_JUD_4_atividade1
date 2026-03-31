@@ -12,6 +12,25 @@ from configuracoes import CaminhosSaida
 from utilitarios import arredondar_numericos, salvar_csv
 
 
+def normalizar_nivel_dificuldade(valor: str) -> str:
+    """Padroniza os rotulos de dificuldade para exibicao."""
+    texto = str(valor or "").strip().lower()
+    mapa = {
+        "media": "medio",
+        "média": "medio",
+        "medio": "medio",
+        "médio": "medio",
+        "facil": "facil",
+        "fácil": "facil",
+        "dificil": "dificil",
+        "difícil": "dificil",
+        "muito_dificil": "muito_dificil",
+        "muito difícil": "muito_dificil",
+        "muito dificil": "muito_dificil",
+    }
+    return mapa.get(texto, texto or "nao_informado")
+
+
 def vencedores_por_grupo(df: pd.DataFrame, coluna_grupo: str, coluna_score: str, tipo_avaliacao: str, criterio: str) -> pd.DataFrame:
     """Seleciona o melhor modelo em cada agrupamento."""
     base = df.copy().sort_values([coluna_grupo, coluna_score, "modelo"], ascending=[True, False, True])
@@ -101,11 +120,13 @@ def gerar_relatorios_consolidados(
         .agg(score=("correto", "mean"), acertos=("correto", "sum"), total=("correto", "size"))
         .reset_index()
     )
+    objetivas_por_dificuldade["nivel_dificuldade"] = objetivas_por_dificuldade["nivel_dificuldade"].map(normalizar_nivel_dificuldade)
     discursivas_por_dificuldade = (
         df_discursivas_detalhe.groupby(["nivel_dificuldade", "modelo"], dropna=False)
         .agg(score_num=("nota_estimada", "sum"), score_den=("pontuacao_total", "sum"))
         .reset_index()
     )
+    discursivas_por_dificuldade["nivel_dificuldade"] = discursivas_por_dificuldade["nivel_dificuldade"].map(normalizar_nivel_dificuldade)
     discursivas_por_dificuldade["score"] = discursivas_por_dificuldade["score_num"] / discursivas_por_dificuldade["score_den"].replace(0, float("nan"))
     discursivas_por_dificuldade = discursivas_por_dificuldade.fillna(0.0)
 
@@ -117,11 +138,14 @@ def gerar_relatorios_consolidados(
         .fillna(0.0)
         .reset_index()
     )
+    objetivas_dificuldade_resumo["nivel_dificuldade"] = objetivas_dificuldade_resumo["nivel_dificuldade"].map(normalizar_nivel_dificuldade)
     total_obj_dificuldade = (
         df_objetivas_detalhe.groupby("nivel_dificuldade", dropna=False)
         .agg(total_questoes=("question_id", "nunique"), total_pontuacao_questoes=("question_id", "nunique"))
         .reset_index()
     )
+    total_obj_dificuldade["nivel_dificuldade"] = total_obj_dificuldade["nivel_dificuldade"].map(normalizar_nivel_dificuldade)
+    total_obj_dificuldade = total_obj_dificuldade.groupby("nivel_dificuldade", dropna=False, as_index=False).sum(numeric_only=True)
     resumo_objetivas_dificuldade = total_obj_dificuldade.merge(
         objetivas_dificuldade_resumo, on="nivel_dificuldade", how="left"
     ).fillna(0.0)
@@ -135,11 +159,16 @@ def gerar_relatorios_consolidados(
         .fillna(0.0)
         .reset_index()
     )
+    discursivas_dificuldade_resumo["nivel_dificuldade"] = discursivas_dificuldade_resumo["nivel_dificuldade"].map(normalizar_nivel_dificuldade)
     total_disc_dificuldade = (
-        df_discursivas_detalhe.groupby("nivel_dificuldade", dropna=False)
+        df_discursivas_detalhe[["question_id", "nivel_dificuldade", "pontuacao_total"]]
+        .drop_duplicates(subset=["question_id"])
+        .groupby("nivel_dificuldade", dropna=False)
         .agg(total_questoes=("question_id", "nunique"), total_pontuacao_questoes=("pontuacao_total", "sum"))
         .reset_index()
     )
+    total_disc_dificuldade["nivel_dificuldade"] = total_disc_dificuldade["nivel_dificuldade"].map(normalizar_nivel_dificuldade)
+    total_disc_dificuldade = total_disc_dificuldade.groupby("nivel_dificuldade", dropna=False, as_index=False).sum(numeric_only=True)
     resumo_discursivas_dificuldade = total_disc_dificuldade.merge(
         discursivas_dificuldade_resumo, on="nivel_dificuldade", how="left"
     ).fillna(0.0)
@@ -149,6 +178,9 @@ def gerar_relatorios_consolidados(
         [resumo_objetivas_dificuldade, resumo_discursivas_dificuldade],
         ignore_index=True,
     )
+    ordem_dificuldade = {"facil": 0, "medio": 1, "dificil": 2, "muito_dificil": 3, "nao_informado": 4}
+    resumo_dificuldade["_ordem"] = resumo_dificuldade["nivel_dificuldade"].map(ordem_dificuldade).fillna(99)
+    resumo_dificuldade = resumo_dificuldade.sort_values(["tipo_avaliacao", "_ordem", "nivel_dificuldade"]).drop(columns="_ordem").reset_index(drop=True)
     salvar_csv(resumo_dificuldade, caminhos_saida.vencedores_dificuldade_csv)
 
     objetivas_por_disciplina = (
@@ -191,7 +223,9 @@ def gerar_relatorios_consolidados(
         .reset_index()
     )
     total_disc_disciplina = (
-        df_discursivas_detalhe.groupby("disciplina", dropna=False)
+        df_discursivas_detalhe[["question_id", "disciplina", "pontuacao_total"]]
+        .drop_duplicates(subset=["question_id"])
+        .groupby("disciplina", dropna=False)
         .agg(total_questoes=("question_id", "nunique"), total_pontuacao_questoes=("pontuacao_total", "sum"))
         .reset_index()
     )
@@ -204,6 +238,7 @@ def gerar_relatorios_consolidados(
         [resumo_objetivas_disciplina, resumo_discursivas_disciplina],
         ignore_index=True,
     )
+    resumo_disciplina = resumo_disciplina.sort_values(["tipo_avaliacao", "disciplina"]).reset_index(drop=True)
     salvar_csv(resumo_disciplina, caminhos_saida.vencedores_disciplina_csv)
 
     composicao_resumida = (
