@@ -71,6 +71,7 @@ def calcular_nli(resposta: str, referencia: str, pipeline_nli) -> float:
 
 def calcular_sbert(texto_1: str, texto_2: str, backend_embeddings) -> float:
     """Calcula a similaridade SBERTScore entre dois textos."""
+    # A comparacao por sentencas reduz o efeito de respostas longas com apenas aderencia parcial.
     sentencas_resposta = segmentar_sentencas(texto_1) or [texto_1]
     sentencas_referencia = segmentar_sentencas(texto_2) or [texto_2]
 
@@ -88,6 +89,7 @@ def calcular_sbert(texto_1: str, texto_2: str, backend_embeddings) -> float:
     vetor_referencia = vetor_referencia / np.linalg.norm(vetor_referencia, axis=1, keepdims=True)
     matriz_similaridade = np.dot(vetor_resposta, vetor_referencia.T)
 
+    # A logica segue a ideia de SBERTScore, equilibrando cobertura da resposta e cobertura do gabarito.
     precisao = matriz_similaridade.max(axis=1).mean()
     revocacao = matriz_similaridade.max(axis=0).mean()
     if precisao + revocacao == 0:
@@ -99,6 +101,7 @@ def avaliar_semantico(resposta: str, referencia: str, backend_embeddings, pipeli
     """Combina similaridade semantica com NLI conforme o estudo de metricas."""
     score_sbert = calcular_sbert(resposta, referencia, backend_embeddings)
     score_nli = calcular_nli(resposta, referencia, pipeline_nli)
+    # Contradicao forte derruba a nota semantica, ainda que exista alguma proximidade lexical.
     if score_nli < 0.2:
         return 0.0
     return (0.7 * score_sbert) + (0.3 * score_nli)
@@ -115,6 +118,7 @@ def carregar_criterios_correcao(criterios_brutos, gabarito_completo: str, pontua
     for criterio in criterios_brutos:
         componentes = []
         for componente in criterio.get("componentes", []):
+            # Cada componente ja chega com o tipo de verificacao e o peso definido no espelho.
             componentes.append(
                 ComponenteCriterio(
                     tipo=normalizar_texto(componente.get("tipo")).lower(),
@@ -135,6 +139,7 @@ def carregar_criterios_correcao(criterios_brutos, gabarito_completo: str, pontua
     if criterios:
         return criterios
 
+    # O fallback preserva a avaliacao quando a curadoria nao trouxer criterios detalhados.
     if gabarito_completo and pontuacao_total > 0:
         return [
             CriterioCorrecao(
@@ -178,6 +183,7 @@ def avaliar_discursivas_estruturadas(
         for criterio in criterios:
             nota_criterio = 0.0
             for indice, componente in enumerate(criterio.componentes, start=1):
+                # Componentes semanticos e legislativos sao avaliados separadamente e depois somados.
                 if componente.tipo == "semantico":
                     score = avaliar_semantico(resposta, componente.referencia, backend_embeddings, pipeline_nli)
                     nota = score * componente.peso
@@ -196,6 +202,7 @@ def avaliar_discursivas_estruturadas(
                     termos_esperados = ""
 
                 nota_criterio += nota
+                # O detalhamento por componente alimenta a auditoria do espelho e os relatorios finais.
                 linhas_componente.append(
                     {
                         "question_id": linha["question_id"],
@@ -215,6 +222,7 @@ def avaliar_discursivas_estruturadas(
 
             nota_total += nota_criterio
 
+        # O aproveitamento normaliza a nota da questao pela pontuacao maxima prevista no espelho.
         aproveitamento = nota_total / pontuacao_total if pontuacao_total > 0 else 0.0
         linhas_questao.append(
             {
@@ -233,6 +241,7 @@ def avaliar_discursivas_estruturadas(
     df_detalhe_questao = pd.DataFrame(linhas_questao)
     df_composicao = pd.DataFrame(linhas_componente)
 
+    # O benchmark agrega o desempenho discursivo por modelo para comparacao direta entre candidatos.
     benchmark = (
         df_detalhe_questao.groupby("modelo", dropna=False)
         .agg(

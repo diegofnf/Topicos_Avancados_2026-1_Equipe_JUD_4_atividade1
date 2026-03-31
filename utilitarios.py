@@ -62,6 +62,7 @@ def extrair_json_bruto(texto: str | None) -> str | None:
         if caractere != "{":
             continue
         try:
+            # Busca o ultimo JSON bem-formado em saidas que podem conter texto extra do modelo.
             objeto, consumidos = decodificador.raw_decode(texto[indice:])
             if isinstance(objeto, dict):
                 candidatos_validos.append(texto[indice:indice + consumidos])
@@ -75,8 +76,10 @@ def segmentar_sentencas(texto: str, minimo_caracteres: int = 10) -> list[str]:
     texto_normalizado = normalizar_texto(texto)
     if not texto_normalizado:
         return []
+    # A segmentacao permite comparar resposta e gabarito por partes menores na etapa semantica.
     partes = re.split(r"(?<=[.!?;])\s+", texto_normalizado)
     sentencas = [parte.strip() for parte in partes if len(parte.strip()) >= minimo_caracteres]
+    # Se o texto nao tiver pontuacao util, a avaliacao segue com o bloco inteiro.
     return sentencas or [texto_normalizado]
 
 

@@ -30,10 +30,12 @@ def gerar_texto(modelo, tokenizer, prompt: str, usar_amostragem: bool, max_token
     mensagens.append({"role": "user", "content": prompt.strip()})
 
     try:
+        # Quando disponivel, o chat template preserva o formato esperado pelo modelo instrucional.
         resultado = tokenizer.apply_chat_template(mensagens, return_tensors="pt", add_generation_prompt=True)
         input_ids = (resultado.input_ids if hasattr(resultado, "input_ids") else resultado).to(dispositivo)
         attention_mask = torch.ones_like(input_ids)
     except Exception:
+        # O fallback garante compatibilidade com tokenizers que nao expõem chat template.
         codificado = tokenizer(prompt.strip(), return_tensors="pt").to(dispositivo)
         input_ids, attention_mask = codificado.input_ids, codificado.attention_mask
 
@@ -71,6 +73,7 @@ def gerar_resposta_objetiva(modelo, tokenizer, linha: pd.Series, nome_modelo: st
         max_tokens=40,
         prompt_sistema=linha.get("Prompt System"),
     )
+    # A saida objetiva e forcada para JSON para simplificar a avaliacao automatica da alternativa.
     bruto = extrair_json_bruto(saida)
     try:
         resposta_json = json.loads(bruto) if bruto else {}
@@ -111,6 +114,7 @@ def gerar_resposta_discursiva(modelo, tokenizer, linha: pd.Series, nome_modelo: 
         temperatura=0.7,
         prompt_sistema=linha.get("Prompt System"),
     )
+    # Remove rotulos introdutorios frequentes para avaliar apenas o corpo efetivo da resposta.
     resposta = re.sub(r"^resposta\s*(final)?\s*:\s*", "", resposta, flags=re.IGNORECASE).strip()
 
     return {
@@ -143,9 +147,11 @@ def gerar_respostas(
         print(f"Candidato: {apelido_modelo} -> {nome_modelo}")
         modelo, tokenizer = carregar_modelo_geracao(nome_modelo, configuracao.diretorio_cache_hf)
 
+        # As objetivas usam decodificacao mais controlada para reduzir variacao fora do formato esperado.
         for _, linha in tqdm(df_objetivas.iterrows(), total=len(df_objetivas), desc=f"Objetivas | {apelido_modelo}"):
             respostas_objetivas.append(gerar_resposta_objetiva(modelo, tokenizer, linha, apelido_modelo))
 
+        # As discursivas mantem amostragem para estimular respostas juridicas mais desenvolvidas.
         for _, linha in tqdm(df_discursivas.iterrows(), total=len(df_discursivas), desc=f"Discursivas | {apelido_modelo}"):
             respostas_discursivas.append(gerar_resposta_discursiva(modelo, tokenizer, linha, apelido_modelo))
 
