@@ -119,7 +119,7 @@ def gerar_relatorios_consolidados(
     )
     total_obj_dificuldade = (
         df_objetivas_detalhe.groupby("nivel_dificuldade", dropna=False)
-        .agg(total_questoes=("question_id", "nunique"), total_pontuacao_questoes=("question_id", "size"))
+        .agg(total_questoes=("question_id", "nunique"), total_pontuacao_questoes=("question_id", "nunique"))
         .reset_index()
     )
     resumo_objetivas_dificuldade = total_obj_dificuldade.merge(
@@ -174,7 +174,7 @@ def gerar_relatorios_consolidados(
     )
     total_obj_disciplina = (
         df_objetivas_detalhe.groupby("disciplina", dropna=False)
-        .agg(total_questoes=("question_id", "nunique"), total_pontuacao_questoes=("question_id", "size"))
+        .agg(total_questoes=("question_id", "nunique"), total_pontuacao_questoes=("question_id", "nunique"))
         .reset_index()
     )
     resumo_objetivas_disciplina = total_obj_disciplina.merge(
