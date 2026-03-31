@@ -31,6 +31,15 @@ def normalizar_nivel_dificuldade(valor: str) -> str:
     return mapa.get(texto, texto or "nao_informado")
 
 
+def chave_ordenacao_criterio_id(valor: str) -> tuple[int, float, str]:
+    """Cria uma chave de ordenacao que respeita ids numericos e alfabeticos."""
+    texto = str(valor or "").strip()
+    try:
+        return (0, float(texto), texto)
+    except ValueError:
+        return (1, float("inf"), texto.upper())
+
+
 def vencedores_por_grupo(df: pd.DataFrame, coluna_grupo: str, coluna_score: str, tipo_avaliacao: str, criterio: str) -> pd.DataFrame:
     """Seleciona o melhor modelo em cada agrupamento."""
     base = df.copy().sort_values([coluna_grupo, coluna_score, "modelo"], ascending=[True, False, True])
@@ -216,7 +225,13 @@ def gerar_relatorios_consolidados(
         .reset_index()
         .fillna(0.0)
     )
-    composicao_resumida = composicao_resumida.sort_values(["question_id", "criterio_id", "tipo_componente"]).reset_index(drop=True)
+    composicao_resumida["_ordem_criterio_tipo"] = composicao_resumida["tipo_componente"].map({"semantico": 0, "legislacao": 1}).fillna(99)
+    composicao_resumida["_ordem_criterio_id"] = composicao_resumida["criterio_id"].map(chave_ordenacao_criterio_id)
+    composicao_resumida = (
+        composicao_resumida.sort_values(["question_id", "_ordem_criterio_id", "_ordem_criterio_tipo"])
+        .drop(columns=["_ordem_criterio_id", "_ordem_criterio_tipo"])
+        .reset_index(drop=True)
+    )
 
     melhor_objetiva = benchmark_objetivas.iloc[0]
     melhor_discursiva = benchmark_discursivas.iloc[0]
