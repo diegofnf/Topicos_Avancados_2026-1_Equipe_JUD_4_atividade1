@@ -9,10 +9,10 @@ import pandas as pd
 import torch
 from tqdm.auto import tqdm
 
-from .configuracoes import ConfiguracaoExecucao
-from .modelos import carregar_modelo_geracao, descarregar_modelo
-from .prompts import PROMPT_CANDIDATO_DISCURSIVA, PROMPT_CANDIDATO_OBJETIVA
-from .utilitarios import (
+from configuracoes import ConfiguracaoExecucao
+from modelos import carregar_modelo_geracao, descarregar_modelo
+from prompts import PROMPT_CANDIDATO_DISCURSIVA, PROMPT_CANDIDATO_OBJETIVA
+from utilitarios import (
     carregar_json_seguro,
     extrair_json_bruto,
     normalizar_texto,

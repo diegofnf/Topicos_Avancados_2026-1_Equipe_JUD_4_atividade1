@@ -4,8 +4,8 @@ from __future__ import annotations
 
 import pandas as pd
 
-from .configuracoes import CaminhosSaida
-from .utilitarios import salvar_csv
+from configuracoes import CaminhosSaida
+from utilitarios import salvar_csv
 
 
 def avaliar_objetivas(df_respostas_objetivas: pd.DataFrame, caminhos_saida: CaminhosSaida) -> tuple[pd.DataFrame, pd.DataFrame]:

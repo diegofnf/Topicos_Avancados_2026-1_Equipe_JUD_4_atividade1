@@ -78,7 +78,7 @@ Essa estrutura substitui a logica antiga baseada em itens menos aderentes ao for
 
 ## 4. Arquitetura do projeto
 
-O projeto foi modularizado no pacote `diego_bispo/`, com separacao de responsabilidades.
+O projeto foi modularizado em modulos Python posicionados diretamente na raiz do projeto, com separacao de responsabilidades.
 
 ### 4.1 Estrutura de diretorios
 
@@ -91,18 +91,16 @@ O projeto foi modularizado no pacote `diego_bispo/`, com separacao de responsabi
 |   |-- Metricas_Escolhidas.ipynb
 |   |-- Parser_Gabarito.ipynb
 |   `-- Teste_Métricas_Qualitativas.ipynb
-|-- diego_bispo/
-|   |-- __init__.py
-|   |-- configuracoes.py
-|   |-- prompts.py
-|   |-- utilitarios.py
-|   |-- carregar_dados.py
-|   |-- modelos.py
-|   |-- geracao_respostas.py
-|   |-- avaliacao_objetiva.py
-|   |-- avaliacao_discursiva.py
-|   |-- relatorios.py
-|   `-- pipeline.py
+|-- configuracoes.py
+|-- prompts.py
+|-- utilitarios.py
+|-- carregar_dados.py
+|-- modelos.py
+|-- geracao_respostas.py
+|-- avaliacao_objetiva.py
+|-- avaliacao_discursiva.py
+|-- relatorios.py
+|-- pipeline.py
 `-- artefatos_gerados/
 ```
 

@@ -10,8 +10,8 @@ import numpy as np
 import pandas as pd
 from tqdm.auto import tqdm
 
-from .configuracoes import CaminhosSaida
-from .utilitarios import carregar_json_seguro, normalizar_texto, salvar_csv, segmentar_sentencas
+from configuracoes import CaminhosSaida
+from utilitarios import carregar_json_seguro, normalizar_texto, salvar_csv, segmentar_sentencas
 
 
 @dataclass

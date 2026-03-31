@@ -7,8 +7,8 @@ from pathlib import Path
 
 import pandas as pd
 
-from .configuracoes import CaminhosSaida
-from .utilitarios import carregar_json_seguro, converter_para_float, normalizar_texto, salvar_csv
+from configuracoes import CaminhosSaida
+from utilitarios import carregar_json_seguro, converter_para_float, normalizar_texto, salvar_csv
 
 
 def montar_texto_discursivo(linha: pd.Series) -> str:

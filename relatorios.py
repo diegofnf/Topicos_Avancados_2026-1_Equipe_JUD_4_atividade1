@@ -8,8 +8,8 @@ import seaborn as sns
 from IPython.display import Image, Markdown, display
 from matplotlib.backends.backend_pdf import PdfPages
 
-from .configuracoes import CaminhosSaida
-from .utilitarios import arredondar_numericos, salvar_csv
+from configuracoes import CaminhosSaida
+from utilitarios import arredondar_numericos, salvar_csv
 
 
 def vencedores_por_grupo(df: pd.DataFrame, coluna_grupo: str, coluna_score: str, tipo_avaliacao: str, criterio: str) -> pd.DataFrame:

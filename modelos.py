@@ -9,8 +9,8 @@ import torch
 from huggingface_hub import snapshot_download
 from transformers import AutoModel, AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig, pipeline
 
-from .configuracoes import ConfiguracaoExecucao
-from .utilitarios import normalizar_texto
+from configuracoes import ConfiguracaoExecucao
+from utilitarios import normalizar_texto
 
 
 def baixar_modelos(configuracao: ConfiguracaoExecucao) -> None:
