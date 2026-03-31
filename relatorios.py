@@ -199,7 +199,7 @@ def gerar_relatorios_consolidados(
     composicao_resumida = (
         df_composicao_discursiva.groupby(["question_id", "criterio_id", "secao", "tipo_componente", "modelo"], dropna=False)
         .agg(
-            nota_criterio=("peso_total_criterio", "max"),
+            nota_criterio=("peso_componente", "max"),
             nota_modelo=("nota_obtida", "sum"),
         )
         .reset_index()
@@ -216,6 +216,7 @@ def gerar_relatorios_consolidados(
         .reset_index()
         .fillna(0.0)
     )
+    composicao_resumida = composicao_resumida.sort_values(["question_id", "criterio_id", "tipo_componente"]).reset_index(drop=True)
 
     melhor_objetiva = benchmark_objetivas.iloc[0]
     melhor_discursiva = benchmark_discursivas.iloc[0]
