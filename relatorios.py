@@ -69,7 +69,7 @@ def gerar_relatorios_consolidados(
     ) / 2
     benchmark_consolidado = benchmark_consolidado.fillna(0.0).sort_values(
         ["media_geral", "acuracia_objetivas", "media_discursivas", "modelo"],
-        ascending=[False, False, True],
+        ascending=[False, False, False, True],
     ).reset_index(drop=True)
     salvar_csv(benchmark_consolidado, caminhos_saida.benchmark_consolidado_csv)
 
@@ -109,21 +109,47 @@ def gerar_relatorios_consolidados(
     discursivas_por_dificuldade["score"] = discursivas_por_dificuldade["score_num"] / discursivas_por_dificuldade["score_den"].replace(0, float("nan"))
     discursivas_por_dificuldade = discursivas_por_dificuldade.fillna(0.0)
 
-    vencedores_dificuldade = pd.concat(
-        [
-            vencedores_por_grupo(objetivas_por_dificuldade, "nivel_dificuldade", "score", "objetiva", "nivel_dificuldade"),
-            vencedores_por_grupo(discursivas_por_dificuldade, "nivel_dificuldade", "score", "discursiva", "nivel_dificuldade"),
-        ],
+    objetivas_dificuldade_resumo = (
+        df_objetivas_detalhe.groupby(["nivel_dificuldade", "modelo"], dropna=False)
+        .agg(total_pontuacao_modelo=("correto", "sum"))
+        .reset_index()
+        .pivot(index="nivel_dificuldade", columns="modelo", values="total_pontuacao_modelo")
+        .fillna(0.0)
+        .reset_index()
+    )
+    total_obj_dificuldade = (
+        df_objetivas_detalhe.groupby("nivel_dificuldade", dropna=False)
+        .agg(total_questoes=("question_id", "nunique"), total_pontuacao_questoes=("question_id", "size"))
+        .reset_index()
+    )
+    resumo_objetivas_dificuldade = total_obj_dificuldade.merge(
+        objetivas_dificuldade_resumo, on="nivel_dificuldade", how="left"
+    ).fillna(0.0)
+    resumo_objetivas_dificuldade.insert(0, "tipo_avaliacao", "objetiva")
+
+    discursivas_dificuldade_resumo = (
+        df_discursivas_detalhe.groupby(["nivel_dificuldade", "modelo"], dropna=False)
+        .agg(total_pontuacao_modelo=("nota_estimada", "sum"))
+        .reset_index()
+        .pivot(index="nivel_dificuldade", columns="modelo", values="total_pontuacao_modelo")
+        .fillna(0.0)
+        .reset_index()
+    )
+    total_disc_dificuldade = (
+        df_discursivas_detalhe.groupby("nivel_dificuldade", dropna=False)
+        .agg(total_questoes=("question_id", "nunique"), total_pontuacao_questoes=("pontuacao_total", "sum"))
+        .reset_index()
+    )
+    resumo_discursivas_dificuldade = total_disc_dificuldade.merge(
+        discursivas_dificuldade_resumo, on="nivel_dificuldade", how="left"
+    ).fillna(0.0)
+    resumo_discursivas_dificuldade.insert(0, "tipo_avaliacao", "discursiva")
+
+    resumo_dificuldade = pd.concat(
+        [resumo_objetivas_dificuldade, resumo_discursivas_dificuldade],
         ignore_index=True,
     )
-    vencedores_dificuldade["acertos"] = vencedores_dificuldade["acertos"].fillna(0.0)
-    vencedores_dificuldade["total"] = vencedores_dificuldade["total"].fillna(0.0)
-    vencedores_dificuldade["score_num"] = vencedores_dificuldade["score_num"].fillna(0.0)
-    vencedores_dificuldade["score_den"] = vencedores_dificuldade["score_den"].fillna(0.0)
-    vencedores_dificuldade = vencedores_dificuldade[
-        ["tipo_avaliacao", "criterio", "nivel_dificuldade", "modelo", "score", "acertos", "total", "score_num", "score_den"]
-    ]
-    salvar_csv(vencedores_dificuldade, caminhos_saida.vencedores_dificuldade_csv)
+    salvar_csv(resumo_dificuldade, caminhos_saida.vencedores_dificuldade_csv)
 
     objetivas_por_disciplina = (
         df_objetivas_detalhe.groupby(["disciplina", "modelo"], dropna=False)
@@ -138,32 +164,68 @@ def gerar_relatorios_consolidados(
     discursivas_por_disciplina["score"] = discursivas_por_disciplina["score_num"] / discursivas_por_disciplina["score_den"].replace(0, float("nan"))
     discursivas_por_disciplina = discursivas_por_disciplina.fillna(0.0)
 
-    vencedores_disciplina = pd.concat(
-        [
-            vencedores_por_grupo(objetivas_por_disciplina, "disciplina", "score", "objetiva", "disciplina"),
-            vencedores_por_grupo(discursivas_por_disciplina, "disciplina", "score", "discursiva", "disciplina"),
-        ],
+    objetivas_disciplina_resumo = (
+        df_objetivas_detalhe.groupby(["disciplina", "modelo"], dropna=False)
+        .agg(total_pontuacao_modelo=("correto", "sum"))
+        .reset_index()
+        .pivot(index="disciplina", columns="modelo", values="total_pontuacao_modelo")
+        .fillna(0.0)
+        .reset_index()
+    )
+    total_obj_disciplina = (
+        df_objetivas_detalhe.groupby("disciplina", dropna=False)
+        .agg(total_questoes=("question_id", "nunique"), total_pontuacao_questoes=("question_id", "size"))
+        .reset_index()
+    )
+    resumo_objetivas_disciplina = total_obj_disciplina.merge(
+        objetivas_disciplina_resumo, on="disciplina", how="left"
+    ).fillna(0.0)
+    resumo_objetivas_disciplina.insert(0, "tipo_avaliacao", "objetiva")
+
+    discursivas_disciplina_resumo = (
+        df_discursivas_detalhe.groupby(["disciplina", "modelo"], dropna=False)
+        .agg(total_pontuacao_modelo=("nota_estimada", "sum"))
+        .reset_index()
+        .pivot(index="disciplina", columns="modelo", values="total_pontuacao_modelo")
+        .fillna(0.0)
+        .reset_index()
+    )
+    total_disc_disciplina = (
+        df_discursivas_detalhe.groupby("disciplina", dropna=False)
+        .agg(total_questoes=("question_id", "nunique"), total_pontuacao_questoes=("pontuacao_total", "sum"))
+        .reset_index()
+    )
+    resumo_discursivas_disciplina = total_disc_disciplina.merge(
+        discursivas_disciplina_resumo, on="disciplina", how="left"
+    ).fillna(0.0)
+    resumo_discursivas_disciplina.insert(0, "tipo_avaliacao", "discursiva")
+
+    resumo_disciplina = pd.concat(
+        [resumo_objetivas_disciplina, resumo_discursivas_disciplina],
         ignore_index=True,
     )
-    vencedores_disciplina["acertos"] = vencedores_disciplina["acertos"].fillna(0.0)
-    vencedores_disciplina["total"] = vencedores_disciplina["total"].fillna(0.0)
-    vencedores_disciplina["score_num"] = vencedores_disciplina["score_num"].fillna(0.0)
-    vencedores_disciplina["score_den"] = vencedores_disciplina["score_den"].fillna(0.0)
-    vencedores_disciplina = vencedores_disciplina[
-        ["tipo_avaliacao", "criterio", "disciplina", "modelo", "score", "acertos", "total", "score_num", "score_den"]
-    ]
-    salvar_csv(vencedores_disciplina, caminhos_saida.vencedores_disciplina_csv)
+    salvar_csv(resumo_disciplina, caminhos_saida.vencedores_disciplina_csv)
 
     composicao_resumida = (
-        df_composicao_discursiva.groupby(["question_id", "modelo", "criterio_id", "secao"], dropna=False)
+        df_composicao_discursiva.groupby(["question_id", "criterio_id", "secao", "tipo_componente", "modelo"], dropna=False)
         .agg(
-            nota_total_criterio=("nota_obtida", "sum"),
-            score_medio=("score", "mean"),
+            nota_criterio=("peso_total_criterio", "max"),
+            nota_modelo=("nota_obtida", "sum"),
         )
         .reset_index()
     )
     primeiras_questoes = list(df_discursivas_detalhe["question_id"].drop_duplicates().head(2))
     composicao_resumida = composicao_resumida[composicao_resumida["question_id"].isin(primeiras_questoes)].reset_index(drop=True)
+    composicao_resumida = (
+        composicao_resumida.pivot_table(
+            index=["question_id", "criterio_id", "secao", "tipo_componente", "nota_criterio"],
+            columns="modelo",
+            values="nota_modelo",
+            aggfunc="first",
+        )
+        .reset_index()
+        .fillna(0.0)
+    )
 
     melhor_objetiva = benchmark_objetivas.iloc[0]
     melhor_discursiva = benchmark_discursivas.iloc[0]
@@ -184,9 +246,9 @@ def gerar_relatorios_consolidados(
     display(Markdown("### Secao 3 - Avaliacao das objetivas"))
     display(arredondar_numericos(objetivas_resumo))
     display(Markdown("### Secao 4 - Analise por dificuldade"))
-    display(arredondar_numericos(vencedores_dificuldade))
+    display(arredondar_numericos(resumo_dificuldade))
     display(Markdown("### Secao 5 - Analise por especialidade"))
-    display(arredondar_numericos(vencedores_disciplina))
+    display(arredondar_numericos(resumo_disciplina))
 
     colunas_heatmap = ["acuracia_objetivas", "media_discursivas", "media_geral"]
     heatmap_df = benchmark_consolidado.set_index("modelo")[colunas_heatmap]
@@ -208,8 +270,8 @@ def gerar_relatorios_consolidados(
         renderizar_pagina_tabela(pdf, "Secao 1 - Notas discursivas", notas_discursivas, linhas_por_pagina=18)
         renderizar_pagina_tabela(pdf, "Secao 2 - Composicao dos criterios", composicao_resumida, linhas_por_pagina=16)
         renderizar_pagina_tabela(pdf, "Secao 3 - Avaliacao objetivas", objetivas_resumo, linhas_por_pagina=10)
-        renderizar_pagina_tabela(pdf, "Secao 4 - Por dificuldade", vencedores_dificuldade, linhas_por_pagina=16)
-        renderizar_pagina_tabela(pdf, "Secao 5 - Por especialidade", vencedores_disciplina, linhas_por_pagina=16)
+        renderizar_pagina_tabela(pdf, "Secao 4 - Por dificuldade", resumo_dificuldade, linhas_por_pagina=16)
+        renderizar_pagina_tabela(pdf, "Secao 5 - Por especialidade", resumo_disciplina, linhas_por_pagina=16)
 
     print(f"Relatorio PDF salvo em: {caminhos_saida.relatorio_executivo_pdf}")
     return benchmark_consolidado
