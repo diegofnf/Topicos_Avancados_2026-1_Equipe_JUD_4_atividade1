@@ -1,3 +1,5 @@
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/diegofnf/Topicos_Avancados_2026-1_Equipe_JUD_4_atividade1/blob/main/diego_bispo.ipynb)
+
 # Benchmark OAB com Avaliacao Estruturada de Questoes Objetivas e Discursivas
 
 ## 1. Visao geral
@@ -101,7 +103,7 @@ O projeto foi modularizado no pacote `diego_bispo/`, com separacao de responsabi
 |   |-- avaliacao_discursiva.py
 |   |-- relatorios.py
 |   `-- pipeline.py
-`-- saida_prototipo/
+`-- artefatos_gerados/
 ```
 
 ### 4.2 Responsabilidade dos modulos
@@ -298,7 +300,7 @@ Esses indicadores ajudam a comparar os modelos sob duas perspectivas:
 
 ## 10. Artefatos gerados
 
-O diretorio `saida_prototipo/` recebe os principais produtos da execucao, como:
+O diretorio `artefatos_gerados/` recebe os principais produtos da execucao, como:
 
 - questoes objetivas e discursivas preparadas;
 - respostas geradas;

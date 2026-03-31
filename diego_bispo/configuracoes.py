@@ -82,7 +82,7 @@ def _obter_token_hf() -> str:
 def criar_configuracao_padrao(raiz_projeto: Path | None = None) -> ConfiguracaoExecucao:
     """Cria a configuracao padrao do projeto."""
     raiz = (raiz_projeto or Path.cwd()).resolve()
-    diretorio_saida = raiz / "saida_prototipo"
+    diretorio_saida = raiz / "artefatos_gerados"
     caminhos_saida = CaminhosSaida(
         questoes_objetivas_csv=diretorio_saida / "questoes_objetivas_preparadas.csv",
         questoes_discursivas_csv=diretorio_saida / "questoes_discursivas_preparadas.csv",
