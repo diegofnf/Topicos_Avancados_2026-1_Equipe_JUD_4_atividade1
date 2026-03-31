@@ -150,6 +150,10 @@ def gerar_relatorios_consolidados(
         objetivas_dificuldade_resumo, on="nivel_dificuldade", how="left"
     ).fillna(0.0)
     resumo_objetivas_dificuldade.insert(0, "tipo_avaliacao", "objetiva")
+    resumo_objetivas_dificuldade = (
+        resumo_objetivas_dificuldade.groupby(["tipo_avaliacao", "nivel_dificuldade"], dropna=False, as_index=False)
+        .sum(numeric_only=True)
+    )
 
     discursivas_dificuldade_resumo = (
         df_discursivas_detalhe.groupby(["nivel_dificuldade", "modelo"], dropna=False)
@@ -173,6 +177,10 @@ def gerar_relatorios_consolidados(
         discursivas_dificuldade_resumo, on="nivel_dificuldade", how="left"
     ).fillna(0.0)
     resumo_discursivas_dificuldade.insert(0, "tipo_avaliacao", "discursiva")
+    resumo_discursivas_dificuldade = (
+        resumo_discursivas_dificuldade.groupby(["tipo_avaliacao", "nivel_dificuldade"], dropna=False, as_index=False)
+        .sum(numeric_only=True)
+    )
 
     resumo_dificuldade = pd.concat(
         [resumo_objetivas_dificuldade, resumo_discursivas_dificuldade],
