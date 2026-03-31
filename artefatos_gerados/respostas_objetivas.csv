@@ -1,0 +1,1346 @@
+﻿question_id,tipo_questao,dataset,modelo,nivel_dificuldade,disciplina,tema,texto_questao,gabarito_oficial,resposta,correto,json_parse_ok,saida_bruta,timestamp_execucao
+2012-08_40,OBJETIVA,J2,gemma2,medio,Direito Civil,Onerosidade excessiva e teoria da imprevisão,"Utilizando-se das regras afetas ao direito das obrigações, assinale a alternativa correta.",B,C,False,True,"{```json
+{
+  ""resposta_objetiva"": ""C""
+}
+```",2026-03-31T01:34:33Z
+2012-08_41,OBJETIVA,J2,gemma2,medio,Direito Civil,Contratos atípicos e vedação de pacto sucessório,"Embora sujeito às constantes mutações e às diferenças de contexto em que é aplicado, o conceito tradicional de contrato sugere que ele representa o acordo de vontades estabelecido com a finalidade de produzir efeitos jurídicos.
+Tomando por base a teoria geral dos contratos, assinale a afirmativa correta.",B,C,False,True,"{```json
+{
+  ""resposta_objetiva"": ""C"" 
+}
+```",2026-03-31T01:34:35Z
+2012-08_42,OBJETIVA,J2,gemma2,medio,Direito Civil,Usucapião familiar (abandono do lar),"Em janeiro de 2010, Nádia, unida estavelmente com Rômulo, após dez anos de convivência e sem que houvesse entre eles contrato escrito que disciplinasse as relações entre companheiros, abandona definitivamente o lar. Nos dois anos seguintes, Rômulo, que não é proprietário de outro imóvel urbano ou rural, continuou, ininterruptamente, sem oposição de quem quer que fosse, na posse direta e exclusiva do imóvel urbano com 200 metros quadrados, cuja propriedade dividia com Nádia e que servia de moradia do casal. Em março de 2012, Rômulo – que nunca havia ajuizado ação de usucapião, de qualquer espécie, contra quem quer que fosse - ingressou com ação de usucapião, pretendendo o reconhecimento judicial para adquirir integralmente o domínio do referido imóvel.
+Diante dessa situação hipotética, assinale a afirmativa correta.",D,B,False,True,"{```json
+{
+  ""resposta_objetiva"": ""B""
+}
+```",2026-03-31T01:34:37Z
+2012-08_43,OBJETIVA,J2,gemma2,medio,Direito Civil,Tutela de menor e alienação de bens do incapaz,"Eduardo e Mônica, casados, tinham um filho menor chamado Renato. Por orientação de um advogado, Eduardo e Mônica, em 2005, fizeram os respectivos testamentos e nomearam Lúcio, irmão mais velho de Eduardo, como tutor do menor para o caso de alguma eventualidade. Pouco antes da nomeação por testamento, Lúcio fora definitivamente condenado pelo crime de dano (art. 163 do Código Penal), mas o casal manteve a nomeação, acreditando no arrependimento de Lúcio, que, desde então, mostrou conduta socialmente adequada.
+Em 2010, Eduardo e Mônica morreram em um acidente aéreo. Dois anos depois do acidente, pretendendo salvaguardar os interesses do menor colocado sob sua tutela, Lúcio, prevendo manifesta vantagem negocial em virtude do aumento dos preços dos imóveis, decide alienar a terceiros um dos bens imóveis do patrimônio de Renato, depositando, imediatamente, todo o dinheiro obtido na negociação em uma conta de poupança, aberta em nome do menor.
+Diante do caso narrado, assinale a afirmativa correta.",C,C,True,True,"{```json
+{
+  ""resposta_objetiva"": ""C""
+}
+```",2026-03-31T01:34:39Z
+2012-08_44,OBJETIVA,J2,gemma2,facil,Direito da Criança e do Adolescente,Hospedagem de crianças e adolescentes,"João e Maria, ambos adolescentes, com dezessete e dezesseis anos, respectivamente, resolvem realizar uma viagem para comemorar o aniversário de um ano de namoro. Como destino, o jovem casal elege Armação dos Búzios, no estado do Rio de Janeiro, e efetua a reserva, por telefone, em uma pousada do balneário.
+Considerando a normativa acerca da prevenção especial contida na Lei n. 8.069, de 13 de julho de 1990, assinale a afirmativa correta.",D,C,False,True,"{```json
+{
+  ""resposta_objetiva"": ""C""
+}
+```",2026-03-31T01:34:41Z
+2012-08_45,OBJETIVA,J2,gemma2,facil,Direito da Criança e do Adolescente,Atribuições do Conselho Tutelar,"Acerca das atribuições do Conselho Tutelar determinadas no Estatuto da Criança e do Adolescente, assinale a alternativa correta.",A,B,False,True,"{```json
+{
+  ""resposta_objetiva"": ""B""
+}
+```",2026-03-31T01:34:44Z
+2012-08_46,OBJETIVA,J2,gemma2,medio,Direito do Consumidor,Cláusulas Abusivas e Legitimidade Institucional,"João celebrou contrato de seguro de vida e invalidez, aderindo a plano oferecido por conhecida rede particular. O contrato de adesão, válido por cinco anos, prevê a possibilidade de cancelamento, em favor da seguradora, antes de ocorrer o sinistro, por alegação de desequilíbrio econômico-financeiro.
+A esse respeito, assinale a afirmativa correta.",C,C,True,True,"{```json
+{
+  ""resposta_objetiva"": ""C""
+}
+```",2026-03-31T01:34:46Z
+2012-08_47,OBJETIVA,J2,gemma2,medio,Direito do Consumidor,Defeito do produto e violação da segurança do consumidor,"Determinado consumidor, ao mastigar uma fatia de pão com geleia, encontrou um elemento rígido, o que lhe causou intenso desconforto e a quebra parcial de um dos dentes. Em razão do fato, ingressou com medida judicial em face do mercado que vendeu a geleia, a fim de ser reparado. No curso do processo, a perícia constatou que o elemento encontrado era uma pequena porção de açúcar cristalizado, não oferecendo risco à saúde do autor.
+Diante desta narrativa, assinale a afirmativa correta.",B,C,False,True,"{```json
+{
+  ""resposta_objetiva"": ""C""
+}
+```",2026-03-31T01:34:48Z
+2012-08_48,OBJETIVA,J2,gemma2,Média,Direito Empresarial,Cheque,"Com relação ao instituto do cheque, assinale a afirmativa correta.",B,D,False,True,"{```json
+{
+  ""resposta_objetiva"": ""D""
+}
+```",2026-03-31T01:34:50Z
+2012-08_49,OBJETIVA,J2,gemma2,facil,Direito Empresarial,Sociedade em Conta de Participação,"A respeito do sócio ostensivo da sociedade em conta de participação, assinale a afirmativa correta.",B,D,False,True,"{```json
+{
+  ""resposta_objetiva"": ""D""
+}
+```",2026-03-31T01:34:52Z
+2012-08_50,OBJETIVA,J2,gemma2,dificil,Direito Empresarial,Debêntures e Órgãos da Companhia,"A Assembleia Geral de S.A. Empreendimentos Turísticos, companhia aberta sediada em “X”, delegou ao Conselho de Administração a deliberação sobre a oportunidade de emissão, época e condições de vencimento de debêntures conversíveis em ações. Petrossian Participações Ltda., acionista minoritário, consultou seu advogado sobre a legalidade da deliberação.
+Com relação ao fato acima, assinale a alternativa que apresenta a resposta correta à consulta.",A,A,True,True,"{```json
+{
+  ""resposta_objetiva"": ""A""
+}
+```",2026-03-31T01:34:55Z
+2012-08_51,OBJETIVA,J2,gemma2,medio,Direito Empresarial,Processamento e Plano de Recuperação Judicial,"A respeito da recuperação judicial, assinale a afirmativa correta.",C,B,False,True,"{```json
+{
+  ""resposta_objetiva"": ""B""
+}
+```",2026-03-31T01:34:57Z
+2012-08_52,OBJETIVA,J2,gemma2,medio,Direito Empresarial,Administração da EIRELI e Responsabilidade dos Administradores,"José decidiu constituir uma Empresa Individual de Responsabilidade Limitada (EIRELI) para atuar no município “X” e consultou um advogado para obter esclarecimentos sobre a administração da EIRELI.
+Assinale a alternativa que apresenta a informação correta dada pelo advogado.",C,B,False,True,"{```json
+{
+  ""resposta_objetiva"": ""B""
+}
+```",2026-03-31T01:34:59Z
+2012-08_53,OBJETIVA,J2,gemma2,medio,Direito Civil,Ação Declaratória Incidental e Coisa Julgada,"A parte que, no curso do processo comum ordinário, suscitar questão prejudicial e requerer ao juiz não apenas o exame, mas o julgamento dessa questão, que passará a integrar o dispositivo da sentença, deverá requerer",B,D,False,True,"{```json
+{
+  ""resposta_objetiva"": ""D""
+}
+```",2026-03-31T01:35:01Z
+2012-08_54,OBJETIVA,J2,gemma2,facil,Direito Civil,Procedimento Sumário,"O procedimento sumário deve ser adotado em causas cujo valor não supere sessenta salários mínimos ou em situações, qualquer que seja o valor da causa, em que se debata um dos assuntos previstos na lei.
+Indique, dentre as alternativas abaixo, a que contém espécie de resposta que não pode ser apresentada pelo réu no rito comum sumário.",A,D,False,True,"{```json
+{
+  ""resposta_objetiva"": ""D""
+}
+```",2026-03-31T01:35:03Z
+2012-08_55,OBJETIVA,J2,gemma2,medio,Direito Civil,Incidente de Uniformização de Jurisprudência,"A uniformização de jurisprudência é um instituto jurídico que tem por objetivo diminuir os impactos das divergências entre julgamentos do mesmo assunto.
+A respeito da uniformização de jurisprudência, asinale a afirmativa correta.",C,A,False,True,"{```json
+{
+  ""resposta_objetiva"": ""A""
+}
+```",2026-03-31T01:35:06Z
+2012-08_56,OBJETIVA,J2,gemma2,medio,Direito Civil,Cumprimento de Sentença,"Nos autos de ação indenizatória movida por Henrique em face de Paulo, ambos prósperos empresários, transitou em julgado sentença de procedência do pleito autoral, condenando o réu ao pagamento de indenização, no montante equivalente a 500 salários mínimos, na data da prolação da sentença, acrescidos de juros legais e correção monetária.
+Assinale a alternativa que apresenta a providência a ser imediatamente adotada pelo advogado de Henrique.",B,B,True,True,"{```json
+{
+  ""resposta_objetiva"": ""B""
+}
+```",2026-03-31T01:35:08Z
+2012-08_57,OBJETIVA,J2,gemma2,facil,Direito Civil,Chamamento ao Processo,"Vinícius foi demandado em uma ação de cobrança por ter sido fiador de sua sogra, Francisca. Assinale a alternativa que indica a medida a ser adotada por Vinícius para trazer Francisca para o pólo passivo desse processo.",C,C,True,True,"{```json
+{
+  ""resposta_objetiva"": ""C"" 
+}
+```",2026-03-31T01:35:10Z
+2012-08_58,OBJETIVA,J2,gemma2,medio,Direito Civil,Competência Absoluta e Relativa,"O sistema processual pátrio estabelece duas espécies de incompetência: a incompetência absoluta e a incompetência relativa.
+Acerca do tema, assinale a afirmativa correta.",B,C,False,True,"{```json
+{
+  ""resposta_objetiva"": ""C""
+}
+```",2026-03-31T01:35:12Z
+2012-08_59,OBJETIVA,J2,gemma2,medio,Direito Penal,Princípio da Insignificância,"Em relação ao princípio da insignificância, assinale a afirmativa correta.",B,B,True,True,"{```json
+{
+  ""resposta_objetiva"": ""B""
+}
+```",2026-03-31T01:35:15Z
+2012-08_60,OBJETIVA,J2,gemma2,facil,Direito Penal,"Anistia, graça e indulto","Trata-se de causa extintiva da punibilidade consistente na exclusão, por lei ordinária com efeitos retroativos, de um ou mais fatos criminosos do campo de incidência do Direito Penal,",B,B,True,True,"{```json
+{
+  ""resposta_objetiva"": ""B""
+}
+```",2026-03-31T01:35:17Z
+2012-08_61,OBJETIVA,J2,gemma2,dificil,Direito Penal,Comunicabilidade de Circunstâncias e Elementares,"Analise detidamente as seguintes situações:
+Casuística 1: Amarildo, ao chegar a sua casa, constata que sua filha foi estuprada por Terêncio. Imbuído de relevante valor moral, contrata Ronaldo, pistoleiro profissional, para tirar a vida do estuprador. O serviço é regularmente executado.
+Casuística 2: Lucas concorre para um infanticídio auxiliando Julieta, parturiente, a matar o nascituro – o que efetivamente acontece. Lucas sabia, desde o início, que Julieta estava sob a influência do estado puerperal.
+Levando em consideração a legislação vigente e a doutrina sobre o concurso de pessoas (concursus delinquentium), é correto afirmar que",A,C,False,True,"{```json
+{
+  ""resposta_objetiva"": ""C""
+}
+```",2026-03-31T01:35:19Z
+2012-08_62,OBJETIVA,J2,gemma2,medio,Direito Penal,Culpabilidade,Analise as hipóteses abaixo relacionadas e assinale a alternativa que apresenta somente causas excludentes de culpabilidade.,A,C,False,True,"{```json
+{
+  ""resposta_objetiva"": ""C""
+}
+```",2026-03-31T01:35:22Z
+2012-08_63,OBJETIVA,J2,gemma2,dificil,Direito Penal,Imputação Objetiva,"José conversava com Antônio em frente a um prédio. Durante a conversa, José percebe que João, do alto do edifício, jogara um vaso mirando a cabeça de seu interlocutor. Assustado, e com o fim de evitar a possível morte de Antônio, José o empurra com força. Antônio cai e, na queda, fratura o braço. Do alto do prédio, João vê a cena e fica irritado ao perceber que, pela atuação rápida de José, não conseguira acertar o vaso na cabeça de Antônio.
+Com base no caso apresentado, segundo os estudos acerca da teoria da imputação objetiva, assinale a afirmativa correta.",C,D,False,True,"{```json
+{
+  ""resposta_objetiva"": ""D""
+}
+```",2026-03-31T01:35:24Z
+2012-08_64,OBJETIVA,J2,gemma2,medio,Direito Penal,Furto e Teoria da Consumação,"Jaime, conhecido pelos colegas como “Jaiminho mão de seda”, utilizando-se de sua destreza, consegue retirar a carteira do bolso traseiro da calça de Ricardo que, ao perceber a subtração, sai ao encalço do delinquente. Ocorre que, durante a perseguição, Ricardo acaba sendo atropelado, vindo a falecer em decorrência dos ferimentos.
+Nesse sentido, com base nas informações apresentadas na hipótese, e a jurisprudência predominante dos tribunais superiores, assinale a afirmativa correta.",B,C,False,True,"{```json
+{
+  ""resposta_objetiva"": ""C""
+}
+```",2026-03-31T01:35:26Z
+2012-08_65,OBJETIVA,J2,gemma2,facil,Direito Penal,Recurso em Sentido Estrito,"Adão ofereceu uma queixa-crime contra Eva por crime de dano qualificado (art. 163, parágrafo único, IV). A queixa preenche todos os requisitos legais e foi oferecida antes do fim do prazo decadencial. Apesar disso, há a rejeição da inicial pelo juízo competente, que refere, equivocadamente, que a inicial é intempestiva, pois já teria transcorrido o prazo decadencial.
+Nesse caso, assinale a afirmativa que indica o recurso cabível.",A,B,False,True,"{```json
+{
+  ""resposta_objetiva"": ""B""
+}
+```",2026-03-31T01:35:28Z
+2012-08_66,OBJETIVA,J2,gemma2,dificil,Direito Penal,Relaxamento de Prisão,"O deputado “M” é um famoso político do Estado “Y”, e tem grande influência no governo estadual, em virtude das posições que já ocupou, como a de Presidente da Assembleia Legislativa. Atualmente, exerce a função de Presidente da Comissão de Finanças e Contratos. Durante a reunião semestral com as empresas interessadas em participar das inúmeras contratações que a Câmara fará até o final do ano, o deputado “M” exigiu do presidente da empresa “Z” R$ 500.000,00 (quinhentos mil reais) para que esta pudesse participar da concorrência para a realização das obras na sede da Câmara dos Deputados.
+O presidente da empresa “Z”, assustado com tal exigência, visto que sua empresa preenchia todos os requisitos legais para participar das obras, compareceu à Delegacia de Polícia e informou ao Delegado de Plantão o ocorrido, que o orientou a combinar a entrega da quantia para daqui a uma semana, oportunidade em que uma equipe de policiais estaria presente para efetuar a prisão em flagrante do deputado. No dia e hora aprazados para a entrega da quantia indevida, os policiais prenderam em flagrante o deputado “M” quando este conferia o valor entregue pelo presidente da empresa “Z”. Na qualidade de advogado contratado pelo Deputado, assinale a alternativa que indica a peça processual ou pretensão processual, exclusiva de advogado, cabível na hipótese acima.",C,C,True,True,"{```json
+{
+  ""resposta_objetiva"": ""C""
+}
+```",2026-03-31T01:35:30Z
+2012-08_67,OBJETIVA,J2,gemma2,facil,Direito Penal,Características do Inquérito Policial,"Um Delegado de Polícia determina a instauração de inquérito policial para apurar a prática do crime de receptação, supostamente praticado por José. Com relação ao Inquérito Policial, assinale a afirmativa que não constitui sua característica.",C,C,True,True,"{```json
+{
+  ""resposta_objetiva"": ""C""
+}
+```",2026-03-31T01:35:32Z
+2012-08_68,OBJETIVA,J2,gemma2,medio,Direito Penal,Competência Jurisdicional e Territorial,"Paulo reside na cidade “Y” e lá resolveu falsificar seu passaporte. Após a falsificação, pegou sua moto e viajou até a cidade “Z”, com o intuito de chegar ao Paraguai. Passou pela cidade “W” e pela cidade “K”, onde foi parado pela Polícia Militar. Paulo se identificou ao policial usando o documento falsificado e este, percebendo a fraude, encaminhou Paulo à delegacia. O Parquet denunciou Paulo pela prática do crime de uso de documento falso.
+Assinale a afirmativa que indica o órgão competente para julgamento.",B,C,False,True,"{```json
+{
+  ""resposta_objetiva"": ""C"" 
+}
+```",2026-03-31T01:35:35Z
+2012-08_69,OBJETIVA,J2,gemma2,medio,Direito Penal,Procedimento em Plenário (2ª fase),"Pedro foi denunciado pela prática de homicídio triplamente qualificado. Como se trata de um crime doloso contra a vida, será julgado pelo Tribunal do Júri. O processo seguiu seu curso normal, tendo Pedro sido pronunciado.
+Acerca da 2ª fase do procedimento, assinale a afirmativa que não corresponde à realidade.",D,C,False,True,"{```json
+{
+  ""resposta_objetiva"": ""C""
+}
+```",2026-03-31T01:35:37Z
+2012-08_70,OBJETIVA,J2,gemma2,medio,Direito do Trabalho,Depósitos e Saques,"Acerca do Fundo de Garantia por Tempo de Serviço (FGTS), assinale a afirmativa correta.",D,D,True,True,"{```json
+{
+  ""resposta_objetiva"": ""D""
+}
+```",2026-03-31T01:35:39Z
+2012-08_71,OBJETIVA,J2,gemma2,dificil,Direito do Trabalho,Estabilidade do Dirigente Sindical,"A respeito da estabilidade, assinale a afirmativa correta.",C,D,False,True,"{```json
+{
+  ""resposta_objetiva"": ""D""
+}
+```",2026-03-31T01:35:41Z
+2012-08_72,OBJETIVA,J2,gemma2,facil,Direito do Trabalho,Trabalhador Avulso,"Segundo expressa previsão em nossa ordem jurídica, assinale a afirmativa que indica o trabalhador que possui igualdade de direitos com os que têm vínculo empregatício permanente.",C,D,False,True,"{```json
+{
+  ""resposta_objetiva"": ""D"" 
+}
+```",2026-03-31T01:35:43Z
+2012-08_73,OBJETIVA,J2,gemma2,medio,Direito do Trabalho,Aviso Prévio Proporcional,"João, após completar 21 anos e dois meses de vínculo jurídico de emprego com a empresa EGEST ENGENHARIA, foi injustificadamente dispensado em 11/11/2011. No mesmo dia, seu colega de trabalho José, que contava com 25 anos completos de vínculo de emprego na mesma empresa, também foi surpreendido com a dispensa sem justo motivo, sendo certo que o ex-empregador nada pagou a título de parcelas resilitórias a ambos. Um mês após a rescisão contratual, João e José ajuízam reclamação trabalhista, postulando, dentre outras rubricas, o pagamento de aviso prévio.
+À luz da Lei n. 12.506/2011, introduzida no ordenamento jurídico em 11/10/2011, que regula o pagamento do aviso prévio proporcional ao tempo se serviço, assinale a afirmativa correta.",B,B,True,True,"{```json
+{
+  ""resposta_objetiva"": ""B""
+}
+```",2026-03-31T01:35:45Z
+2012-08_74,OBJETIVA,J2,gemma2,medio,Direito do Trabalho,Data de pagamento do salário,"Um determinado empregador paga os salários dos seus empregados no primeiro dia útil do mês seguinte ao vencido. Encontrando-se em situação financeira delicada, pretende passar a honrar esta obrigação no 5º dia útil do mês subsequente ao vencido, como normalmente fazem os seus concorrentes.
+A partir da hipótese apresentada, assinale a afirmativa correta.",B,C,False,True,"{```json
+{
+  ""resposta_objetiva"": ""C""
+}
+```",2026-03-31T01:35:47Z
+2012-08_75,OBJETIVA,J2,gemma2,medio,Direito do Trabalho,Invenção do Empregado,"Um cientista é contratado como empregado para trabalhar no setor de pesquisa de uma empresa, visando desenvolver atividade inventiva. Após três anos, com uso de equipamentos e insumos da empresa, o trabalhador inventa um novo maquinário, cuja patente é requerida e, em breve, introduzida no processo de produção, com previsão de alto lucro.
+Na hipótese, caso nada tenha sido disposto a respeito, assinale a afirmativa correta.",B,C,False,True,"{```json
+{
+  ""resposta_objetiva"": ""C""
+}
+```",2026-03-31T01:35:50Z
+2012-08_76,OBJETIVA,J2,gemma2,facil,Direito do Trabalho,Representação em Audiência e Preposto,"A respeito do preposto no Processo do Trabalho, de acordo com a legislação, assinale a afirmativa correta.",C,C,True,True,"{```json
+{
+  ""resposta_objetiva"": ""C""
+}
+```",2026-03-31T01:35:52Z
+2012-08_77,OBJETIVA,J2,gemma2,facil,Direito do Trabalho,Conflito de Competência,"Se for instalado conflito de competência positivo entre dois juízes do Trabalho do Estado de Pernambuco, qual será o órgão competente para julgá-lo?",C,C,True,True,"{```json
+{
+  ""resposta_objetiva"": ""C"" 
+}
+```",2026-03-31T01:35:54Z
+2012-08_78,OBJETIVA,J2,gemma2,medio,Direito do Trabalho,Competência em Embargos à Execução por Carta Precatória,"Em 30/7/2008 foi efetuada a penhora de um veículo BMW, modelo X1, por meio de carta precatória executória. Depois de devolvida a carta, o executado Eliezer Filho, proprietário do veículo, opôs embargos à execução em 4/8/2008, dirigindo essa ação incidental ao juízo deprecante. Em seus embargos, alegando a existência de um grosseiro vício, o embargante apontou para a irregularidade na avaliação do bem, uma vez que constou do auto da constrição judicial sua avaliação em R$ 15.000,00, montante muito abaixo do valor de mercado.
+Logo, por força do princípio da execução menos onerosa ao devedor, requereu a reavaliação do bem, sob pena de nulidade da execução.
+Com base nesse caso concreto, é correto afirmar que o juiz deprecante",A,C,False,True,"{```json
+{
+  ""resposta_objetiva"": ""C""
+}
+```",2026-03-31T01:35:56Z
+2012-08_79,OBJETIVA,J2,gemma2,medio,Direito do Trabalho,Procedimento Sumaríssimo,"A respeito do procedimento sumaríssimo no processo do trabalho, assinale a afirmativa correta.",A,B,False,True,"{```json
+{
+  ""resposta_objetiva"": ""B""
+}
+```",2026-03-31T01:35:58Z
+2012-08_80,OBJETIVA,J2,gemma2,facil,Direito do Trabalho,Custas Processuais,"Em relação ao valor das custas no processo do trabalho, assinale a afirmativa correta.",C,C,True,True,"{```json
+{
+  ""resposta_objetiva"": ""C""
+}
+```",2026-03-31T01:36:00Z
+2012-09_1,OBJETIVA,J2,gemma2,facil,Ética Profissional,Cobrança de Honorários,"Um advogado é contratado por um empresário para atuar em causas na área empresarial, formalizando contrato escrito e emitindo fatura para pagamento dos honorários ajustados. A partir de determinado momento o empresário passou a não pagar os honorários ajustados.
+Consoante as regras do Código de Ética, o advogado para buscar o recebimento dos honorários pactuados, deverá",D,D,True,True,"{```json
+{
+  ""resposta_objetiva"": ""D""
+}
+```",2026-03-31T01:36:03Z
+2012-09_2,OBJETIVA,J2,gemma2,facil,Ética Profissional,Atuação Simultânea como Advogado e Preposto,"O advogado Carlos é Presidente da empresa XYZ, com sede no Município Q. Em determinada data, a empresa é notificada para apresentar defesa em processo trabalhista ajuizado por antigo empregado da empresa. No dia da audiência designada, Carlos apresenta-se como preposto, vez que dirigente da empresa e advogado, por possuir habilitação profissional regular.
+Observados tais fatos, de acordo com as normas do Regulamento Geral do Estatuto da Advocacia e da OAB, assinale a afirmativa correta.",C,C,True,True,"{```json
+{
+  ""resposta_objetiva"": ""C""
+}
+```",2026-03-31T01:36:05Z
+2012-09_4,OBJETIVA,J2,gemma2,facil,Ética Profissional,Funções Privativas de Advogado,"Laura, advogada na área empresarial, após concluir o mestrado em renomada instituição de ensino superior, é convidada para integrar a equipe de assessoria jurídica da empresa K S/A . No dia da entrevista final, é inquirida pelo Gerente Jurídico da empresa, bacharel em Direito, sem inscrição na Ordem dos Advogados do Brasil, apesar de o mesmo ter logrado êxito no Exame de Ordem.
+Observado tal relato, consoante as normas do Regulamento Geral do Estatuto da Advocacia e da OAB, assinale a afirmativa correta.",B,C,False,True,"{```json
+{
+  ""resposta_objetiva"": ""C""
+}
+```",2026-03-31T01:36:07Z
+2012-09_5,OBJETIVA,J2,gemma2,medio,Ética Profissional,Requisitos para Inscrição de Advogado,"Sávio, aluno regularmente matriculado em Escola de Direito, obtém a sua graduação e, logo a seguir, aprovação no Exame de Ordem. Por força de movimento grevista na sua instituição, o diploma não pode ser expedido.
+A respeito da inscrição no quadro de advogados, consoante as normas do Regulamento Geral do Estatuto da Advocacia e da OAB, assinale a afirmativa correta.",D,D,True,True,"{```json
+{
+  ""resposta_objetiva"": ""D"" 
+}
+```",2026-03-31T01:36:09Z
+2012-09_6,OBJETIVA,J2,gemma2,medio,Ética Profissional,Atos do Estagiário,"Marcio é estagiário de Direito regularmente inscrito na Ordem dos Advogados do Brasil e atua sob supervisão da advogada Helena. Atuando em determinado processo, a advogada substabelece ao estagiário os poderes que lhe foram conferidos pelo cliente.
+A respeito do caso apresentado, consoante as normas do Regulamento Geral do Estatuto da Advocacia e da OAB, assinale a afirmativa correta.",B,B,True,True,"{```json
+{
+  ""resposta_objetiva"": ""B""
+}
+```",2026-03-31T01:36:12Z
+2012-09_7,OBJETIVA,J2,gemma2,facil,Ética Profissional,Conselhos Seccionais,"Assinale a afirmativa que indica como ocorrerá, em havendo necessidade, a criação de novos Conselhos Seccionais, de acordo com as normas do Regulamento Geral do Estatuto da Advocacia e da OAB.",D,D,True,True,"{```json
+{
+  ""resposta_objetiva"": ""D"" 
+}
+```",2026-03-31T01:36:14Z
+2012-09_8,OBJETIVA,J2,gemma2,medio,Ética Profissional,Cancelamento e Licença,"José da Silva, advogado renomado, é acometido por doença mental considerada pela unanimidade dos médicos como incurável, perdendo suas faculdades de discernimento e sendo considerado absolutamente incapaz por sentença judicial.
+Nos termos das regras estatutárias, sua inscrição como advogado será",B,D,False,True,"{```json
+{
+  ""resposta_objetiva"": ""D"" 
+}
+```",2026-03-31T01:36:16Z
+2012-09_9,OBJETIVA,J2,gemma2,medio,Ética Profissional,Responsabilidade por Danos ao Cliente,"O advogado João, regularmente contratado para defender os interesses de José em Juízo, realiza a defesa regular em primeiro grau, mas não apresenta recurso de apelação contra sentença que julgou improcedente o pedido, mesmo havendo sólida fundamentação para modificar o decidido. O prejuízo causado ao cliente foi de R$ 10.000,00, parcialmente coberto por seguro realizado pela sociedade de advogados integrada por João.
+Consoante as regras estatutárias, os prejuízos causados ao cliente acarretam a responsabilidade pessoal do sócio advogado de forma",B,A,False,True,"{```json
+{
+  ""resposta_objetiva"": ""A""
+}
+```",2026-03-31T01:36:18Z
+2012-09_10,OBJETIVA,J2,gemma2,medio,Ética Profissional,Exceção à infração por advogar contra literal disposição de lei,"O advogado Cândido, conhecido pelas soluções criativas para resolver os problemas dos seus clientes, aduz, como tese defensiva, em ação de despejo por falta de pagamento, que a norma que autoriza tal desocupação forçada seria inconstitucional, pois caberia ao Estado fornecer habitação gratuita ou a preços módicos aos necessitados e, em caso de impossibilidade financeira, custear a moradia, pagando ao locador os valores devidos, a título de aluguel social.
+Essa defesa foi considerada como contrária à disposição de lei que determina, como consequência do não pagamento dos alugueres, o despejo por falta de pagamento. Em razão disso, foi proferida sentença determinando a desocupação do imóvel e condenando o cliente do advogado Cândido ao pagamento dos alugueres devidos, bem como as demais verbas decorrentes da sucumbência. Além disso, determinou o magistrado a expedição de ofício à Ordem dos Advogados do Brasil para abertura de processo disciplinar.
+Consoante as regras do Estatuto da Advocacia, assinale a afirmativa correta.",B,C,False,True,"{```json
+{
+  ""resposta_objetiva"": ""C""
+}
+```",2026-03-31T01:36:20Z
+2012-09_11,OBJETIVA,J2,gemma2,medio,Ética Profissional,Competência Disciplinar,"Caio é advogado que atua em três estados da federação, possuindo uma inscrição principal e duas suplementares, tendo em vista o número elevado de causas que possui. Em decorrência de conflitos ocorridos em função dos processos em que atua, foram instaurados três processos disciplinares, um em cada seccional onde atua.
+De acordo com as normas do Estatuto da Advocacia, a competência para julgamento desses processos cabe ao",C,B,False,True,"{```json
+{
+  ""resposta_objetiva"": ""B""
+}
+```",2026-03-31T01:36:23Z
+2012-09_12,OBJETIVA,J2,gemma2,medio,Ética Profissional,Sigilo profissional em relação a ex-clientes,"Mário advogou, por muitos anos, para a empresa “X”, especializada no ramo de cosméticos. Por problemas pessoais, afastou-se da advocacia empresarial por um período de dois anos. No retorno, passou a representar os interesses da empresa “Y”, também do ramo de cosméticos, e concorrente direta da empresa para quem anteriormente prestara serviços.
+Quando da prestação de seus serviços à empresa “X”, Mário atuou em vários contratos em que constavam informações submetidas a segredo industrial, a que teve acesso exclusivamente em decorrência da sua atuação como advogado.
+Observado tal relato, em consonância com as normas do Código de Ética da Advocacia, assinale a afirmativa correta.",B,D,False,True,"{```json
+{
+  ""resposta_objetiva"": ""D""
+}
+```",2026-03-31T01:36:25Z
+2012-09_13,OBJETIVA,J2,gemma2,medio,Direito Constitucional,Habeas Corpus,"A respeito da ação de habeas corpus, assinale a afirmativa incorreta.",C,C,True,True,"{```json
+{
+  ""resposta_objetiva"": ""C""
+}
+```",2026-03-31T01:36:27Z
+2012-09_14,OBJETIVA,J2,gemma2,facil,Direito Constitucional,Repartição de Competências,"O Estado W, governado por dirigente progressista, pretende realizar uma ampla reforma agrária no seu território para melhor dividir a terra, incluindo diversos desempregados na vida produtiva, apresentando, ainda, amplo programa de financiamento das atividades agrícolas. Com essa proposta política, resolve apresentar projeto de lei, criando formas de desapropriação e inovando nos procedimentos, dando característica sumária e permitindo o ingresso nos imóveis sem pagar indenização.
+Quanto ao tema em foco, legislação sobre desapropriação, nos termos da Constituição Federal, assinale a afirmativa correta.",A,C,False,True,"{```json
+{
+  ""resposta_objetiva"": ""C""
+}
+```",2026-03-31T01:36:29Z
+2012-09_15,OBJETIVA,J2,gemma2,facil,Direito Constitucional,Competência do Congresso Nacional,O Congresso Nacional aprova tratados internacionais por meio de:,D,C,False,True,"{```json
+{
+  ""resposta_objetiva"": ""C"" 
+}
+```",2026-03-31T01:36:31Z
+2012-09_16,OBJETIVA,J2,gemma2,medio,Direito Constitucional,Controle Difuso e Reserva de Plenario,"João ingressa com ação individual buscando a repetição de indébito tributário, tendo como causa de pedir a inconstitucionalidade da Lei Federal “X”, que criou o tributo.
+Sobre a demanda, assinale a afirmativa correta.",C,C,True,True,"{```json
+{
+  ""resposta_objetiva"": ""C""
+}
+```",2026-03-31T01:36:33Z
+2012-09_17,OBJETIVA,J2,gemma2,medio,Direito Constitucional,Inelegibilidades,"José da Silva, prefeito do Município “X”, integrante do Estado “Y”, possui familiares que pretendem concorrer a cargos elegíveis nas próximas eleições.
+Sobre essa situação, assinale a afirmativa correta.",D,B,False,True,"{```json
+{
+  ""resposta_objetiva"": ""B""
+}
+```",2026-03-31T01:36:36Z
+2012-09_18,OBJETIVA,J2,gemma2,medio,Direito Constitucional,Repartição de Competências,"O Estado ”X” possui Lei Ordinária, que dispõe sobre regras de trânsito e transporte. Determina essa lei a instalação de cinto de segurança em veículos de transporte coletivo de passageiros, impondo penalidades em caso de descumprimento. Inconformado com este diploma legal, o Governador do Estado deseja propor ação direta de inconstitucionalidade.
+Neste caso, assinale a afirmativa correta.",C,C,True,True,"{```json
+{
+  ""resposta_objetiva"": ""C""
+}
+```",2026-03-31T01:36:38Z
+2012-09_19,OBJETIVA,J2,gemma2,medio,Direito Constitucional,Saúde,"Com relação às diretrizes e normas constitucionais referentes à prestação da saúde, assinale a afirmativa correta.",B,D,False,True,"{```json
+{
+  ""resposta_objetiva"": ""D"" 
+}
+```",2026-03-31T01:36:40Z
+2012-09_20,OBJETIVA,J2,gemma2,medio,Direito Internacional,Convenção para a Prevenção e a Repressão do Crime de Genocídio,"A Resolução 96 (I), de 11 de dezembro de 1946, da Assembleia Geral da Organização das Nações Unidas declarou que o genocídio é um crime contra o Direito Internacional.
+Nesse passo, a Convenção para a Prevenção e Repressão do Crime de Genocídio afirmou que",D,D,True,True,"{```json
+{
+  ""resposta_objetiva"": ""D""
+}
+```",2026-03-31T01:36:42Z
+2012-09_21,OBJETIVA,J2,gemma2,medio,Direito Internacional,Execução de Sentença,"O Pacto de São José da Costa Rica prevê que os Estados signatários devem cumprir com as decisões emanadas pela Corte Interamericana de Direitos Humanos. Uma das hipóteses de condenação consiste no pagamento, pelo Estado, de indenização compensatória à vítima da violação de direitos humanos.
+Assinale a afirmativa que indica o procedimento a ser adotado, caso o Estado brasileiro não cumpra espontaneamente a sentença internacional que o obriga a pagar a indenização.",B,C,False,True,"{```json
+{
+  ""resposta_objetiva"": ""C"" 
+}
+```",2026-03-31T01:36:44Z
+2012-09_22,OBJETIVA,J2,gemma2,medio,Direito Internacional,Convenção Interamericana para Prevenir e Punir a Tortura,"Com relação à Convenção Interamericana para Prevenir e Punir a Tortura, ratificada pelo Brasil em 20 de julho de 1989, assinale a afirmativa correta.",C,C,True,True,"{```json
+{
+  ""resposta_objetiva"": ""C""
+}
+```",2026-03-31T01:36:47Z
+2012-09_23,OBJETIVA,J2,gemma2,medio,Direito Internacional,Organizações Internacionais - Organização das Nações Unidas (ONU),"Com base da Carta das Nações Unidas, assinale a afirmativa correta.",A,A,True,True,"{```json
+{
+  ""resposta_objetiva"": ""A""
+}
+```",2026-03-31T01:36:49Z
+2012-09_24,OBJETIVA,J2,gemma2,dificil,Direito Internacional,Conflito de Leis no Espaço - Sucessão e Forma dos Atos,"José, de nacionalidade brasileira, era casado com Maria, de nacionalidade sueca, encontrando-se o casal domiciliado no Brasil. Durante a viagem de “lua de mel”, na França, Maria, após o jantar, veio a falecer, em razão de uma intoxicação alimentar. Maria, quando ainda era noiva de José, havia realizado testamento em Londres, dispondo sobre os seus bens, entre eles dois imóveis situados no Rio de Janeiro.
+À luz das regras de Direito Internacional Privado, assinale a afirmativa correta.",B,B,True,True,"{```json
+{
+  ""resposta_objetiva"": ""B""
+}
+```",2026-03-31T01:36:51Z
+2012-09_25,OBJETIVA,J2,gemma2,medio,Direito Tributário,Imposto sobre Produtos Industrializados (IPI),"Acerca do Imposto sobre Produtos Industrializados, de competência da União, assinale a afirmativa que contempla duas de suas características.",A,A,True,True,"{```json
+{
+  ""resposta_objetiva"": ""A""
+}
+```",2026-03-31T01:36:53Z
+2012-09_28,OBJETIVA,J2,gemma2,medio,Direito Tributário,Imunidade Recíproca,"O procurador do município Gama decide contestar judicialmente a cobrança do ICMS discriminada na fatura da conta de luz do imóvel onde funciona a sede da prefeitura, alegando a condição de ente político para livrar-se da exação.
+A demanda da municipalidade deverá ser",D,D,True,True,"{```json
+{
+  ""resposta_objetiva"": ""D""
+}
+```",2026-03-31T01:36:55Z
+2012-09_29,OBJETIVA,J2,gemma2,facil,Direito Administrativo,Classificação dos Serviços Públicos,"Acerca dos serviços considerados como serviços públicos uti singuli, assinale a afirmativa correta.",C,B,False,True,"{```json
+{
+  ""resposta_objetiva"": ""B"" 
+}
+```",2026-03-31T01:36:58Z
+2012-09_30,OBJETIVA,J2,gemma2,medio,Direito Administrativo,Fase Declaratória,"A desapropriação é um procedimento administrativo que possui duas fases: a primeira, denominada declaratória e a segunda, denominada executória.
+Quanto à fase declaratória, assinale a afirmativa correta.",B,C,False,True,"{```json
+{
+  ""resposta_objetiva"": ""C""
+}
+```",2026-03-31T01:37:00Z
+2012-09_31,OBJETIVA,J2,gemma2,facil,Direito Administrativo,Segurança Jurídica,"De acordo com o Art. 2º, inciso XIII, da Lei n. 9.784/98, a Administração deve buscar a interpretação da norma que melhor garanta o atendimento do fim público a que se dirige, vedada a aplicação retroativa da nova interpretação.
+Assinale a alternativa que indica o princípio consagrado por esse dispositivo, em sua parte final.",D,A,False,True,"{```json
+{
+  ""resposta_objetiva"": ""A""
+}
+```",2026-03-31T01:37:02Z
+2012-09_32,OBJETIVA,J2,gemma2,medio,Direito Administrativo,Exploração direta de atividade econômica pelo Estado,"Atento à crescente especulação imobiliária, e ciente do sucesso econômico obtido pelas construtoras do País com a construção de imóveis destinados ao público de alta renda, o Estado “X” decide ingressar nesse lucrativo mercado. Assim, edita uma lei autorizando a criação de uma empresa pública e, no mesmo ano, promove a inscrição dos seus atos constitutivos no registro das pessoas jurídicas.
+Assinale a alternativa que apresenta a alegação que as construtoras privadas, incomodadas pela concorrência de uma empresa pública, poderiam apresentar.",C,C,True,True,"{```json
+{
+  ""resposta_objetiva"": ""C"" 
+}
+```",2026-03-31T01:37:04Z
+2012-09_33,OBJETIVA,J2,gemma2,medio,Direito Administrativo,Parcerias Público-Privadas (PPP),"Um estado da Federação, em processo de recuperação econômica, pretende restaurar o seu antigo Parque de Esportes, uma enorme área que concentra estádio de futebol, ginásio de esportes coletivos e parque aquático. Não dispondo de recursos para custear a totalidade da obra e nem tendo expertise para promover uma boa gestão do espaço, o Estado pretende firmar um contrato de parceria público-privada, nos moldes da Lei n. 11.079/2004.
+Sobre o instituto da Parceria Público-Privada, assinale a afirmativa correta.",C,C,True,True,"{```json
+{
+  ""resposta_objetiva"": ""C""
+}
+```",2026-03-31T01:37:06Z
+2012-09_34,OBJETIVA,J2,gemma2,medio,Direito Administrativo,Controle Externo e Tribunal de Contas,"As contas do Prefeito do Município X não foram aprovadas pelo Tribunal de Contas do Estado. Dentre outras irregularidades, apurou-se o superfaturamento em obras públicas.
+Sobre o controle exercido pelas Cortes de Contas, assinale a afirmativa correta.",A,D,False,True,"{```json
+{
+  ""resposta_objetiva"": ""D""
+}
+```",2026-03-31T01:37:08Z
+2012-09_35,OBJETIVA,J2,gemma2,medio,Direito Ambiental,Ações Administrativas na Lei Complementar 140/2011,"A Lei Complementar n. 140 de 2011 fixou normas para a cooperação entre os entes da federação nas ações administrativas decorrentes do exercício da competência comum relativas ao meio ambiente. Sobre esse tema, assinale a afirmativa correta.",D,B,False,True,"{```json
+{
+  ""resposta_objetiva"": ""B""
+}
+```",2026-03-31T01:37:10Z
+2012-09_36,OBJETIVA,J2,gemma2,medio,Direito Ambiental,Sanções Administrativas,"A respeito da responsabilidade administrativa federal por danos ambientais, regulamentada pelo Decreto n. 6.514/08 e alterado pelo Decreto 6.686/08, assinale a afirmativa correta.",A,D,False,True,"{```json
+{
+  ""resposta_objetiva"": ""D""
+}
+```",2026-03-31T01:37:13Z
+2012-09_37,OBJETIVA,J2,gemma2,medio,Direito Civil,Ordem de vocação hereditária e meação,"José, viúvo, é pai de Mauro e Mário, possuindo um patrimônio de R$ 300.000,00. Casou-se com Roberta, que tinha um patrimônio de R$ 200.000,00, pelo regime da comunhão universal de bens. José e Roberta tiveram dois filhos, Bruno e Breno.
+Falecendo Roberta, a divisão do monte seria a seguinte:",C,A,False,True,"{```json
+{
+  ""resposta_objetiva"": ""A""
+}
+```",2026-03-31T01:37:15Z
+2012-09_38,OBJETIVA,J2,gemma2,facil,Direito Civil,Cláusulas Especiais à Compra e Venda (Preempção),"Marcelo firmou com Augusto contrato de compra e venda de imóvel, tendo sido instituindo no contrato o pacto de preempção. Acerca do instituto da preempção, assinale a afirmativa correta.",B,C,False,True,"{```json
+{
+  ""resposta_objetiva"": ""C""
+}
+```",2026-03-31T01:37:17Z
+2012-09_39,OBJETIVA,J2,gemma2,medio,Direito Civil,Hipoteca,"De acordo com as regras atinentes à hipoteca, assinale a afirmativa correta.",D,D,True,True,"{```json
+{
+  ""resposta_objetiva"": ""D""
+}
+```",2026-03-31T01:37:19Z
+2012-09_40,OBJETIVA,J2,gemma2,dificil,Direito Civil,Alimentos,"Henrique e Natália, casados sob o regime de comunhão parcial de bens, decidiram se divorciar após 10 anos de união conjugal. Do relacionamento nasceram Gabriela e Bruno, hoje, com 8 e 6 anos, respectivamente. Enquanto esteve casada, Natália, apesar de ter curso superior completo, ser pessoa jovem e capaz para o trabalho, não exerceu atividade profissional para se dedicar integralmente aos cuidados da casa e dos filhos.
+Considerando a hipótese acima e as regras atinentes à prestação de alimentos, assinale a afirmativa correta.",C,C,True,True,"{```json
+{
+  ""resposta_objetiva"": ""C""
+}
+```",2026-03-31T01:37:21Z
+2012-09_41,OBJETIVA,J2,gemma2,medio,Direito Civil,Vícios Redibitórios,"Em 12.09.12, Sílvio adquiriu de Maurício, por contrato particular de compra e venda, um automóvel, ano 2011, por R$ 34.000,00 (trinta e quatro mil reais). Vinte dias após a celebração do negócio, Sílvio tomou conhecimento que o veículo apresentava avarias na suspensão dianteira, tornando seu uso impróprio pela ausência de segurança.
+Considerando que o vício apontado existia ao tempo da contratação, de acordo com a hipótese acima e as regras de direito civil, assinale a afirmativa correta.",B,B,True,True,"{```json
+{
+  ""resposta_objetiva"": ""B""
+}
+```",2026-03-31T01:37:23Z
+2012-09_42,OBJETIVA,J2,gemma2,medio,Direito Civil,Pagamento em Consignação,"Tiago celebrou com Ronaldo contrato de compra e venda de dez máquinas de costura importadas da China. Restou acordado que o pagamento se daria em trinta e seis prestações mensais e consecutivas com reajuste a cada doze meses conforme taxa Selic, a ser efetuado no domicílio do credor. O contrato estabeleceu, ainda, a incidência de juros moratórios, no importe de 2% (dois por cento) do valor da parcela em atraso, e cláusula penal, fixada em 10% (dez por cento) do valor do contrato, em caso de inadimplência. Após o pagamento de nove parcelas, Tiago foi surpreendido com a notificação extrajudicial enviada por Ronaldo, em que se comunicava um reajuste de 30% (trinta por cento) sobre o valor da última parcela paga sob o argumento de que ocorreu elevada desvalorização no câmbio. Tiago não concordou com o reajuste e ao tentar efetuar o pagamento da décima parcela com base no valor inicialmente ajustado teve o pagamento recusado por Ronaldo.
+Considerando o caso acima e as regras previstas no Código Civil, assinale a afirmativa correta.",A,C,False,True,"{```json
+{
+  ""resposta_objetiva"": ""C""
+}
+```",2026-03-31T01:37:26Z
+2012-09_43,OBJETIVA,J2,gemma2,medio,Direito Civil,Responsabilidade Objetiva e Solidária,"No dia 23 de junho de 2012, Alfredo, produtor rural, contratou a sociedade Simões Aviação Agrícola Ltda., com a finalidade de pulverizar, por via aérea, sua plantação de soja. Ocorre que a pulverização se deu de forma incorreta, ocasionando a perda integral da safra de abóbora pertencente a Nilson, vizinho lindeiro de Alfredo.
+Considerando a situação hipotética e as regras de responsabilidade civil, assinale a afirmativa correta.",B,D,False,True,"{```json
+{
+  ""resposta_objetiva"": ""D""
+}
+```",2026-03-31T01:37:28Z
+2012-09_44,OBJETIVA,J2,gemma2,medio,Direito da Criança e do Adolescente,Autorização para Viagem e Hospedagem,"Juliana, estudante de 17 anos, em comemoração a sua recente aprovação no vestibular de uma renomada universidade, saiu em viagem com Gustavo, seu namorado de 25 anos, funcionário público federal.
+Acerca de possíveis intercorrências ao longo da viagem, é correto afirmar que",A,D,False,True,"{```json
+{
+  ""resposta_objetiva"": ""D""
+}
+```",2026-03-31T01:37:30Z
+2012-09_45,OBJETIVA,J2,gemma2,medio,Direito da Criança e do Adolescente,Estágio de Convivência,"Acerca do estágio de convivência precedente a adoção, assinale a afirmativa correta.",D,B,False,True,"{```json
+{
+  ""resposta_objetiva"": ""B""
+}
+```",2026-03-31T01:37:32Z
+2012-09_46,OBJETIVA,J2,gemma2,medio,Direito do Consumidor,Publicidade Enganosa e Abusiva,"Academia de ginástica veicula anúncio assinalando que os seus alunos, quando viajam ao exterior, podem se utilizar de rede mundial credenciada, presente em 60 países e 230 cidades, sem custo adicional. Um ano após continuamente fazer tal divulgação, vários alunos reclamam que, em quase todos os países, é exigida tarifa de uso da unidade conveniada. A academia responde que a referência ao “sem custo adicional” refere-se à inexistência de acréscimo cobrado por ela, e não de eventual cobrança, no exterior, de terceiro.
+Acerca dessa situação, assinale a afirmativa correta.",D,D,True,True,"{```json
+{
+  ""resposta_objetiva"": ""D""
+}
+```",2026-03-31T01:37:34Z
+2012-09_47,OBJETIVA,J2,gemma2,medio,Direito do Consumidor,Aplicabilidade do CDC e Revisão Contratual,"A sociedade empresária XYZ Ltda. oferta e celebra, com vários estudantes universitários, contratos individuais de fornecimento de material didático, nos quais garante a entrega, com 25% de desconto sobre o valor indicado pela editora, dos livros didáticos escolhidos pelos contratantes (de lista de editoras de antemão definidas). Os contratos têm duração de 24 meses, e cada estudante compromete-se a pagar valor mensal, que fica como crédito, a ser abatido do valor dos livros escolhidos. Posteriormente, a capacidade de entrega da sociedade diminuiu, devido a dívidas e problemas judiciais. Em razão disso, ela pretende rever judicialmente os contratos, para obter aumento do valor mensal, ou então liberar-se do vínculo.
+Acerca dessa situação, assinale a afirmativa correta.",A,C,False,True,"{```json
+{
+  ""resposta_objetiva"": ""C""
+}
+```",2026-03-31T01:37:36Z
+2012-09_48,OBJETIVA,J2,gemma2,facil,Direito Empresarial,Subsidiária Integral,"Leia o trecho a seguir.
+Companhia cuja totalidade das ações em que se divide o capital pertence a uma sociedade brasileira.
+Essa definição refere-se à",A,C,False,True,"{```json
+{
+  ""resposta_objetiva"": ""C""
+}
+```",2026-03-31T01:37:39Z
+2012-09_49,OBJETIVA,J2,gemma2,medio,Direito Empresarial,Sociedade Limitada,"A sociedade limitada encontra-se regulada nos artigos 1052 a 1087 do Código Civil. Para que ela possa atingir sua finalidade, necessita de patrimônio, já que sua personalidade é diversa da personalidade dos sócios. Em relação ao capital e ao patrimônio social desse tipo societário, assinale a afirmativa incorreta.",B,C,False,True,"{```json
+{
+  ""resposta_objetiva"": ""C""
+}
+```",2026-03-31T01:37:41Z
+2012-09_50,OBJETIVA,J2,gemma2,medio,Direito Empresarial,Duplicata e Princípios Cambiários,"Com relação aos títulos de crédito, assinale a afirmativa correta.",D,C,False,True,"{```json
+{
+  ""resposta_objetiva"": ""C""
+}
+```",2026-03-31T01:37:43Z
+2012-09_51,OBJETIVA,J2,gemma2,medio,Direito Empresarial,Classificação de Créditos,"A respeito do processo de falência, assinale a afirmativa correta.",C,C,True,True,"{```json
+{
+  ""resposta_objetiva"": ""C""
+}
+```",2026-03-31T01:37:45Z
+2012-09_52,OBJETIVA,J2,gemma2,medio,Direito Civil,Arrendamento Mercantil (Leasing),"Primavera do Leste Arrendamento Mercantil S.A. ajuizou ação de reintegração de posse de bem arrendado à sociedade empresária Vila Bela Distribuidora de Jornais e Revistas Ltda., em face do não pagamento das prestações nos vencimentos. O contrato de arrendamento mercantil prevê resolução de pleno direito em caso de qualquer inadimplemento da arrendatária.
+O juiz extinguiu o processo sem resolução de mérito porque",A,C,False,True,"{```json
+{
+  ""resposta_objetiva"": ""C""
+}
+```",2026-03-31T01:37:47Z
+2012-09_53,OBJETIVA,J2,gemma2,medio,Direito Administrativo,Procedimento,"Os Juizados Especiais da Fazenda Pública, órgãos da Justiça comum e integrantes do Sistema dos Juizados Especiais, foram instituídos pela Lei n. 12.153/2009.
+Com base nessas disposições, asinale a afirmativa correta.",D,D,True,True,"{```json
+{
+  ""resposta_objetiva"": ""D""
+}
+```",2026-03-31T01:37:50Z
+2012-09_54,OBJETIVA,J2,gemma2,medio,Direito Constitucional,Mandado de Segurança,"Impetrado um mandado de segurança, já sob a égide da Lei n. 12.016/2009, assinale a afirmativa correta.",A,C,False,True,"{```json
+{
+  ""resposta_objetiva"": ""C""
+}
+```",2026-03-31T01:37:52Z
+2012-09_55,OBJETIVA,J2,gemma2,medio,Direito Civil,Intervenção de Terceiros,"Considerando a assistência e as demais formas de intervenção de terceiros previstas no Código de Processo Civil, assinale a afirmativa correta.",C,B,False,True,"{```json
+{
+  ""resposta_objetiva"": ""B""
+}
+```",2026-03-31T01:37:54Z
+2012-09_56,OBJETIVA,J2,gemma2,medio,Direito Civil,Ação Rescisória,"A respeito da Ação Rescisória, assinale a afirmativa correta.",B,C,False,True,"{```json
+{
+  ""resposta_objetiva"": ""C""
+}
+```",2026-03-31T01:37:56Z
+2012-09_57,OBJETIVA,J2,gemma2,medio,Direito Constitucional,Recurso Extraordinário e Repercussão Geral,"Como forma de prestigiar o princípio da razoável duração do processo e propiciar uma prestação jurisdicional mais célere e eficiente, um legislador promoveu uma série de alterações na sistemática recursal do Processo Civil brasileiro. Nesse sentido, destaca-se a Emenda Constitucional n. 45/2004 que introduziu em nosso ordenamento jurídico a figura da repercussão geral.
+Acerca deste instituto, assinale a afirmativa correta.",B,C,False,True,"{```json
+{
+  ""resposta_objetiva"": ""C""
+}
+```",2026-03-31T01:37:58Z
+2012-09_58,OBJETIVA,J2,gemma2,medio,Direito Civil,Impugnação ao Cumprimento de Sentença,"A execução tem por finalidade precípua a adoção de medidas necessárias à satisfação da obrigação prevista em um título executivo judicial ou extrajudicial. Em um primeiro momento, vigia no ordenamento pátrio o princípio da autonomia, segundo o qual as atividades executivas e de conhecimento deveriam ser desenvolvidas necessariamente por meio de ações distintas. Contudo, tal sistemática foi alvo de uma série de reformas que buscaram prestigiar um desenvolvimento sincrético do processo, bem como a própria efetivação do título executivo.
+Com base na legislação vigente, assinale a afirmativa correta:",B,C,False,True,"{```json
+{
+  ""resposta_objetiva"": ""C""
+}
+```",2026-03-31T01:38:00Z
+2012-09_59,OBJETIVA,J2,gemma2,medio,Direito Penal,Progressão de Regime,"O sistema punitivo brasileiro é progressivo. Por meio dele o condenado passa do regime inicial de cumprimento de pena mais severo para regime mais brando, até alcançar o livramento condicional ou a liberdade definitiva.
+A respeito da progressão de regime, assinale a afirmativa correta.",C,B,False,True,"{```json
+{
+  ""resposta_objetiva"": ""B""
+}
+```",2026-03-31T01:38:03Z
+2012-09_60,OBJETIVA,J2,gemma2,medio,Direito Penal,Princípios da Ação Penal,"Tendo como base o instituto da ação penal, assinale a afirmativa correta.",A,C,False,True,"{```json
+{
+  ""resposta_objetiva"": ""C""
+}
+```",2026-03-31T01:38:05Z
+2012-09_61,OBJETIVA,J2,gemma2,medio,Direito Penal,Excludentes de Ilicitude e Culpabilidade,"Acerca das causas excludentes de ilicitude e extintivas de punibilidade, assinale a afirmativa incorreta.",B,C,False,True,"{```json
+{
+  ""resposta_objetiva"": ""C""
+}
+```",2026-03-31T01:38:07Z
+2012-09_62,OBJETIVA,J2,gemma2,medio,Direito Penal,Relação de Causalidade e Agravação pelo Resultado,"José subtrai o carro de um jovem que lhe era totalmente desconhecido, chamado João. Tal subtração deu-se mediante o emprego de grave ameaça exercida pela utilização de arma de fogo. João, entretanto, rapaz jovem e de boa saúde, sem qualquer histórico de doença cardiovascular, assusta-se de tal forma com a arma, que vem a óbito em virtude de ataque cardíaco.
+Com base no cenário acima, assinale a afirmativa correta.",B,C,False,True,"{```json
+{
+  ""resposta_objetiva"": ""C""
+}
+```",2026-03-31T01:38:09Z
+2012-09_63,OBJETIVA,J2,gemma2,dificil,Direito Penal,Reincidência,"Guilherme praticou, em 18/02/2009, contravenção penal de vias de fato (Art. 21 do Decreto Lei n. 3.688/41), tendo sido condenado à pena de multa. A sentença transitou definitivamente em julgado no dia 15/03/2010, mas Guilherme não pagou a multa. No dia 10/07/2010, Guilherme praticou crime de ato obsceno (Art. 233 do CP).
+Com base na situação descrita e na legislação, assinale a afirmativa correta.",A,C,False,True,"{```json
+{
+  ""resposta_objetiva"": ""C""
+}
+```",2026-03-31T01:38:11Z
+2012-09_64,OBJETIVA,J2,gemma2,medio,Direito Penal,Erro de Proibição,"Jaime, brasileiro, passou a morar em um país estrangeiro no ano de 1999. Assim como seu falecido pai, Jaime tinha por hábito sempre levar consigo acessórios de arma de fogo, o que não era proibido, levando-se em conta a legislação vigente à época, a saber, a Lei n. 9.437/97. Tal hábito foi mantido no país estrangeiro que, em sua legislação, não vedava a conduta. Todavia, em 2012, Jaime resolve vir de férias ao Brasil. Além de matar as saudades dos familiares, Jaime também queria apresentar o país aos seus dois filhos, ambos nascidos no estrangeiro. Ocorre que, dois dias após sua chegada, Jaime foi preso em flagrante por portar ilegalmente acessório de arma de fogo, conduta descrita no Art. 14 da Lei n. 10.826/2003, verbis: “Portar, deter, adquirir, fornecer, receber, ter em depósito, transportar, ceder, ainda que gratuitamente, emprestar, remeter, empregar, manter sob guarda ou ocultar arma de fogo, acessório ou munição, de uso permitido, sem autorização e em desacordo com determinação legal ou regulamentar”.
+Nesse sentido, podemos afirmar que Jaime agiu em hipótese de",A,B,False,True,"{```json
+{
+  ""resposta_objetiva"": ""B""
+}
+```",2026-03-31T01:38:13Z
+2012-09_65,OBJETIVA,J2,gemma2,medio,Direito Penal,Suspensão Condicional do Processo e Transação Penal,"Com relação à Lei n. 9.099/95, assinale a afirmativa incorreta.",B,C,False,True,"{```json
+{
+  ""resposta_objetiva"": ""C""
+}
+```",2026-03-31T01:38:16Z
+2012-09_66,OBJETIVA,J2,gemma2,facil,Direito Penal,Prisao em Flagrante,"O Código de Processo Penal pátrio menciona que também se considera em flagrante delito quem é perseguido, logo após o delito, pela autoridade, pelo ofendido ou por qualquer pessoa, em situação que faça presumir ser o perseguido autor da infração.
+A essa modalidade dá-se o nome de flagrante",A,C,False,True,"{```json
+{
+  ""resposta_objetiva"": ""C""
+}
+```",2026-03-31T01:38:18Z
+2012-09_67,OBJETIVA,J2,gemma2,facil,Direito Penal,Ação Penal,"Em relação aos procedimentos previstos na Lei n. 8.666/93, que instituiu as normas de licitações e contratos da Administração Pública, assinale a afirmativa correta.",A,C,False,True,"{```json
+{
+  ""resposta_objetiva"": ""C""
+}
+```",2026-03-31T01:38:20Z
+2012-09_68,OBJETIVA,J2,gemma2,medio,Direito Penal,Embargos Infringentes e de Nulidade,"Joel foi condenado pela prática do crime de extorsão mediante sequestro. A defesa interpôs recurso de Apelação, que foi recebido e processado, sendo certo que o tribunal, de forma não unânime, manteve a condenação imposta pelo juízo a quo. O advogado do réu verifica que o acórdão viola, de forma direta, dispositivos constitucionais, razão pela qual decide continuar recorrendo da decisão exarada pela Segunda Instância.
+De acordo com as informações acima, assinale a alternativa que indica o recurso a ser interposto.",D,C,False,True,"{```json
+{
+  ""resposta_objetiva"": ""C"" 
+}
+```",2026-03-31T01:38:22Z
+2012-09_69,OBJETIVA,J2,gemma2,medio,Direito Penal,Lei Maria da Penha (Violência Doméstica),"Em relação à Lei Maria da Penha, assinale a afirmativa correta.",D,A,False,True,"{```json
+{
+  ""resposta_objetiva"": ""A""
+}
+```",2026-03-31T01:38:24Z
+2012-09_70,OBJETIVA,J2,gemma2,facil,Direito do Trabalho,Aposentadoria por Invalidez,"Após sofrer um acidente automobilístico de gravíssimas proporções enquanto viajava a lazer, o empregado Pedro foi aposentado por invalidez pelo INSS. Assinale a alternativa que indica o efeito desse fato no seu contrato de trabalho.",B,D,False,True,"{```json
+{
+  ""resposta_objetiva"": ""D""
+}
+```",2026-03-31T01:38:27Z
+2012-09_71,OBJETIVA,J2,gemma2,medio,Direito do Trabalho,Intervalo Intrajornada,"Maria foi contratada pela empresa Bolos S.A. para exercer a função de copeira, cumprindo jornada de trabalho de segunda à sexta-feira das 13:00 h às 17:00 h, sem intervalo alimentar. Decorridos dois anos do início do pacto contratual, foi a empregada dispensada, recebendo as parcelas da ruptura.
+Contudo, inconformada porque jamais lhe foi permitido usufruir de intervalo para descanso e alimentação, Maria ajuíza reclamação trabalhista postulando o pagamento do período correspondente ao intervalo alimentar não concedido.
+Diante da hipótese relatada, assinale a afirmativa correta.",C,C,True,True,"{```json
+{
+  ""resposta_objetiva"": ""C""
+}
+```",2026-03-31T01:38:29Z
+2012-09_72,OBJETIVA,J2,gemma2,facil,Direito do Trabalho,Homologação e Assistência na Rescisão,"Partindo-se da premissa legal de que o pedido de demissão ou recibo de quitação de rescisão do contrato de trabalho, firmado por empregado com mais de um ano de serviço, somente será válido quando realizado perante a autoridade competente, assinale a afirmativa correta.",C,D,False,True,"{```json
+{
+  ""resposta_objetiva"": ""D"" 
+}
+```",2026-03-31T01:38:31Z
+2012-09_73,OBJETIVA,J2,gemma2,facil,Direito do Trabalho,Requisitos para Contratação e Exigência de Experiência,"Buscando profissionais experientes para manusear equipamentos de alta tecnologia e custo extremamente elevado, uma empresa anuncia a existência de vagas para candidatos que possuam dois anos de experiência prévia em determinada atividade.
+A partir da hipótese apresentada, assinale a afirmativa correta.",A,D,False,True,"{```json
+{
+  ""resposta_objetiva"": ""D""
+}
+```",2026-03-31T01:38:33Z
+2012-09_74,OBJETIVA,J2,gemma2,medio,Direito do Trabalho,Extinção do Contrato e Prescrição,"De acordo com o entendimento consolidado da jurisprudência, a mudança de regime jurídico do empregado celetista para estatutário",C,A,False,True,"{```json
+{
+  ""resposta_objetiva"": ""A""
+}
+```",2026-03-31T01:38:35Z
+2012-09_75,OBJETIVA,J2,gemma2,medio,Direito do Trabalho,Custas e Responsabilidade Solidária,"Assinale a alternativa em que há, incontroversamente, responsabilidade solidária no âmbito trabalhista.",C,B,False,True,"{```json
+{
+  ""resposta_objetiva"": ""B""
+}
+```",2026-03-31T01:38:37Z
+2012-09_76,OBJETIVA,J2,gemma2,medio,Direito do Trabalho,Citação na Execução Trabalhista,"De acordo com a Consolidação das Leis do Trabalho, assinale a afirmativa correta.",C,C,True,True,"{```json
+{
+  ""resposta_objetiva"": ""C""
+}
+```",2026-03-31T01:38:40Z
+2012-09_77,OBJETIVA,J2,gemma2,medio,Direito do Trabalho,Preferência de Tramitação,"Um dos princípios norteadores do Processo do Trabalho é o da celeridade, dada a natureza salarial do crédito trabalhista. Entretanto, por força de Lei, algumas causas especiais possuem preferência na tramitação. Das situações listadas a seguir, assinale aquela que terá preferência em todas as fases processuais.",B,B,True,True,"{```json
+{
+  ""resposta_objetiva"": ""B""
+}
+```",2026-03-31T01:38:42Z
+2012-09_78,OBJETIVA,J2,gemma2,medio,Direito do Trabalho,Reconvenção e Competência da Justiça do Trabalho,"Uma das espécies de resposta é a reconvenção, que vem a ser a ação do réu contra o autor no mesmo feito e juízo em que é demandado. Malgrado não estar formalmente previsto na CLT, é pacífico o cabimento da reconvenção nas lides trabalhistas. Das hipóteses abaixo listadas, assinale aquela em que, pela natureza da pretensão deduzida, seria inviável a apresentação de reconvenção na Justiça do Trabalho.",D,C,False,True,"{```json
+{
+  ""resposta_objetiva"": ""C""
+}
+```",2026-03-31T01:38:44Z
+2012-09_79,OBJETIVA,J2,gemma2,medio,Direito do Trabalho,Liquidação de Sentença,"A liquidação tem por objetivo a apuração do quantum debeatur nas sentenças proferidas de forma ilíquida e que tenham deferido, ao menos em parte, a pretensão deduzida. De acordo com a CLT, assinale a alternativa que indica as formas possíveis de liquidação da sentença nas obrigações de dar (pagar) e, caso o juiz conceda prazo às partes para manifestação, o número de dias para a impugnação.",B,D,False,True,"{```json
+{
+  ""resposta_objetiva"": ""D""
+}
+```",2026-03-31T01:38:46Z
+2012-09_80,OBJETIVA,J2,gemma2,medio,Direito do Trabalho,Jus Postulandi,"Na Justiça do Trabalho, segundo o entendimento sumulado pelo TST, é correto afirmar-se que o jus postulandi",A,D,False,True,"{```json
+{
+  ""resposta_objetiva"": ""D""
+}
+```",2026-03-31T01:38:48Z
+2013-10_1,OBJETIVA,J2,gemma2,medio,Ética Profissional,Publicação de Alegações Forenses,"O advogado João, que também é formado em Comunicação Social, atua nas duas profissões, possuindo uma coluna onde apresenta noticias jurídicas, com informações sobre atividades policiais, forenses ou vinculadas ao Ministério Público. Semanalmente inclui, nos seus comentários, alguns em forma de poesia, suas alegações forenses e os resultados dos processos sob sua responsabilidade, divulgando, com isso, seu trabalho como advogado.
+À luz das normas estatutárias, assinale a afirmativa correta.",B,D,False,True,"{```json
+{
+  ""resposta_objetiva"": ""D"" 
+}
+```",2026-03-31T01:38:51Z
+2013-10_2,OBJETIVA,J2,gemma2,medio,Ética Profissional,Visto em Atos Constitutivos,"O advogado Mário pertence aos quadros da sociedade de economia mista controlada pelo Estado W, na qual chefia o Departamento Jurídico. Não existe óbice para a prestação de serviços de advocacia privada, o que ocorre no escritório que possui no centro da capital do Estado, em horário diverso do expediente na empresa. Um dos seus clientes realiza contrato para que Mário aponha o seu visto em ato constitutivo de pessoa jurídica, em Junta Comercial cuja sede está localizada na capital do Estado W.
+Observado tal relato, consoante as normas do Regulamento Geral do Estatuto da Advocacia e da OAB, assinale a afirmativa correta.",D,A,False,True,"{```json
+{
+  ""resposta_objetiva"": ""A""
+}
+```",2026-03-31T01:38:53Z
+2013-10_3,OBJETIVA,J2,gemma2,medio,Ética Profissional,Assistência e Defesa das Prerrogativas pela OAB,"João, advogado regularmente inscrito nos quadros da Ordem dos Advogados do Brasil, veio a ser indiciado por força de investigação proposta em face de um dos seus inúmeros clientes, não tendo o causídico participado de qualquer ato ilícito, mas apenas como advogado. Veio a saber que seu nome fora incluído por força de exercício considerado exacerbado de sua atividade advocatícia. Contratou advogado para a sua defesa no inquérito criminal e postulou assistência à Ordem dos Advogados do Brasil por entender feridas suas prerrogativas profissionais.
+Observado tal relato, consoante as normas do Regulamento Geral do Estatuto da Advocacia e da OAB, assinale a afirmativa correta.",B,D,False,True,"{```json
+{
+  ""resposta_objetiva"": ""D""
+}
+```",2026-03-31T01:38:55Z
+2013-10_4,OBJETIVA,J2,gemma2,facil,Ética Profissional,Pagamento de Honorários,"Nos termos do Estatuto da Advocacia existe a previsão de pagamento de honorários advocatícios. Assinale a afirmativa que indica como deve ocorrer o pagamento, quando não houver estipulação em contrário.",B,C,False,True,"{```json
+{
+  ""resposta_objetiva"": ""C"" 
+}
+```",2026-03-31T01:38:57Z
+2013-10_5,OBJETIVA,J2,gemma2,facil,Ética Profissional,Exame de autos sem procuração e obtenção de cópias,"A advogada Maria solicitou, no cartório de determinada vara cível, ter vista e extrair cópias dos autos de processo não sujeito a sigilo. O serventuário a quem foi feita a solicitação afirmou que Maria não havia juntado procuração aos autos do processo em questão e, em razão disso, apenas poderia ter vista dos autos e que lhe seria vedada a extração de cópias.
+A partir do caso apresentado, assinale a afirmativa correta.",A,B,False,True,"{```json
+{
+  ""resposta_objetiva"": ""B""
+}
+```",2026-03-31T01:39:00Z
+2012-08_40,OBJETIVA,J2,llama323b,medio,Direito Civil,Onerosidade excessiva e teoria da imprevisão,"Utilizando-se das regras afetas ao direito das obrigações, assinale a alternativa correta.",B,A,False,True,"{{""resposta_objetiva"": ""A""}",2026-03-31T01:44:57Z
+2012-08_41,OBJETIVA,J2,llama323b,medio,Direito Civil,Contratos atípicos e vedação de pacto sucessório,"Embora sujeito às constantes mutações e às diferenças de contexto em que é aplicado, o conceito tradicional de contrato sugere que ele representa o acordo de vontades estabelecido com a finalidade de produzir efeitos jurídicos.
+Tomando por base a teoria geral dos contratos, assinale a afirmativa correta.",B,B,True,True,"{{""resposta_objetiva"": ""B""}",2026-03-31T01:44:58Z
+2012-08_42,OBJETIVA,J2,llama323b,medio,Direito Civil,Usucapião familiar (abandono do lar),"Em janeiro de 2010, Nádia, unida estavelmente com Rômulo, após dez anos de convivência e sem que houvesse entre eles contrato escrito que disciplinasse as relações entre companheiros, abandona definitivamente o lar. Nos dois anos seguintes, Rômulo, que não é proprietário de outro imóvel urbano ou rural, continuou, ininterruptamente, sem oposição de quem quer que fosse, na posse direta e exclusiva do imóvel urbano com 200 metros quadrados, cuja propriedade dividia com Nádia e que servia de moradia do casal. Em março de 2012, Rômulo – que nunca havia ajuizado ação de usucapião, de qualquer espécie, contra quem quer que fosse - ingressou com ação de usucapião, pretendendo o reconhecimento judicial para adquirir integralmente o domínio do referido imóvel.
+Diante dessa situação hipotética, assinale a afirmativa correta.",D,B,False,True,"{{""resposta_objetiva"": ""B""}",2026-03-31T01:44:59Z
+2012-08_43,OBJETIVA,J2,llama323b,medio,Direito Civil,Tutela de menor e alienação de bens do incapaz,"Eduardo e Mônica, casados, tinham um filho menor chamado Renato. Por orientação de um advogado, Eduardo e Mônica, em 2005, fizeram os respectivos testamentos e nomearam Lúcio, irmão mais velho de Eduardo, como tutor do menor para o caso de alguma eventualidade. Pouco antes da nomeação por testamento, Lúcio fora definitivamente condenado pelo crime de dano (art. 163 do Código Penal), mas o casal manteve a nomeação, acreditando no arrependimento de Lúcio, que, desde então, mostrou conduta socialmente adequada.
+Em 2010, Eduardo e Mônica morreram em um acidente aéreo. Dois anos depois do acidente, pretendendo salvaguardar os interesses do menor colocado sob sua tutela, Lúcio, prevendo manifesta vantagem negocial em virtude do aumento dos preços dos imóveis, decide alienar a terceiros um dos bens imóveis do patrimônio de Renato, depositando, imediatamente, todo o dinheiro obtido na negociação em uma conta de poupança, aberta em nome do menor.
+Diante do caso narrado, assinale a afirmativa correta.",C,C,True,True,"{{""resposta_objetiva"": ""C""}",2026-03-31T01:45:01Z
+2012-08_44,OBJETIVA,J2,llama323b,facil,Direito da Criança e do Adolescente,Hospedagem de crianças e adolescentes,"João e Maria, ambos adolescentes, com dezessete e dezesseis anos, respectivamente, resolvem realizar uma viagem para comemorar o aniversário de um ano de namoro. Como destino, o jovem casal elege Armação dos Búzios, no estado do Rio de Janeiro, e efetua a reserva, por telefone, em uma pousada do balneário.
+Considerando a normativa acerca da prevenção especial contida na Lei n. 8.069, de 13 de julho de 1990, assinale a afirmativa correta.",D,D,True,True,"{{""resposta_objetiva"": ""D""}",2026-03-31T01:45:02Z
+2012-08_45,OBJETIVA,J2,llama323b,facil,Direito da Criança e do Adolescente,Atribuições do Conselho Tutelar,"Acerca das atribuições do Conselho Tutelar determinadas no Estatuto da Criança e do Adolescente, assinale a alternativa correta.",A,A,True,True,"{{""resposta_objetiva"": ""A""}",2026-03-31T01:45:03Z
+2012-08_46,OBJETIVA,J2,llama323b,medio,Direito do Consumidor,Cláusulas Abusivas e Legitimidade Institucional,"João celebrou contrato de seguro de vida e invalidez, aderindo a plano oferecido por conhecida rede particular. O contrato de adesão, válido por cinco anos, prevê a possibilidade de cancelamento, em favor da seguradora, antes de ocorrer o sinistro, por alegação de desequilíbrio econômico-financeiro.
+A esse respeito, assinale a afirmativa correta.",C,B,False,True,"{{""resposta_objetiva"": ""B""}",2026-03-31T01:45:04Z
+2012-08_47,OBJETIVA,J2,llama323b,medio,Direito do Consumidor,Defeito do produto e violação da segurança do consumidor,"Determinado consumidor, ao mastigar uma fatia de pão com geleia, encontrou um elemento rígido, o que lhe causou intenso desconforto e a quebra parcial de um dos dentes. Em razão do fato, ingressou com medida judicial em face do mercado que vendeu a geleia, a fim de ser reparado. No curso do processo, a perícia constatou que o elemento encontrado era uma pequena porção de açúcar cristalizado, não oferecendo risco à saúde do autor.
+Diante desta narrativa, assinale a afirmativa correta.",B,B,True,True,"{{""resposta_objetiva"": ""B""}",2026-03-31T01:45:05Z
+2012-08_48,OBJETIVA,J2,llama323b,Média,Direito Empresarial,Cheque,"Com relação ao instituto do cheque, assinale a afirmativa correta.",B,C,False,True,"{{""resposta_objetiva"": ""C""}",2026-03-31T01:45:06Z
+2012-08_49,OBJETIVA,J2,llama323b,facil,Direito Empresarial,Sociedade em Conta de Participação,"A respeito do sócio ostensivo da sociedade em conta de participação, assinale a afirmativa correta.",B,C,False,True,"{{""resposta_objetiva"": ""C""}",2026-03-31T01:45:07Z
+2012-08_50,OBJETIVA,J2,llama323b,dificil,Direito Empresarial,Debêntures e Órgãos da Companhia,"A Assembleia Geral de S.A. Empreendimentos Turísticos, companhia aberta sediada em “X”, delegou ao Conselho de Administração a deliberação sobre a oportunidade de emissão, época e condições de vencimento de debêntures conversíveis em ações. Petrossian Participações Ltda., acionista minoritário, consultou seu advogado sobre a legalidade da deliberação.
+Com relação ao fato acima, assinale a alternativa que apresenta a resposta correta à consulta.",A,A,True,True,"{{""resposta_objetiva"": ""A""}",2026-03-31T01:45:08Z
+2012-08_51,OBJETIVA,J2,llama323b,medio,Direito Empresarial,Processamento e Plano de Recuperação Judicial,"A respeito da recuperação judicial, assinale a afirmativa correta.",C,B,False,True,"{{""resposta_objetiva"": ""B""}",2026-03-31T01:45:10Z
+2012-08_52,OBJETIVA,J2,llama323b,medio,Direito Empresarial,Administração da EIRELI e Responsabilidade dos Administradores,"José decidiu constituir uma Empresa Individual de Responsabilidade Limitada (EIRELI) para atuar no município “X” e consultou um advogado para obter esclarecimentos sobre a administração da EIRELI.
+Assinale a alternativa que apresenta a informação correta dada pelo advogado.",C,C,True,True,"{{""resposta_objetiva"": ""C""}",2026-03-31T01:45:11Z
+2012-08_53,OBJETIVA,J2,llama323b,medio,Direito Civil,Ação Declaratória Incidental e Coisa Julgada,"A parte que, no curso do processo comum ordinário, suscitar questão prejudicial e requerer ao juiz não apenas o exame, mas o julgamento dessa questão, que passará a integrar o dispositivo da sentença, deverá requerer",B,N/A,False,False,"{""A""",2026-03-31T01:45:11Z
+2012-08_54,OBJETIVA,J2,llama323b,facil,Direito Civil,Procedimento Sumário,"O procedimento sumário deve ser adotado em causas cujo valor não supere sessenta salários mínimos ou em situações, qualquer que seja o valor da causa, em que se debata um dos assuntos previstos na lei.
+Indique, dentre as alternativas abaixo, a que contém espécie de resposta que não pode ser apresentada pelo réu no rito comum sumário.",A,B,False,True,"{{""resposta_objetiva"": ""B""}",2026-03-31T01:45:12Z
+2012-08_55,OBJETIVA,J2,llama323b,medio,Direito Civil,Incidente de Uniformização de Jurisprudência,"A uniformização de jurisprudência é um instituto jurídico que tem por objetivo diminuir os impactos das divergências entre julgamentos do mesmo assunto.
+A respeito da uniformização de jurisprudência, asinale a afirmativa correta.",C,A,False,True,"{{""resposta_objetiva"": ""A""}",2026-03-31T01:45:13Z
+2012-08_56,OBJETIVA,J2,llama323b,medio,Direito Civil,Cumprimento de Sentença,"Nos autos de ação indenizatória movida por Henrique em face de Paulo, ambos prósperos empresários, transitou em julgado sentença de procedência do pleito autoral, condenando o réu ao pagamento de indenização, no montante equivalente a 500 salários mínimos, na data da prolação da sentença, acrescidos de juros legais e correção monetária.
+Assinale a alternativa que apresenta a providência a ser imediatamente adotada pelo advogado de Henrique.",B,B,True,True,"{{""resposta_objetiva"": ""B""}",2026-03-31T01:45:15Z
+2012-08_57,OBJETIVA,J2,llama323b,facil,Direito Civil,Chamamento ao Processo,"Vinícius foi demandado em uma ação de cobrança por ter sido fiador de sua sogra, Francisca. Assinale a alternativa que indica a medida a ser adotada por Vinícius para trazer Francisca para o pólo passivo desse processo.",C,N/A,False,False,"{""A""",2026-03-31T01:45:15Z
+2012-08_58,OBJETIVA,J2,llama323b,medio,Direito Civil,Competência Absoluta e Relativa,"O sistema processual pátrio estabelece duas espécies de incompetência: a incompetência absoluta e a incompetência relativa.
+Acerca do tema, assinale a afirmativa correta.",B,D,False,True,"{{""resposta_objetiva"": ""D""}",2026-03-31T01:45:16Z
+2012-08_59,OBJETIVA,J2,llama323b,medio,Direito Penal,Princípio da Insignificância,"Em relação ao princípio da insignificância, assinale a afirmativa correta.",B,C,False,True,"{{""resposta_objetiva"": ""C""}",2026-03-31T01:45:17Z
+2012-08_60,OBJETIVA,J2,llama323b,facil,Direito Penal,"Anistia, graça e indulto","Trata-se de causa extintiva da punibilidade consistente na exclusão, por lei ordinária com efeitos retroativos, de um ou mais fatos criminosos do campo de incidência do Direito Penal,",B,B,True,True,"{{""resposta_objetiva"": ""B""}",2026-03-31T01:45:18Z
+2012-08_61,OBJETIVA,J2,llama323b,dificil,Direito Penal,Comunicabilidade de Circunstâncias e Elementares,"Analise detidamente as seguintes situações:
+Casuística 1: Amarildo, ao chegar a sua casa, constata que sua filha foi estuprada por Terêncio. Imbuído de relevante valor moral, contrata Ronaldo, pistoleiro profissional, para tirar a vida do estuprador. O serviço é regularmente executado.
+Casuística 2: Lucas concorre para um infanticídio auxiliando Julieta, parturiente, a matar o nascituro – o que efetivamente acontece. Lucas sabia, desde o início, que Julieta estava sob a influência do estado puerperal.
+Levando em consideração a legislação vigente e a doutrina sobre o concurso de pessoas (concursus delinquentium), é correto afirmar que",A,B,False,True,"{{""resposta_objetiva"": ""B""}",2026-03-31T01:45:19Z
+2012-08_62,OBJETIVA,J2,llama323b,medio,Direito Penal,Culpabilidade,Analise as hipóteses abaixo relacionadas e assinale a alternativa que apresenta somente causas excludentes de culpabilidade.,A,C,False,True,"{{""resposta_objetiva"": ""C""}",2026-03-31T01:45:20Z
+2012-08_63,OBJETIVA,J2,llama323b,dificil,Direito Penal,Imputação Objetiva,"José conversava com Antônio em frente a um prédio. Durante a conversa, José percebe que João, do alto do edifício, jogara um vaso mirando a cabeça de seu interlocutor. Assustado, e com o fim de evitar a possível morte de Antônio, José o empurra com força. Antônio cai e, na queda, fratura o braço. Do alto do prédio, João vê a cena e fica irritado ao perceber que, pela atuação rápida de José, não conseguira acertar o vaso na cabeça de Antônio.
+Com base no caso apresentado, segundo os estudos acerca da teoria da imputação objetiva, assinale a afirmativa correta.",C,C,True,True,"{{""resposta_objetiva"": ""C""}",2026-03-31T01:45:21Z
+2012-08_64,OBJETIVA,J2,llama323b,medio,Direito Penal,Furto e Teoria da Consumação,"Jaime, conhecido pelos colegas como “Jaiminho mão de seda”, utilizando-se de sua destreza, consegue retirar a carteira do bolso traseiro da calça de Ricardo que, ao perceber a subtração, sai ao encalço do delinquente. Ocorre que, durante a perseguição, Ricardo acaba sendo atropelado, vindo a falecer em decorrência dos ferimentos.
+Nesse sentido, com base nas informações apresentadas na hipótese, e a jurisprudência predominante dos tribunais superiores, assinale a afirmativa correta.",B,A,False,True,"{{""resposta_objetiva"": ""A""}",2026-03-31T01:45:23Z
+2012-08_65,OBJETIVA,J2,llama323b,facil,Direito Penal,Recurso em Sentido Estrito,"Adão ofereceu uma queixa-crime contra Eva por crime de dano qualificado (art. 163, parágrafo único, IV). A queixa preenche todos os requisitos legais e foi oferecida antes do fim do prazo decadencial. Apesar disso, há a rejeição da inicial pelo juízo competente, que refere, equivocadamente, que a inicial é intempestiva, pois já teria transcorrido o prazo decadencial.
+Nesse caso, assinale a afirmativa que indica o recurso cabível.",A,B,False,True,"{{""resposta_objetiva"": ""B""}",2026-03-31T01:45:24Z
+2012-08_66,OBJETIVA,J2,llama323b,dificil,Direito Penal,Relaxamento de Prisão,"O deputado “M” é um famoso político do Estado “Y”, e tem grande influência no governo estadual, em virtude das posições que já ocupou, como a de Presidente da Assembleia Legislativa. Atualmente, exerce a função de Presidente da Comissão de Finanças e Contratos. Durante a reunião semestral com as empresas interessadas em participar das inúmeras contratações que a Câmara fará até o final do ano, o deputado “M” exigiu do presidente da empresa “Z” R$ 500.000,00 (quinhentos mil reais) para que esta pudesse participar da concorrência para a realização das obras na sede da Câmara dos Deputados.
+O presidente da empresa “Z”, assustado com tal exigência, visto que sua empresa preenchia todos os requisitos legais para participar das obras, compareceu à Delegacia de Polícia e informou ao Delegado de Plantão o ocorrido, que o orientou a combinar a entrega da quantia para daqui a uma semana, oportunidade em que uma equipe de policiais estaria presente para efetuar a prisão em flagrante do deputado. No dia e hora aprazados para a entrega da quantia indevida, os policiais prenderam em flagrante o deputado “M” quando este conferia o valor entregue pelo presidente da empresa “Z”. Na qualidade de advogado contratado pelo Deputado, assinale a alternativa que indica a peça processual ou pretensão processual, exclusiva de advogado, cabível na hipótese acima.",C,B,False,True,"{{""resposta_objetiva"": ""B""}",2026-03-31T01:45:25Z
+2012-08_67,OBJETIVA,J2,llama323b,facil,Direito Penal,Características do Inquérito Policial,"Um Delegado de Polícia determina a instauração de inquérito policial para apurar a prática do crime de receptação, supostamente praticado por José. Com relação ao Inquérito Policial, assinale a afirmativa que não constitui sua característica.",C,N/A,False,False,"{""Indispensável""",2026-03-31T01:45:26Z
+2012-08_68,OBJETIVA,J2,llama323b,medio,Direito Penal,Competência Jurisdicional e Territorial,"Paulo reside na cidade “Y” e lá resolveu falsificar seu passaporte. Após a falsificação, pegou sua moto e viajou até a cidade “Z”, com o intuito de chegar ao Paraguai. Passou pela cidade “W” e pela cidade “K”, onde foi parado pela Polícia Militar. Paulo se identificou ao policial usando o documento falsificado e este, percebendo a fraude, encaminhou Paulo à delegacia. O Parquet denunciou Paulo pela prática do crime de uso de documento falso.
+Assinale a afirmativa que indica o órgão competente para julgamento.",B,C,False,True,"{{""resposta_objetiva"": ""C""}",2026-03-31T01:45:27Z
+2012-08_69,OBJETIVA,J2,llama323b,medio,Direito Penal,Procedimento em Plenário (2ª fase),"Pedro foi denunciado pela prática de homicídio triplamente qualificado. Como se trata de um crime doloso contra a vida, será julgado pelo Tribunal do Júri. O processo seguiu seu curso normal, tendo Pedro sido pronunciado.
+Acerca da 2ª fase do procedimento, assinale a afirmativa que não corresponde à realidade.",D,B,False,True,"{{""resposta_objetiva"": ""B""}",2026-03-31T01:45:28Z
+2012-08_70,OBJETIVA,J2,llama323b,medio,Direito do Trabalho,Depósitos e Saques,"Acerca do Fundo de Garantia por Tempo de Serviço (FGTS), assinale a afirmativa correta.",D,D,True,True,"{{""resposta_objetiva"": ""D""}",2026-03-31T01:45:29Z
+2012-08_71,OBJETIVA,J2,llama323b,dificil,Direito do Trabalho,Estabilidade do Dirigente Sindical,"A respeito da estabilidade, assinale a afirmativa correta.",C,D,False,True,"{{""resposta_objetiva"": ""D""}",2026-03-31T01:45:30Z
+2012-08_72,OBJETIVA,J2,llama323b,facil,Direito do Trabalho,Trabalhador Avulso,"Segundo expressa previsão em nossa ordem jurídica, assinale a afirmativa que indica o trabalhador que possui igualdade de direitos com os que têm vínculo empregatício permanente.",C,N/A,False,False,"{""C""",2026-03-31T01:45:31Z
+2012-08_73,OBJETIVA,J2,llama323b,medio,Direito do Trabalho,Aviso Prévio Proporcional,"João, após completar 21 anos e dois meses de vínculo jurídico de emprego com a empresa EGEST ENGENHARIA, foi injustificadamente dispensado em 11/11/2011. No mesmo dia, seu colega de trabalho José, que contava com 25 anos completos de vínculo de emprego na mesma empresa, também foi surpreendido com a dispensa sem justo motivo, sendo certo que o ex-empregador nada pagou a título de parcelas resilitórias a ambos. Um mês após a rescisão contratual, João e José ajuízam reclamação trabalhista, postulando, dentre outras rubricas, o pagamento de aviso prévio.
+À luz da Lei n. 12.506/2011, introduzida no ordenamento jurídico em 11/10/2011, que regula o pagamento do aviso prévio proporcional ao tempo se serviço, assinale a afirmativa correta.",B,D,False,True,"{{""resposta_objetiva"": ""D""}",2026-03-31T01:45:32Z
+2012-08_74,OBJETIVA,J2,llama323b,medio,Direito do Trabalho,Data de pagamento do salário,"Um determinado empregador paga os salários dos seus empregados no primeiro dia útil do mês seguinte ao vencido. Encontrando-se em situação financeira delicada, pretende passar a honrar esta obrigação no 5º dia útil do mês subsequente ao vencido, como normalmente fazem os seus concorrentes.
+A partir da hipótese apresentada, assinale a afirmativa correta.",B,A,False,True,"{{""resposta_objetiva"": ""A""}",2026-03-31T01:45:33Z
+2012-08_75,OBJETIVA,J2,llama323b,medio,Direito do Trabalho,Invenção do Empregado,"Um cientista é contratado como empregado para trabalhar no setor de pesquisa de uma empresa, visando desenvolver atividade inventiva. Após três anos, com uso de equipamentos e insumos da empresa, o trabalhador inventa um novo maquinário, cuja patente é requerida e, em breve, introduzida no processo de produção, com previsão de alto lucro.
+Na hipótese, caso nada tenha sido disposto a respeito, assinale a afirmativa correta.",B,B,True,True,"{{""resposta_objetiva"": ""B""}",2026-03-31T01:45:34Z
+2012-08_76,OBJETIVA,J2,llama323b,facil,Direito do Trabalho,Representação em Audiência e Preposto,"A respeito do preposto no Processo do Trabalho, de acordo com a legislação, assinale a afirmativa correta.",C,N/A,False,False,"{""C""",2026-03-31T01:45:34Z
+2012-08_77,OBJETIVA,J2,llama323b,facil,Direito do Trabalho,Conflito de Competência,"Se for instalado conflito de competência positivo entre dois juízes do Trabalho do Estado de Pernambuco, qual será o órgão competente para julgá-lo?",C,C,True,True,"{{""resposta_objetiva"": ""C""}",2026-03-31T01:45:35Z
+2012-08_78,OBJETIVA,J2,llama323b,medio,Direito do Trabalho,Competência em Embargos à Execução por Carta Precatória,"Em 30/7/2008 foi efetuada a penhora de um veículo BMW, modelo X1, por meio de carta precatória executória. Depois de devolvida a carta, o executado Eliezer Filho, proprietário do veículo, opôs embargos à execução em 4/8/2008, dirigindo essa ação incidental ao juízo deprecante. Em seus embargos, alegando a existência de um grosseiro vício, o embargante apontou para a irregularidade na avaliação do bem, uma vez que constou do auto da constrição judicial sua avaliação em R$ 15.000,00, montante muito abaixo do valor de mercado.
+Logo, por força do princípio da execução menos onerosa ao devedor, requereu a reavaliação do bem, sob pena de nulidade da execução.
+Com base nesse caso concreto, é correto afirmar que o juiz deprecante",A,C,False,True,"{{""resposta_objetiva"": ""C""}",2026-03-31T01:45:36Z
+2012-08_79,OBJETIVA,J2,llama323b,medio,Direito do Trabalho,Procedimento Sumaríssimo,"A respeito do procedimento sumaríssimo no processo do trabalho, assinale a afirmativa correta.",A,A,True,True,"{{""resposta_objetiva"": ""A""}",2026-03-31T01:45:38Z
+2012-08_80,OBJETIVA,J2,llama323b,facil,Direito do Trabalho,Custas Processuais,"Em relação ao valor das custas no processo do trabalho, assinale a afirmativa correta.",C,C,True,True,"{{""resposta_objetiva"": ""C""}",2026-03-31T01:45:39Z
+2012-09_1,OBJETIVA,J2,llama323b,facil,Ética Profissional,Cobrança de Honorários,"Um advogado é contratado por um empresário para atuar em causas na área empresarial, formalizando contrato escrito e emitindo fatura para pagamento dos honorários ajustados. A partir de determinado momento o empresário passou a não pagar os honorários ajustados.
+Consoante as regras do Código de Ética, o advogado para buscar o recebimento dos honorários pactuados, deverá",D,D,True,True,"{{""resposta_objetiva"": ""D""}",2026-03-31T01:45:40Z
+2012-09_2,OBJETIVA,J2,llama323b,facil,Ética Profissional,Atuação Simultânea como Advogado e Preposto,"O advogado Carlos é Presidente da empresa XYZ, com sede no Município Q. Em determinada data, a empresa é notificada para apresentar defesa em processo trabalhista ajuizado por antigo empregado da empresa. No dia da audiência designada, Carlos apresenta-se como preposto, vez que dirigente da empresa e advogado, por possuir habilitação profissional regular.
+Observados tais fatos, de acordo com as normas do Regulamento Geral do Estatuto da Advocacia e da OAB, assinale a afirmativa correta.",C,C,True,True,"{{""resposta_objetiva"": ""C""}",2026-03-31T01:45:41Z
+2012-09_4,OBJETIVA,J2,llama323b,facil,Ética Profissional,Funções Privativas de Advogado,"Laura, advogada na área empresarial, após concluir o mestrado em renomada instituição de ensino superior, é convidada para integrar a equipe de assessoria jurídica da empresa K S/A . No dia da entrevista final, é inquirida pelo Gerente Jurídico da empresa, bacharel em Direito, sem inscrição na Ordem dos Advogados do Brasil, apesar de o mesmo ter logrado êxito no Exame de Ordem.
+Observado tal relato, consoante as normas do Regulamento Geral do Estatuto da Advocacia e da OAB, assinale a afirmativa correta.",B,B,True,True,"{{""resposta_objetiva"": ""B""}",2026-03-31T01:45:42Z
+2012-09_5,OBJETIVA,J2,llama323b,medio,Ética Profissional,Requisitos para Inscrição de Advogado,"Sávio, aluno regularmente matriculado em Escola de Direito, obtém a sua graduação e, logo a seguir, aprovação no Exame de Ordem. Por força de movimento grevista na sua instituição, o diploma não pode ser expedido.
+A respeito da inscrição no quadro de advogados, consoante as normas do Regulamento Geral do Estatuto da Advocacia e da OAB, assinale a afirmativa correta.",D,B,False,True,"{{""resposta_objetiva"": ""B""}",2026-03-31T01:45:43Z
+2012-09_6,OBJETIVA,J2,llama323b,medio,Ética Profissional,Atos do Estagiário,"Marcio é estagiário de Direito regularmente inscrito na Ordem dos Advogados do Brasil e atua sob supervisão da advogada Helena. Atuando em determinado processo, a advogada substabelece ao estagiário os poderes que lhe foram conferidos pelo cliente.
+A respeito do caso apresentado, consoante as normas do Regulamento Geral do Estatuto da Advocacia e da OAB, assinale a afirmativa correta.",B,B,True,True,"{{""resposta_objetiva"": ""B""}",2026-03-31T01:45:44Z
+2012-09_7,OBJETIVA,J2,llama323b,facil,Ética Profissional,Conselhos Seccionais,"Assinale a afirmativa que indica como ocorrerá, em havendo necessidade, a criação de novos Conselhos Seccionais, de acordo com as normas do Regulamento Geral do Estatuto da Advocacia e da OAB.",D,D,True,True,"{{""resposta_objetiva"": ""D""}",2026-03-31T01:45:45Z
+2012-09_8,OBJETIVA,J2,llama323b,medio,Ética Profissional,Cancelamento e Licença,"José da Silva, advogado renomado, é acometido por doença mental considerada pela unanimidade dos médicos como incurável, perdendo suas faculdades de discernimento e sendo considerado absolutamente incapaz por sentença judicial.
+Nos termos das regras estatutárias, sua inscrição como advogado será",B,B,True,True,"{{""resposta_objetiva"": ""B""}",2026-03-31T01:45:46Z
+2012-09_9,OBJETIVA,J2,llama323b,medio,Ética Profissional,Responsabilidade por Danos ao Cliente,"O advogado João, regularmente contratado para defender os interesses de José em Juízo, realiza a defesa regular em primeiro grau, mas não apresenta recurso de apelação contra sentença que julgou improcedente o pedido, mesmo havendo sólida fundamentação para modificar o decidido. O prejuízo causado ao cliente foi de R$ 10.000,00, parcialmente coberto por seguro realizado pela sociedade de advogados integrada por João.
+Consoante as regras estatutárias, os prejuízos causados ao cliente acarretam a responsabilidade pessoal do sócio advogado de forma",B,C,False,True,"{{""resposta_objetiva"": ""C""}",2026-03-31T01:45:47Z
+2012-09_10,OBJETIVA,J2,llama323b,medio,Ética Profissional,Exceção à infração por advogar contra literal disposição de lei,"O advogado Cândido, conhecido pelas soluções criativas para resolver os problemas dos seus clientes, aduz, como tese defensiva, em ação de despejo por falta de pagamento, que a norma que autoriza tal desocupação forçada seria inconstitucional, pois caberia ao Estado fornecer habitação gratuita ou a preços módicos aos necessitados e, em caso de impossibilidade financeira, custear a moradia, pagando ao locador os valores devidos, a título de aluguel social.
+Essa defesa foi considerada como contrária à disposição de lei que determina, como consequência do não pagamento dos alugueres, o despejo por falta de pagamento. Em razão disso, foi proferida sentença determinando a desocupação do imóvel e condenando o cliente do advogado Cândido ao pagamento dos alugueres devidos, bem como as demais verbas decorrentes da sucumbência. Além disso, determinou o magistrado a expedição de ofício à Ordem dos Advogados do Brasil para abertura de processo disciplinar.
+Consoante as regras do Estatuto da Advocacia, assinale a afirmativa correta.",B,B,True,True,"{{""resposta_objetiva"": ""B""}",2026-03-31T01:45:49Z
+2012-09_11,OBJETIVA,J2,llama323b,medio,Ética Profissional,Competência Disciplinar,"Caio é advogado que atua em três estados da federação, possuindo uma inscrição principal e duas suplementares, tendo em vista o número elevado de causas que possui. Em decorrência de conflitos ocorridos em função dos processos em que atua, foram instaurados três processos disciplinares, um em cada seccional onde atua.
+De acordo com as normas do Estatuto da Advocacia, a competência para julgamento desses processos cabe ao",C,C,True,True,"{{""resposta_objetiva"": ""C""}",2026-03-31T01:45:50Z
+2012-09_12,OBJETIVA,J2,llama323b,medio,Ética Profissional,Sigilo profissional em relação a ex-clientes,"Mário advogou, por muitos anos, para a empresa “X”, especializada no ramo de cosméticos. Por problemas pessoais, afastou-se da advocacia empresarial por um período de dois anos. No retorno, passou a representar os interesses da empresa “Y”, também do ramo de cosméticos, e concorrente direta da empresa para quem anteriormente prestara serviços.
+Quando da prestação de seus serviços à empresa “X”, Mário atuou em vários contratos em que constavam informações submetidas a segredo industrial, a que teve acesso exclusivamente em decorrência da sua atuação como advogado.
+Observado tal relato, em consonância com as normas do Código de Ética da Advocacia, assinale a afirmativa correta.",B,B,True,True,"{{""resposta_objetiva"": ""B""}",2026-03-31T01:45:51Z
+2012-09_13,OBJETIVA,J2,llama323b,medio,Direito Constitucional,Habeas Corpus,"A respeito da ação de habeas corpus, assinale a afirmativa incorreta.",C,D,False,True,"{{""resposta_objetiva"": ""D""}",2026-03-31T01:45:52Z
+2012-09_14,OBJETIVA,J2,llama323b,facil,Direito Constitucional,Repartição de Competências,"O Estado W, governado por dirigente progressista, pretende realizar uma ampla reforma agrária no seu território para melhor dividir a terra, incluindo diversos desempregados na vida produtiva, apresentando, ainda, amplo programa de financiamento das atividades agrícolas. Com essa proposta política, resolve apresentar projeto de lei, criando formas de desapropriação e inovando nos procedimentos, dando característica sumária e permitindo o ingresso nos imóveis sem pagar indenização.
+Quanto ao tema em foco, legislação sobre desapropriação, nos termos da Constituição Federal, assinale a afirmativa correta.",A,B,False,True,"{{""resposta_objetiva"": ""B""}",2026-03-31T01:45:53Z
+2012-09_15,OBJETIVA,J2,llama323b,facil,Direito Constitucional,Competência do Congresso Nacional,O Congresso Nacional aprova tratados internacionais por meio de:,D,N/A,False,False,"{""Possui conhecimento sobre o sistema legislativo brasileiro""",2026-03-31T01:45:55Z
+2012-09_16,OBJETIVA,J2,llama323b,medio,Direito Constitucional,Controle Difuso e Reserva de Plenario,"João ingressa com ação individual buscando a repetição de indébito tributário, tendo como causa de pedir a inconstitucionalidade da Lei Federal “X”, que criou o tributo.
+Sobre a demanda, assinale a afirmativa correta.",C,C,True,True,"{{""resposta_objetiva"": ""C""}",2026-03-31T01:45:56Z
+2012-09_17,OBJETIVA,J2,llama323b,medio,Direito Constitucional,Inelegibilidades,"José da Silva, prefeito do Município “X”, integrante do Estado “Y”, possui familiares que pretendem concorrer a cargos elegíveis nas próximas eleições.
+Sobre essa situação, assinale a afirmativa correta.",D,B,False,True,"{{""resposta_objetiva"": ""B""}",2026-03-31T01:45:57Z
+2012-09_18,OBJETIVA,J2,llama323b,medio,Direito Constitucional,Repartição de Competências,"O Estado ”X” possui Lei Ordinária, que dispõe sobre regras de trânsito e transporte. Determina essa lei a instalação de cinto de segurança em veículos de transporte coletivo de passageiros, impondo penalidades em caso de descumprimento. Inconformado com este diploma legal, o Governador do Estado deseja propor ação direta de inconstitucionalidade.
+Neste caso, assinale a afirmativa correta.",C,A,False,True,"{{""resposta_objetiva"": ""A""}",2026-03-31T01:45:58Z
+2012-09_19,OBJETIVA,J2,llama323b,medio,Direito Constitucional,Saúde,"Com relação às diretrizes e normas constitucionais referentes à prestação da saúde, assinale a afirmativa correta.",B,D,False,True,"{{""resposta_objetiva"": ""D""}",2026-03-31T01:45:59Z
+2012-09_20,OBJETIVA,J2,llama323b,medio,Direito Internacional,Convenção para a Prevenção e a Repressão do Crime de Genocídio,"A Resolução 96 (I), de 11 de dezembro de 1946, da Assembleia Geral da Organização das Nações Unidas declarou que o genocídio é um crime contra o Direito Internacional.
+Nesse passo, a Convenção para a Prevenção e Repressão do Crime de Genocídio afirmou que",D,A,False,True,"{{""resposta_objetiva"": ""A""}",2026-03-31T01:46:00Z
+2012-09_21,OBJETIVA,J2,llama323b,medio,Direito Internacional,Execução de Sentença,"O Pacto de São José da Costa Rica prevê que os Estados signatários devem cumprir com as decisões emanadas pela Corte Interamericana de Direitos Humanos. Uma das hipóteses de condenação consiste no pagamento, pelo Estado, de indenização compensatória à vítima da violação de direitos humanos.
+Assinale a afirmativa que indica o procedimento a ser adotado, caso o Estado brasileiro não cumpra espontaneamente a sentença internacional que o obriga a pagar a indenização.",B,B,True,True,"{{""resposta_objetiva"": ""B""}",2026-03-31T01:46:02Z
+2012-09_22,OBJETIVA,J2,llama323b,medio,Direito Internacional,Convenção Interamericana para Prevenir e Punir a Tortura,"Com relação à Convenção Interamericana para Prevenir e Punir a Tortura, ratificada pelo Brasil em 20 de julho de 1989, assinale a afirmativa correta.",C,B,False,True,"{{""resposta_objetiva"": ""B""}",2026-03-31T01:46:03Z
+2012-09_23,OBJETIVA,J2,llama323b,medio,Direito Internacional,Organizações Internacionais - Organização das Nações Unidas (ONU),"Com base da Carta das Nações Unidas, assinale a afirmativa correta.",A,A,True,True,"{{""resposta_objetiva"": ""A""}",2026-03-31T01:46:04Z
+2012-09_24,OBJETIVA,J2,llama323b,dificil,Direito Internacional,Conflito de Leis no Espaço - Sucessão e Forma dos Atos,"José, de nacionalidade brasileira, era casado com Maria, de nacionalidade sueca, encontrando-se o casal domiciliado no Brasil. Durante a viagem de “lua de mel”, na França, Maria, após o jantar, veio a falecer, em razão de uma intoxicação alimentar. Maria, quando ainda era noiva de José, havia realizado testamento em Londres, dispondo sobre os seus bens, entre eles dois imóveis situados no Rio de Janeiro.
+À luz das regras de Direito Internacional Privado, assinale a afirmativa correta.",B,B,True,True,"{{""resposta_objetiva"": ""B""}",2026-03-31T01:46:05Z
+2012-09_25,OBJETIVA,J2,llama323b,medio,Direito Tributário,Imposto sobre Produtos Industrializados (IPI),"Acerca do Imposto sobre Produtos Industrializados, de competência da União, assinale a afirmativa que contempla duas de suas características.",A,N/A,False,False,"{""A""",2026-03-31T01:46:06Z
+2012-09_28,OBJETIVA,J2,llama323b,medio,Direito Tributário,Imunidade Recíproca,"O procurador do município Gama decide contestar judicialmente a cobrança do ICMS discriminada na fatura da conta de luz do imóvel onde funciona a sede da prefeitura, alegando a condição de ente político para livrar-se da exação.
+A demanda da municipalidade deverá ser",D,D,True,True,"{{""resposta_objetiva"": ""D""}",2026-03-31T01:46:07Z
+2012-09_29,OBJETIVA,J2,llama323b,facil,Direito Administrativo,Classificação dos Serviços Públicos,"Acerca dos serviços considerados como serviços públicos uti singuli, assinale a afirmativa correta.",C,A,False,True,"{{""resposta_objetiva"": ""A""}",2026-03-31T01:46:08Z
+2012-09_30,OBJETIVA,J2,llama323b,medio,Direito Administrativo,Fase Declaratória,"A desapropriação é um procedimento administrativo que possui duas fases: a primeira, denominada declaratória e a segunda, denominada executória.
+Quanto à fase declaratória, assinale a afirmativa correta.",B,B,True,True,"{{""resposta_objetiva"": ""B""}",2026-03-31T01:46:09Z
+2012-09_31,OBJETIVA,J2,llama323b,facil,Direito Administrativo,Segurança Jurídica,"De acordo com o Art. 2º, inciso XIII, da Lei n. 9.784/98, a Administração deve buscar a interpretação da norma que melhor garanta o atendimento do fim público a que se dirige, vedada a aplicação retroativa da nova interpretação.
+Assinale a alternativa que indica o princípio consagrado por esse dispositivo, em sua parte final.",D,B,False,True,"{{""resposta_objetiva"": ""B""}",2026-03-31T01:46:10Z
+2012-09_32,OBJETIVA,J2,llama323b,medio,Direito Administrativo,Exploração direta de atividade econômica pelo Estado,"Atento à crescente especulação imobiliária, e ciente do sucesso econômico obtido pelas construtoras do País com a construção de imóveis destinados ao público de alta renda, o Estado “X” decide ingressar nesse lucrativo mercado. Assim, edita uma lei autorizando a criação de uma empresa pública e, no mesmo ano, promove a inscrição dos seus atos constitutivos no registro das pessoas jurídicas.
+Assinale a alternativa que apresenta a alegação que as construtoras privadas, incomodadas pela concorrência de uma empresa pública, poderiam apresentar.",C,A,False,True,"{{""resposta_objetiva"": ""A""}",2026-03-31T01:46:11Z
+2012-09_33,OBJETIVA,J2,llama323b,medio,Direito Administrativo,Parcerias Público-Privadas (PPP),"Um estado da Federação, em processo de recuperação econômica, pretende restaurar o seu antigo Parque de Esportes, uma enorme área que concentra estádio de futebol, ginásio de esportes coletivos e parque aquático. Não dispondo de recursos para custear a totalidade da obra e nem tendo expertise para promover uma boa gestão do espaço, o Estado pretende firmar um contrato de parceria público-privada, nos moldes da Lei n. 11.079/2004.
+Sobre o instituto da Parceria Público-Privada, assinale a afirmativa correta.",C,A,False,True,"{{""resposta_objetiva"": ""A""}",2026-03-31T01:46:12Z
+2012-09_34,OBJETIVA,J2,llama323b,medio,Direito Administrativo,Controle Externo e Tribunal de Contas,"As contas do Prefeito do Município X não foram aprovadas pelo Tribunal de Contas do Estado. Dentre outras irregularidades, apurou-se o superfaturamento em obras públicas.
+Sobre o controle exercido pelas Cortes de Contas, assinale a afirmativa correta.",A,B,False,True,"{{""resposta_objetiva"": ""B""}",2026-03-31T01:46:13Z
+2012-09_35,OBJETIVA,J2,llama323b,medio,Direito Ambiental,Ações Administrativas na Lei Complementar 140/2011,"A Lei Complementar n. 140 de 2011 fixou normas para a cooperação entre os entes da federação nas ações administrativas decorrentes do exercício da competência comum relativas ao meio ambiente. Sobre esse tema, assinale a afirmativa correta.",D,B,False,True,"{{""resposta_objetiva"": ""B""}",2026-03-31T01:46:14Z
+2012-09_36,OBJETIVA,J2,llama323b,medio,Direito Ambiental,Sanções Administrativas,"A respeito da responsabilidade administrativa federal por danos ambientais, regulamentada pelo Decreto n. 6.514/08 e alterado pelo Decreto 6.686/08, assinale a afirmativa correta.",A,D,False,True,"{{""resposta_objetiva"": ""D""}",2026-03-31T01:46:16Z
+2012-09_37,OBJETIVA,J2,llama323b,medio,Direito Civil,Ordem de vocação hereditária e meação,"José, viúvo, é pai de Mauro e Mário, possuindo um patrimônio de R$ 300.000,00. Casou-se com Roberta, que tinha um patrimônio de R$ 200.000,00, pelo regime da comunhão universal de bens. José e Roberta tiveram dois filhos, Bruno e Breno.
+Falecendo Roberta, a divisão do monte seria a seguinte:",C,A,False,True,"{{""resposta_objetiva"": ""A""}",2026-03-31T01:46:17Z
+2012-09_38,OBJETIVA,J2,llama323b,facil,Direito Civil,Cláusulas Especiais à Compra e Venda (Preempção),"Marcelo firmou com Augusto contrato de compra e venda de imóvel, tendo sido instituindo no contrato o pacto de preempção. Acerca do instituto da preempção, assinale a afirmativa correta.",B,A,False,True,"{{""resposta_objetiva"": ""A""}",2026-03-31T01:46:18Z
+2012-09_39,OBJETIVA,J2,llama323b,medio,Direito Civil,Hipoteca,"De acordo com as regras atinentes à hipoteca, assinale a afirmativa correta.",D,C,False,True,"{{""resposta_objetiva"": ""C""}",2026-03-31T01:46:19Z
+2012-09_40,OBJETIVA,J2,llama323b,dificil,Direito Civil,Alimentos,"Henrique e Natália, casados sob o regime de comunhão parcial de bens, decidiram se divorciar após 10 anos de união conjugal. Do relacionamento nasceram Gabriela e Bruno, hoje, com 8 e 6 anos, respectivamente. Enquanto esteve casada, Natália, apesar de ter curso superior completo, ser pessoa jovem e capaz para o trabalho, não exerceu atividade profissional para se dedicar integralmente aos cuidados da casa e dos filhos.
+Considerando a hipótese acima e as regras atinentes à prestação de alimentos, assinale a afirmativa correta.",C,C,True,True,"{{""resposta_objetiva"": ""C""}",2026-03-31T01:46:20Z
+2012-09_41,OBJETIVA,J2,llama323b,medio,Direito Civil,Vícios Redibitórios,"Em 12.09.12, Sílvio adquiriu de Maurício, por contrato particular de compra e venda, um automóvel, ano 2011, por R$ 34.000,00 (trinta e quatro mil reais). Vinte dias após a celebração do negócio, Sílvio tomou conhecimento que o veículo apresentava avarias na suspensão dianteira, tornando seu uso impróprio pela ausência de segurança.
+Considerando que o vício apontado existia ao tempo da contratação, de acordo com a hipótese acima e as regras de direito civil, assinale a afirmativa correta.",B,A,False,True,"{{""resposta_objetiva"": ""A""}",2026-03-31T01:46:21Z
+2012-09_42,OBJETIVA,J2,llama323b,medio,Direito Civil,Pagamento em Consignação,"Tiago celebrou com Ronaldo contrato de compra e venda de dez máquinas de costura importadas da China. Restou acordado que o pagamento se daria em trinta e seis prestações mensais e consecutivas com reajuste a cada doze meses conforme taxa Selic, a ser efetuado no domicílio do credor. O contrato estabeleceu, ainda, a incidência de juros moratórios, no importe de 2% (dois por cento) do valor da parcela em atraso, e cláusula penal, fixada em 10% (dez por cento) do valor do contrato, em caso de inadimplência. Após o pagamento de nove parcelas, Tiago foi surpreendido com a notificação extrajudicial enviada por Ronaldo, em que se comunicava um reajuste de 30% (trinta por cento) sobre o valor da última parcela paga sob o argumento de que ocorreu elevada desvalorização no câmbio. Tiago não concordou com o reajuste e ao tentar efetuar o pagamento da décima parcela com base no valor inicialmente ajustado teve o pagamento recusado por Ronaldo.
+Considerando o caso acima e as regras previstas no Código Civil, assinale a afirmativa correta.",A,D,False,True,"{{""resposta_objetiva"": ""D""}",2026-03-31T01:46:23Z
+2012-09_43,OBJETIVA,J2,llama323b,medio,Direito Civil,Responsabilidade Objetiva e Solidária,"No dia 23 de junho de 2012, Alfredo, produtor rural, contratou a sociedade Simões Aviação Agrícola Ltda., com a finalidade de pulverizar, por via aérea, sua plantação de soja. Ocorre que a pulverização se deu de forma incorreta, ocasionando a perda integral da safra de abóbora pertencente a Nilson, vizinho lindeiro de Alfredo.
+Considerando a situação hipotética e as regras de responsabilidade civil, assinale a afirmativa correta.",B,D,False,True,"{{""resposta_objetiva"": ""D""}",2026-03-31T01:46:24Z
+2012-09_44,OBJETIVA,J2,llama323b,medio,Direito da Criança e do Adolescente,Autorização para Viagem e Hospedagem,"Juliana, estudante de 17 anos, em comemoração a sua recente aprovação no vestibular de uma renomada universidade, saiu em viagem com Gustavo, seu namorado de 25 anos, funcionário público federal.
+Acerca de possíveis intercorrências ao longo da viagem, é correto afirmar que",A,D,False,True,"{{""resposta_objetiva"": ""D""}",2026-03-31T01:46:25Z
+2012-09_45,OBJETIVA,J2,llama323b,medio,Direito da Criança e do Adolescente,Estágio de Convivência,"Acerca do estágio de convivência precedente a adoção, assinale a afirmativa correta.",D,D,True,True,"{{""resposta_objetiva"": ""D""}",2026-03-31T01:46:26Z
+2012-09_46,OBJETIVA,J2,llama323b,medio,Direito do Consumidor,Publicidade Enganosa e Abusiva,"Academia de ginástica veicula anúncio assinalando que os seus alunos, quando viajam ao exterior, podem se utilizar de rede mundial credenciada, presente em 60 países e 230 cidades, sem custo adicional. Um ano após continuamente fazer tal divulgação, vários alunos reclamam que, em quase todos os países, é exigida tarifa de uso da unidade conveniada. A academia responde que a referência ao “sem custo adicional” refere-se à inexistência de acréscimo cobrado por ela, e não de eventual cobrança, no exterior, de terceiro.
+Acerca dessa situação, assinale a afirmativa correta.",D,A,False,True,"{{""resposta_objetiva"": ""A""}",2026-03-31T01:46:28Z
+2012-09_47,OBJETIVA,J2,llama323b,medio,Direito do Consumidor,Aplicabilidade do CDC e Revisão Contratual,"A sociedade empresária XYZ Ltda. oferta e celebra, com vários estudantes universitários, contratos individuais de fornecimento de material didático, nos quais garante a entrega, com 25% de desconto sobre o valor indicado pela editora, dos livros didáticos escolhidos pelos contratantes (de lista de editoras de antemão definidas). Os contratos têm duração de 24 meses, e cada estudante compromete-se a pagar valor mensal, que fica como crédito, a ser abatido do valor dos livros escolhidos. Posteriormente, a capacidade de entrega da sociedade diminuiu, devido a dívidas e problemas judiciais. Em razão disso, ela pretende rever judicialmente os contratos, para obter aumento do valor mensal, ou então liberar-se do vínculo.
+Acerca dessa situação, assinale a afirmativa correta.",A,B,False,True,"{{""resposta_objetiva"": ""B""}",2026-03-31T01:46:29Z
+2012-09_48,OBJETIVA,J2,llama323b,facil,Direito Empresarial,Subsidiária Integral,"Leia o trecho a seguir.
+Companhia cuja totalidade das ações em que se divide o capital pertence a uma sociedade brasileira.
+Essa definição refere-se à",A,N/A,False,False,"{""A""",2026-03-31T01:46:29Z
+2012-09_49,OBJETIVA,J2,llama323b,medio,Direito Empresarial,Sociedade Limitada,"A sociedade limitada encontra-se regulada nos artigos 1052 a 1087 do Código Civil. Para que ela possa atingir sua finalidade, necessita de patrimônio, já que sua personalidade é diversa da personalidade dos sócios. Em relação ao capital e ao patrimônio social desse tipo societário, assinale a afirmativa incorreta.",B,B,True,True,"{{""resposta_objetiva"": ""B""}",2026-03-31T01:46:30Z
+2012-09_50,OBJETIVA,J2,llama323b,medio,Direito Empresarial,Duplicata e Princípios Cambiários,"Com relação aos títulos de crédito, assinale a afirmativa correta.",D,D,True,True,"{{""resposta_objetiva"": ""D""}",2026-03-31T01:46:31Z
+2012-09_51,OBJETIVA,J2,llama323b,medio,Direito Empresarial,Classificação de Créditos,"A respeito do processo de falência, assinale a afirmativa correta.",C,B,False,True,"{{""resposta_objetiva"": ""B""}",2026-03-31T01:46:32Z
+2012-09_52,OBJETIVA,J2,llama323b,medio,Direito Civil,Arrendamento Mercantil (Leasing),"Primavera do Leste Arrendamento Mercantil S.A. ajuizou ação de reintegração de posse de bem arrendado à sociedade empresária Vila Bela Distribuidora de Jornais e Revistas Ltda., em face do não pagamento das prestações nos vencimentos. O contrato de arrendamento mercantil prevê resolução de pleno direito em caso de qualquer inadimplemento da arrendatária.
+O juiz extinguiu o processo sem resolução de mérito porque",A,A,True,True,"{{""resposta_objetiva"": ""A""}",2026-03-31T01:46:34Z
+2012-09_53,OBJETIVA,J2,llama323b,medio,Direito Administrativo,Procedimento,"Os Juizados Especiais da Fazenda Pública, órgãos da Justiça comum e integrantes do Sistema dos Juizados Especiais, foram instituídos pela Lei n. 12.153/2009.
+Com base nessas disposições, asinale a afirmativa correta.",D,D,True,True,"{{""resposta_objetiva"": ""D""}",2026-03-31T01:46:35Z
+2012-09_54,OBJETIVA,J2,llama323b,medio,Direito Constitucional,Mandado de Segurança,"Impetrado um mandado de segurança, já sob a égide da Lei n. 12.016/2009, assinale a afirmativa correta.",A,C,False,True,"{{""resposta_objetiva"": ""C""}",2026-03-31T01:46:36Z
+2012-09_55,OBJETIVA,J2,llama323b,medio,Direito Civil,Intervenção de Terceiros,"Considerando a assistência e as demais formas de intervenção de terceiros previstas no Código de Processo Civil, assinale a afirmativa correta.",C,B,False,True,"{{""resposta_objetiva"": ""B""}",2026-03-31T01:46:37Z
+2012-09_56,OBJETIVA,J2,llama323b,medio,Direito Civil,Ação Rescisória,"A respeito da Ação Rescisória, assinale a afirmativa correta.",B,A,False,True,"{{""resposta_objetiva"": ""A""}",2026-03-31T01:46:38Z
+2012-09_57,OBJETIVA,J2,llama323b,medio,Direito Constitucional,Recurso Extraordinário e Repercussão Geral,"Como forma de prestigiar o princípio da razoável duração do processo e propiciar uma prestação jurisdicional mais célere e eficiente, um legislador promoveu uma série de alterações na sistemática recursal do Processo Civil brasileiro. Nesse sentido, destaca-se a Emenda Constitucional n. 45/2004 que introduziu em nosso ordenamento jurídico a figura da repercussão geral.
+Acerca deste instituto, assinale a afirmativa correta.",B,B,True,True,"{{""resposta_objetiva"": ""B""}",2026-03-31T01:46:39Z
+2012-09_58,OBJETIVA,J2,llama323b,medio,Direito Civil,Impugnação ao Cumprimento de Sentença,"A execução tem por finalidade precípua a adoção de medidas necessárias à satisfação da obrigação prevista em um título executivo judicial ou extrajudicial. Em um primeiro momento, vigia no ordenamento pátrio o princípio da autonomia, segundo o qual as atividades executivas e de conhecimento deveriam ser desenvolvidas necessariamente por meio de ações distintas. Contudo, tal sistemática foi alvo de uma série de reformas que buscaram prestigiar um desenvolvimento sincrético do processo, bem como a própria efetivação do título executivo.
+Com base na legislação vigente, assinale a afirmativa correta:",B,A,False,True,"{{""resposta_objetiva"": ""A""}",2026-03-31T01:46:41Z
+2012-09_59,OBJETIVA,J2,llama323b,medio,Direito Penal,Progressão de Regime,"O sistema punitivo brasileiro é progressivo. Por meio dele o condenado passa do regime inicial de cumprimento de pena mais severo para regime mais brando, até alcançar o livramento condicional ou a liberdade definitiva.
+A respeito da progressão de regime, assinale a afirmativa correta.",C,B,False,True,"{{""resposta_objetiva"": ""B""}",2026-03-31T01:46:42Z
+2012-09_60,OBJETIVA,J2,llama323b,medio,Direito Penal,Princípios da Ação Penal,"Tendo como base o instituto da ação penal, assinale a afirmativa correta.",A,D,False,True,"{{""resposta_objetiva"": ""D""}",2026-03-31T01:46:43Z
+2012-09_61,OBJETIVA,J2,llama323b,medio,Direito Penal,Excludentes de Ilicitude e Culpabilidade,"Acerca das causas excludentes de ilicitude e extintivas de punibilidade, assinale a afirmativa incorreta.",B,C,False,True,"{{""resposta_objetiva"": ""C""}",2026-03-31T01:46:44Z
+2012-09_62,OBJETIVA,J2,llama323b,medio,Direito Penal,Relação de Causalidade e Agravação pelo Resultado,"José subtrai o carro de um jovem que lhe era totalmente desconhecido, chamado João. Tal subtração deu-se mediante o emprego de grave ameaça exercida pela utilização de arma de fogo. João, entretanto, rapaz jovem e de boa saúde, sem qualquer histórico de doença cardiovascular, assusta-se de tal forma com a arma, que vem a óbito em virtude de ataque cardíaco.
+Com base no cenário acima, assinale a afirmativa correta.",B,B,True,True,"{{""resposta_objetiva"": ""B""}",2026-03-31T01:46:45Z
+2012-09_63,OBJETIVA,J2,llama323b,dificil,Direito Penal,Reincidência,"Guilherme praticou, em 18/02/2009, contravenção penal de vias de fato (Art. 21 do Decreto Lei n. 3.688/41), tendo sido condenado à pena de multa. A sentença transitou definitivamente em julgado no dia 15/03/2010, mas Guilherme não pagou a multa. No dia 10/07/2010, Guilherme praticou crime de ato obsceno (Art. 233 do CP).
+Com base na situação descrita e na legislação, assinale a afirmativa correta.",A,C,False,True,"{{""resposta_objetiva"": ""C""}",2026-03-31T01:46:46Z
+2012-09_64,OBJETIVA,J2,llama323b,medio,Direito Penal,Erro de Proibição,"Jaime, brasileiro, passou a morar em um país estrangeiro no ano de 1999. Assim como seu falecido pai, Jaime tinha por hábito sempre levar consigo acessórios de arma de fogo, o que não era proibido, levando-se em conta a legislação vigente à época, a saber, a Lei n. 9.437/97. Tal hábito foi mantido no país estrangeiro que, em sua legislação, não vedava a conduta. Todavia, em 2012, Jaime resolve vir de férias ao Brasil. Além de matar as saudades dos familiares, Jaime também queria apresentar o país aos seus dois filhos, ambos nascidos no estrangeiro. Ocorre que, dois dias após sua chegada, Jaime foi preso em flagrante por portar ilegalmente acessório de arma de fogo, conduta descrita no Art. 14 da Lei n. 10.826/2003, verbis: “Portar, deter, adquirir, fornecer, receber, ter em depósito, transportar, ceder, ainda que gratuitamente, emprestar, remeter, empregar, manter sob guarda ou ocultar arma de fogo, acessório ou munição, de uso permitido, sem autorização e em desacordo com determinação legal ou regulamentar”.
+Nesse sentido, podemos afirmar que Jaime agiu em hipótese de",A,A,True,True,"{{""resposta_objetiva"": ""A""}",2026-03-31T01:46:48Z
+2012-09_65,OBJETIVA,J2,llama323b,medio,Direito Penal,Suspensão Condicional do Processo e Transação Penal,"Com relação à Lei n. 9.099/95, assinale a afirmativa incorreta.",B,C,False,True,"{{""resposta_objetiva"": ""C""}",2026-03-31T01:46:49Z
+2012-09_66,OBJETIVA,J2,llama323b,facil,Direito Penal,Prisao em Flagrante,"O Código de Processo Penal pátrio menciona que também se considera em flagrante delito quem é perseguido, logo após o delito, pela autoridade, pelo ofendido ou por qualquer pessoa, em situação que faça presumir ser o perseguido autor da infração.
+A essa modalidade dá-se o nome de flagrante",A,A,True,True,"{{""resposta_objetiva"": ""A""}",2026-03-31T01:46:50Z
+2012-09_67,OBJETIVA,J2,llama323b,facil,Direito Penal,Ação Penal,"Em relação aos procedimentos previstos na Lei n. 8.666/93, que instituiu as normas de licitações e contratos da Administração Pública, assinale a afirmativa correta.",A,C,False,True,"{{""resposta_objetiva"": ""C""}",2026-03-31T01:46:51Z
+2012-09_68,OBJETIVA,J2,llama323b,medio,Direito Penal,Embargos Infringentes e de Nulidade,"Joel foi condenado pela prática do crime de extorsão mediante sequestro. A defesa interpôs recurso de Apelação, que foi recebido e processado, sendo certo que o tribunal, de forma não unânime, manteve a condenação imposta pelo juízo a quo. O advogado do réu verifica que o acórdão viola, de forma direta, dispositivos constitucionais, razão pela qual decide continuar recorrendo da decisão exarada pela Segunda Instância.
+De acordo com as informações acima, assinale a alternativa que indica o recurso a ser interposto.",D,C,False,True,"{{""resposta_objetiva"": ""C""}",2026-03-31T01:46:52Z
+2012-09_69,OBJETIVA,J2,llama323b,medio,Direito Penal,Lei Maria da Penha (Violência Doméstica),"Em relação à Lei Maria da Penha, assinale a afirmativa correta.",D,A,False,True,"{{""resposta_objetiva"": ""A""}",2026-03-31T01:46:53Z
+2012-09_70,OBJETIVA,J2,llama323b,facil,Direito do Trabalho,Aposentadoria por Invalidez,"Após sofrer um acidente automobilístico de gravíssimas proporções enquanto viajava a lazer, o empregado Pedro foi aposentado por invalidez pelo INSS. Assinale a alternativa que indica o efeito desse fato no seu contrato de trabalho.",B,D,False,True,"{{""resposta_objetiva"": ""D""}",2026-03-31T01:46:54Z
+2012-09_71,OBJETIVA,J2,llama323b,medio,Direito do Trabalho,Intervalo Intrajornada,"Maria foi contratada pela empresa Bolos S.A. para exercer a função de copeira, cumprindo jornada de trabalho de segunda à sexta-feira das 13:00 h às 17:00 h, sem intervalo alimentar. Decorridos dois anos do início do pacto contratual, foi a empregada dispensada, recebendo as parcelas da ruptura.
+Contudo, inconformada porque jamais lhe foi permitido usufruir de intervalo para descanso e alimentação, Maria ajuíza reclamação trabalhista postulando o pagamento do período correspondente ao intervalo alimentar não concedido.
+Diante da hipótese relatada, assinale a afirmativa correta.",C,C,True,True,"{{""resposta_objetiva"": ""C""}",2026-03-31T01:46:56Z
+2012-09_72,OBJETIVA,J2,llama323b,facil,Direito do Trabalho,Homologação e Assistência na Rescisão,"Partindo-se da premissa legal de que o pedido de demissão ou recibo de quitação de rescisão do contrato de trabalho, firmado por empregado com mais de um ano de serviço, somente será válido quando realizado perante a autoridade competente, assinale a afirmativa correta.",C,D,False,True,"{{""resposta_objetiva"": ""D""}",2026-03-31T01:46:57Z
+2012-09_73,OBJETIVA,J2,llama323b,facil,Direito do Trabalho,Requisitos para Contratação e Exigência de Experiência,"Buscando profissionais experientes para manusear equipamentos de alta tecnologia e custo extremamente elevado, uma empresa anuncia a existência de vagas para candidatos que possuam dois anos de experiência prévia em determinada atividade.
+A partir da hipótese apresentada, assinale a afirmativa correta.",A,B,False,True,"{{""resposta_objetiva"": ""B""}",2026-03-31T01:46:58Z
+2012-09_74,OBJETIVA,J2,llama323b,medio,Direito do Trabalho,Extinção do Contrato e Prescrição,"De acordo com o entendimento consolidado da jurisprudência, a mudança de regime jurídico do empregado celetista para estatutário",C,A,False,True,"{{""resposta_objetiva"": ""A""}",2026-03-31T01:46:59Z
+2012-09_75,OBJETIVA,J2,llama323b,medio,Direito do Trabalho,Custas e Responsabilidade Solidária,"Assinale a alternativa em que há, incontroversamente, responsabilidade solidária no âmbito trabalhista.",C,B,False,True,"{{""resposta_objetiva"": ""B""}",2026-03-31T01:47:00Z
+2012-09_76,OBJETIVA,J2,llama323b,medio,Direito do Trabalho,Citação na Execução Trabalhista,"De acordo com a Consolidação das Leis do Trabalho, assinale a afirmativa correta.",C,D,False,True,"{{""resposta_objetiva"": ""D""}",2026-03-31T01:47:01Z
+2012-09_77,OBJETIVA,J2,llama323b,medio,Direito do Trabalho,Preferência de Tramitação,"Um dos princípios norteadores do Processo do Trabalho é o da celeridade, dada a natureza salarial do crédito trabalhista. Entretanto, por força de Lei, algumas causas especiais possuem preferência na tramitação. Das situações listadas a seguir, assinale aquela que terá preferência em todas as fases processuais.",B,A,False,True,"{{""resposta_objetiva"": ""A""}",2026-03-31T01:47:02Z
+2012-09_78,OBJETIVA,J2,llama323b,medio,Direito do Trabalho,Reconvenção e Competência da Justiça do Trabalho,"Uma das espécies de resposta é a reconvenção, que vem a ser a ação do réu contra o autor no mesmo feito e juízo em que é demandado. Malgrado não estar formalmente previsto na CLT, é pacífico o cabimento da reconvenção nas lides trabalhistas. Das hipóteses abaixo listadas, assinale aquela em que, pela natureza da pretensão deduzida, seria inviável a apresentação de reconvenção na Justiça do Trabalho.",D,B,False,True,"{{""resposta_objetiva"": ""B""}",2026-03-31T01:47:03Z
+2012-09_79,OBJETIVA,J2,llama323b,medio,Direito do Trabalho,Liquidação de Sentença,"A liquidação tem por objetivo a apuração do quantum debeatur nas sentenças proferidas de forma ilíquida e que tenham deferido, ao menos em parte, a pretensão deduzida. De acordo com a CLT, assinale a alternativa que indica as formas possíveis de liquidação da sentença nas obrigações de dar (pagar) e, caso o juiz conceda prazo às partes para manifestação, o número de dias para a impugnação.",B,A,False,True,"{{""resposta_objetiva"": ""A""}",2026-03-31T01:47:04Z
+2012-09_80,OBJETIVA,J2,llama323b,medio,Direito do Trabalho,Jus Postulandi,"Na Justiça do Trabalho, segundo o entendimento sumulado pelo TST, é correto afirmar-se que o jus postulandi",A,A,True,True,"{{""resposta_objetiva"": ""A""}",2026-03-31T01:47:06Z
+2013-10_1,OBJETIVA,J2,llama323b,medio,Ética Profissional,Publicação de Alegações Forenses,"O advogado João, que também é formado em Comunicação Social, atua nas duas profissões, possuindo uma coluna onde apresenta noticias jurídicas, com informações sobre atividades policiais, forenses ou vinculadas ao Ministério Público. Semanalmente inclui, nos seus comentários, alguns em forma de poesia, suas alegações forenses e os resultados dos processos sob sua responsabilidade, divulgando, com isso, seu trabalho como advogado.
+À luz das normas estatutárias, assinale a afirmativa correta.",B,D,False,True,"{{""resposta_objetiva"": ""D""}",2026-03-31T01:47:07Z
+2013-10_2,OBJETIVA,J2,llama323b,medio,Ética Profissional,Visto em Atos Constitutivos,"O advogado Mário pertence aos quadros da sociedade de economia mista controlada pelo Estado W, na qual chefia o Departamento Jurídico. Não existe óbice para a prestação de serviços de advocacia privada, o que ocorre no escritório que possui no centro da capital do Estado, em horário diverso do expediente na empresa. Um dos seus clientes realiza contrato para que Mário aponha o seu visto em ato constitutivo de pessoa jurídica, em Junta Comercial cuja sede está localizada na capital do Estado W.
+Observado tal relato, consoante as normas do Regulamento Geral do Estatuto da Advocacia e da OAB, assinale a afirmativa correta.",D,A,False,True,"{{""resposta_objetiva"": ""A""}",2026-03-31T01:47:08Z
+2013-10_3,OBJETIVA,J2,llama323b,medio,Ética Profissional,Assistência e Defesa das Prerrogativas pela OAB,"João, advogado regularmente inscrito nos quadros da Ordem dos Advogados do Brasil, veio a ser indiciado por força de investigação proposta em face de um dos seus inúmeros clientes, não tendo o causídico participado de qualquer ato ilícito, mas apenas como advogado. Veio a saber que seu nome fora incluído por força de exercício considerado exacerbado de sua atividade advocatícia. Contratou advogado para a sua defesa no inquérito criminal e postulou assistência à Ordem dos Advogados do Brasil por entender feridas suas prerrogativas profissionais.
+Observado tal relato, consoante as normas do Regulamento Geral do Estatuto da Advocacia e da OAB, assinale a afirmativa correta.",B,A,False,True,"{{""resposta_objetiva"": ""A""}",2026-03-31T01:47:09Z
+2013-10_4,OBJETIVA,J2,llama323b,facil,Ética Profissional,Pagamento de Honorários,"Nos termos do Estatuto da Advocacia existe a previsão de pagamento de honorários advocatícios. Assinale a afirmativa que indica como deve ocorrer o pagamento, quando não houver estipulação em contrário.",B,D,False,True,"{{""resposta_objetiva"": ""D""}",2026-03-31T01:47:10Z
+2013-10_5,OBJETIVA,J2,llama323b,facil,Ética Profissional,Exame de autos sem procuração e obtenção de cópias,"A advogada Maria solicitou, no cartório de determinada vara cível, ter vista e extrair cópias dos autos de processo não sujeito a sigilo. O serventuário a quem foi feita a solicitação afirmou que Maria não havia juntado procuração aos autos do processo em questão e, em razão disso, apenas poderia ter vista dos autos e que lhe seria vedada a extração de cópias.
+A partir do caso apresentado, assinale a afirmativa correta.",A,B,False,True,"{{
+  ""resposta_objetiva"": ""B""
+}",2026-03-31T01:47:12Z
+2012-08_40,OBJETIVA,J2,llama321b,medio,Direito Civil,Onerosidade excessiva e teoria da imprevisão,"Utilizando-se das regras afetas ao direito das obrigações, assinale a alternativa correta.",B,B,True,True,"{{
+  ""resposta_objetiva"": ""B""
+}",2026-03-31T01:54:00Z
+2012-08_41,OBJETIVA,J2,llama321b,medio,Direito Civil,Contratos atípicos e vedação de pacto sucessório,"Embora sujeito às constantes mutações e às diferenças de contexto em que é aplicado, o conceito tradicional de contrato sugere que ele representa o acordo de vontades estabelecido com a finalidade de produzir efeitos jurídicos.
+Tomando por base a teoria geral dos contratos, assinale a afirmativa correta.",B,B,True,True,"{{
+  ""resposta_objetiva"": ""B""
+}",2026-03-31T01:54:01Z
+2012-08_42,OBJETIVA,J2,llama321b,medio,Direito Civil,Usucapião familiar (abandono do lar),"Em janeiro de 2010, Nádia, unida estavelmente com Rômulo, após dez anos de convivência e sem que houvesse entre eles contrato escrito que disciplinasse as relações entre companheiros, abandona definitivamente o lar. Nos dois anos seguintes, Rômulo, que não é proprietário de outro imóvel urbano ou rural, continuou, ininterruptamente, sem oposição de quem quer que fosse, na posse direta e exclusiva do imóvel urbano com 200 metros quadrados, cuja propriedade dividia com Nádia e que servia de moradia do casal. Em março de 2012, Rômulo – que nunca havia ajuizado ação de usucapião, de qualquer espécie, contra quem quer que fosse - ingressou com ação de usucapião, pretendendo o reconhecimento judicial para adquirir integralmente o domínio do referido imóvel.
+Diante dessa situação hipotética, assinale a afirmativa correta.",D,D,True,True,"{{
+  ""resposta_objetiva"": ""D""
+}",2026-03-31T01:54:02Z
+2012-08_43,OBJETIVA,J2,llama321b,medio,Direito Civil,Tutela de menor e alienação de bens do incapaz,"Eduardo e Mônica, casados, tinham um filho menor chamado Renato. Por orientação de um advogado, Eduardo e Mônica, em 2005, fizeram os respectivos testamentos e nomearam Lúcio, irmão mais velho de Eduardo, como tutor do menor para o caso de alguma eventualidade. Pouco antes da nomeação por testamento, Lúcio fora definitivamente condenado pelo crime de dano (art. 163 do Código Penal), mas o casal manteve a nomeação, acreditando no arrependimento de Lúcio, que, desde então, mostrou conduta socialmente adequada.
+Em 2010, Eduardo e Mônica morreram em um acidente aéreo. Dois anos depois do acidente, pretendendo salvaguardar os interesses do menor colocado sob sua tutela, Lúcio, prevendo manifesta vantagem negocial em virtude do aumento dos preços dos imóveis, decide alienar a terceiros um dos bens imóveis do patrimônio de Renato, depositando, imediatamente, todo o dinheiro obtido na negociação em uma conta de poupança, aberta em nome do menor.
+Diante do caso narrado, assinale a afirmativa correta.",C,B,False,True,"{{
+  ""resposta_objetiva"": ""B""
+}",2026-03-31T01:54:03Z
+2012-08_44,OBJETIVA,J2,llama321b,facil,Direito da Criança e do Adolescente,Hospedagem de crianças e adolescentes,"João e Maria, ambos adolescentes, com dezessete e dezesseis anos, respectivamente, resolvem realizar uma viagem para comemorar o aniversário de um ano de namoro. Como destino, o jovem casal elege Armação dos Búzios, no estado do Rio de Janeiro, e efetua a reserva, por telefone, em uma pousada do balneário.
+Considerando a normativa acerca da prevenção especial contida na Lei n. 8.069, de 13 de julho de 1990, assinale a afirmativa correta.",D,D,True,True,"{{
+  ""resposta_objetiva"": ""D""
+}",2026-03-31T01:54:04Z
+2012-08_45,OBJETIVA,J2,llama321b,facil,Direito da Criança e do Adolescente,Atribuições do Conselho Tutelar,"Acerca das atribuições do Conselho Tutelar determinadas no Estatuto da Criança e do Adolescente, assinale a alternativa correta.",A,C,False,True,"{{
+  ""resposta_objetiva"": ""C""
+}",2026-03-31T01:54:04Z
+2012-08_46,OBJETIVA,J2,llama321b,medio,Direito do Consumidor,Cláusulas Abusivas e Legitimidade Institucional,"João celebrou contrato de seguro de vida e invalidez, aderindo a plano oferecido por conhecida rede particular. O contrato de adesão, válido por cinco anos, prevê a possibilidade de cancelamento, em favor da seguradora, antes de ocorrer o sinistro, por alegação de desequilíbrio econômico-financeiro.
+A esse respeito, assinale a afirmativa correta.",C,B,False,True,"{{
+  ""resposta_objetiva"": ""B""
+}",2026-03-31T01:54:05Z
+2012-08_47,OBJETIVA,J2,llama321b,medio,Direito do Consumidor,Defeito do produto e violação da segurança do consumidor,"Determinado consumidor, ao mastigar uma fatia de pão com geleia, encontrou um elemento rígido, o que lhe causou intenso desconforto e a quebra parcial de um dos dentes. Em razão do fato, ingressou com medida judicial em face do mercado que vendeu a geleia, a fim de ser reparado. No curso do processo, a perícia constatou que o elemento encontrado era uma pequena porção de açúcar cristalizado, não oferecendo risco à saúde do autor.
+Diante desta narrativa, assinale a afirmativa correta.",B,B,True,True,"{{
+  ""resposta_objetiva"": ""B""
+}",2026-03-31T01:54:06Z
+2012-08_48,OBJETIVA,J2,llama321b,Média,Direito Empresarial,Cheque,"Com relação ao instituto do cheque, assinale a afirmativa correta.",B,A,False,True,"{{
+  ""resposta_objetiva"": ""A""
+}",2026-03-31T01:54:07Z
+2012-08_49,OBJETIVA,J2,llama321b,facil,Direito Empresarial,Sociedade em Conta de Participação,"A respeito do sócio ostensivo da sociedade em conta de participação, assinale a afirmativa correta.",B,C,False,True,"{{
+  ""resposta_objetiva"": ""C""
+}",2026-03-31T01:54:07Z
+2012-08_50,OBJETIVA,J2,llama321b,dificil,Direito Empresarial,Debêntures e Órgãos da Companhia,"A Assembleia Geral de S.A. Empreendimentos Turísticos, companhia aberta sediada em “X”, delegou ao Conselho de Administração a deliberação sobre a oportunidade de emissão, época e condições de vencimento de debêntures conversíveis em ações. Petrossian Participações Ltda., acionista minoritário, consultou seu advogado sobre a legalidade da deliberação.
+Com relação ao fato acima, assinale a alternativa que apresenta a resposta correta à consulta.",A,A,True,True,"{{
+  ""resposta_objetiva"": ""A""
+}",2026-03-31T01:54:08Z
+2012-08_51,OBJETIVA,J2,llama321b,medio,Direito Empresarial,Processamento e Plano de Recuperação Judicial,"A respeito da recuperação judicial, assinale a afirmativa correta.",C,B,False,True,"{{
+  ""resposta_objetiva"": ""B""
+}",2026-03-31T01:54:09Z
+2012-08_52,OBJETIVA,J2,llama321b,medio,Direito Empresarial,Administração da EIRELI e Responsabilidade dos Administradores,"José decidiu constituir uma Empresa Individual de Responsabilidade Limitada (EIRELI) para atuar no município “X” e consultou um advogado para obter esclarecimentos sobre a administração da EIRELI.
+Assinale a alternativa que apresenta a informação correta dada pelo advogado.",C,A,False,True,"{{
+  ""resposta_objetiva"": ""A""
+}",2026-03-31T01:54:09Z
+2012-08_53,OBJETIVA,J2,llama321b,medio,Direito Civil,Ação Declaratória Incidental e Coisa Julgada,"A parte que, no curso do processo comum ordinário, suscitar questão prejudicial e requerer ao juiz não apenas o exame, mas o julgamento dessa questão, que passará a integrar o dispositivo da sentença, deverá requerer",B,B,True,True,"{{
+  ""resposta_objetiva"": ""B""
+}",2026-03-31T01:54:10Z
+2012-08_54,OBJETIVA,J2,llama321b,facil,Direito Civil,Procedimento Sumário,"O procedimento sumário deve ser adotado em causas cujo valor não supere sessenta salários mínimos ou em situações, qualquer que seja o valor da causa, em que se debata um dos assuntos previstos na lei.
+Indique, dentre as alternativas abaixo, a que contém espécie de resposta que não pode ser apresentada pelo réu no rito comum sumário.",A,B,False,True,"{{
+  ""resposta_objetiva"": ""B""
+}",2026-03-31T01:54:11Z
+2012-08_55,OBJETIVA,J2,llama321b,medio,Direito Civil,Incidente de Uniformização de Jurisprudência,"A uniformização de jurisprudência é um instituto jurídico que tem por objetivo diminuir os impactos das divergências entre julgamentos do mesmo assunto.
+A respeito da uniformização de jurisprudência, asinale a afirmativa correta.",C,A,False,True,"{{
+  ""resposta_objetiva"": ""A""
+}",2026-03-31T01:54:12Z
+2012-08_56,OBJETIVA,J2,llama321b,medio,Direito Civil,Cumprimento de Sentença,"Nos autos de ação indenizatória movida por Henrique em face de Paulo, ambos prósperos empresários, transitou em julgado sentença de procedência do pleito autoral, condenando o réu ao pagamento de indenização, no montante equivalente a 500 salários mínimos, na data da prolação da sentença, acrescidos de juros legais e correção monetária.
+Assinale a alternativa que apresenta a providência a ser imediatamente adotada pelo advogado de Henrique.",B,B,True,True,"{{
+  ""resposta_objetiva"": ""B""
+}",2026-03-31T01:54:12Z
+2012-08_57,OBJETIVA,J2,llama321b,facil,Direito Civil,Chamamento ao Processo,"Vinícius foi demandado em uma ação de cobrança por ter sido fiador de sua sogra, Francisca. Assinale a alternativa que indica a medida a ser adotada por Vinícius para trazer Francisca para o pólo passivo desse processo.",C,A,False,True,"{{
+  ""resposta_objetiva"": ""A""
+}",2026-03-31T01:54:13Z
+2012-08_58,OBJETIVA,J2,llama321b,medio,Direito Civil,Competência Absoluta e Relativa,"O sistema processual pátrio estabelece duas espécies de incompetência: a incompetência absoluta e a incompetência relativa.
+Acerca do tema, assinale a afirmativa correta.",B,D,False,True,"{{
+  ""resposta_objetiva"": ""D""
+}",2026-03-31T01:54:14Z
+2012-08_59,OBJETIVA,J2,llama321b,medio,Direito Penal,Princípio da Insignificância,"Em relação ao princípio da insignificância, assinale a afirmativa correta.",B,B,True,True,"{{
+  ""resposta_objetiva"": ""B""
+}",2026-03-31T01:54:15Z
+2012-08_60,OBJETIVA,J2,llama321b,facil,Direito Penal,"Anistia, graça e indulto","Trata-se de causa extintiva da punibilidade consistente na exclusão, por lei ordinária com efeitos retroativos, de um ou mais fatos criminosos do campo de incidência do Direito Penal,",B,B,True,True,"{{
+  ""resposta_objetiva"": ""B""
+}",2026-03-31T01:54:16Z
+2012-08_61,OBJETIVA,J2,llama321b,dificil,Direito Penal,Comunicabilidade de Circunstâncias e Elementares,"Analise detidamente as seguintes situações:
+Casuística 1: Amarildo, ao chegar a sua casa, constata que sua filha foi estuprada por Terêncio. Imbuído de relevante valor moral, contrata Ronaldo, pistoleiro profissional, para tirar a vida do estuprador. O serviço é regularmente executado.
+Casuística 2: Lucas concorre para um infanticídio auxiliando Julieta, parturiente, a matar o nascituro – o que efetivamente acontece. Lucas sabia, desde o início, que Julieta estava sob a influência do estado puerperal.
+Levando em consideração a legislação vigente e a doutrina sobre o concurso de pessoas (concursus delinquentium), é correto afirmar que",A,B,False,True,"{{
+  ""resposta_objetiva"": ""B""
+}",2026-03-31T01:54:17Z
+2012-08_62,OBJETIVA,J2,llama321b,medio,Direito Penal,Culpabilidade,Analise as hipóteses abaixo relacionadas e assinale a alternativa que apresenta somente causas excludentes de culpabilidade.,A,B,False,True,"{{
+  ""resposta_objetiva"": ""B""
+}",2026-03-31T01:54:17Z
+2012-08_63,OBJETIVA,J2,llama321b,dificil,Direito Penal,Imputação Objetiva,"José conversava com Antônio em frente a um prédio. Durante a conversa, José percebe que João, do alto do edifício, jogara um vaso mirando a cabeça de seu interlocutor. Assustado, e com o fim de evitar a possível morte de Antônio, José o empurra com força. Antônio cai e, na queda, fratura o braço. Do alto do prédio, João vê a cena e fica irritado ao perceber que, pela atuação rápida de José, não conseguira acertar o vaso na cabeça de Antônio.
+Com base no caso apresentado, segundo os estudos acerca da teoria da imputação objetiva, assinale a afirmativa correta.",C,B,False,True,"{{
+  ""resposta_objetiva"": ""B""
+}",2026-03-31T01:54:18Z
+2012-08_64,OBJETIVA,J2,llama321b,medio,Direito Penal,Furto e Teoria da Consumação,"Jaime, conhecido pelos colegas como “Jaiminho mão de seda”, utilizando-se de sua destreza, consegue retirar a carteira do bolso traseiro da calça de Ricardo que, ao perceber a subtração, sai ao encalço do delinquente. Ocorre que, durante a perseguição, Ricardo acaba sendo atropelado, vindo a falecer em decorrência dos ferimentos.
+Nesse sentido, com base nas informações apresentadas na hipótese, e a jurisprudência predominante dos tribunais superiores, assinale a afirmativa correta.",B,B,True,True,"{{
+  ""resposta_objetiva"": ""B""
+}",2026-03-31T01:54:19Z
+2012-08_65,OBJETIVA,J2,llama321b,facil,Direito Penal,Recurso em Sentido Estrito,"Adão ofereceu uma queixa-crime contra Eva por crime de dano qualificado (art. 163, parágrafo único, IV). A queixa preenche todos os requisitos legais e foi oferecida antes do fim do prazo decadencial. Apesar disso, há a rejeição da inicial pelo juízo competente, que refere, equivocadamente, que a inicial é intempestiva, pois já teria transcorrido o prazo decadencial.
+Nesse caso, assinale a afirmativa que indica o recurso cabível.",A,A,True,True,"{{
+  ""resposta_objetiva"": ""A""
+}",2026-03-31T01:54:19Z
+2012-08_66,OBJETIVA,J2,llama321b,dificil,Direito Penal,Relaxamento de Prisão,"O deputado “M” é um famoso político do Estado “Y”, e tem grande influência no governo estadual, em virtude das posições que já ocupou, como a de Presidente da Assembleia Legislativa. Atualmente, exerce a função de Presidente da Comissão de Finanças e Contratos. Durante a reunião semestral com as empresas interessadas em participar das inúmeras contratações que a Câmara fará até o final do ano, o deputado “M” exigiu do presidente da empresa “Z” R$ 500.000,00 (quinhentos mil reais) para que esta pudesse participar da concorrência para a realização das obras na sede da Câmara dos Deputados.
+O presidente da empresa “Z”, assustado com tal exigência, visto que sua empresa preenchia todos os requisitos legais para participar das obras, compareceu à Delegacia de Polícia e informou ao Delegado de Plantão o ocorrido, que o orientou a combinar a entrega da quantia para daqui a uma semana, oportunidade em que uma equipe de policiais estaria presente para efetuar a prisão em flagrante do deputado. No dia e hora aprazados para a entrega da quantia indevida, os policiais prenderam em flagrante o deputado “M” quando este conferia o valor entregue pelo presidente da empresa “Z”. Na qualidade de advogado contratado pelo Deputado, assinale a alternativa que indica a peça processual ou pretensão processual, exclusiva de advogado, cabível na hipótese acima.",C,B,False,True,"{{
+  ""resposta_objetiva"": ""B""
+}",2026-03-31T01:54:20Z
+2012-08_67,OBJETIVA,J2,llama321b,facil,Direito Penal,Características do Inquérito Policial,"Um Delegado de Polícia determina a instauração de inquérito policial para apurar a prática do crime de receptação, supostamente praticado por José. Com relação ao Inquérito Policial, assinale a afirmativa que não constitui sua característica.",C,B,False,True,"{{
+  ""resposta_objetiva"": ""B""
+}",2026-03-31T01:54:21Z
+2012-08_68,OBJETIVA,J2,llama321b,medio,Direito Penal,Competência Jurisdicional e Territorial,"Paulo reside na cidade “Y” e lá resolveu falsificar seu passaporte. Após a falsificação, pegou sua moto e viajou até a cidade “Z”, com o intuito de chegar ao Paraguai. Passou pela cidade “W” e pela cidade “K”, onde foi parado pela Polícia Militar. Paulo se identificou ao policial usando o documento falsificado e este, percebendo a fraude, encaminhou Paulo à delegacia. O Parquet denunciou Paulo pela prática do crime de uso de documento falso.
+Assinale a afirmativa que indica o órgão competente para julgamento.",B,B,True,True,"{{
+  ""resposta_objetiva"": ""B""
+}",2026-03-31T01:54:22Z
+2012-08_69,OBJETIVA,J2,llama321b,medio,Direito Penal,Procedimento em Plenário (2ª fase),"Pedro foi denunciado pela prática de homicídio triplamente qualificado. Como se trata de um crime doloso contra a vida, será julgado pelo Tribunal do Júri. O processo seguiu seu curso normal, tendo Pedro sido pronunciado.
+Acerca da 2ª fase do procedimento, assinale a afirmativa que não corresponde à realidade.",D,B,False,True,"{{
+  ""resposta_objetiva"": ""B""
+}",2026-03-31T01:54:22Z
+2012-08_70,OBJETIVA,J2,llama321b,medio,Direito do Trabalho,Depósitos e Saques,"Acerca do Fundo de Garantia por Tempo de Serviço (FGTS), assinale a afirmativa correta.",D,D,True,True,"{{
+  ""resposta_objetiva"": ""D""
+}",2026-03-31T01:54:23Z
+2012-08_71,OBJETIVA,J2,llama321b,dificil,Direito do Trabalho,Estabilidade do Dirigente Sindical,"A respeito da estabilidade, assinale a afirmativa correta.",C,D,False,True,"{{
+  ""resposta_objetiva"": ""D""
+}",2026-03-31T01:54:24Z
+2012-08_72,OBJETIVA,J2,llama321b,facil,Direito do Trabalho,Trabalhador Avulso,"Segundo expressa previsão em nossa ordem jurídica, assinale a afirmativa que indica o trabalhador que possui igualdade de direitos com os que têm vínculo empregatício permanente.",C,A,False,True,"{{
+  ""resposta_objetiva"": ""A""
+}",2026-03-31T01:54:25Z
+2012-08_73,OBJETIVA,J2,llama321b,medio,Direito do Trabalho,Aviso Prévio Proporcional,"João, após completar 21 anos e dois meses de vínculo jurídico de emprego com a empresa EGEST ENGENHARIA, foi injustificadamente dispensado em 11/11/2011. No mesmo dia, seu colega de trabalho José, que contava com 25 anos completos de vínculo de emprego na mesma empresa, também foi surpreendido com a dispensa sem justo motivo, sendo certo que o ex-empregador nada pagou a título de parcelas resilitórias a ambos. Um mês após a rescisão contratual, João e José ajuízam reclamação trabalhista, postulando, dentre outras rubricas, o pagamento de aviso prévio.
+À luz da Lei n. 12.506/2011, introduzida no ordenamento jurídico em 11/10/2011, que regula o pagamento do aviso prévio proporcional ao tempo se serviço, assinale a afirmativa correta.",B,A,False,True,"{{
+  ""resposta_objetiva"": ""A""
+}",2026-03-31T01:54:25Z
+2012-08_74,OBJETIVA,J2,llama321b,medio,Direito do Trabalho,Data de pagamento do salário,"Um determinado empregador paga os salários dos seus empregados no primeiro dia útil do mês seguinte ao vencido. Encontrando-se em situação financeira delicada, pretende passar a honrar esta obrigação no 5º dia útil do mês subsequente ao vencido, como normalmente fazem os seus concorrentes.
+A partir da hipótese apresentada, assinale a afirmativa correta.",B,B,True,True,"{{
+  ""resposta_objetiva"": ""B""
+}",2026-03-31T01:54:26Z
+2012-08_75,OBJETIVA,J2,llama321b,medio,Direito do Trabalho,Invenção do Empregado,"Um cientista é contratado como empregado para trabalhar no setor de pesquisa de uma empresa, visando desenvolver atividade inventiva. Após três anos, com uso de equipamentos e insumos da empresa, o trabalhador inventa um novo maquinário, cuja patente é requerida e, em breve, introduzida no processo de produção, com previsão de alto lucro.
+Na hipótese, caso nada tenha sido disposto a respeito, assinale a afirmativa correta.",B,B,True,True,"{{
+  ""resposta_objetiva"": ""B""
+}",2026-03-31T01:54:27Z
+2012-08_76,OBJETIVA,J2,llama321b,facil,Direito do Trabalho,Representação em Audiência e Preposto,"A respeito do preposto no Processo do Trabalho, de acordo com a legislação, assinale a afirmativa correta.",C,B,False,True,"{{
+  ""resposta_objetiva"": ""B""
+}",2026-03-31T01:54:28Z
+2012-08_77,OBJETIVA,J2,llama321b,facil,Direito do Trabalho,Conflito de Competência,"Se for instalado conflito de competência positivo entre dois juízes do Trabalho do Estado de Pernambuco, qual será o órgão competente para julgá-lo?",C,B,False,True,"{{
+  ""resposta_objetiva"": ""B""
+}",2026-03-31T01:54:29Z
+2012-08_78,OBJETIVA,J2,llama321b,medio,Direito do Trabalho,Competência em Embargos à Execução por Carta Precatória,"Em 30/7/2008 foi efetuada a penhora de um veículo BMW, modelo X1, por meio de carta precatória executória. Depois de devolvida a carta, o executado Eliezer Filho, proprietário do veículo, opôs embargos à execução em 4/8/2008, dirigindo essa ação incidental ao juízo deprecante. Em seus embargos, alegando a existência de um grosseiro vício, o embargante apontou para a irregularidade na avaliação do bem, uma vez que constou do auto da constrição judicial sua avaliação em R$ 15.000,00, montante muito abaixo do valor de mercado.
+Logo, por força do princípio da execução menos onerosa ao devedor, requereu a reavaliação do bem, sob pena de nulidade da execução.
+Com base nesse caso concreto, é correto afirmar que o juiz deprecante",A,B,False,True,"{{
+  ""resposta_objetiva"": ""B""
+}",2026-03-31T01:54:30Z
+2012-08_79,OBJETIVA,J2,llama321b,medio,Direito do Trabalho,Procedimento Sumaríssimo,"A respeito do procedimento sumaríssimo no processo do trabalho, assinale a afirmativa correta.",A,A,True,True,"{{
+  ""resposta_objetiva"": ""A""
+}",2026-03-31T01:54:30Z
+2012-08_80,OBJETIVA,J2,llama321b,facil,Direito do Trabalho,Custas Processuais,"Em relação ao valor das custas no processo do trabalho, assinale a afirmativa correta.",C,B,False,True,"{{
+  ""resposta_objetiva"": ""B""
+}",2026-03-31T01:54:31Z
+2012-09_1,OBJETIVA,J2,llama321b,facil,Ética Profissional,Cobrança de Honorários,"Um advogado é contratado por um empresário para atuar em causas na área empresarial, formalizando contrato escrito e emitindo fatura para pagamento dos honorários ajustados. A partir de determinado momento o empresário passou a não pagar os honorários ajustados.
+Consoante as regras do Código de Ética, o advogado para buscar o recebimento dos honorários pactuados, deverá",D,B,False,True,"{{
+  ""resposta_objetiva"": ""B""
+}",2026-03-31T01:54:32Z
+2012-09_2,OBJETIVA,J2,llama321b,facil,Ética Profissional,Atuação Simultânea como Advogado e Preposto,"O advogado Carlos é Presidente da empresa XYZ, com sede no Município Q. Em determinada data, a empresa é notificada para apresentar defesa em processo trabalhista ajuizado por antigo empregado da empresa. No dia da audiência designada, Carlos apresenta-se como preposto, vez que dirigente da empresa e advogado, por possuir habilitação profissional regular.
+Observados tais fatos, de acordo com as normas do Regulamento Geral do Estatuto da Advocacia e da OAB, assinale a afirmativa correta.",C,D,False,True,"{{
+  ""resposta_objetiva"": ""D""
+}",2026-03-31T01:54:32Z
+2012-09_4,OBJETIVA,J2,llama321b,facil,Ética Profissional,Funções Privativas de Advogado,"Laura, advogada na área empresarial, após concluir o mestrado em renomada instituição de ensino superior, é convidada para integrar a equipe de assessoria jurídica da empresa K S/A . No dia da entrevista final, é inquirida pelo Gerente Jurídico da empresa, bacharel em Direito, sem inscrição na Ordem dos Advogados do Brasil, apesar de o mesmo ter logrado êxito no Exame de Ordem.
+Observado tal relato, consoante as normas do Regulamento Geral do Estatuto da Advocacia e da OAB, assinale a afirmativa correta.",B,C,False,True,"{{
+  ""resposta_objetiva"": ""C""
+}",2026-03-31T01:54:33Z
+2012-09_5,OBJETIVA,J2,llama321b,medio,Ética Profissional,Requisitos para Inscrição de Advogado,"Sávio, aluno regularmente matriculado em Escola de Direito, obtém a sua graduação e, logo a seguir, aprovação no Exame de Ordem. Por força de movimento grevista na sua instituição, o diploma não pode ser expedido.
+A respeito da inscrição no quadro de advogados, consoante as normas do Regulamento Geral do Estatuto da Advocacia e da OAB, assinale a afirmativa correta.",D,B,False,True,"{{
+  ""resposta_objetiva"": ""B""
+}",2026-03-31T01:54:34Z
+2012-09_6,OBJETIVA,J2,llama321b,medio,Ética Profissional,Atos do Estagiário,"Marcio é estagiário de Direito regularmente inscrito na Ordem dos Advogados do Brasil e atua sob supervisão da advogada Helena. Atuando em determinado processo, a advogada substabelece ao estagiário os poderes que lhe foram conferidos pelo cliente.
+A respeito do caso apresentado, consoante as normas do Regulamento Geral do Estatuto da Advocacia e da OAB, assinale a afirmativa correta.",B,B,True,True,"{{
+  ""resposta_objetiva"": ""B""
+}",2026-03-31T01:54:35Z
+2012-09_7,OBJETIVA,J2,llama321b,facil,Ética Profissional,Conselhos Seccionais,"Assinale a afirmativa que indica como ocorrerá, em havendo necessidade, a criação de novos Conselhos Seccionais, de acordo com as normas do Regulamento Geral do Estatuto da Advocacia e da OAB.",D,A,False,True,"{{
+  ""resposta_objetiva"": ""A""
+}",2026-03-31T01:54:35Z
+2012-09_8,OBJETIVA,J2,llama321b,medio,Ética Profissional,Cancelamento e Licença,"José da Silva, advogado renomado, é acometido por doença mental considerada pela unanimidade dos médicos como incurável, perdendo suas faculdades de discernimento e sendo considerado absolutamente incapaz por sentença judicial.
+Nos termos das regras estatutárias, sua inscrição como advogado será",B,A,False,True,"{{
+  ""resposta_objetiva"": ""A""
+}",2026-03-31T01:54:36Z
+2012-09_9,OBJETIVA,J2,llama321b,medio,Ética Profissional,Responsabilidade por Danos ao Cliente,"O advogado João, regularmente contratado para defender os interesses de José em Juízo, realiza a defesa regular em primeiro grau, mas não apresenta recurso de apelação contra sentença que julgou improcedente o pedido, mesmo havendo sólida fundamentação para modificar o decidido. O prejuízo causado ao cliente foi de R$ 10.000,00, parcialmente coberto por seguro realizado pela sociedade de advogados integrada por João.
+Consoante as regras estatutárias, os prejuízos causados ao cliente acarretam a responsabilidade pessoal do sócio advogado de forma",B,B,True,True,"{{
+  ""resposta_objetiva"": ""B""
+}",2026-03-31T01:54:37Z
+2012-09_10,OBJETIVA,J2,llama321b,medio,Ética Profissional,Exceção à infração por advogar contra literal disposição de lei,"O advogado Cândido, conhecido pelas soluções criativas para resolver os problemas dos seus clientes, aduz, como tese defensiva, em ação de despejo por falta de pagamento, que a norma que autoriza tal desocupação forçada seria inconstitucional, pois caberia ao Estado fornecer habitação gratuita ou a preços módicos aos necessitados e, em caso de impossibilidade financeira, custear a moradia, pagando ao locador os valores devidos, a título de aluguel social.
+Essa defesa foi considerada como contrária à disposição de lei que determina, como consequência do não pagamento dos alugueres, o despejo por falta de pagamento. Em razão disso, foi proferida sentença determinando a desocupação do imóvel e condenando o cliente do advogado Cândido ao pagamento dos alugueres devidos, bem como as demais verbas decorrentes da sucumbência. Além disso, determinou o magistrado a expedição de ofício à Ordem dos Advogados do Brasil para abertura de processo disciplinar.
+Consoante as regras do Estatuto da Advocacia, assinale a afirmativa correta.",B,B,True,True,"{{
+  ""resposta_objetiva"": ""B""
+}",2026-03-31T01:54:37Z
+2012-09_11,OBJETIVA,J2,llama321b,medio,Ética Profissional,Competência Disciplinar,"Caio é advogado que atua em três estados da federação, possuindo uma inscrição principal e duas suplementares, tendo em vista o número elevado de causas que possui. Em decorrência de conflitos ocorridos em função dos processos em que atua, foram instaurados três processos disciplinares, um em cada seccional onde atua.
+De acordo com as normas do Estatuto da Advocacia, a competência para julgamento desses processos cabe ao",C,B,False,True,"{{
+  ""resposta_objetiva"": ""B""
+}",2026-03-31T01:54:38Z
+2012-09_12,OBJETIVA,J2,llama321b,medio,Ética Profissional,Sigilo profissional em relação a ex-clientes,"Mário advogou, por muitos anos, para a empresa “X”, especializada no ramo de cosméticos. Por problemas pessoais, afastou-se da advocacia empresarial por um período de dois anos. No retorno, passou a representar os interesses da empresa “Y”, também do ramo de cosméticos, e concorrente direta da empresa para quem anteriormente prestara serviços.
+Quando da prestação de seus serviços à empresa “X”, Mário atuou em vários contratos em que constavam informações submetidas a segredo industrial, a que teve acesso exclusivamente em decorrência da sua atuação como advogado.
+Observado tal relato, em consonância com as normas do Código de Ética da Advocacia, assinale a afirmativa correta.",B,B,True,True,"{{
+  ""resposta_objetiva"": ""B""
+}",2026-03-31T01:54:39Z
+2012-09_13,OBJETIVA,J2,llama321b,medio,Direito Constitucional,Habeas Corpus,"A respeito da ação de habeas corpus, assinale a afirmativa incorreta.",C,B,False,True,"{{
+  ""resposta_objetiva"": ""B""
+}",2026-03-31T01:54:40Z
+2012-09_14,OBJETIVA,J2,llama321b,facil,Direito Constitucional,Repartição de Competências,"O Estado W, governado por dirigente progressista, pretende realizar uma ampla reforma agrária no seu território para melhor dividir a terra, incluindo diversos desempregados na vida produtiva, apresentando, ainda, amplo programa de financiamento das atividades agrícolas. Com essa proposta política, resolve apresentar projeto de lei, criando formas de desapropriação e inovando nos procedimentos, dando característica sumária e permitindo o ingresso nos imóveis sem pagar indenização.
+Quanto ao tema em foco, legislação sobre desapropriação, nos termos da Constituição Federal, assinale a afirmativa correta.",A,B,False,True,"{{
+  ""resposta_objetiva"": ""B""
+}",2026-03-31T01:54:41Z
+2012-09_15,OBJETIVA,J2,llama321b,facil,Direito Constitucional,Competência do Congresso Nacional,O Congresso Nacional aprova tratados internacionais por meio de:,D,A,False,True,"{{
+  ""resposta_objetiva"": ""A""
+}",2026-03-31T01:54:42Z
+2012-09_16,OBJETIVA,J2,llama321b,medio,Direito Constitucional,Controle Difuso e Reserva de Plenario,"João ingressa com ação individual buscando a repetição de indébito tributário, tendo como causa de pedir a inconstitucionalidade da Lei Federal “X”, que criou o tributo.
+Sobre a demanda, assinale a afirmativa correta.",C,B,False,True,"{{
+  ""resposta_objetiva"": ""B""
+}",2026-03-31T01:54:42Z
+2012-09_17,OBJETIVA,J2,llama321b,medio,Direito Constitucional,Inelegibilidades,"José da Silva, prefeito do Município “X”, integrante do Estado “Y”, possui familiares que pretendem concorrer a cargos elegíveis nas próximas eleições.
+Sobre essa situação, assinale a afirmativa correta.",D,B,False,True,"{{
+  ""resposta_objetiva"": ""B""
+}",2026-03-31T01:54:43Z
+2012-09_18,OBJETIVA,J2,llama321b,medio,Direito Constitucional,Repartição de Competências,"O Estado ”X” possui Lei Ordinária, que dispõe sobre regras de trânsito e transporte. Determina essa lei a instalação de cinto de segurança em veículos de transporte coletivo de passageiros, impondo penalidades em caso de descumprimento. Inconformado com este diploma legal, o Governador do Estado deseja propor ação direta de inconstitucionalidade.
+Neste caso, assinale a afirmativa correta.",C,B,False,True,"{{
+  ""resposta_objetiva"": ""B""
+}",2026-03-31T01:54:44Z
+2012-09_19,OBJETIVA,J2,llama321b,medio,Direito Constitucional,Saúde,"Com relação às diretrizes e normas constitucionais referentes à prestação da saúde, assinale a afirmativa correta.",B,D,False,True,"{{
+  ""resposta_objetiva"": ""D""
+}",2026-03-31T01:54:45Z
+2012-09_20,OBJETIVA,J2,llama321b,medio,Direito Internacional,Convenção para a Prevenção e a Repressão do Crime de Genocídio,"A Resolução 96 (I), de 11 de dezembro de 1946, da Assembleia Geral da Organização das Nações Unidas declarou que o genocídio é um crime contra o Direito Internacional.
+Nesse passo, a Convenção para a Prevenção e Repressão do Crime de Genocídio afirmou que",D,D,True,True,"{{
+  ""resposta_objetiva"": ""D""
+}",2026-03-31T01:54:45Z
+2012-09_21,OBJETIVA,J2,llama321b,medio,Direito Internacional,Execução de Sentença,"O Pacto de São José da Costa Rica prevê que os Estados signatários devem cumprir com as decisões emanadas pela Corte Interamericana de Direitos Humanos. Uma das hipóteses de condenação consiste no pagamento, pelo Estado, de indenização compensatória à vítima da violação de direitos humanos.
+Assinale a afirmativa que indica o procedimento a ser adotado, caso o Estado brasileiro não cumpra espontaneamente a sentença internacional que o obriga a pagar a indenização.",B,C,False,True,"{{
+  ""resposta_objetiva"": ""C""
+}",2026-03-31T01:54:46Z
+2012-09_22,OBJETIVA,J2,llama321b,medio,Direito Internacional,Convenção Interamericana para Prevenir e Punir a Tortura,"Com relação à Convenção Interamericana para Prevenir e Punir a Tortura, ratificada pelo Brasil em 20 de julho de 1989, assinale a afirmativa correta.",C,B,False,True,"{{
+  ""resposta_objetiva"": ""B""
+}",2026-03-31T01:54:47Z
+2012-09_23,OBJETIVA,J2,llama321b,medio,Direito Internacional,Organizações Internacionais - Organização das Nações Unidas (ONU),"Com base da Carta das Nações Unidas, assinale a afirmativa correta.",A,A,True,True,"{{
+  ""resposta_objetiva"": ""A""
+}",2026-03-31T01:54:48Z
+2012-09_24,OBJETIVA,J2,llama321b,dificil,Direito Internacional,Conflito de Leis no Espaço - Sucessão e Forma dos Atos,"José, de nacionalidade brasileira, era casado com Maria, de nacionalidade sueca, encontrando-se o casal domiciliado no Brasil. Durante a viagem de “lua de mel”, na França, Maria, após o jantar, veio a falecer, em razão de uma intoxicação alimentar. Maria, quando ainda era noiva de José, havia realizado testamento em Londres, dispondo sobre os seus bens, entre eles dois imóveis situados no Rio de Janeiro.
+À luz das regras de Direito Internacional Privado, assinale a afirmativa correta.",B,B,True,True,"{{
+  ""resposta_objetiva"": ""B""
+}",2026-03-31T01:54:48Z
+2012-09_25,OBJETIVA,J2,llama321b,medio,Direito Tributário,Imposto sobre Produtos Industrializados (IPI),"Acerca do Imposto sobre Produtos Industrializados, de competência da União, assinale a afirmativa que contempla duas de suas características.",A,B,False,True,"{{
+  ""resposta_objetiva"": ""B""
+}",2026-03-31T01:54:49Z
+2012-09_28,OBJETIVA,J2,llama321b,medio,Direito Tributário,Imunidade Recíproca,"O procurador do município Gama decide contestar judicialmente a cobrança do ICMS discriminada na fatura da conta de luz do imóvel onde funciona a sede da prefeitura, alegando a condição de ente político para livrar-se da exação.
+A demanda da municipalidade deverá ser",D,B,False,True,"{{
+  ""resposta_objetiva"": ""B""
+}",2026-03-31T01:54:50Z
+2012-09_29,OBJETIVA,J2,llama321b,facil,Direito Administrativo,Classificação dos Serviços Públicos,"Acerca dos serviços considerados como serviços públicos uti singuli, assinale a afirmativa correta.",C,B,False,True,"{{
+  ""resposta_objetiva"": ""B""
+}",2026-03-31T01:54:50Z
+2012-09_30,OBJETIVA,J2,llama321b,medio,Direito Administrativo,Fase Declaratória,"A desapropriação é um procedimento administrativo que possui duas fases: a primeira, denominada declaratória e a segunda, denominada executória.
+Quanto à fase declaratória, assinale a afirmativa correta.",B,B,True,True,"{{
+  ""resposta_objetiva"": ""B""
+}",2026-03-31T01:54:51Z
+2012-09_31,OBJETIVA,J2,llama321b,facil,Direito Administrativo,Segurança Jurídica,"De acordo com o Art. 2º, inciso XIII, da Lei n. 9.784/98, a Administração deve buscar a interpretação da norma que melhor garanta o atendimento do fim público a que se dirige, vedada a aplicação retroativa da nova interpretação.
+Assinale a alternativa que indica o princípio consagrado por esse dispositivo, em sua parte final.",D,B,False,True,"{{
+  ""resposta_objetiva"": ""B""
+}",2026-03-31T01:54:52Z
+2012-09_32,OBJETIVA,J2,llama321b,medio,Direito Administrativo,Exploração direta de atividade econômica pelo Estado,"Atento à crescente especulação imobiliária, e ciente do sucesso econômico obtido pelas construtoras do País com a construção de imóveis destinados ao público de alta renda, o Estado “X” decide ingressar nesse lucrativo mercado. Assim, edita uma lei autorizando a criação de uma empresa pública e, no mesmo ano, promove a inscrição dos seus atos constitutivos no registro das pessoas jurídicas.
+Assinale a alternativa que apresenta a alegação que as construtoras privadas, incomodadas pela concorrência de uma empresa pública, poderiam apresentar.",C,D,False,True,"{{
+  ""resposta_objetiva"": ""D""
+}",2026-03-31T01:54:53Z
+2012-09_33,OBJETIVA,J2,llama321b,medio,Direito Administrativo,Parcerias Público-Privadas (PPP),"Um estado da Federação, em processo de recuperação econômica, pretende restaurar o seu antigo Parque de Esportes, uma enorme área que concentra estádio de futebol, ginásio de esportes coletivos e parque aquático. Não dispondo de recursos para custear a totalidade da obra e nem tendo expertise para promover uma boa gestão do espaço, o Estado pretende firmar um contrato de parceria público-privada, nos moldes da Lei n. 11.079/2004.
+Sobre o instituto da Parceria Público-Privada, assinale a afirmativa correta.",C,B,False,True,"{{
+  ""resposta_objetiva"": ""B""
+}",2026-03-31T01:54:54Z
+2012-09_34,OBJETIVA,J2,llama321b,medio,Direito Administrativo,Controle Externo e Tribunal de Contas,"As contas do Prefeito do Município X não foram aprovadas pelo Tribunal de Contas do Estado. Dentre outras irregularidades, apurou-se o superfaturamento em obras públicas.
+Sobre o controle exercido pelas Cortes de Contas, assinale a afirmativa correta.",A,A,True,True,"{{
+  ""resposta_objetiva"": ""A""
+}",2026-03-31T01:54:55Z
+2012-09_35,OBJETIVA,J2,llama321b,medio,Direito Ambiental,Ações Administrativas na Lei Complementar 140/2011,"A Lei Complementar n. 140 de 2011 fixou normas para a cooperação entre os entes da federação nas ações administrativas decorrentes do exercício da competência comum relativas ao meio ambiente. Sobre esse tema, assinale a afirmativa correta.",D,B,False,True,"{{
+  ""resposta_objetiva"": ""B""
+}",2026-03-31T01:54:55Z
+2012-09_36,OBJETIVA,J2,llama321b,medio,Direito Ambiental,Sanções Administrativas,"A respeito da responsabilidade administrativa federal por danos ambientais, regulamentada pelo Decreto n. 6.514/08 e alterado pelo Decreto 6.686/08, assinale a afirmativa correta.",A,D,False,True,"{{
+  ""resposta_objetiva"": ""D""
+}",2026-03-31T01:54:56Z
+2012-09_37,OBJETIVA,J2,llama321b,medio,Direito Civil,Ordem de vocação hereditária e meação,"José, viúvo, é pai de Mauro e Mário, possuindo um patrimônio de R$ 300.000,00. Casou-se com Roberta, que tinha um patrimônio de R$ 200.000,00, pelo regime da comunhão universal de bens. José e Roberta tiveram dois filhos, Bruno e Breno.
+Falecendo Roberta, a divisão do monte seria a seguinte:",C,B,False,True,"{{
+  ""resposta_objetiva"": ""B""
+}",2026-03-31T01:54:57Z
+2012-09_38,OBJETIVA,J2,llama321b,facil,Direito Civil,Cláusulas Especiais à Compra e Venda (Preempção),"Marcelo firmou com Augusto contrato de compra e venda de imóvel, tendo sido instituindo no contrato o pacto de preempção. Acerca do instituto da preempção, assinale a afirmativa correta.",B,A,False,True,"{{
+  ""resposta_objetiva"": ""A""
+}",2026-03-31T01:54:57Z
+2012-09_39,OBJETIVA,J2,llama321b,medio,Direito Civil,Hipoteca,"De acordo com as regras atinentes à hipoteca, assinale a afirmativa correta.",D,B,False,True,"{{
+  ""resposta_objetiva"": ""B""
+}",2026-03-31T01:54:58Z
+2012-09_40,OBJETIVA,J2,llama321b,dificil,Direito Civil,Alimentos,"Henrique e Natália, casados sob o regime de comunhão parcial de bens, decidiram se divorciar após 10 anos de união conjugal. Do relacionamento nasceram Gabriela e Bruno, hoje, com 8 e 6 anos, respectivamente. Enquanto esteve casada, Natália, apesar de ter curso superior completo, ser pessoa jovem e capaz para o trabalho, não exerceu atividade profissional para se dedicar integralmente aos cuidados da casa e dos filhos.
+Considerando a hipótese acima e as regras atinentes à prestação de alimentos, assinale a afirmativa correta.",C,B,False,True,"{{
+  ""resposta_objetiva"": ""B""
+}",2026-03-31T01:54:59Z
+2012-09_41,OBJETIVA,J2,llama321b,medio,Direito Civil,Vícios Redibitórios,"Em 12.09.12, Sílvio adquiriu de Maurício, por contrato particular de compra e venda, um automóvel, ano 2011, por R$ 34.000,00 (trinta e quatro mil reais). Vinte dias após a celebração do negócio, Sílvio tomou conhecimento que o veículo apresentava avarias na suspensão dianteira, tornando seu uso impróprio pela ausência de segurança.
+Considerando que o vício apontado existia ao tempo da contratação, de acordo com a hipótese acima e as regras de direito civil, assinale a afirmativa correta.",B,B,True,True,"{{
+  ""resposta_objetiva"": ""B""
+}",2026-03-31T01:55:00Z
+2012-09_42,OBJETIVA,J2,llama321b,medio,Direito Civil,Pagamento em Consignação,"Tiago celebrou com Ronaldo contrato de compra e venda de dez máquinas de costura importadas da China. Restou acordado que o pagamento se daria em trinta e seis prestações mensais e consecutivas com reajuste a cada doze meses conforme taxa Selic, a ser efetuado no domicílio do credor. O contrato estabeleceu, ainda, a incidência de juros moratórios, no importe de 2% (dois por cento) do valor da parcela em atraso, e cláusula penal, fixada em 10% (dez por cento) do valor do contrato, em caso de inadimplência. Após o pagamento de nove parcelas, Tiago foi surpreendido com a notificação extrajudicial enviada por Ronaldo, em que se comunicava um reajuste de 30% (trinta por cento) sobre o valor da última parcela paga sob o argumento de que ocorreu elevada desvalorização no câmbio. Tiago não concordou com o reajuste e ao tentar efetuar o pagamento da décima parcela com base no valor inicialmente ajustado teve o pagamento recusado por Ronaldo.
+Considerando o caso acima e as regras previstas no Código Civil, assinale a afirmativa correta.",A,B,False,True,"{{
+  ""resposta_objetiva"": ""B""
+}",2026-03-31T01:55:00Z
+2012-09_43,OBJETIVA,J2,llama321b,medio,Direito Civil,Responsabilidade Objetiva e Solidária,"No dia 23 de junho de 2012, Alfredo, produtor rural, contratou a sociedade Simões Aviação Agrícola Ltda., com a finalidade de pulverizar, por via aérea, sua plantação de soja. Ocorre que a pulverização se deu de forma incorreta, ocasionando a perda integral da safra de abóbora pertencente a Nilson, vizinho lindeiro de Alfredo.
+Considerando a situação hipotética e as regras de responsabilidade civil, assinale a afirmativa correta.",B,B,True,True,"{{
+  ""resposta_objetiva"": ""B""
+}",2026-03-31T01:55:01Z
+2012-09_44,OBJETIVA,J2,llama321b,medio,Direito da Criança e do Adolescente,Autorização para Viagem e Hospedagem,"Juliana, estudante de 17 anos, em comemoração a sua recente aprovação no vestibular de uma renomada universidade, saiu em viagem com Gustavo, seu namorado de 25 anos, funcionário público federal.
+Acerca de possíveis intercorrências ao longo da viagem, é correto afirmar que",A,D,False,True,"{{
+  ""resposta_objetiva"": ""D""
+}",2026-03-31T01:55:02Z
+2012-09_45,OBJETIVA,J2,llama321b,medio,Direito da Criança e do Adolescente,Estágio de Convivência,"Acerca do estágio de convivência precedente a adoção, assinale a afirmativa correta.",D,B,False,True,"{{
+  ""resposta_objetiva"": ""B""
+}",2026-03-31T01:55:03Z
+2012-09_46,OBJETIVA,J2,llama321b,medio,Direito do Consumidor,Publicidade Enganosa e Abusiva,"Academia de ginástica veicula anúncio assinalando que os seus alunos, quando viajam ao exterior, podem se utilizar de rede mundial credenciada, presente em 60 países e 230 cidades, sem custo adicional. Um ano após continuamente fazer tal divulgação, vários alunos reclamam que, em quase todos os países, é exigida tarifa de uso da unidade conveniada. A academia responde que a referência ao “sem custo adicional” refere-se à inexistência de acréscimo cobrado por ela, e não de eventual cobrança, no exterior, de terceiro.
+Acerca dessa situação, assinale a afirmativa correta.",D,B,False,True,"{{
+  ""resposta_objetiva"": ""B""
+}",2026-03-31T01:55:03Z
+2012-09_47,OBJETIVA,J2,llama321b,medio,Direito do Consumidor,Aplicabilidade do CDC e Revisão Contratual,"A sociedade empresária XYZ Ltda. oferta e celebra, com vários estudantes universitários, contratos individuais de fornecimento de material didático, nos quais garante a entrega, com 25% de desconto sobre o valor indicado pela editora, dos livros didáticos escolhidos pelos contratantes (de lista de editoras de antemão definidas). Os contratos têm duração de 24 meses, e cada estudante compromete-se a pagar valor mensal, que fica como crédito, a ser abatido do valor dos livros escolhidos. Posteriormente, a capacidade de entrega da sociedade diminuiu, devido a dívidas e problemas judiciais. Em razão disso, ela pretende rever judicialmente os contratos, para obter aumento do valor mensal, ou então liberar-se do vínculo.
+Acerca dessa situação, assinale a afirmativa correta.",A,D,False,True,"{{
+  ""resposta_objetiva"": ""D""
+}",2026-03-31T01:55:04Z
+2012-09_48,OBJETIVA,J2,llama321b,facil,Direito Empresarial,Subsidiária Integral,"Leia o trecho a seguir.
+Companhia cuja totalidade das ações em que se divide o capital pertence a uma sociedade brasileira.
+Essa definição refere-se à",A,B,False,True,"{{
+  ""resposta_objetiva"": ""B""
+}",2026-03-31T01:55:05Z
+2012-09_49,OBJETIVA,J2,llama321b,medio,Direito Empresarial,Sociedade Limitada,"A sociedade limitada encontra-se regulada nos artigos 1052 a 1087 do Código Civil. Para que ela possa atingir sua finalidade, necessita de patrimônio, já que sua personalidade é diversa da personalidade dos sócios. Em relação ao capital e ao patrimônio social desse tipo societário, assinale a afirmativa incorreta.",B,B,True,True,"{{
+  ""resposta_objetiva"": ""B""
+}",2026-03-31T01:55:06Z
+2012-09_50,OBJETIVA,J2,llama321b,medio,Direito Empresarial,Duplicata e Princípios Cambiários,"Com relação aos títulos de crédito, assinale a afirmativa correta.",D,B,False,True,"{{
+  ""resposta_objetiva"": ""B""
+}",2026-03-31T01:55:07Z
+2012-09_51,OBJETIVA,J2,llama321b,medio,Direito Empresarial,Classificação de Créditos,"A respeito do processo de falência, assinale a afirmativa correta.",C,D,False,True,"{{
+  ""resposta_objetiva"": ""D""
+}",2026-03-31T01:55:07Z
+2012-09_52,OBJETIVA,J2,llama321b,medio,Direito Civil,Arrendamento Mercantil (Leasing),"Primavera do Leste Arrendamento Mercantil S.A. ajuizou ação de reintegração de posse de bem arrendado à sociedade empresária Vila Bela Distribuidora de Jornais e Revistas Ltda., em face do não pagamento das prestações nos vencimentos. O contrato de arrendamento mercantil prevê resolução de pleno direito em caso de qualquer inadimplemento da arrendatária.
+O juiz extinguiu o processo sem resolução de mérito porque",A,B,False,True,"{{
+  ""resposta_objetiva"": ""B""
+}",2026-03-31T01:55:08Z
+2012-09_53,OBJETIVA,J2,llama321b,medio,Direito Administrativo,Procedimento,"Os Juizados Especiais da Fazenda Pública, órgãos da Justiça comum e integrantes do Sistema dos Juizados Especiais, foram instituídos pela Lei n. 12.153/2009.
+Com base nessas disposições, asinale a afirmativa correta.",D,D,True,True,"{{
+  ""resposta_objetiva"": ""D""
+}",2026-03-31T01:55:09Z
+2012-09_54,OBJETIVA,J2,llama321b,medio,Direito Constitucional,Mandado de Segurança,"Impetrado um mandado de segurança, já sob a égide da Lei n. 12.016/2009, assinale a afirmativa correta.",A,B,False,True,"{{
+  ""resposta_objetiva"": ""B""
+}",2026-03-31T01:55:10Z
+2012-09_55,OBJETIVA,J2,llama321b,medio,Direito Civil,Intervenção de Terceiros,"Considerando a assistência e as demais formas de intervenção de terceiros previstas no Código de Processo Civil, assinale a afirmativa correta.",C,B,False,True,"{{
+  ""resposta_objetiva"": ""B""
+}",2026-03-31T01:55:10Z
+2012-09_56,OBJETIVA,J2,llama321b,medio,Direito Civil,Ação Rescisória,"A respeito da Ação Rescisória, assinale a afirmativa correta.",B,D,False,True,"{{
+  ""resposta_objetiva"": ""D""
+}",2026-03-31T01:55:11Z
+2012-09_57,OBJETIVA,J2,llama321b,medio,Direito Constitucional,Recurso Extraordinário e Repercussão Geral,"Como forma de prestigiar o princípio da razoável duração do processo e propiciar uma prestação jurisdicional mais célere e eficiente, um legislador promoveu uma série de alterações na sistemática recursal do Processo Civil brasileiro. Nesse sentido, destaca-se a Emenda Constitucional n. 45/2004 que introduziu em nosso ordenamento jurídico a figura da repercussão geral.
+Acerca deste instituto, assinale a afirmativa correta.",B,N/A,False,False,"{{
+  ""resposta_objetiva"": 
+"" 
+A) É um pressuposto processual de admissibilidade específico do Recurso Especial que permite que apenas sejam anal",2026-03-31T01:55:13Z
+2012-09_58,OBJETIVA,J2,llama321b,medio,Direito Civil,Impugnação ao Cumprimento de Sentença,"A execução tem por finalidade precípua a adoção de medidas necessárias à satisfação da obrigação prevista em um título executivo judicial ou extrajudicial. Em um primeiro momento, vigia no ordenamento pátrio o princípio da autonomia, segundo o qual as atividades executivas e de conhecimento deveriam ser desenvolvidas necessariamente por meio de ações distintas. Contudo, tal sistemática foi alvo de uma série de reformas que buscaram prestigiar um desenvolvimento sincrético do processo, bem como a própria efetivação do título executivo.
+Com base na legislação vigente, assinale a afirmativa correta:",B,A,False,True,"{{
+  ""resposta_objetiva"": ""A""
+}",2026-03-31T01:55:14Z
+2012-09_59,OBJETIVA,J2,llama321b,medio,Direito Penal,Progressão de Regime,"O sistema punitivo brasileiro é progressivo. Por meio dele o condenado passa do regime inicial de cumprimento de pena mais severo para regime mais brando, até alcançar o livramento condicional ou a liberdade definitiva.
+A respeito da progressão de regime, assinale a afirmativa correta.",C,A,False,True,"{{
+  ""resposta_objetiva"": ""A""
+}",2026-03-31T01:55:15Z
+2012-09_60,OBJETIVA,J2,llama321b,medio,Direito Penal,Princípios da Ação Penal,"Tendo como base o instituto da ação penal, assinale a afirmativa correta.",A,B,False,True,"{{
+  ""resposta_objetiva"": ""B""
+}",2026-03-31T01:55:15Z
+2012-09_61,OBJETIVA,J2,llama321b,medio,Direito Penal,Excludentes de Ilicitude e Culpabilidade,"Acerca das causas excludentes de ilicitude e extintivas de punibilidade, assinale a afirmativa incorreta.",B,B,True,True,"{{
+  ""resposta_objetiva"": ""B""
+}",2026-03-31T01:55:16Z
+2012-09_62,OBJETIVA,J2,llama321b,medio,Direito Penal,Relação de Causalidade e Agravação pelo Resultado,"José subtrai o carro de um jovem que lhe era totalmente desconhecido, chamado João. Tal subtração deu-se mediante o emprego de grave ameaça exercida pela utilização de arma de fogo. João, entretanto, rapaz jovem e de boa saúde, sem qualquer histórico de doença cardiovascular, assusta-se de tal forma com a arma, que vem a óbito em virtude de ataque cardíaco.
+Com base no cenário acima, assinale a afirmativa correta.",B,A,False,True,"{{
+  ""resposta_objetiva"": ""A""
+}",2026-03-31T01:55:17Z
+2012-09_63,OBJETIVA,J2,llama321b,dificil,Direito Penal,Reincidência,"Guilherme praticou, em 18/02/2009, contravenção penal de vias de fato (Art. 21 do Decreto Lei n. 3.688/41), tendo sido condenado à pena de multa. A sentença transitou definitivamente em julgado no dia 15/03/2010, mas Guilherme não pagou a multa. No dia 10/07/2010, Guilherme praticou crime de ato obsceno (Art. 233 do CP).
+Com base na situação descrita e na legislação, assinale a afirmativa correta.",A,B,False,True,"{{
+  ""resposta_objetiva"": ""B""
+}",2026-03-31T01:55:18Z
+2012-09_64,OBJETIVA,J2,llama321b,medio,Direito Penal,Erro de Proibição,"Jaime, brasileiro, passou a morar em um país estrangeiro no ano de 1999. Assim como seu falecido pai, Jaime tinha por hábito sempre levar consigo acessórios de arma de fogo, o que não era proibido, levando-se em conta a legislação vigente à época, a saber, a Lei n. 9.437/97. Tal hábito foi mantido no país estrangeiro que, em sua legislação, não vedava a conduta. Todavia, em 2012, Jaime resolve vir de férias ao Brasil. Além de matar as saudades dos familiares, Jaime também queria apresentar o país aos seus dois filhos, ambos nascidos no estrangeiro. Ocorre que, dois dias após sua chegada, Jaime foi preso em flagrante por portar ilegalmente acessório de arma de fogo, conduta descrita no Art. 14 da Lei n. 10.826/2003, verbis: “Portar, deter, adquirir, fornecer, receber, ter em depósito, transportar, ceder, ainda que gratuitamente, emprestar, remeter, empregar, manter sob guarda ou ocultar arma de fogo, acessório ou munição, de uso permitido, sem autorização e em desacordo com determinação legal ou regulamentar”.
+Nesse sentido, podemos afirmar que Jaime agiu em hipótese de",A,A,True,True,"{{
+  ""resposta_objetiva"": ""A""
+}",2026-03-31T01:55:19Z
+2012-09_65,OBJETIVA,J2,llama321b,medio,Direito Penal,Suspensão Condicional do Processo e Transação Penal,"Com relação à Lei n. 9.099/95, assinale a afirmativa incorreta.",B,C,False,True,"{{
+  ""resposta_objetiva"": ""C""
+}",2026-03-31T01:55:19Z
+2012-09_66,OBJETIVA,J2,llama321b,facil,Direito Penal,Prisao em Flagrante,"O Código de Processo Penal pátrio menciona que também se considera em flagrante delito quem é perseguido, logo após o delito, pela autoridade, pelo ofendido ou por qualquer pessoa, em situação que faça presumir ser o perseguido autor da infração.
+A essa modalidade dá-se o nome de flagrante",A,N/A,False,True,"{{
+  ""resposta_objetiva"": ""esperado""
+}",2026-03-31T01:55:20Z
+2012-09_67,OBJETIVA,J2,llama321b,facil,Direito Penal,Ação Penal,"Em relação aos procedimentos previstos na Lei n. 8.666/93, que instituiu as normas de licitações e contratos da Administração Pública, assinale a afirmativa correta.",A,B,False,True,"{{
+  ""resposta_objetiva"": ""B""
+}",2026-03-31T01:55:21Z
+2012-09_68,OBJETIVA,J2,llama321b,medio,Direito Penal,Embargos Infringentes e de Nulidade,"Joel foi condenado pela prática do crime de extorsão mediante sequestro. A defesa interpôs recurso de Apelação, que foi recebido e processado, sendo certo que o tribunal, de forma não unânime, manteve a condenação imposta pelo juízo a quo. O advogado do réu verifica que o acórdão viola, de forma direta, dispositivos constitucionais, razão pela qual decide continuar recorrendo da decisão exarada pela Segunda Instância.
+De acordo com as informações acima, assinale a alternativa que indica o recurso a ser interposto.",D,B,False,True,"{{
+  ""resposta_objetiva"": ""B""
+}",2026-03-31T01:55:22Z
+2012-09_69,OBJETIVA,J2,llama321b,medio,Direito Penal,Lei Maria da Penha (Violência Doméstica),"Em relação à Lei Maria da Penha, assinale a afirmativa correta.",D,B,False,True,"{{
+  ""resposta_objetiva"": ""B""
+}",2026-03-31T01:55:22Z
+2012-09_70,OBJETIVA,J2,llama321b,facil,Direito do Trabalho,Aposentadoria por Invalidez,"Após sofrer um acidente automobilístico de gravíssimas proporções enquanto viajava a lazer, o empregado Pedro foi aposentado por invalidez pelo INSS. Assinale a alternativa que indica o efeito desse fato no seu contrato de trabalho.",B,D,False,True,"{{
+  ""resposta_objetiva"": ""D""
+}",2026-03-31T01:55:23Z
+2012-09_71,OBJETIVA,J2,llama321b,medio,Direito do Trabalho,Intervalo Intrajornada,"Maria foi contratada pela empresa Bolos S.A. para exercer a função de copeira, cumprindo jornada de trabalho de segunda à sexta-feira das 13:00 h às 17:00 h, sem intervalo alimentar. Decorridos dois anos do início do pacto contratual, foi a empregada dispensada, recebendo as parcelas da ruptura.
+Contudo, inconformada porque jamais lhe foi permitido usufruir de intervalo para descanso e alimentação, Maria ajuíza reclamação trabalhista postulando o pagamento do período correspondente ao intervalo alimentar não concedido.
+Diante da hipótese relatada, assinale a afirmativa correta.",C,B,False,True,"{{
+  ""resposta_objetiva"": ""B""
+}",2026-03-31T01:55:24Z
+2012-09_72,OBJETIVA,J2,llama321b,facil,Direito do Trabalho,Homologação e Assistência na Rescisão,"Partindo-se da premissa legal de que o pedido de demissão ou recibo de quitação de rescisão do contrato de trabalho, firmado por empregado com mais de um ano de serviço, somente será válido quando realizado perante a autoridade competente, assinale a afirmativa correta.",C,D,False,True,"{{
+  ""resposta_objetiva"": ""D""
+}",2026-03-31T01:55:25Z
+2012-09_73,OBJETIVA,J2,llama321b,facil,Direito do Trabalho,Requisitos para Contratação e Exigência de Experiência,"Buscando profissionais experientes para manusear equipamentos de alta tecnologia e custo extremamente elevado, uma empresa anuncia a existência de vagas para candidatos que possuam dois anos de experiência prévia em determinada atividade.
+A partir da hipótese apresentada, assinale a afirmativa correta.",A,B,False,True,"{{
+  ""resposta_objetiva"": ""B""
+}",2026-03-31T01:55:25Z
+2012-09_74,OBJETIVA,J2,llama321b,medio,Direito do Trabalho,Extinção do Contrato e Prescrição,"De acordo com o entendimento consolidado da jurisprudência, a mudança de regime jurídico do empregado celetista para estatutário",C,B,False,True,"{{
+  ""resposta_objetiva"": ""B""
+}",2026-03-31T01:55:26Z
+2012-09_75,OBJETIVA,J2,llama321b,medio,Direito do Trabalho,Custas e Responsabilidade Solidária,"Assinale a alternativa em que há, incontroversamente, responsabilidade solidária no âmbito trabalhista.",C,A,False,True,"{{
+  ""resposta_objetiva"": ""A""
+}",2026-03-31T01:55:27Z
+2012-09_76,OBJETIVA,J2,llama321b,medio,Direito do Trabalho,Citação na Execução Trabalhista,"De acordo com a Consolidação das Leis do Trabalho, assinale a afirmativa correta.",C,D,False,True,"{{
+  ""resposta_objetiva"": ""D""
+}",2026-03-31T01:55:27Z
+2012-09_77,OBJETIVA,J2,llama321b,medio,Direito do Trabalho,Preferência de Tramitação,"Um dos princípios norteadores do Processo do Trabalho é o da celeridade, dada a natureza salarial do crédito trabalhista. Entretanto, por força de Lei, algumas causas especiais possuem preferência na tramitação. Das situações listadas a seguir, assinale aquela que terá preferência em todas as fases processuais.",B,B,True,True,"{{
+  ""resposta_objetiva"": ""B""
+}",2026-03-31T01:55:28Z
+2012-09_78,OBJETIVA,J2,llama321b,medio,Direito do Trabalho,Reconvenção e Competência da Justiça do Trabalho,"Uma das espécies de resposta é a reconvenção, que vem a ser a ação do réu contra o autor no mesmo feito e juízo em que é demandado. Malgrado não estar formalmente previsto na CLT, é pacífico o cabimento da reconvenção nas lides trabalhistas. Das hipóteses abaixo listadas, assinale aquela em que, pela natureza da pretensão deduzida, seria inviável a apresentação de reconvenção na Justiça do Trabalho.",D,D,True,True,"{{
+  ""resposta_objetiva"": ""D""
+}",2026-03-31T01:55:29Z
+2012-09_79,OBJETIVA,J2,llama321b,medio,Direito do Trabalho,Liquidação de Sentença,"A liquidação tem por objetivo a apuração do quantum debeatur nas sentenças proferidas de forma ilíquida e que tenham deferido, ao menos em parte, a pretensão deduzida. De acordo com a CLT, assinale a alternativa que indica as formas possíveis de liquidação da sentença nas obrigações de dar (pagar) e, caso o juiz conceda prazo às partes para manifestação, o número de dias para a impugnação.",B,B,True,True,"{{
+  ""resposta_objetiva"": ""B""
+}",2026-03-31T01:55:30Z
+2012-09_80,OBJETIVA,J2,llama321b,medio,Direito do Trabalho,Jus Postulandi,"Na Justiça do Trabalho, segundo o entendimento sumulado pelo TST, é correto afirmar-se que o jus postulandi",A,N/A,False,False,"{resposta_objetiva: { ""alternativa"": ""D"", ""justificativa"": ""O juiz pode decidir sobre os recursos de competência do TST, mas ele não pode",2026-03-31T01:55:32Z
+2013-10_1,OBJETIVA,J2,llama321b,medio,Ética Profissional,Publicação de Alegações Forenses,"O advogado João, que também é formado em Comunicação Social, atua nas duas profissões, possuindo uma coluna onde apresenta noticias jurídicas, com informações sobre atividades policiais, forenses ou vinculadas ao Ministério Público. Semanalmente inclui, nos seus comentários, alguns em forma de poesia, suas alegações forenses e os resultados dos processos sob sua responsabilidade, divulgando, com isso, seu trabalho como advogado.
+À luz das normas estatutárias, assinale a afirmativa correta.",B,A,False,True,"{{
+  ""resposta_objetiva"": ""A""
+}",2026-03-31T01:55:33Z
+2013-10_2,OBJETIVA,J2,llama321b,medio,Ética Profissional,Visto em Atos Constitutivos,"O advogado Mário pertence aos quadros da sociedade de economia mista controlada pelo Estado W, na qual chefia o Departamento Jurídico. Não existe óbice para a prestação de serviços de advocacia privada, o que ocorre no escritório que possui no centro da capital do Estado, em horário diverso do expediente na empresa. Um dos seus clientes realiza contrato para que Mário aponha o seu visto em ato constitutivo de pessoa jurídica, em Junta Comercial cuja sede está localizada na capital do Estado W.
+Observado tal relato, consoante as normas do Regulamento Geral do Estatuto da Advocacia e da OAB, assinale a afirmativa correta.",D,A,False,True,"{{
+  ""resposta_objetiva"": ""A""
+}",2026-03-31T01:55:33Z
+2013-10_3,OBJETIVA,J2,llama321b,medio,Ética Profissional,Assistência e Defesa das Prerrogativas pela OAB,"João, advogado regularmente inscrito nos quadros da Ordem dos Advogados do Brasil, veio a ser indiciado por força de investigação proposta em face de um dos seus inúmeros clientes, não tendo o causídico participado de qualquer ato ilícito, mas apenas como advogado. Veio a saber que seu nome fora incluído por força de exercício considerado exacerbado de sua atividade advocatícia. Contratou advogado para a sua defesa no inquérito criminal e postulou assistência à Ordem dos Advogados do Brasil por entender feridas suas prerrogativas profissionais.
+Observado tal relato, consoante as normas do Regulamento Geral do Estatuto da Advocacia e da OAB, assinale a afirmativa correta.",B,A,False,True,"{{
+  ""resposta_objetiva"": ""A""
+}",2026-03-31T01:55:34Z
+2013-10_4,OBJETIVA,J2,llama321b,facil,Ética Profissional,Pagamento de Honorários,"Nos termos do Estatuto da Advocacia existe a previsão de pagamento de honorários advocatícios. Assinale a afirmativa que indica como deve ocorrer o pagamento, quando não houver estipulação em contrário.",B,B,True,True,"{{
+  ""resposta_objetiva"": ""B""
+}",2026-03-31T01:55:35Z
+2013-10_5,OBJETIVA,J2,llama321b,facil,Ética Profissional,Exame de autos sem procuração e obtenção de cópias,"A advogada Maria solicitou, no cartório de determinada vara cível, ter vista e extrair cópias dos autos de processo não sujeito a sigilo. O serventuário a quem foi feita a solicitação afirmou que Maria não havia juntado procuração aos autos do processo em questão e, em razão disso, apenas poderia ter vista dos autos e que lhe seria vedada a extração de cópias.
+A partir do caso apresentado, assinale a afirmativa correta.",A,A,True,True,"{{
+  ""resposta_objetiva"": ""A""
+}",2026-03-31T01:55:36Z
