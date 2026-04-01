@@ -182,69 +182,18 @@ Cada criterio pode possuir componentes de dois tipos:
 - `semantico`;
 - `legislacao`.
 
-### 7.2.1 Componente semantico
+### 7.2.1 Formula final da questao discursiva
 
-O componente semantico combina duas fontes:
-
-- similaridade SBERT juridica;
-- score de NLI.
-
-Formula adotada no projeto:
+A nota da questao discursiva e calculada pela soma dos componentes semanticos e legislativos previstos no espelho estruturado. Nos componentes semanticos, o NLI atua como trava contra contradicao: se o score inferencial ficar abaixo de `0.2`, o componente zera; caso contrario, a nota combina `SBERT` e `NLI`. Nos componentes legislativos, `MATCH` vale `1` quando a referencia legal esperada aparece na resposta e `0` quando nao aparece.
 
 ```text
-score_semantico = 0.7 * score_sbert + 0.3 * score_nli
+nota_questao =
+  Σ_componentes_semanticos [ peso * ( 0, se NLI < 0.2; senão 0.7*SBERT + 0.3*NLI ) ]
+  +
+  Σ_componentes_legislacao [ peso * MATCH ]
 ```
 
-Regra de penalizacao:
-
-```text
-se score_nli < 0.2, entao score_semantico = 0
-```
-
-Essa regra reduz a nota quando a resposta se mostra contraditoria em relacao ao criterio esperado.
-
-### 7.2.2 Componente de legislacao
-
-O componente legislativo verifica se a resposta menciona os termos legais esperados, como artigos, sumulas e referencias normativas.
-
-No estado atual, a verificacao e binaria:
-
-```text
-score_legislacao = 1, se houver correspondencia
-score_legislacao = 0, caso contrario
-```
-
-### 7.2.3 Nota de cada componente
-
-Para cada componente:
-
-```text
-nota_componente = score_componente * peso_componente
-```
-
-### 7.2.4 Nota de cada criterio
-
-A nota do criterio e a soma das notas de seus componentes:
-
-```text
-nota_criterio = soma(nota_componente)
-```
-
-### 7.2.5 Nota final da discursiva
-
-A nota final da questao discursiva e a soma dos criterios:
-
-```text
-nota_discursiva = soma(nota_criterio)
-```
-
-O aproveitamento da questao e calculado por:
-
-```text
-aproveitamento = nota_discursiva / pontuacao_total
-```
-
-### 7.2.6 Aproveitamento agregado por modelo
+### 7.2.2 Aproveitamento agregado por modelo
 
 No benchmark discursivo, sao calculados:
 
