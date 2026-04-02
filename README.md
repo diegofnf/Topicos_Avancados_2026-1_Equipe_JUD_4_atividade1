@@ -2,6 +2,10 @@
 
 # Avaliação comparativa de pequenos modelos de linguagem para resposta a perguntas jurídicas em ambientes com recursos limitados
 
+Disciplina: Tópicos Avançados em ES e SI I  
+Aluno: Diego Alves Bispo  
+Professor: Dr. Glauco de Figueiredo Carneiro
+
 ## 1. Visão geral
 
 Este projeto implementa um protótipo autônomo para benchmark de modelos de linguagem em questões da prova da OAB. O fluxo parte de um único arquivo de entrada, `curadorias.csv`, e executa as seguintes etapas:
@@ -14,6 +18,8 @@ Este projeto implementa um protótipo autônomo para benchmark de modelos de lin
 6. consolidar os resultados em relatórios, tabelas e visualizações.
 
 O arquivo `curadorias.csv` é gerado na aplicação de curadorias do Grupo 4. Link da aplicação: [Curadorias Grupo 4](https://my-google-ai-studio-applet-60692236585.us-west1.run.app/).
+
+No recorte atual do projeto, as questões de múltipla escolha correspondem ao intervalo **739 a 861** do dataset [eduagarcia/oab_exams](https://huggingface.co/datasets/eduagarcia/oab_exams), enquanto as questões abertas correspondem ao intervalo **71 a 82** do dataset [maritaca-ai/oab-bench](https://huggingface.co/datasets/maritaca-ai/oab-bench/viewer?row=0).
 
 O projeto foi refatorado para separar responsabilidades em módulos Python e deixar o notebook principal apenas como camada de orquestração.
 
