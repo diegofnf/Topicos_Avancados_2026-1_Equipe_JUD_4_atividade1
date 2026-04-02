@@ -175,12 +175,19 @@ Também são registrados:
 
 ### 7.2 Métrica discursiva estruturada
 
-As discursivas seguem a estrutura do gabarito, com critérios e componentes.
+As questões discursivas são avaliadas a partir do espelho estruturado presente no gabarito. Cada critério do espelho pode ser decomposto em componentes semânticos e legislativos, e cada componente recebe um peso próprio definido na curadoria.
 
-Cada critério pode possuir componentes de dois tipos:
+A escolha das métricas não foi arbitrária. Os arquivos da pasta `artefatos_estudo/`, em especial `Metricas_Escolhidas.ipynb` e `Teste_Métricas_Qualitativas.ipynb`, foram utilizados para estudar alternativas e justificar a configuração final adotada no projeto. A partir desses experimentos, chegou-se ao conjunto de métricas hoje utilizado:
 
-- `semantico`;
-- `legislacao`.
+- `Legal SBERT Score`, para medir aderência semântica entre a resposta e a referência esperada;
+- `NLI`, para verificar consistência inferencial e penalizar contradições;
+- `MATCH` de legislação, para verificar a presença das referências legais esperadas no espelho.
+
+Em termos práticos:
+
+- componentes `semantico` avaliam o conteúdo jurídico da resposta;
+- componentes `legislacao` avaliam se a resposta menciona a base legal exigida;
+- a nota final da questão é a soma ponderada desses componentes.
 
 #### 7.2.1 Fórmula final da questão discursiva
 
