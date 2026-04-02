@@ -2,9 +2,12 @@
 
 # Avaliação comparativa de pequenos modelos de linguagem para resposta a perguntas jurídicas em ambientes com recursos limitados
 
+Universidade Federal de Sergipe
 Disciplina: Tópicos Avançados em ES e SI I  
 Aluno: Diego Alves Bispo  
 Professor: Dr. Glauco de Figueiredo Carneiro
+
+Atividade 1 - 04/2026
 
 ## 1. Visão geral
 
