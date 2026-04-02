@@ -310,6 +310,8 @@ Entre esses artefatos, `Metricas_Escolhidas.ipynb` serviu como referência para 
 
 ## 13. Principais decisões de projeto
 
+- métricas qualitativas - Legal-Sbert, NLI e Match de Legislação;
+- fazer a curadoria assistida por IA em uma aplicação;
 - modularização do pipeline para facilitar manutenção;
 - centralização da configuração em um único módulo;
 - reaproveitamento opcional de respostas já geradas;
