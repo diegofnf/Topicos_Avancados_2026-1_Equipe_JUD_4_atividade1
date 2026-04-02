@@ -74,7 +74,7 @@ Exemplo conceitual:
 }
 ```
 
-Essa estrutura substitui a logica antiga baseada em itens menos aderentes ao formato atual do espelho.
+
 
 ## 4. Arquitetura do projeto
 
