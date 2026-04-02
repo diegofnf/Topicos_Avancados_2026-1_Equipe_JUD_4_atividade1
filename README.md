@@ -45,8 +45,8 @@ O projeto utiliza o arquivo `curadorias.csv` na raiz do repositório como fonte 
 - enunciado;
 - perguntas complementares das discursivas;
 - alternativas das objetivas;
-- gabarito;
-- metadados de dificuldade, disciplina, tema e legislação.
+- gabarito estruturado;
+- classificação de dificuldade, especialidade e legislação.
 
 ### 3.1 Estrutura do gabarito
 
@@ -148,7 +148,7 @@ Os modelos atualmente definidos para responder às questões são:
 - `meta-llama/Llama-3.2-3B-Instruct`
 - `meta-llama/Llama-3.2-1B-Instruct`
 
-Esses modelos são usados tanto para questões objetivas quanto para questões discursivas.
+Esses modelos são usados tanto para questões objetivas quanto para questões discursivas. Eles são modelos gated, que necessitam de autorização prévia para uso.
 
 ### 6.2 Modelo de embeddings jurídicos
 
@@ -156,7 +156,7 @@ Para comparação semântica das respostas discursivas, o projeto utiliza:
 
 - `stjiris/bert-large-portuguese-cased-legal-mlm-sts-v1.0`
 
-Esse modelo fornece embeddings jurídicos em português e sustenta a avaliação de similaridade semântica entre a resposta do candidato e a referência esperada no gabarito.
+Esse modelo fornece embeddings jurídicos em português e sustenta a avaliação de similaridade semântica entre a resposta do candidato e a referência esperada no gabarito por sentenças.
 
 ### 6.3 Modelo de inferência textual NLI
 
@@ -164,7 +164,7 @@ Para verificar entailment, neutralidade e contradição semântica, o projeto ut
 
 - `MoritzLaurer/mDeBERTa-v3-base-mnli-xnli`
 
-Esse modelo é aplicado na etapa discursiva para complementar a similaridade semântica com uma noção de consistência inferencial.
+Esse modelo multilingual é aplicado na etapa discursiva para complementar a similaridade semântica com uma noção de consistência/contradição inferencial.
 
 ## 7. Métricas utilizadas
 
