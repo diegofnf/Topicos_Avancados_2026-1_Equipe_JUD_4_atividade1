@@ -12,7 +12,7 @@ Atividade 1 - 04/2026
 
 ## 1. Visão geral
 
-Este projeto implementa um protótipo autônomo para benchmark de modelos de linguagem em questões da prova da OAB. O fluxo parte de um único arquivo de entrada, `curadorias.csv`, e executa as seguintes etapas:
+Este projeto implementa um benchmark de modelos de linguagem em questões da prova da OAB. O fluxo parte de um único arquivo de entrada, `curadorias.csv`, e executa as seguintes etapas:
 
 1. preparar os dados curados;
 2. carregar os modelos de geração e de avaliação;
@@ -25,7 +25,6 @@ O arquivo `curadorias.csv` é gerado na aplicação de curadorias do Grupo 4. Li
 
 No recorte atual do projeto, as questões de múltipla escolha correspondem ao intervalo **739 a 861** do dataset [eduagarcia/oab_exams](https://huggingface.co/datasets/eduagarcia/oab_exams), enquanto as questões abertas correspondem ao intervalo **71 a 82** do dataset [maritaca-ai/oab-bench](https://huggingface.co/datasets/maritaca-ai/oab-bench/viewer?row=0).
 
-O projeto foi refatorado para separar responsabilidades em módulos Python e deixar o notebook principal apenas como camada de orquestração.
 
 ## 2. Objetivo do benchmark
 
