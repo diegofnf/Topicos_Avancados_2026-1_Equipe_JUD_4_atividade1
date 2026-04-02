@@ -10,7 +10,7 @@ Professor: Dr. Glauco de Figueiredo Carneiro
 
 Atividade 1 - 04/2026
 
-[Explicação YT](https://www.youtube.com/watch?v=jVHmo4xAS3g)
+[Explicação YouTube](https://www.youtube.com/watch?v=jVHmo4xAS3g)
 
 ## 1. Visão geral
 
