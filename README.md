@@ -175,7 +175,7 @@ Também são registrados:
 
 ### 7.2 Métrica discursiva estruturada
 
-As questões discursivas são avaliadas a partir do espelho estruturado presente no gabarito. Cada critério do espelho pode ser decomposto em componentes semânticos e legislativos, e cada componente recebe um peso próprio definido na curadoria.
+As questões discursivas são avaliadas a partir do espelho presente no dataset. Cada critério do espelho pode ser decomposto em componentes semânticos e legislativos com o seu respectivo peso.
 
 A escolha das métricas não foi arbitrária. Os arquivos da pasta `artefatos_estudo/`, em especial `Metricas_Escolhidas.ipynb` e `Teste_Métricas_Qualitativas.ipynb`, foram utilizados para estudar alternativas e justificar a configuração final adotada no projeto. A partir desses experimentos, chegou-se ao conjunto de métricas hoje utilizado:
 
@@ -199,23 +199,6 @@ nota_questao =
   +
   Σ_componentes_legislacao [ peso * MATCH ]
 ```
-
-#### 7.2.2 Leitura agregada por modelo
-
-Após calcular a nota de cada questão discursiva, o projeto agrega os resultados por modelo em quatro indicadores:
-
-- `nota_total`: soma de todos os pontos obtidos pelo modelo nas discursivas;
-- `pontuacao_total_disc`: soma da pontuação máxima das discursivas avaliadas;
-- `aproveitamento_medio`: média simples do aproveitamento questão a questão;
-- `aproveitamento_geral`: razão entre pontos obtidos e pontos totais possíveis.
-
-O indicador principal do benchmark discursivo é:
-
-```text
-aproveitamento_geral = nota_total / pontuacao_total_disc
-```
-
-Ele representa, de forma proporcional, quanto o modelo converteu da pontuação máxima total disponível nas questões discursivas.
 
 ## 8. Regras de pontuação
 
