@@ -175,7 +175,7 @@ Tambem sao registrados:
 
 ## 7.2 Metrica discursiva estruturada
 
-As discursivas deixaram de usar a analise qualitativa anterior e passaram a seguir a nova estrutura do gabarito, com criterios e componentes.
+As discursivas seguem a estrutura do gabarito, com criterios e componentes.
 
 Cada criterio pode possuir componentes de dois tipos:
 
