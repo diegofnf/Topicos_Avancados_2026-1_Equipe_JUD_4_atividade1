@@ -10,6 +10,8 @@ Professor: Dr. Glauco de Figueiredo Carneiro
 
 Atividade 1 - 04/2026
 
+[Explicação YT](https://www.youtube.com/watch?v=jVHmo4xAS3g)
+
 ## 1. Visão geral
 
 Este projeto implementa um benchmark de modelos de linguagem em questões da prova da OAB. O fluxo parte de um único arquivo de entrada, `curadorias.csv`, e executa as seguintes etapas:
