@@ -313,15 +313,13 @@ Entre esses artefatos, `Metricas_Escolhidas.ipynb` serviu como referência para 
 - modularização do pipeline para facilitar manutenção;
 - centralização da configuração em um único módulo;
 - reaproveitamento opcional de respostas já geradas;
-- substituição da avaliação qualitativa antiga por correção estruturada baseada no espelho;
+- avaliação qualitativa por correção estruturada baseada no espelho;
 - manutenção do notebook como camada de demonstração e execução;
-- preservação integral da pasta `artefatos_estudo`.
+- preservação da pasta `artefatos_estudo`.
 
 ## 14. Próximos aprimoramentos sugeridos
 
-- incluir testes automatizados para parsing do gabarito;
-- permitir configuração externa dos modelos candidatos;
 - enriquecer a verificação legislativa com normalização mais robusta;
-- adicionar validações de consistência entre `peso_total` e soma dos pesos dos componentes;
-- registrar logs de execução por etapa;
-- exportar relatórios adicionais por questão e por critério.
+- avaliação com LLM as Judge
+- utilização de um modelo NLI pré treinado no domínio jurídico brasileiro
+- fine tuning dos modelos candidatos
