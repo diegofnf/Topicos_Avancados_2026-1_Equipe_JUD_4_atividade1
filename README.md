@@ -335,17 +335,32 @@ Requisitos principais:
 Pacotes utilizados:
 
 - `transformers`
+   Biblioteca central para carregamento dos modelos de linguagem, tokenizadores e pipelines de inferência utilizados tanto na geração de respostas quanto na avaliação semântica e inferencial.
 - `accelerate`
+   Utilizada para otimizar a execução dos modelos em GPU, facilitando o gerenciamento de memória e a distribuição eficiente da inferência no ambiente de experimentação.
 - `bitsandbytes`
+   Implementei a quantização em 4 bits, porém optei por não utilizá-la nos experimentos devido à degradação significativa na qualidade das respostas. Observou-se que modelos de menor porte, quando quantizados em 4 bits, apresentam desempenho insuficiente, o que inviabiliza sua utilização em benchmarks comparativos.
+
+Ainda assim, o código foi mantido e estruturado para permitir testes futuros, possibilitando avaliar, na prática, a regra amplamente discutida em sala de aula: modelos maiores (por exemplo, 70B) quantizados em INT4 tendem a superar modelos menores (como 8B) em precisão FP16.
+   
 - `pandas`
+  Responsável pela manipulação tabular dos dados do projeto, incluindo leitura da curadorias.csv, organização das respostas geradas e consolidação dos resultados em DataFrames e arquivos CSV.
 - `numpy`
+  Empregado em operações numéricas auxiliares, especialmente no cálculo e agregação de métricas ao longo do pipeline de avaliação.
 - `tqdm`
+  Utilizado para exibir barras de progresso durante etapas mais longas da execução, melhorando o acompanhamento do processamento no notebook.
 - `seaborn`
+  Biblioteca empregada na construção de visualizações estatísticas, especialmente nos heatmaps comparativos de desempenho entre modelos.
 - `matplotlib`
+  Usada como base para geração dos gráficos e ajustes visuais das figuras apresentadas no relatório final.
 - `huggingface_hub`
+  Responsável pelo acesso e download dos modelos e recursos hospedados no ecossistema Hugging Face, garantindo integração direta com os checkpoints utilizados nos experimentos.
 - `sentencepiece`
+  Dependência necessária para tokenização em alguns modelos utilizados, permitindo o correto processamento de texto em português durante a inferência.
 - `scipy`
+  Utilizada em rotinas matemáticas e estatísticas complementares empregadas no cálculo de similaridade e apoio às métricas do pipeline.
 - `sentence-transformers`
+Biblioteca usada para carregar modelos de embeddings semânticos, especialmente o Legal SBERT Score, base da avaliação discursiva nas dimensões de precisão, argumentação e coesão legal.
 
 ## 12. Papel da pasta `artefatos_estudo`
 
