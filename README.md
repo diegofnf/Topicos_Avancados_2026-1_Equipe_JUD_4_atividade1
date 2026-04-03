@@ -197,7 +197,7 @@ Os modelos atualmente definidos para responder às questões são:
 - `meta-llama/Llama-3.2-3B-Instruct`
 - `meta-llama/Llama-3.2-1B-Instruct`
 
-Esses modelos são usados tanto para questões objetivas quanto para questões discursivas. Eles são modelos gated, que necessitam de autorização prévia para uso.
+Esses modelos são usados tanto para questões objetivas quanto para questões discursivas. Eles são modelos gated, que necessitam de autorização prévia para uso. <b> Os modelos não foram quantizados. </b>
 
 ### 6.2 Modelo de embeddings jurídicos
 
