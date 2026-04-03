@@ -40,9 +40,52 @@ O objetivo central é comparar diferentes modelos de linguagem em tarefas juríd
 
 Essa abordagem permite avaliar não apenas se o modelo acerta a alternativa correta, mas também se a resposta discursiva atende aos critérios jurídicos relevantes do gabarito.
 
-## 3. Base de dados
+## 3. Curadoria
 
-O projeto utiliza o arquivo `curadorias.csv` na raiz do repositório como fonte única de dados. O arquivo contém:
+O projeto utiliza o arquivo `curadorias.csv` na raiz do repositório como fonte única de dados. Os parâmetros da curadoria foram definidos pelo grupo. 
+
+Esse arquivo é gerado na aplicação de curadorias do grupo 4. 
+
+Esta aplicação é uma plataforma de curadoria especializada para o OAB-Bench, focada em estruturar dados de exames da OAB para avaliação de IAs.
+A ferramenta gerencia dois conjuntos de dados: J1 (Peças Prático-Profissionais e questões discursivas) e J2 (Questões de múltipla escolha).
+O processo de curadoria consiste na revisão técnica de cada questão assistida por IA(Gemini 3.1 pro) em diversas áreas do Direito.
+Os curadores classificam o nível de dificuldade (de 1 a 4) com base em critérios como "lei seca" ou "caso complexo".
+É feita a categorização precisa da especialidade, definindo a disciplina, o assunto específico e o tema jurídico abordado.
+A aplicação realiza o mapeamento da legislação pertinente, incluindo normas, artigos específicos e URLs de referência.
+O sistema utiliza Firebase para persistência em tempo real, permitindo que múltiplos curadores trabalhem simultaneamente.
+O Dashboard oferece controle total sobre o progresso das atribuições e a integridade dos dados coletados por área.
+Ao final, a plataforma exporta os dados em JSON e CSV padronizados, prontos para uso em benchmarks de modelos de linguagem.
+
+Dificuldade:
+1 - Fácil
+lei seca, resposta direta, sem interpretacao
+
+2 - Médio
+interpretacao simples, mono artigo, baixa ambiguidade
+
+3 - Difícil
+caso pratico, multiplos artigos, exige raciocinio
+
+4 - Muito Difícil
+caso complexo, excecoes, integracao de temas, alta ambiguidade
+
+Área de especialidade: 
+Domínio presente nos guidelines do dataset. 
+
+Legislação:
+Utilizamos a legislação base e os artigos, além do identificador único URN.
+
+| Campo                    | Principal uso                         |
+|--------------------------|---------------------------------------|
+| dificuldade.nivel        | benchmark                             |
+| dificuldade.escala       | métricas / fine-tuning                |
+| dificuldade.criterios    | explicabilidade                       |
+| especialidade            | análise por área / dashboards         |
+| legislacao.norma/lei     | contexto jurídico                     |
+| urn/url                  | integração / RAG                      |
+| artigos                  | explicabilidade                       |
+
+O arquivo `curadorias.csv` contém:
 
 - identificadores das questões;
 - tipo da questão;
