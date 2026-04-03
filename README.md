@@ -391,15 +391,15 @@ Entre esses artefatos, `Metricas_Escolhidas.ipynb` serviu como referência para 
 
 ## 15. Referências
 
-ARIAI, Farid; MACKENZIE, Joel; DEMARTINI, Gianluca. Natural language processing for the legal domain: a survey of tasks, datasets, models, and challenges. Versão 3. arXiv preprint, 2024. Disponível em: <https://doi.org/10.48550/ARXIV.2410.21306>. Acesso em: 3 abr. 2026.
+ARIAI, Farid; MACKENZIE, Joel; DEMARTINI, Gianluca. Natural language processing for the legal domain: a survey of tasks, datasets, models, and challenges. Versão 3. arXiv preprint, 2024. Disponível em: <https://doi.org/10.48550/ARXIV.2410.21306>.
 
 CHAUHAN, Jayendra. Legal-SBERT: creating a sentence tranformer for the legal domain and generating data. [S. l.: s. n.], s.d.
 
-GARCIA, Eduardo; SILVA, Nadia; SIQUEIRA, Felipe et al. RoBERTaLexPT: a legal RoBERTa model pretrained with deduplication for Portuguese. In: GAMALLO, Pablo; CLARO, Daniela; TEIXEIRA, António et al. (org.). Proceedings of the 16th International Conference on Computational Processing of Portuguese - Vol. 1. [S. l.]: Association for Computational Linguistics, 2024. Disponível em: <https://aclanthology.org/2024.propor-1.38/>. Acesso em: 3 abr. 2026.
+GARCIA, Eduardo; SILVA, Nadia; SIQUEIRA, Felipe et al. RoBERTaLexPT: a legal RoBERTa model pretrained with deduplication for Portuguese. In: GAMALLO, Pablo; CLARO, Daniela; TEIXEIRA, António et al. (org.). Proceedings of the 16th International Conference on Computational Processing of Portuguese - Vol. 1. [S. l.]: Association for Computational Linguistics, 2024. Disponível em: <https://aclanthology.org/2024.propor-1.38/>.
 
 HASIMOTO, Márcia. Análise textual das decisões proferidas em colegiado Tribunal de Justiça do Tocantins. [S. l.: s. n.], 2025.
 
-SELLAM, Thibault; DAS, Dipanjan; PARIKH, Ankur. BLEURT: learning robust metrics for text generation. In: JURAFSKY, Dan; CHAI, Joyce; SCHLUTER, Natalie; TETREAULT, Joel (org.). Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics. [S. l.]: Association for Computational Linguistics, 2020. Disponível em: <https://doi.org/10.18653/v1/2020.acl-main.704>. Acesso em: 3 abr. 2026.
+SELLAM, Thibault; DAS, Dipanjan; PARIKH, Ankur. BLEURT: learning robust metrics for text generation. In: JURAFSKY, Dan; CHAI, Joyce; SCHLUTER, Natalie; TETREAULT, Joel (org.). Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics. [S. l.]: Association for Computational Linguistics, 2020. Disponível em: <https://doi.org/10.18653/v1/2020.acl-main.704>.
 
 YE, Yuxuan; SIMPSON, Edwin; SANTOS RODRIGUEZ, Raul. SBERTScore: using similarity to evaluate factual consistency in summaries. [S. l.: s. n.], s.d.
 
