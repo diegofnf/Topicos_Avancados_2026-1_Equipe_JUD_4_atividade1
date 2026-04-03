@@ -387,3 +387,4 @@ Entre esses artefatos, `Metricas_Escolhidas.ipynb` serviu como referência para 
 - avaliação com LLM as Judge
 - utilização de um modelo NLI pré treinado no domínio jurídico brasileiro
 - fine tuning dos modelos candidatos
+- utilizar a regra de ouro da quantização: 35B em INT4 quase sempre supera um modelo 4B em FP16.
