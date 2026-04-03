@@ -44,7 +44,7 @@ Essa abordagem permite avaliar não apenas se o modelo acerta a alternativa corr
 
 O projeto utiliza o arquivo `curadorias.csv` na raiz do repositório como fonte única de dados. Os parâmetros da curadoria foram definidos pelo grupo. 
 
-Esse arquivo é gerado na aplicação de curadorias do grupo 4. 
+Esse arquivo é gerado na [aplicação de curadorias do grupo 4](https://my-google-ai-studio-applet-60692236585.us-west1.run.app/). 
 
 Esta aplicação é uma plataforma de curadoria especializada para o OAB-Bench, focada em estruturar dados de exames da OAB para avaliação de IAs.
 A ferramenta gerencia dois conjuntos de dados: J1 (Peças Prático-Profissionais e questões discursivas) e J2 (Questões de múltipla escolha).
