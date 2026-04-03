@@ -340,9 +340,7 @@ Pacotes utilizados:
    Utilizada para otimizar a execução dos modelos em GPU, facilitando o gerenciamento de memória e a distribuição eficiente da inferência no ambiente de experimentação.
 - `bitsandbytes`
    Implementei a quantização em 4 bits, porém optei por não utilizá-la nos experimentos devido à degradação significativa na qualidade das respostas. Observou-se que modelos de menor porte, quando quantizados em 4 bits, apresentam desempenho insuficiente, o que inviabiliza sua utilização em benchmarks comparativos.
-
 Ainda assim, o código foi mantido e estruturado para permitir testes futuros, possibilitando avaliar, na prática, a regra amplamente discutida em sala de aula: modelos maiores (por exemplo, 70B) quantizados em INT4 tendem a superar modelos menores (como 8B) em precisão FP16.
-   
 - `pandas`
   Responsável pela manipulação tabular dos dados do projeto, incluindo leitura da curadorias.csv, organização das respostas geradas e consolidação dos resultados em DataFrames e arquivos CSV.
 - `numpy`
