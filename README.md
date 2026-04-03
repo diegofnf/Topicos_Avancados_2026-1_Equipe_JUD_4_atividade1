@@ -277,7 +277,7 @@ O diretório `artefatos_gerados/` recebe os principais produtos da execução:
 
 ## 11. Ambiente de execução
 
-O projeto foi pensado para ambiente com GPU e token do Hugging Face.
+O projeto foi pensado para rodar no ambiente do Colab com GPU T4 e token do Hugging Face.
 
 Requisitos principais:
 
