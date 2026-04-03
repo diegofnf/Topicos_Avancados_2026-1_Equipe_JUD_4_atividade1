@@ -57,16 +57,17 @@ O Dashboard oferece controle total sobre o progresso das atribuições e a integ
 Ao final, a plataforma exporta os dados em JSON e CSV padronizados, prontos para uso em benchmarks de modelos de linguagem.
 
 Dificuldade:
-1 - Fácil
+
+1 - Fácil: 
 lei seca, resposta direta, sem interpretacao
 
-2 - Médio
+2 - Médio: 
 interpretacao simples, mono artigo, baixa ambiguidade
 
-3 - Difícil
+3 - Difícil: 
 caso pratico, multiplos artigos, exige raciocinio
 
-4 - Muito Difícil
+4 - Muito Difícil: 
 caso complexo, excecoes, integracao de temas, alta ambiguidade
 
 Área de especialidade: 
