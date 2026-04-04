@@ -25,7 +25,7 @@ def baixar_modelos(configuracao: ConfiguracaoExecucao) -> None:
 
 
 def carregar_modelo_geracao(nome_modelo: str, diretorio_cache_hf: str):
-    """Carrega um modelo causal em 4 bits para inferencia."""
+    """Carrega um modelo causal em FP16 para inferencia.  #quantization_config=bnb_config desativada"""
     bnb_config = BitsAndBytesConfig(
         load_in_4bit=True,
         bnb_4bit_quant_type="nf4",
@@ -39,7 +39,8 @@ def carregar_modelo_geracao(nome_modelo: str, diretorio_cache_hf: str):
         nome_modelo,
         cache_dir=diretorio_cache_hf,
         device_map="auto",
-        quantization_config=bnb_config,
+        #quantization_config=bnb_config,
+        dtype=torch.float16, 
         low_cpu_mem_usage=True,
     )
     return modelo, tokenizer
