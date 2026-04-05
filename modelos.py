@@ -48,11 +48,10 @@ def carregar_modelo_geracao(nome_modelo: str, diretorio_cache_hf: str):
 
 def descarregar_modelo(modelo, tokenizer) -> None:
     """Libera memoria de GPU e CPU apos o uso do modelo."""
-    try:
-        modelo.to("cpu")
-    except Exception:
-        pass
-    del modelo, tokenizer
+    if hasattr(modelo, "generation_config"):
+        modelo.generation_config = None
+    del tokenizer
+    del modelo
     gc.collect()
     torch.cuda.empty_cache()
 
