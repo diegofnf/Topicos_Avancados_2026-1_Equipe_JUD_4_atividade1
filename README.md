@@ -128,7 +128,7 @@ Esse modelo multilingual é aplicado na etapa discursiva para complementar a sim
 
 ## 6. Consolidado executivo
 
-A etapa final não usa mais o consolidado antigo. O arquivo [relatorios.py](/Users/diegobispo/Documents/Atividade_1/Topicos_Avancados_2026-1_Equipe_JUD_4_atividade1/relatorios.py) hoje gera um consolidado executivo orientado por médias e por totais agregados.
+O arquivo [relatorios.py](/Users/diegobispo/Documents/Atividade_1/Topicos_Avancados_2026-1_Equipe_JUD_4_atividade1/relatorios.py) hoje gera um consolidado executivo orientado por médias e por totais agregados.
 
 Os principais indicadores do benchmark consolidado são:
 
@@ -140,16 +140,6 @@ Os principais indicadores do benchmark consolidado são:
 - composição resumida dos critérios discursivos;
 - heatmap consolidado;
 - relatório executivo em PDF.
-
-As fórmulas centrais ficaram assim:
-
-```text
-media_discursivas = aproveitamento_geral
-```
-
-```text
-media_geral = (acuracia_objetivas + media_discursivas) / 2
-```
 
 Além do ranking geral por modelo, o consolidado também passa a mostrar:
 
