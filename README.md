@@ -324,14 +324,13 @@ O diretório `artefatos_gerados/` recebe os principais produtos da execução:
 
 ## 11. Ambiente de execução
 
-O projeto foi pensado para rodar no ambiente do Colab com GPU T4 e token do Hugging Face.
+O projeto foi desenvolvido para rodar no ambiente do Colab com GPU T4 e token do Hugging Face.
 
 Requisitos principais:
 
 - Python 3;
 - GPU habilitada;
-- `HF_TOKEN` configurado no ambiente ou no Colab;
-- bibliotecas instaladas no notebook.
+- `HF_TOKEN` configurado no Colab;
 
 Pacotes utilizados:
 
