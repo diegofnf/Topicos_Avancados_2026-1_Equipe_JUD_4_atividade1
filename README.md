@@ -43,105 +43,12 @@ O objetivo central é comparar diferentes modelos de linguagem em tarefas juríd
 
 Essa abordagem permite avaliar não apenas se o modelo acerta a alternativa correta, mas também se a resposta discursiva atende aos critérios jurídicos relevantes do gabarito.
 
-## 3. Curadoria
 
-O projeto utiliza o arquivo `curadorias.csv` na raiz do repositório como fonte única de dados. Os parâmetros da curadoria foram definidos pelo grupo. 
-
-Esse arquivo é gerado na [aplicação de curadorias do grupo 4](https://my-google-ai-studio-applet-60692236585.us-west1.run.app/). 
-
-Esta aplicação é uma plataforma de curadoria especializada para o OAB-Bench, focada em estruturar dados de exames da OAB para avaliação de IAs.
-A ferramenta gerencia dois conjuntos de dados: J1 (Peças Prático-Profissionais e questões discursivas) e J2 (Questões de múltipla escolha).
-O processo de curadoria consiste na revisão técnica de cada questão assistida por IA(Gemini 3.1 pro) em diversas áreas do Direito.
-Os curadores classificam o nível de dificuldade (de 1 a 4) com base em critérios como "lei seca" ou "caso complexo".
-É feita a categorização precisa da especialidade, definindo a disciplina, o assunto específico e o tema jurídico abordado.
-A aplicação realiza o mapeamento da legislação pertinente, incluindo normas, artigos específicos e URLs de referência.
-O sistema utiliza Firebase para persistência em tempo real, permitindo que múltiplos curadores trabalhem simultaneamente.
-O Dashboard oferece controle total sobre o progresso das atribuições e a integridade dos dados coletados por área.
-Ao final, a plataforma exporta os dados em JSON e CSV padronizados, prontos para uso em benchmarks de modelos de linguagem.
-
-Dificuldade:
-
-1 - Fácil: 
-lei seca, resposta direta, sem interpretacao
-
-2 - Médio: 
-interpretacao simples, mono artigo, baixa ambiguidade
-
-3 - Difícil: 
-caso pratico, multiplos artigos, exige raciocinio
-
-4 - Muito Difícil: 
-caso complexo, excecoes, integracao de temas, alta ambiguidade
-
-Área de especialidade: 
-Domínio presente nos guidelines do dataset. 
-
-Legislação:
-Utilizamos a legislação base e os artigos, além do identificador único URN.
-
-| Campo                    | Principal uso                         |
-|--------------------------|---------------------------------------|
-| dificuldade.nivel        | benchmark                             |
-| dificuldade.escala       | métricas / fine-tuning                |
-| dificuldade.criterios    | explicabilidade                       |
-| especialidade            | análise por área / dashboards         |
-| legislacao.norma/lei     | contexto jurídico                     |
-| urn/url                  | integração / RAG                      |
-| artigos                  | explicabilidade                       |
-
-O arquivo `curadorias.csv` contém:
-
-- identificadores das questões;
-- tipo da questão;
-- prompt de sistema;
-- enunciado;
-- perguntas complementares das discursivas;
-- alternativas das objetivas;
-- gabarito estruturado;
-- classificação de dificuldade, especialidade e legislação.
-
-### 3.1 Estrutura do gabarito
-
-As questões objetivas utilizam um gabarito simples com a alternativa correta.
-
-As questões discursivas seguem uma estrutura JSON no campo `Gabarito`, com destaque para:
-
-- `gabarito_completo`: texto corrido com a resposta esperada;
-- `criterios`: lista estruturada de critérios de correção;
-- `componentes`: subdivisões internas de cada critério.
-
-Exemplo conceitual:
-
-```json
-{
-  "gabarito_completo": "Resposta discursiva esperada...",
-  "criterios": [
-    {
-      "id": "A",
-      "secao": "Fundamentação",
-      "peso_total": 0.6,
-      "componentes": [
-        {
-          "tipo": "semantico",
-          "referencia": "Tese jurídica esperada",
-          "peso": 0.5
-        },
-        {
-          "tipo": "legislacao",
-          "termos": ["art. 71", "Súmula Vinculante 3"],
-          "peso": 0.1
-        }
-      ]
-    }
-  ]
-}
-```
-
-## 4. Arquitetura do projeto
+## 3. Arquitetura do projeto
 
 O projeto foi modularizado em arquivos Python posicionados diretamente na raiz, com separação clara de responsabilidades.
 
-### 4.1 Estrutura de diretórios
+### 3.1 Estrutura de diretórios
 
 ```text
 .
@@ -165,7 +72,7 @@ O projeto foi modularizado em arquivos Python posicionados diretamente na raiz, 
 `-- artefatos_gerados/
 ```
 
-### 4.2 Responsabilidade dos módulos
+### 3.2 Responsabilidade dos módulos
 
 - `configuracoes.py`: centraliza caminhos, nomes de modelos, cache, limites de execução e variáveis de ambiente.
 - `prompts.py`: armazena os prompts utilizados para geração das respostas.
@@ -178,7 +85,7 @@ O projeto foi modularizado em arquivos Python posicionados diretamente na raiz, 
 - `relatorios.py`: consolida resultados, gera heatmap, tabelas e PDF.
 - `pipeline.py`: fornece funções de alto nível para o notebook principal.
 
-## 5. Notebook principal
+## 4. Notebook principal
 
 O arquivo `diego_bispo.ipynb` é a interface principal de execução. Ele organiza o fluxo em sete blocos:
 
@@ -190,9 +97,9 @@ O arquivo `diego_bispo.ipynb` é a interface principal de execução. Ele organi
 6. avaliação discursiva estruturada;
 7. consolidado executivo.
 
-## 6. Modelos utilizados
+## 5. Modelos utilizados
 
-### 6.1 Modelos candidatos para geração
+### 5.1 Modelos candidatos para geração
 
 Os modelos atualmente definidos para responder às questões são:
 
@@ -202,7 +109,7 @@ Os modelos atualmente definidos para responder às questões são:
 
 Esses modelos são usados tanto para questões objetivas quanto para questões discursivas. Eles são modelos gated, que necessitam de autorização prévia para uso. <b> Os modelos não foram quantizados. </b>
 
-### 6.2 Modelo de embeddings jurídicos
+### 5.2 Modelo de embeddings jurídicos
 
 Para comparação semântica das respostas discursivas, o projeto utiliza:
 
@@ -210,7 +117,7 @@ Para comparação semântica das respostas discursivas, o projeto utiliza:
 
 Esse modelo fornece embeddings jurídicos em português e sustenta a avaliação de similaridade semântica entre a resposta do candidato e a referência esperada no gabarito por sentenças.
 
-### 6.3 Modelo de inferência textual NLI
+### 5.3 Modelo de inferência textual NLI
 
 Para verificar entailment, neutralidade e contradição semântica, o projeto utiliza:
 
@@ -219,7 +126,7 @@ Para verificar entailment, neutralidade e contradição semântica, o projeto ut
 Esse modelo multilingual é aplicado na etapa discursiva para complementar a similaridade semântica com uma noção de consistência/contradição inferencial.
 
 
-## 7. Consolidado executivo
+## 6. Consolidado executivo
 
 A etapa final não usa mais o consolidado antigo. O arquivo [relatorios.py](/Users/diegobispo/Documents/Atividade_1/Topicos_Avancados_2026-1_Equipe_JUD_4_atividade1/relatorios.py) hoje gera um consolidado executivo orientado por médias e por totais agregados.
 
@@ -254,7 +161,7 @@ Além do ranking geral por modelo, o consolidado também passa a mostrar:
 
 Isso reflete melhor a lógica atual do projeto: objetivas e discursivas continuam comparáveis, mas o relatório final passou a enfatizar médias, totais por agrupamento e rastreabilidade da correção discursiva.
 
-## 8. Artefatos gerados
+## 7. Artefatos gerados
 
 O diretório `artefatos_gerados/` recebe os principais produtos da execução:
 
@@ -271,7 +178,7 @@ O diretório `artefatos_gerados/` recebe os principais produtos da execução:
 - notas discursivas por questão;
 - resumo das objetivas.
 
-## 9. Ambiente de execução
+## 8. Ambiente de execução
 
 O projeto foi desenvolvido para rodar no ambiente do Colab com GPU T4 e token do Hugging Face.
 
@@ -309,7 +216,7 @@ Ainda assim, o código foi mantido e estruturado para permitir testes futuros, p
 - `sentence-transformers`
 Biblioteca usada para carregar modelos de embeddings semânticos, especialmente o Legal SBERT Score, base da avaliação discursiva nas dimensões de precisão, argumentação e coesão legal.
 
-## 10. Papel da pasta `artefatos_estudo`
+## 9. Papel da pasta `artefatos_estudo`
 
 A pasta `artefatos_estudo/` foi preservada e não participa diretamente da execução do pipeline modular. Ela funciona como base de estudo e validação metodológica, especialmente para:
 
@@ -319,7 +226,7 @@ A pasta `artefatos_estudo/` foi preservada e não participa diretamente da execu
 
 Entre esses artefatos, `Metricas_Escolhidas.ipynb` serviu como referência para a incorporação da avaliação semântica com SBERT e NLI no fluxo principal.
 
-## 11. Principais decisões de projeto
+## 10. Principais decisões de projeto
 
 - métricas qualitativas - Legal-Sbert, NLI e Match de Legislação;
 - fazer a curadoria assistida por IA em uma aplicação;
@@ -330,7 +237,7 @@ Entre esses artefatos, `Metricas_Escolhidas.ipynb` serviu como referência para 
 - manutenção do notebook como camada de demonstração e execução;
 - preservação da pasta `artefatos_estudo`.
 
-## 12. Próximos aprimoramentos sugeridos
+## 11. Próximos aprimoramentos sugeridos
 
 - enriquecer a verificação legislativa com normalização mais robusta;
 - avaliação com LLM as Judge
@@ -338,7 +245,7 @@ Entre esses artefatos, `Metricas_Escolhidas.ipynb` serviu como referência para 
 - fine tuning dos modelos candidatos
 - utilizar a regra de ouro da quantização: 35B em INT4 quase sempre supera um modelo 4B em FP16.
 
-## 13. Referências
+## 12. Referências
 
 ARIAI, Farid; MACKENZIE, Joel; DEMARTINI, Gianluca. Natural language processing for the legal domain: a survey of tasks, datasets, models, and challenges. Versão 3. arXiv preprint, 2024. Disponível em: <https://doi.org/10.48550/ARXIV.2410.21306>.
 
