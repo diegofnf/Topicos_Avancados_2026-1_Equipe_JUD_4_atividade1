@@ -34,7 +34,7 @@ O arquivo `curadorias.csv` é gerado na aplicação de curadorias do Grupo 4. Li
 No recorte atual do projeto, as questões de múltipla escolha correspondem ao intervalo **739 a 861** do dataset [eduagarcia/oab_exams](https://huggingface.co/datasets/eduagarcia/oab_exams), enquanto as questões abertas correspondem ao intervalo **71 a 82** do dataset [maritaca-ai/oab-bench](https://huggingface.co/datasets/maritaca-ai/oab-bench/viewer?row=0).
 
 
-## 2. Objetivo do benchmark
+## 2. Objetivo
 
 O objetivo central é comparar diferentes modelos de linguagem em tarefas jurídicas da OAB, considerando dois eixos complementares:
 
