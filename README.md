@@ -12,6 +12,8 @@ Professor: Dr. Glauco de Figueiredo Carneiro
 
 Atividade 1 - 04/2026
 
+[PDF](https://drive.google.com/file/d/1lcXAXJMs0v9ZU7jRV8xrEUuYjrMBzuXi/view?usp=sharing)
+
 [Explicação YouTube](https://www.youtube.com/watch?v=jVHmo4xAS3g)
 
 [App Curadoria](https://my-google-ai-studio-applet-60692236585.us-west1.run.app/)
