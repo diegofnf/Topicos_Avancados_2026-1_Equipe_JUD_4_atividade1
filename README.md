@@ -2,7 +2,7 @@
  
 
 
-# Avaliação comparativa de pequenos modelos de linguagem para resposta a perguntas jurídicas em ambientes com recursos limitados
+# Curadoria de Datasets e Inferência Básica com LLMs
 
 Universidade Federal de Sergipe
 
