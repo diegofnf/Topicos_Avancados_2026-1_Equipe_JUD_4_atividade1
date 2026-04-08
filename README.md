@@ -218,61 +218,8 @@ Para verificar entailment, neutralidade e contradição semântica, o projeto ut
 
 Esse modelo multilingual é aplicado na etapa discursiva para complementar a similaridade semântica com uma noção de consistência/contradição inferencial.
 
-## 7. Métricas utilizadas
 
-### 7.1 Métrica quantitativa das objetivas
-
-Nas questões objetivas, a métrica principal é a acurácia:
-
-```text
-acurácia = total de acertos / total de questões objetivas
-```
-
-Também são registrados:
-
-- `acertos_objetivas`;
-- `total_objetivas`;
-- `acuracia_objetivas`.
-
-### 7.2 Métrica discursiva estruturada
-
-As questões discursivas são avaliadas a partir do espelho presente no dataset. Cada critério do espelho pode ser decomposto em componentes semânticos e legislativos com o seu respectivo peso.
-
-A escolha das métricas não foi arbitrária. Os arquivos da pasta `artefatos_estudo/`, em especial `Metricas_Escolhidas.ipynb` e `Teste_Métricas_Qualitativas.ipynb`, foram utilizados para estudar alternativas e justificar a configuração final adotada no projeto. A partir desses experimentos, chegou-se ao conjunto de métricas hoje utilizado:
-
-- `Legal SBERT Score`, para medir aderência semântica entre a resposta e a referência esperada;
-- `NLI`, para verificar consistência inferencial e penalizar contradições;
-- `MATCH` de legislação, para verificar a presença das referências legais esperadas no espelho.
-
-Em termos práticos:
-
-- componentes `semantico` avaliam o conteúdo jurídico da resposta;
-- componentes `legislacao` avaliam se a resposta menciona a base legal exigida;
-- a nota final da questão é a soma ponderada desses componentes.
-
-#### 7.2.1 Fórmula final da questão discursiva
-
-A nota da questão discursiva é calculada pela soma dos componentes semânticos e legislativos previstos no espelho estruturado. Nos componentes semânticos, o NLI atua como trava contra contradição: se o score inferencial ficar abaixo de `0.2`, o componente zera; caso contrário, a nota combina `SBERT` e `NLI`. Nos componentes legislativos, `MATCH` vale `1` quando a referência legal esperada aparece na resposta e `0` quando não aparece.
-
-```text
-nota_questao =
-  Σ_componentes_semanticos [ peso * ( 0, se NLI < 0.2; senão 0.7*SBERT + 0.3*NLI ) ]
-  +
-  Σ_componentes_legislacao [ peso * MATCH ]
-```
-
-## 8. Regras de pontuação
-
-As regras de pontuação seguem o espelho estruturado informado em `curadorias.csv`.
-
-- Cada critério possui `peso_total`.
-- Cada componente possui seu próprio `peso`.
-- A soma dos componentes de um critério deve refletir o peso máximo esperado para aquele bloco.
-- A nota final da resposta discursiva é a soma dos pontos efetivamente obtidos em cada componente.
-
-Se uma questão discursiva vier sem `criterios`, o sistema aplica um fallback com base em `gabarito_completo`, tratando a resposta esperada como um único critério semântico global.
-
-## 9. Consolidado executivo
+## 7. Consolidado executivo
 
 A etapa final não usa mais o consolidado antigo. O arquivo [relatorios.py](/Users/diegobispo/Documents/Atividade_1/Topicos_Avancados_2026-1_Equipe_JUD_4_atividade1/relatorios.py) hoje gera um consolidado executivo orientado por médias e por totais agregados.
 
@@ -307,7 +254,7 @@ Além do ranking geral por modelo, o consolidado também passa a mostrar:
 
 Isso reflete melhor a lógica atual do projeto: objetivas e discursivas continuam comparáveis, mas o relatório final passou a enfatizar médias, totais por agrupamento e rastreabilidade da correção discursiva.
 
-## 10. Artefatos gerados
+## 8. Artefatos gerados
 
 O diretório `artefatos_gerados/` recebe os principais produtos da execução:
 
@@ -324,7 +271,7 @@ O diretório `artefatos_gerados/` recebe os principais produtos da execução:
 - notas discursivas por questão;
 - resumo das objetivas.
 
-## 11. Ambiente de execução
+## 9. Ambiente de execução
 
 O projeto foi desenvolvido para rodar no ambiente do Colab com GPU T4 e token do Hugging Face.
 
@@ -362,7 +309,7 @@ Ainda assim, o código foi mantido e estruturado para permitir testes futuros, p
 - `sentence-transformers`
 Biblioteca usada para carregar modelos de embeddings semânticos, especialmente o Legal SBERT Score, base da avaliação discursiva nas dimensões de precisão, argumentação e coesão legal.
 
-## 12. Papel da pasta `artefatos_estudo`
+## 10. Papel da pasta `artefatos_estudo`
 
 A pasta `artefatos_estudo/` foi preservada e não participa diretamente da execução do pipeline modular. Ela funciona como base de estudo e validação metodológica, especialmente para:
 
@@ -372,7 +319,7 @@ A pasta `artefatos_estudo/` foi preservada e não participa diretamente da execu
 
 Entre esses artefatos, `Metricas_Escolhidas.ipynb` serviu como referência para a incorporação da avaliação semântica com SBERT e NLI no fluxo principal.
 
-## 13. Principais decisões de projeto
+## 11. Principais decisões de projeto
 
 - métricas qualitativas - Legal-Sbert, NLI e Match de Legislação;
 - fazer a curadoria assistida por IA em uma aplicação;
@@ -383,7 +330,7 @@ Entre esses artefatos, `Metricas_Escolhidas.ipynb` serviu como referência para 
 - manutenção do notebook como camada de demonstração e execução;
 - preservação da pasta `artefatos_estudo`.
 
-## 14. Próximos aprimoramentos sugeridos
+## 12. Próximos aprimoramentos sugeridos
 
 - enriquecer a verificação legislativa com normalização mais robusta;
 - avaliação com LLM as Judge
@@ -391,7 +338,7 @@ Entre esses artefatos, `Metricas_Escolhidas.ipynb` serviu como referência para 
 - fine tuning dos modelos candidatos
 - utilizar a regra de ouro da quantização: 35B em INT4 quase sempre supera um modelo 4B em FP16.
 
-## 15. Referências
+## 13. Referências
 
 ARIAI, Farid; MACKENZIE, Joel; DEMARTINI, Gianluca. Natural language processing for the legal domain: a survey of tasks, datasets, models, and challenges. Versão 3. arXiv preprint, 2024. Disponível em: <https://doi.org/10.48550/ARXIV.2410.21306>.
 
