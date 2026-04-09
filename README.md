@@ -224,7 +224,6 @@ Entre esses artefatos, `Metricas_Escolhidas.ipynb` serviu como referência para 
 - centralização da configuração em um único módulo;
 - reaproveitamento opcional de respostas já geradas;
 - avaliação qualitativa por correção estruturada baseada no espelho;
-- manutenção do notebook como camada de demonstração e execução;
 - preservação da pasta `artefatos_estudo`.
 
 ## 11. Próximos aprimoramentos sugeridos
